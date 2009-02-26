@@ -1,0 +1,28 @@
+<% form_for(:blog_entry, @msg, :url => {:controller => "users", :action =>"new_msg"} ) do |f| %>
+
+    <%= hidden_field :user, :id %>
+
+    <strong>Here's your chance to share your savings!</strong>
+    <table id="inputBox" cellspacing="0px">
+
+        <tr>
+            <td><label>What:</label> <br/> <%= f.text_field :what, :size => 30 %>   <br/>
+                <span class="help"> e.g Toy Drum </span>
+            </td>
+
+            <td><label>Where:</label> <br/><%= f.text_field :where, :size => 30 %>  <br/>
+                <span class="help"> The Toy Store @ 100 Pine, San Francisco, CA </span>
+            </td>
+
+            <td><label>How Much:</label> <br/> $<%= f.text_field :price, :size=>5 -%> <br/>
+                <span class="help">$5, $10, $89.99,  $.25 (get it?)</span>
+            </td>
+
+            <td style="vertical-align:middle">
+                <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed'} %>
+            </td>
+
+        </tr>      
+
+    </table>
+<% end %>

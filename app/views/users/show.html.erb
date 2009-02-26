@@ -1,0 +1,20 @@
+<div id="container-loggedin">
+    <% form_for :blog_entry, @message, :url => {:action => 'search'}  do |f| %>
+        <%= render_partial 'layouts/leftbar' %>
+        <%= render_partial 'listings/search' %>
+        <div class="centered-sm"><%= render_partial 'listings/search_sliders' %></div>
+      
+    <% end %>
+
+    <div class="centered-sm">
+        <% if logged_in? && current_web_user.user.id == @user.id %>
+            <%= render_partial 'input_header' %>
+            <% @last_id = 0 %>
+            <%= render_partial 'listings/messagelist' %>
+
+        <% end %>
+    </div>
+
+    <%= render_partial 'layouts/rightbar' %>
+</div>
+

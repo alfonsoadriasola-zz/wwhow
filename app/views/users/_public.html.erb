@@ -1,0 +1,18 @@
+<div id="userProfile">   
+    <div>
+       <label>Screen name:</label>
+        <%= link_to_function  h(@user.name.downcase).sub("'", "&rsquo"), "submitByUser('#{@user.id}');" %>
+    </div>
+
+    <div><label>Posts:</label> <%= @user.blog_entries.count %> </div>
+
+    <div>
+        <label>Status:</label> <%= @user.ranked %>
+    </div>
+
+    <div>
+        <label>Location:</label> <%= @user.address %>
+    </div>
+
+
+</div>

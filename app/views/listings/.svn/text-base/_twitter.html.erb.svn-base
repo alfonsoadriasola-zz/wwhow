@@ -1,0 +1,7 @@
+
+
+<div id="twitter_div">
+<h2 class="twitter-title"> Twitter Cheaps </h2>
+<ul id="twitter_update_list"></ul></div>
+<script type="text/javascript" src="http://cheapcheap:cheapdeal@twitter.com/javascripts/blogger.js"></script>
+<script type="text/javascript" src="http://cheapcheap:cheapdeal@twitter.com/statuses/replies.json?callback=twitterCallback2&amp;count=20"></script>

@@ -1,0 +1,75 @@
+<div id="container">
+    <div class="centered-sm">
+
+
+        
+
+        <div id="user-profile">
+
+            <h2>WWHOW!Account For <%= @user.name %> </h2>
+
+            <ul>
+                <li><label> Status </label> <%= @user.ranked %> </li>
+                <%= "You have put up  #{@user.blog_entries.count} posts" %>  on WWHOW
+
+                <h3> Registration Info </h3>
+
+                <li><label> Date You Joined WWHOW!</label> <%= @user.created_at.strftime("%m/%d/%y") %> </li>
+                <% form_for(@user) do |f| %>
+                    <%= f.error_messages %>
+
+                    <li>
+                        <%= f.label :name %>
+                        <%= f.text_field :name %>
+                    </li>
+
+
+                    <li>
+                        <%= f.label :uri %>
+                        <%= f.text_field :uri %>
+                    </li>
+
+                    <li>
+                        <%= f.label 'address', 'Default Location' %>
+                        <%= f.text_field :address %>
+
+                        <% if @user.lat %>
+                            <span class="hasMap"> Mapped!</span>
+                        <% end %>
+                    </li>
+
+                    <li><label for="web_user_email">Email</label>
+                        <input id="web_user_email" name="web_user[email]" size="30" type="text" value="<%= @user.web_user.email %>"/>
+                    </li>
+
+                    <li>
+                        <%= f.label :show_friends_only %>
+                        <%= f.check_box :show_friends_only %>
+                    </li>
+
+                    <!--<li>-->
+                        <!--<%= f.label :hide_blocked_users %>-->
+                        <!--<%= f.check_box :hide_blocked_users %>-->
+                    <!--</li>-->
+
+
+                    <h3>Reset password (optional)</h3>
+
+                    <li><label for="web_user_password">Password</label>
+                        <input id="web_user_password" name="web_user[password]" size="30" type="password"/></li>
+
+                    <li><label for="web_user_password_confirmation">Confirm Password</label>
+                        <input id="web_user_password_confirmation" name="web_user[password_confirmation]" size="30" type="password"/>
+                    </li>
+
+                    <li style="text-align:center;">
+
+                        <%= f.submit "Update", :class=> "buttonRed" %>
+                    </li>
+                <% end %></ul>
+
+
+        </div>
+
+    </div>
+</div>

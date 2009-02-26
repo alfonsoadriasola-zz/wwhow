@@ -1,0 +1,8 @@
+<div id="homeLink">
+ <% if logged_in?
+     @homelink = "/#{current_web_user.user.name}"
+ else
+     @homelink = "/"
+ end %>
+    <%= link_to '<em>Home</em>', @homelink %>
+ </div>

@@ -1,0 +1,58 @@
+<div class="centered-xs">
+    <div id="signupBox" style="position:relative">
+        <h1>Sign up on WWHOW! </h1>
+        Sign Up and let the savings begin! Fill in the info below. Don't worry, we won't be sharing your information
+        with anyone.
+
+        <% @web_user.password = @web_user.password_confirmation = nil %>
+
+        <% form_for :web_user, :url => web_users_path do |f| -%>
+            <% if error_messages_for(:web_user) != ""  then %>
+                <div class="error"> <%= error_messages_for :web_user %> </div>
+            <% end %>
+
+            <p><%= label_tag 'login' %>
+                <%= f.text_field :login %> <br/>
+                <span class="help"><%= h("(This'll show onscreen when you are logged in. It'll also be shown to others who use WWHOW!)") %></span>
+
+            </p>
+
+            <p><%= label_tag 'email' %>
+                <%= f.text_field :email %> <br/>
+                <span class="help"><%= h "(If you lose your password this is where we will rescue it from, nake it real)" %></span>
+
+            </p>
+
+
+            <p><%= label_tag 'password' %>
+                <%= f.password_field :password %> <br/>
+                <span class="help"><%= h "(You'll use this to log in, so it'd be good if it was easy to remember)" %></span>
+
+            </p>
+
+
+            <p><%= label_tag 'password_confirmation', 'Confirm Password' %>
+                <%= f.password_field :password_confirmation %> <br/>
+                <span class="help"><%= h "(Put in your password again)" %></span>
+
+            </p>
+
+            <p><%= label_tag 'address', 'Default Location' %>
+                <input id="web_user_address" name="web_user[address]" type="text" size="30"/> <br/>
+                <span class="help"><%= h "(The place where you do most of your shopping, try an address or city)" %></span>
+
+            </p>
+
+            <div class="centered-xxs">
+                <%= recaptcha_tags({:display => {:theme => 'clean'}}) %>
+                <%= submit_tag 'Sign up', {:class=> "buttonRed"} %>
+            </div>
+        <% end -%>
+
+
+          <span style="position: absolute; z-index: 10; width: 312px; right: -175px; height: 268px; top: 0px;" id="tipsy-headset"></span>
+    </div>
+</div>
+
+
+

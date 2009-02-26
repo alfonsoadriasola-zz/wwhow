@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>WWHOW!</title>
+    <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag 'main' %>
+    <!--[if IE]>
+    <%= stylesheet_link_tag 'ie' %>
+<![endif]-->
+
+</head>
+<body>
+<div id="frame">
+
+    <%= render_partial 'layouts/menu' %>
+    <div id="bannerCommon"><%=render_partial 'shared/home'%></div>
+
+    <div id="container" class="centered-sm">
+
+        <div id="wwhowsays" class="centered-xxs">
+            <div id="notice" style="text-align:center">
+                <%= flash[:notice] %>
+                <% flash[:notice] = "" %>
+            </div>
+            <div id="errors" style="text-align:center">
+                <%= flash[:error] %>
+            </div>
+        </div>
+        <%= yield %>
+
+    </div>    
+    <%= render_partial 'layouts/footer' %>
+
+</div>
+
+<div id="busy" style="display:none">please wait..</div>
+<div id="tooltip" style="display:none"></div>
+
+</body>
+
+</html>

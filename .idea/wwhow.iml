@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="false" type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="SHOULD_USE_RSPEC_PLUGIN" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_ADDED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="[gem] rails (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/rails-2.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] activerecord (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] actionmailer (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/actionmailer-2.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] rake (v0.8.3, C:/ruby/lib/ruby/gems/1.8/gems/rake-0.8.3)" level="application" />
+    <orderEntry type="library" name="[gem] actionpack (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] activeresource (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/activeresource-2.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] activesupport (v2.1.0, C:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0)" level="application" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="0" />
+  </component>
+  <component name="RailsViewFoldersManager">
+    <USER_URLS url="file://$MODULE_DIR$/spec" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/spec
+    <USER_URLS url="file://$MODULE_DIR$/lib" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/lib
+    <USER_URLS url="file://$MODULE_DIR$/public/javascripts" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/public/javascripts
+    <USER_URLS url="file://$MODULE_DIR$/config" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/config
+    <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/vendor/rails
+    <USER_URLS url="file://$MODULE_DIR$/vendor/plugins" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/vendor/plugins
+    <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
+    file://C:/Users/Alfonso/RubymineProjects/wwhow/public/stylesheets
+  </component>
+</module>
+

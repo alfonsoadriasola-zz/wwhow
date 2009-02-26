@@ -1,0 +1,11 @@
+
+<div id = "friendsList">
+ <h3> friends </h3>
+  <ul>
+   <% for sub in @user.subscriptions %>
+   <% unless sub.friend_id == sub.user_id %>
+     <li> <%= User.find(sub.friend_id).name %></li>
+   <% end%>
+   <%end %>
+  </ul>
+  </div>

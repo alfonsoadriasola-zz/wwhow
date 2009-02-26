@@ -1,0 +1,673 @@
+/*
+table, tr, th, td {border:dashed 1px red;}
+body div { border:dotted .1px orange;
+padding: .2em; }
+ul , li {   border:dotted 1px green;
+padding: 1em; }
+span { border:dotted .1px red ;
+padding: .2em; }
+*/
+body div {
+    padding: .01em;
+}
+
+.centered {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.centered-sm {
+    width: 780px;
+    margin: 0 auto;
+}
+
+.centered-xs {
+    width: 580px;
+    margin: 0 auto;
+    background: url(/images/centerbgdark.jpg) transparent repeat-x;
+}
+
+.centered-xxs {
+    width: 420px;
+    margin: 0 auto;
+}
+
+body {
+/*font-family:Comic Sans, Comic Sans MS, cursive;*/
+/*font-family:'Century Gothic',Futura,'URW Gothic L',sans-serif;*/
+/*font-family:'Lucida Sans Unicode','Lucida Grande','Lucida Sans','DejaVu Sans Condensed',sans-serif; */
+    font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
+    font-size: .9em;
+    background-color: transparent; /*font-variant:small-caps;*/
+}
+
+#frame {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+#homeLink {
+    height: 6.5em;
+    width: 188px;
+}
+
+#homeLink a {
+    text-decoration: none;
+    font-size: 5.5em;
+}
+
+#homeLink a em {
+    visibility: hidden;
+}
+
+#rightbar div, #leftbar div {
+    border: none;
+    padding: .2em;
+}
+
+#container, #container-loggedin {
+    width: 1200px;
+    padding-bottom: 20px;
+    min-height: 600px;
+}
+
+#container {
+    background: url('/images/centerbgdark.jpg') transparent repeat-x;
+}
+
+#container-loggedin {
+    background: url('/images/centerbgdark.jpg') transparent repeat-x;
+}
+
+#banner, #bannerLoggedIn {
+    z-index: 0;
+    display: block;
+}
+
+#banner {
+    background: transparent url(/images/top-tipsy.jpg) no-repeat center center;
+    height: 383px;
+}
+
+#bannerCommon, #bannerLoggedIn {
+    background: transparent url(/images/banner-common.jpg) no-repeat center center;
+    height: 117px;
+    overflow-y: visible;
+}
+
+#welcome {
+    background: transparent url(/images/info-tipsy.png) no-repeat top center;
+    height: 291px;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+#tipsy {
+    background: url(/images/tipsy-pen.png) no-repeat top left;
+    width: 184px;
+    height: 315px;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    z-index: 2;
+}
+
+#tipsy_2, #tipsy_3 {
+    background: transparent url("/images/tipsy-pen.png") no-repeat top left;
+    width: 177px;
+    height: 308px;
+
+}
+
+#tipsy_2 {
+    position: absolute;
+    top: 210px;
+    right: 260px;
+    z-index: 0;
+}
+
+#tipsy_3 {
+    position: absolute;
+    top: 140px;
+    right: 260px;
+    z-index: 0;
+}
+
+#menu Table {
+    font-size: .75em;
+    font-weight: bold;
+    text-align: right;
+    display: inline-block;
+    right: 2em;
+    position: absolute;
+    top: 0px;
+    left: auto;
+    white-space: nowrap;
+    background-color: #ffde00;
+    z-index: 5;
+    line-height: 1.8em;
+}
+
+#menu .button {
+    border: none;
+    line-height: 1.6em;
+}
+
+#menu span {
+    padding: .2em;
+}
+
+#menuLeft {
+    float: left;
+    width: 16px;
+    background-image: url(/images/menu-left.jpg)
+}
+
+#menu #web_user-bar-greeting a {
+    text-decoration: none;
+    color: #d50f10;
+}
+
+#searchrow {
+    width: 880px;
+    position: absolute;
+    left: 214px;
+    top: 78px;
+    font-size: 86%
+}
+
+#rightbar {
+    position: absolute;
+    top: 385px;
+    right: 0px;
+    background-color: transparent;
+    width: 183px;
+}
+
+#leftbar {
+    position: absolute;
+    width: 176px;
+    left: 24px;
+    background-color: transparent;
+}
+
+#popular_tags {
+    text-align: left;
+    display: block;
+}
+
+#active_members a {
+    font-size: 1.3em;
+}
+
+#wwhowsays {
+    border: 0;
+    background: #ffde00;
+    font-weight: bold;
+    text-align: center;
+}
+
+#notice, #errors {
+    font-weight: 600;
+}
+
+.error {
+    color: #d50f10;
+    background-color: #ffde00;
+    text-align: center;
+    padding: 1em;
+}
+
+h2.error {
+    font-size: 1.3em;
+}
+
+#notice {
+    color: #0045cf;
+}
+
+#errors {
+    color: #d50f10;
+}
+
+#statusBox .label {
+    font-size: 120%;
+}
+
+#messageList {
+    min-height: 500px;
+
+}
+
+#tableTop {
+    line-height: 2em;
+    background-color: #0045cf;
+    color: white;
+    padding: 0 1em;
+}
+
+#headerTable {
+    width: 780px;
+}
+
+#headerTable th {
+    font-size: 180%;;
+    text-align: center;
+    color: #E6F4FF;
+}
+
+#headerTable td {
+    vertical-align: top;
+}
+
+#messageListTable {
+    width: 100%;
+    z-index: 2;
+    table-layout: fixed;
+}
+
+#messageListTable th {
+    text-align: center;
+    font-size: .8em;
+    background-color: #ffde00;
+}
+
+td.comment {
+    font-size: 80%;
+}
+
+#messageListTable td {
+    text-align: left;
+    font-size: 1em;
+}
+
+#messageListTable span.price, span.discount {
+    font-size: small;
+}
+
+#messageListTable tr {
+    background-color: transparent;
+}
+
+#input_header, #messageList {
+    display: block;
+}
+
+ul {
+    background-color: transparent;
+}
+
+li {
+    list-style: none;
+}
+
+.buttonstrip {
+    display: inline;
+}
+
+table tr td {
+    vertical-align: top;
+}
+
+td table {
+    width: 100%;
+}
+
+#footer {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    font-size: 75%;
+    color: #d50f10;
+    background-color: #ffde00;
+
+}
+
+#footer a {
+    color: #d50f10;
+    text-decoration: none;
+}
+
+span.help {
+    font-weight: bold;
+    display: run-in;
+    font-size: .7em;
+}
+
+span.right {
+    text-align: left;
+    float: right;
+    width: 40%;
+}
+
+span.left {
+    text-align: right;
+    float: left;
+    width: 42%;
+}
+
+#searchTable {
+
+}
+
+#searchTable td {
+    line-height: 1.7em;
+    background-color: transparent;
+    margin: .2em .2em .2em .2em;
+    vertical-align: middle;
+    height: 2.6em;
+    padding-left: 1em;
+}
+
+#searchTable td input {
+    line-height: 1.3em;
+    font-size: 1.1em;
+    color: #666;
+    width: 18em;
+}
+
+#searchTable th {
+    font-size: 100%;
+}
+
+#inputBox td {
+    line-height: 1.7em;
+    background-color: #d2e1f4;
+    margin: .2em .2em .2em .2em;
+    vertical-align: top;
+    height: 2.6em;
+    padding-left: 1em;
+}
+
+#widgetLinks {
+    float: right;
+}
+
+#widgetLinks a, #tableTop a {
+    color: #d50f10;
+    font-size: .8em;
+    text-decoration: none;
+    font-style: oblique;
+    background-color: #ffde00;
+    padding: .2em .4em .2em 1.6em;
+}
+
+#mapOn, #mapOff {
+    background: transparent url(/images/mappedPost.png) no-repeat center left;
+}
+
+#slidersTable {
+    background-color: #ffde00;
+    border: solid 0 2px 0 2px #0045cf;
+    width: 780px;
+    height: 5em;
+}
+
+#sliderstable span {
+    opacity: 1;
+}
+
+#slider.hide {
+    display: none;
+}
+
+#popular_tags a, #messageListTable tags a,
+    #user-control-panel a, #login a, #active_members a {
+    text-decoration: none;
+    color: #d50f10;
+}
+
+table tr.show {
+    display: table-row;
+}
+
+table tr.hide {
+    display: none !important;
+}
+
+a img {
+    border: 0;
+}
+
+table.sortable th a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+table.sortable {
+    border-spacing: 1px;
+}
+
+table.sortable th, table.sortable td {
+    text-align: left;
+    padding: 2px 4px 2px 4px;
+    border-color: #444;
+}
+
+table.sortable th {
+    border-width: 0px 1px 1px 1px;
+    background-color: transparent;;
+}
+
+table.sortable td {
+}
+
+table.sortable tr.odd td {
+    background-color: transparent;
+}
+
+table.sortable tr.even td {
+    background-color: #edf5fe;
+}
+
+table.sortable tr.sortbottom td {
+    font-weight: bold;
+}
+
+table.sortable .sortcol {
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+table.sortable .sortasc {
+    background-image: url(/images/arrow-up.gif);
+}
+
+table.sortable .sortdesc {
+    background-image: url(/images/arrow-down.gif);
+}
+
+table.sortable .nosort {
+    cursor: default;
+    background-image: url(/images/arrow-none.gif);
+}
+
+.button, .buttonRed {
+    cursor: pointer;
+    border: outset 1px #ccc;
+    background: #999;
+    color: #d50f10;
+    font-weight: bold;
+    padding: .2em .4em;
+    background: url(/images/toolButton.png) repeat-x left top;
+    line-height: 1.3em;
+}
+
+.buttonRed {
+    background-color: #d50f10;
+    color: #fff;
+    background: url(/images/toolButtonRed.png) repeat-x left top;
+}
+
+#messageListTable td .button {
+    padding: 0 .2em 0 .2em;
+    background-color: transparent;
+    background-image: none;
+    line-height: .5em;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+    color: #d50f10;
+    font-size: .420em;
+
+}
+
+#messageLisTable tr .hide {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+#messageListTable tr .show {
+    display: table-row;
+}
+
+a.buttonRed, a.button {
+    text-decoration: none;
+}
+
+div.slider {
+    margin: 10px 0;
+    background-color: transparent;
+    width: 228px;
+    height: 29px;
+    position: relative;
+    background-image: url(/images/bg-fader.gif);
+    z-index: 4;
+}
+
+div.slider div.handle {
+    width: 18px;
+    height: 20px;
+    background-color: transparent;
+    cursor: move;
+    position: absolute;
+    background-image: url(/images/thumb-u.gif);
+    z-index: 5;
+}
+
+#loginBox label, #signupBox label, #user-profile label, #forgotBox label, #usersBox label {
+    width: 30%;
+    float: left;
+    text-align: right;
+    padding-right: 1em;
+    font-weight: bold;
+}
+
+#user-profile ul li {
+    line-height: 2.3em;
+}
+
+#user-control-panel label {
+    width: 67%;
+    float: left;
+    font-size: .85em;
+    font-weight: bold;
+}
+
+/* General */
+div.info {
+    background-color: #d2e1f4;
+    padding: 20px 20px 20px 20px;
+    line-height: 1.3em;
+}
+
+td.editing {
+    vertical-align: top;
+}
+
+td.editing label {
+    width: 25%;
+    float: left;
+    font-weight: bolder;
+    text-align: right;
+}
+
+.small {
+    font-size: smaller;
+}
+
+#tooltip {
+
+}
+
+#mapframe {
+    display: block;
+}
+
+#loginBox, #signupBox, #forgotBox, #usersBox {
+    background-color: #d2e1f4;
+    padding: 20px 20px 20px 20px;
+    line-height: 1.3em;
+}
+
+#signupBox span.help {
+    font-size: 75%;
+    font-style: oblique;
+    font-weight: 100;
+    float: none;
+    text-align: center;
+}
+
+/*buttons*/
+span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
+    height: 14px;
+    width: 14px;
+    text-decoration: none;
+}
+
+span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
+    visibility: hidden;
+    font-size: 1.1em;
+}
+
+span.hasMap {
+    background: transparent url(/images/mappedPost.png) no-repeat center right;
+    padding-right: 16px;
+}
+
+a.buttonAddFave {
+    background: transparent url(/images/makeFavorite.png) no-repeat center left;
+
+}
+
+a.buttonOffFaves {
+    background: transparent url(/images/unFavorite.png) no-repeat center left;
+
+}
+
+a.buttonEdit {
+    background: transparent url(/images/editPost.png) no-repeat center left;
+}
+
+/* about Page*/
+
+#tipsy-pen {
+    background: url(/images/tipsy-pen.png) no-repeat top center;
+}
+
+#tipsy-presents {
+    background: url(/images/tipsy-presents.png) no-repeat top center;
+}
+
+#tipsy-ashamed {
+    background: url(/images/tipsy-ashamed.png) no-repeat top center;
+}
+
+#tipsy-pen {
+    background: url(/images/tipsy-pen.png) no-repeat top center;
+}
+
+#tipsy-headset {
+    background: url(/images/tipsy-headset.png) no-repeat top center;
+}
+
+a {
+    color: #d50f10;
+    text-decoration: none;
+}

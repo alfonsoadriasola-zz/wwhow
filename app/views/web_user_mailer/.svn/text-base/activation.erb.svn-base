@@ -1,0 +1,3 @@
+<%=h @web_user.login %>, your account on WWHOW!has been activated.  Welcome aboard!
+
+  <%=h @url %>

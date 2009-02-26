@@ -1,0 +1,10 @@
+<div>
+<table id="headerTable" cellspacing="0" cellpadding="6" style="border-collapse:collapse">
+  
+  <tr>
+  <td colspan="3">
+    <%= render_partial 'search' %>  
+  </td>
+  </tr>
+</table>
+</div>

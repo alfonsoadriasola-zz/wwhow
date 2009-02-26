@@ -1,0 +1,28 @@
+<div id="container">
+
+    <%= render_partial '/shared/system_messages' %>
+    <div class="centered-xs">
+        <h2> My Favorite Users </h2>
+
+        <ul id="usersBox">
+
+            <% for user in @users %>
+                <li id="li<%=user.id%>">
+                    <label> Name:  :</label> <%= h user.name %>    <br/>
+                    <label> Status :</label> <%= h user.ranked %>  <br/>
+                    <label> Posts  :</label> <%= user.blog_entries.count %> <br/>
+                    <label> Joined :</label> <%= distance_of_time_in_words(Time.now, user.created_at) %> ago <br/>
+
+                    <span class="right"><%= link_to_remote "<em>remove</em>", {
+                            :url => { :controller => 'users', :action => 'remove_user_from_favorites',
+                                    :friend_id => user.id }, :confirm => 'Remove  '+user.name + ' from my faves?'},
+                            {:class=>"buttonOffFaves", :title => 'take off favorites'} %></span>
+
+
+                </li>
+            <% end %>
+
+        </ul>
+    </div>
+
+</div>

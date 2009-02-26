@@ -1,0 +1,1860 @@
+
+--- 
+blog_entries: 
+  columns: 
+  - id
+  - user_id
+  - text
+  - created_at
+  - updated_at
+  - what
+  - where
+  - price
+  - original
+  - twit_id
+  - discount
+  - lat
+  - lng
+  records: 
+  - - "25"
+    - "7"
+    - "cape Metropolis 100.0 "
+    - 2008-09-04 07:34:34
+    - 2008-12-04 06:50:28
+    - cape
+    - Metropolis
+    - "100"
+    - "1000"
+    - 
+    - 
+    - "31.9634"
+    - "-91.6902"
+  - - "26"
+    - "6"
+    - "Bat Mask Gotham City  143.23 "
+    - 2008-09-04 23:48:39
+    - 2008-12-04 06:50:31
+    - Bat Mask
+    - "Gotham City "
+    - "143.23"
+    - "150"
+    - 
+    - 
+    - "52.8663"
+    - "-1.2052"
+  - - "27"
+    - "10"
+    - "joker mask Gotham 20.0 "
+    - 2008-09-05 03:46:20
+    - 2008-12-04 06:50:34
+    - joker mask
+    - Gotham
+    - "20"
+    - "50"
+    - 
+    - 
+    - "43.2233"
+    - "-90.2916"
+  - - "28"
+    - "16"
+    - "shield DC 100.0 "
+    - 2008-09-08 22:58:56
+    - 2008-12-04 06:50:37
+    - shield
+    - DC
+    - "100"
+    - "100"
+    - 
+    - 
+    - "38.906"
+    - "-77.0334"
+  - - "29"
+    - "16"
+    - "mask DC 10.0 "
+    - 2008-09-08 23:03:17
+    - 2008-12-04 06:50:41
+    - mask
+    - DC
+    - "10"
+    - "10"
+    - 
+    - 
+    - "38.906"
+    - "-77.0334"
+  - - "31"
+    - "16"
+    - "thor's hammer DC 5.0 "
+    - 2008-09-11 06:02:27
+    - 2008-12-04 06:50:45
+    - thor's hammer
+    - DC
+    - "5"
+    - "10"
+    - 
+    - 
+    - "38.906"
+    - "-77.0334"
+  - - "35"
+    - "26"
+    - " nike running shoes san francisco 100.0 150.0"
+    - 2008-09-13 20:54:28
+    - 2008-12-04 06:50:49
+    - " nike running shoes"
+    - san francisco
+    - "100"
+    - 
+    - "916863353"
+    - "150"
+    - "37.7752"
+    - "-122.419"
+  - - "36"
+    - "28"
+    - " Dreyers Ice Cream oak grove,94596 1.0 3.0"
+    - 2008-09-17 06:17:08
+    - 2008-12-04 06:50:52
+    - " Dreyers Ice Cream"
+    - oak grove,94596
+    - "1"
+    - 
+    - "924303876"
+    - "3"
+    - "42.8582"
+    - "-106.363"
+  - - "37"
+    - "28"
+    - "Quickbooks Premium Costco 94518 299.0 "
+    - 2008-09-18 05:16:56
+    - 2008-12-04 06:50:56
+    - Quickbooks Premium
+    - Costco 94518
+    - "299"
+    - "450"
+    - 
+    - 
+    - "51.6627"
+    - "-0.36287"
+  - - "38"
+    - "28"
+    - " Aig Shares Wall Street, NY, NY 0.4 100.0"
+    - 2008-09-18 05:52:42
+    - 2008-12-04 06:50:59
+    - " Aig Shares"
+    - Wall Street, NY, NY
+    - "0.4"
+    - 
+    - "925567247"
+    - "100"
+    - "40.706"
+    - "-74.0088"
+  - - "43"
+    - "28"
+    - " hamburgers citrus plaza, walnut creek, ca 17.0 14.0"
+    - 2008-09-19 06:30:27
+    - 2008-12-04 06:51:02
+    - " hamburgers"
+    - citrus plaza, walnut creek, ca
+    - "17"
+    - 
+    - "926875878"
+    - "14"
+    - 
+    - 
+  - - "45"
+    - "28"
+    - " Crepes De Manjar  Lake Chabot Park  5.0 "
+    - 2008-09-21 21:47:58
+    - 2008-12-04 06:51:05
+    - " Crepes De Manjar "
+    - "Lake Chabot Park "
+    - "5"
+    - "0"
+    - 
+    - 
+    - 
+    - 
+  - - "48"
+    - "28"
+    - Apples monument bl, concord, ca 0.5 150.0
+    - 2008-09-21 22:01:17
+    - 2008-12-04 06:51:08
+    - Apples
+    - monument bl, concord, ca
+    - "0.5"
+    - "3.5"
+    - 
+    - "150"
+    - "37.9564"
+    - "-122.039"
+  - - "50"
+    - "16"
+    - Toy Train Big Lots 10.0 20.0
+    - 2008-09-22 06:33:38
+    - 2008-12-04 06:51:11
+    - Toy Train
+    - Big Lots
+    - "10"
+    - "50"
+    - 
+    - "20"
+    - 
+    - 
+  - - "52"
+    - "28"
+    - ipod nano apple store @mission 160.0 20.0
+    - 2008-09-23 04:23:01
+    - 2008-12-04 06:51:15
+    - ipod nano
+    - apple store @mission
+    - "160"
+    - "800"
+    - 
+    - "20"
+    - 
+    - 
+  - - "54"
+    - "28"
+    - " usd in clp  foreign exchange 570.0 -20.0"
+    - 2008-10-09 06:56:33
+    - 2008-12-04 06:51:18
+    - " usd in clp "
+    - foreign exchange
+    - "570"
+    - 
+    - "943770260"
+    - "-20"
+    - 
+    - 
+  - - "55"
+    - "28"
+    - " falafel sandwiches embarcadero, san francisco, ca 5.25 2.0"
+    - 2008-10-09 06:56:33
+    - 2008-12-18 18:17:42
+    - " falafel sandwiches"
+    - embarcadero, san francisco, ca
+    - "5.25"
+    - 
+    - "941514257"
+    - "2"
+    - "37.7984"
+    - "-122.397"
+  - - "56"
+    - "16"
+    - halo3  best buy 59.99 1.0
+    - 2008-10-10 05:52:46
+    - 2008-12-04 06:51:23
+    - "halo3 "
+    - best buy
+    - "59.99"
+    - 
+    - 
+    - "1"
+    - 
+    - 
+  - - "57"
+    - "28"
+    - " oil barrel wall street, ny 78.0 140.0"
+    - 2008-10-10 23:07:14
+    - 2008-12-04 06:51:26
+    - " oil barrel"
+    - wall street, ny
+    - "78"
+    - 
+    - "954762354"
+    - "140"
+    - "53.4061"
+    - "14.6933"
+  - - "58"
+    - "28"
+    - asado carnicero santiago 10.0 120.0
+    - 2008-10-14 00:03:07
+    - 2008-12-04 06:51:34
+    - asado carnicero
+    - santiago
+    - "10"
+    - 
+    - 
+    - "120"
+    - "-33.4254"
+    - "-70.5665"
+  - - "60"
+    - "29"
+    - smirnoff costco 25.0 50.0
+    - 2008-10-14 19:30:27
+    - 2008-12-04 06:51:39
+    - smirnoff
+    - costco
+    - "25"
+    - 
+    - 
+    - "50"
+    - 
+    - 
+  - - "61"
+    - "28"
+    - " bfg tech 1gb 100 buskirk ,walnut creek, ca 150.0 25.0"
+    - 2008-10-22 06:05:41
+    - 2008-12-04 06:51:43
+    - " bfg tech 1gb"
+    - 100 buskirk ,walnut creek, ca
+    - "150"
+    - 
+    - "968513969"
+    - "25"
+    - 
+    - 
+  - - "63"
+    - "30"
+    - everything mervyns 0.0 50.0
+    - 2008-11-03 16:38:31
+    - 2008-12-04 06:51:46
+    - everything
+    - mervyns
+    - "0"
+    - 
+    - 
+    - "50"
+    - 
+    - 
+  - - "64"
+    - "30"
+    - kids's shoes macy's 20.0 50.0
+    - 2008-11-03 16:48:51
+    - 2008-12-04 06:51:49
+    - kids's shoes
+    - macy's
+    - "20"
+    - 
+    - 
+    - "50"
+    - 
+    - 
+  - - "65"
+    - "30"
+    - granola safeway 2.0 0.0
+    - 2008-11-03 16:52:12
+    - 2008-12-04 06:51:52
+    - granola
+    - safeway
+    - "2"
+    - 
+    - 
+    - "0"
+    - 
+    - 
+  - - "66"
+    - "30"
+    - yogurt trader joes 2.0 0.0
+    - 2008-11-03 16:52:28
+    - 2008-12-04 06:51:55
+    - yogurt
+    - trader joes
+    - "2"
+    - 
+    - 
+    - "0"
+    - 
+    - 
+  - - "67"
+    - "30"
+    - mouse best buy 3.0 54.0
+    - 2008-11-03 17:01:27
+    - 2008-12-04 06:52:00
+    - mouse
+    - best buy
+    - "3"
+    - 
+    - 
+    - "54"
+    - 
+    - 
+  - - "68"
+    - "30"
+    - cell phones att 10.0 0.0
+    - 2008-11-03 17:01:41
+    - 2008-12-04 06:52:05
+    - cell phones
+    - att
+    - "10"
+    - 
+    - 
+    - "0"
+    - "34.8044"
+    - "-106.825"
+  - - "69"
+    - "30"
+    - sofas macys 500.0 0.0
+    - 2008-11-03 17:01:52
+    - 2008-12-04 06:52:08
+    - sofas
+    - macys
+    - "500"
+    - 
+    - 
+    - "0"
+    - 
+    - 
+  - - "70"
+    - "30"
+    - summer toys target 4.0 0.0
+    - 2008-11-03 17:02:06
+    - 2008-12-04 06:52:13
+    - summer toys
+    - target
+    - "4"
+    - 
+    - 
+    - "0"
+    - 
+    - 
+  - - "71"
+    - "28"
+    - " burton snowboard pants the-house.com 99.0 200.0"
+    - 2008-11-06 07:54:54
+    - 2008-12-18 17:56:33
+    - " burton snowboard pants"
+    - Minesotta
+    - "99"
+    - 
+    - "992943836"
+    - "200"
+    - "46.7296"
+    - "-94.6859"
+  - - "72"
+    - "28"
+    - ski tickets south lake tahoe 45.0 20.0
+    - 2008-11-12 01:05:29
+    - 2008-12-18 18:19:30
+    - ski tickets
+    - 100 Ski Way, South Lake Tahoe, CA
+    - "45"
+    - 
+    - 
+    - "20"
+    - "38.9404"
+    - "-119.952"
+  - - "73"
+    - "28"
+    - tomato  pesto flatbread Oak Grove at Treat Bl, Concord, CA 3.69 2.0
+    - 2008-11-12 06:25:16
+    - 2008-12-04 06:52:38
+    - tomato  pesto flatbread
+    - Oak Grove at Treat Bl, Concord, CA
+    - "3.69"
+    - 
+    - 
+    - "2"
+    - "37.9387"
+    - "-122.025"
+  - - "74"
+    - "28"
+    - granola bar box Concord,CA 20.0 5.0
+    - 2008-11-14 18:56:07
+    - 2008-12-04 06:52:34
+    - granola bar box
+    - Concord,CA
+    - "20"
+    - "20"
+    - 
+    - "5"
+    - "37.9765"
+    - "-122.029"
+  - - "76"
+    - "28"
+    - ski tickets south lake tahoe, ca 59.0 20.0
+    - 2008-12-01 03:20:29
+    - 2008-12-04 06:52:43
+    - ski tickets
+    - south lake tahoe, ca
+    - "59"
+    - 
+    - 
+    - "20"
+    - "38.939"
+    - "-119.977"
+  - - "77"
+    - "28"
+    - cinnamon twists 891 carthage ct, concord, ca 94518 1.0 50.0
+    - 2008-12-02 19:03:22
+    - 2008-12-18 17:55:15
+    - cinnamon twists
+    - 891 carthage ct, concord, ca 94518
+    - "1"
+    - 
+    - 
+    - "50"
+    - "37.9423"
+    - "-122.029"
+  - - "78"
+    - "28"
+    - "@WWHOW!Test Product # San Francisco, CA #  80"
+    - 2009-01-31 06:12:04.713666
+    - 2009-01-31 06:12:05.113167
+    - " test product "
+    - " San Francisco, CA "
+    - "80"
+    - 
+    - "1132532896"
+    - 
+    - 
+    - 
+
+--- 
+ratings: 
+  columns: 
+  - id
+  - rating
+  - created_at
+  - rateable_type
+  - rateable_id
+  - user_id
+  records: 
+  - - "1"
+    - "3"
+    - 2008-11-03 05:45:03
+    - BlogEntry
+    - "61"
+    - "28"
+  - - "2"
+    - "2"
+    - 2008-11-03 05:45:19
+    - BlogEntry
+    - "60"
+    - "28"
+  - - "3"
+    - "3"
+    - 2008-11-03 05:45:28
+    - BlogEntry
+    - "58"
+    - "28"
+  - - "5"
+    - "5"
+    - 2008-11-03 06:07:48
+    - BlogEntry
+    - "48"
+    - "28"
+  - - "7"
+    - "4"
+    - 2008-11-03 06:10:16
+    - BlogEntry
+    - "55"
+    - "28"
+  - - "10"
+    - "3"
+    - 2008-11-03 16:46:51
+    - BlogEntry
+    - "63"
+    - "30"
+  - - "11"
+    - "5"
+    - 2008-11-03 16:47:32
+    - BlogEntry
+    - "60"
+    - "30"
+  - - "12"
+    - "3"
+    - 2008-11-03 16:47:43
+    - BlogEntry
+    - "61"
+    - "30"
+  - - "13"
+    - "4"
+    - 2008-11-03 16:47:52
+    - BlogEntry
+    - "58"
+    - "30"
+  - - "15"
+    - "5"
+    - 2008-11-03 16:48:24
+    - BlogEntry
+    - "55"
+    - "30"
+  - - "16"
+    - "2"
+    - 2008-11-04 00:41:05
+    - BlogEntry
+    - "67"
+    - "28"
+  - - "17"
+    - "3"
+    - 2008-11-04 00:45:16
+    - BlogEntry
+    - "70"
+    - "28"
+  - - "18"
+    - "3"
+    - 2008-11-06 08:10:42
+    - BlogEntry
+    - "71"
+    - "28"
+  - - "19"
+    - "3"
+    - 2008-11-10 05:53:38
+    - BlogEntry
+    - "25"
+    - "28"
+  - - "20"
+    - "1"
+    - 2008-11-21 22:59:09
+    - BlogEntry
+    - "74"
+    - "28"
+  - - "21"
+    - "1"
+    - 2008-11-23 07:03:59
+    - BlogEntry
+    - "36"
+    - "28"
+
+--- 
+taggings: 
+  columns: 
+  - id
+  - tag_id
+  - taggable_id
+  - taggable_type
+  - context
+  - created_at
+  records: 
+  - - "7"
+    - "7"
+    - "52"
+    - BlogEntry
+    - places
+    - 2008-09-24 06:27:14
+  - - "10"
+    - "10"
+    - "25"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "11"
+    - "11"
+    - "25"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "12"
+    - "12"
+    - "26"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "13"
+    - "13"
+    - "26"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "14"
+    - "14"
+    - "28"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "15"
+    - "15"
+    - "28"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "16"
+    - "16"
+    - "29"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "17"
+    - "15"
+    - "29"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "18"
+    - "17"
+    - "31"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "19"
+    - "15"
+    - "31"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "20"
+    - "18"
+    - "27"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "21"
+    - "19"
+    - "27"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "22"
+    - "20"
+    - "50"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "23"
+    - "21"
+    - "50"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "26"
+    - "24"
+    - "48"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "27"
+    - "25"
+    - "48"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "28"
+    - "26"
+    - "45"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "29"
+    - "27"
+    - "45"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:47
+  - - "30"
+    - "28"
+    - "52"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:47
+  - - "32"
+    - "30"
+    - "37"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:48
+  - - "45"
+    - "39"
+    - "36"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:48
+  - - "46"
+    - "40"
+    - "36"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:48
+  - - "48"
+    - "42"
+    - "38"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:48
+  - - "49"
+    - "43"
+    - "38"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:48
+  - - "51"
+    - "45"
+    - "43"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:48
+  - - "52"
+    - "46"
+    - "35"
+    - BlogEntry
+    - categories
+    - 2008-09-24 07:02:48
+  - - "53"
+    - "47"
+    - "35"
+    - BlogEntry
+    - places
+    - 2008-09-24 07:02:48
+  - - "57"
+    - "51"
+    - "54"
+    - BlogEntry
+    - categories
+    - 2008-10-09 06:56:33
+  - - "58"
+    - "52"
+    - "54"
+    - BlogEntry
+    - categories
+    - 2008-10-09 06:56:33
+  - - "59"
+    - "53"
+    - "54"
+    - BlogEntry
+    - categories
+    - 2008-10-09 06:56:33
+  - - "60"
+    - "54"
+    - "54"
+    - BlogEntry
+    - categories
+    - 2008-10-09 06:56:33
+  - - "61"
+    - "55"
+    - "54"
+    - BlogEntry
+    - places
+    - 2008-10-09 06:56:33
+  - - "63"
+    - "57"
+    - "55"
+    - BlogEntry
+    - categories
+    - 2008-10-09 06:56:33
+  - - "64"
+    - "58"
+    - "55"
+    - BlogEntry
+    - places
+    - 2008-10-09 06:56:33
+  - - "65"
+    - "59"
+    - "55"
+    - BlogEntry
+    - places
+    - 2008-10-09 06:56:33
+  - - "66"
+    - "47"
+    - "55"
+    - BlogEntry
+    - places
+    - 2008-10-09 06:56:33
+  - - "67"
+    - "60"
+    - "56"
+    - BlogEntry
+    - categories
+    - 2008-10-10 05:52:46
+  - - "68"
+    - "61"
+    - "56"
+    - BlogEntry
+    - categories
+    - 2008-10-10 05:52:46
+  - - "69"
+    - "62"
+    - "56"
+    - BlogEntry
+    - categories
+    - 2008-10-10 05:52:46
+  - - "70"
+    - "63"
+    - "56"
+    - BlogEntry
+    - places
+    - 2008-10-10 05:52:46
+  - - "71"
+    - "64"
+    - "57"
+    - BlogEntry
+    - categories
+    - 2008-10-10 23:07:15
+  - - "72"
+    - "65"
+    - "57"
+    - BlogEntry
+    - places
+    - 2008-10-10 23:07:15
+  - - "73"
+    - "66"
+    - "58"
+    - BlogEntry
+    - categories
+    - 2008-10-14 00:03:07
+  - - "74"
+    - "67"
+    - "58"
+    - BlogEntry
+    - categories
+    - 2008-10-14 00:03:07
+  - - "75"
+    - "33"
+    - "58"
+    - BlogEntry
+    - places
+    - 2008-10-14 00:03:07
+  - - "76"
+    - "34"
+    - "58"
+    - BlogEntry
+    - places
+    - 2008-10-14 00:03:07
+  - - "77"
+    - "68"
+    - "58"
+    - BlogEntry
+    - places
+    - 2008-10-14 00:03:07
+  - - "81"
+    - "69"
+    - "60"
+    - BlogEntry
+    - categories
+    - 2008-10-14 19:30:27
+  - - "82"
+    - "72"
+    - "60"
+    - BlogEntry
+    - places
+    - 2008-10-14 19:30:27
+  - - "83"
+    - "71"
+    - "60"
+    - BlogEntry
+    - places
+    - 2008-10-14 19:30:27
+  - - "84"
+    - "73"
+    - "61"
+    - BlogEntry
+    - categories
+    - 2008-10-22 06:05:41
+  - - "85"
+    - "74"
+    - "61"
+    - BlogEntry
+    - categories
+    - 2008-10-22 06:05:41
+  - - "86"
+    - "75"
+    - "61"
+    - BlogEntry
+    - categories
+    - 2008-10-22 06:05:41
+  - - "87"
+    - "63"
+    - "61"
+    - BlogEntry
+    - places
+    - 2008-10-22 06:05:41
+  - - "93"
+    - "81"
+    - "63"
+    - BlogEntry
+    - categories
+    - 2008-11-03 16:38:31
+  - - "94"
+    - "80"
+    - "63"
+    - BlogEntry
+    - places
+    - 2008-11-03 16:38:31
+  - - "95"
+    - "79"
+    - "64"
+    - BlogEntry
+    - categories
+    - 2008-11-03 16:48:51
+  - - "96"
+    - "82"
+    - "64"
+    - BlogEntry
+    - places
+    - 2008-11-03 16:48:51
+  - - "97"
+    - "83"
+    - "65"
+    - BlogEntry
+    - categories
+    - 2008-11-03 16:52:12
+  - - "98"
+    - "40"
+    - "65"
+    - BlogEntry
+    - places
+    - 2008-11-03 16:52:12
+  - - "99"
+    - "84"
+    - "66"
+    - BlogEntry
+    - categories
+    - 2008-11-03 16:52:28
+  - - "100"
+    - "85"
+    - "66"
+    - BlogEntry
+    - places
+    - 2008-11-03 16:52:28
+  - - "101"
+    - "86"
+    - "67"
+    - BlogEntry
+    - categories
+    - 2008-11-03 17:01:27
+  - - "102"
+    - "63"
+    - "67"
+    - BlogEntry
+    - places
+    - 2008-11-03 17:01:27
+  - - "103"
+    - "87"
+    - "68"
+    - BlogEntry
+    - categories
+    - 2008-11-03 17:01:41
+  - - "104"
+    - "88"
+    - "68"
+    - BlogEntry
+    - places
+    - 2008-11-03 17:01:41
+  - - "105"
+    - "89"
+    - "69"
+    - BlogEntry
+    - categories
+    - 2008-11-03 17:01:52
+  - - "106"
+    - "90"
+    - "69"
+    - BlogEntry
+    - places
+    - 2008-11-03 17:01:52
+  - - "107"
+    - "91"
+    - "70"
+    - BlogEntry
+    - categories
+    - 2008-11-03 17:02:06
+  - - "108"
+    - "92"
+    - "70"
+    - BlogEntry
+    - places
+    - 2008-11-03 17:02:06
+  - - "109"
+    - "93"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "110"
+    - "94"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "111"
+    - "95"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "112"
+    - "96"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "113"
+    - "97"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "114"
+    - "98"
+    - "71"
+    - BlogEntry
+    - categories
+    - 2008-11-06 07:54:56
+  - - "116"
+    - "100"
+    - "71"
+    - BlogEntry
+    - places
+    - 2008-11-06 07:54:56
+  - - "117"
+    - "101"
+    - "72"
+    - BlogEntry
+    - categories
+    - 2008-11-12 01:05:34
+  - - "118"
+    - "102"
+    - "72"
+    - BlogEntry
+    - places
+    - 2008-11-12 01:05:34
+  - - "119"
+    - "78"
+    - "72"
+    - BlogEntry
+    - places
+    - 2008-11-12 01:05:34
+  - - "121"
+    - "85"
+    - "73"
+    - BlogEntry
+    - places
+    - 2008-11-12 06:25:18
+  - - "130"
+    - "57"
+    - "73"
+    - BlogEntry
+    - categories
+    - 2008-11-21 20:01:04
+  - - "131"
+    - "115"
+    - "55"
+    - BlogEntry
+    - categories
+    - 2008-11-21 20:01:30
+  - - "132"
+    - "57"
+    - "74"
+    - BlogEntry
+    - categories
+    - 2008-11-21 22:56:06
+  - - "133"
+    - "116"
+    - "74"
+    - BlogEntry
+    - categories
+    - 2008-11-21 22:56:06
+  - - "134"
+    - "72"
+    - "74"
+    - BlogEntry
+    - places
+    - 2008-11-21 22:56:06
+  - - "135"
+    - "57"
+    - "43"
+    - BlogEntry
+    - categories
+    - 2008-11-23 03:32:06
+  - - "136"
+    - "117"
+    - "37"
+    - BlogEntry
+    - categories
+    - 2008-11-23 04:31:45
+  - - "137"
+    - "77"
+    - "73"
+    - BlogEntry
+    - places
+    - 2008-11-23 07:02:57
+  - - "138"
+    - "78"
+    - "73"
+    - BlogEntry
+    - places
+    - 2008-11-23 07:02:57
+  - - "139"
+    - "118"
+    - "36"
+    - BlogEntry
+    - places
+    - 2008-11-23 07:04:06
+  - - "140"
+    - "95"
+    - "76"
+    - BlogEntry
+    - categories
+    - 2008-12-01 03:20:29
+  - - "141"
+    - "119"
+    - "76"
+    - BlogEntry
+    - categories
+    - 2008-12-01 03:20:29
+  - - "142"
+    - "120"
+    - "76"
+    - BlogEntry
+    - categories
+    - 2008-12-01 03:20:29
+  - - "143"
+    - "94"
+    - "76"
+    - BlogEntry
+    - categories
+    - 2008-12-01 03:20:29
+  - - "144"
+    - "121"
+    - "76"
+    - BlogEntry
+    - places
+    - 2008-12-01 03:20:29
+  - - "145"
+    - "122"
+    - "76"
+    - BlogEntry
+    - places
+    - 2008-12-01 03:20:29
+  - - "146"
+    - "78"
+    - "76"
+    - BlogEntry
+    - places
+    - 2008-12-01 03:20:29
+  - - "147"
+    - "123"
+    - "77"
+    - BlogEntry
+    - categories
+    - 2008-12-02 19:03:22
+  - - "149"
+    - "77"
+    - "77"
+    - BlogEntry
+    - places
+    - 2008-12-02 19:03:22
+  - - "150"
+    - "78"
+    - "77"
+    - BlogEntry
+    - places
+    - 2008-12-02 19:03:22
+  - - "151"
+    - "57"
+    - "77"
+    - BlogEntry
+    - categories
+    - 2008-12-02 19:13:24
+  - - "152"
+    - "116"
+    - "77"
+    - BlogEntry
+    - categories
+    - 2008-12-02 19:13:24
+  - - "153"
+    - "99"
+    - "71"
+    - BlogEntry
+    - places
+    - 2008-12-18 17:56:33
+  - - "154"
+    - "125"
+    - "78"
+    - BlogEntry
+    - categories
+    - 2009-01-31 06:12:05.149729
+  - - "155"
+    - "126"
+    - "78"
+    - BlogEntry
+    - categories
+    - 2009-01-31 06:12:05.158741
+  - - "156"
+    - "125"
+    - "78"
+    - BlogEntry
+    - categories
+    - 2009-01-31 06:12:05.192192
+  - - "157"
+    - "126"
+    - "78"
+    - BlogEntry
+    - categories
+    - 2009-01-31 06:12:05.195284
+
+--- 
+tags: 
+  columns: 
+  - id
+  - name
+  records: 
+  - - "7"
+    - apple store @mission
+  - - "10"
+    - cape
+  - - "11"
+    - metropolis
+  - - "12"
+    - bat mask
+  - - "13"
+    - gotham city
+  - - "14"
+    - shield
+  - - "15"
+    - dc
+  - - "16"
+    - mask
+  - - "17"
+    - thor's hammer
+  - - "18"
+    - joker mask
+  - - "19"
+    - gotham
+  - - "20"
+    - toy train
+  - - "21"
+    - big lots
+  - - "24"
+    - apples
+  - - "25"
+    - mexican maket 94518
+  - - "26"
+    - crepes de manjar
+  - - "27"
+    - lake chabot park
+  - - "28"
+    - ipod nano
+  - - "29"
+    - quickbooks premium
+  - - "30"
+    - costco 94518
+  - - "33"
+    - santiago
+  - - "34"
+    - chile
+  - - "35"
+    - bart
+  - - "37"
+    - ygnacio valley
+  - - "38"
+    - chinese food
+  - - "39"
+    - dreyers ice cream
+  - - "40"
+    - safeway
+  - - "41"
+    - "94596"
+  - - "42"
+    - aig shares
+  - - "43"
+    - wall street
+  - - "44"
+    - hamburgers
+  - - "45"
+    - carls jr
+  - - "46"
+    - nike running shoes
+  - - "47"
+    - san francisco
+  - - "51"
+    - usd in clp
+  - - "52"
+    - currency
+  - - "53"
+    - dollar
+  - - "54"
+    - peso
+  - - "55"
+    - foreign exchange
+  - - "56"
+    - alafel sandwiches
+  - - "57"
+    - food
+  - - "58"
+    - embarcadero 1
+  - - "59"
+    - embarcadero
+  - - "60"
+    - halo3
+  - - "61"
+    - game
+  - - "62"
+    - xbox
+  - - "63"
+    - best buy
+  - - "64"
+    - oil barrel
+  - - "65"
+    - nyse
+  - - "66"
+    - beef
+  - - "67"
+    - barbeque
+  - - "68"
+    - south america
+  - - "69"
+    - vodka
+  - - "70"
+    - costoc
+  - - "71"
+    - dublin ca
+  - - "72"
+    - costco
+  - - "73"
+    - bfg tech 1gb
+  - - "74"
+    - graphics card
+  - - "75"
+    - upgrade
+  - - "76"
+    - store
+  - - "77"
+    - concord
+  - - "78"
+    - ca
+  - - "79"
+    - kids's shoes
+  - - "80"
+    - mervyns
+  - - "81"
+    - everything
+  - - "82"
+    - macy's
+  - - "83"
+    - granola
+  - - "84"
+    - yogurt
+  - - "85"
+    - trader joes
+  - - "86"
+    - mouse
+  - - "87"
+    - cell phones
+  - - "88"
+    - att
+  - - "89"
+    - sofas
+  - - "90"
+    - macys
+  - - "91"
+    - summer toys
+  - - "92"
+    - target
+  - - "93"
+    - burton snowboard pants
+  - - "94"
+    - snowboard
+  - - "95"
+    - sports
+  - - "96"
+    - winter
+  - - "97"
+    - clothes
+  - - "98"
+    - mens
+  - - "99"
+    - the-house.com
+  - - "100"
+    - online
+  - - "101"
+    - ski tickets
+  - - "102"
+    - south lake tahoe
+  - - "103"
+    - tomato & pesto flatbread
+  - - "104"
+    - "94518"
+  - - "105"
+    - mini longboard
+  - - "106"
+    - surf
+  - - "107"
+    - board
+  - - "108"
+    - santa cruz
+  - - "109"
+    - mini long board
+  - - "110"
+    - sant cruz
+  - - "111"
+    - santa cruz boardwalk
+  - - "112"
+    - toys
+  - - "113"
+    - breakfast
+  - - "114"
+    - monument bl
+  - - "115"
+    - falafel sandwiches
+  - - "116"
+    - snacks
+  - - "117"
+    - software
+  - - "118"
+    - walnut creek
+  - - "119"
+    - snow
+  - - "120"
+    - ski
+  - - "121"
+    - heavenly
+  - - "122"
+    - lake tahoe
+  - - "123"
+    - cinnamon twists
+  - - "124"
+    - 891 carthage ct
+  - - "125"
+    - test
+  - - "126"
+    - product
+
+--- 
+users: 
+  columns: 
+  - id
+  - name
+  - uri
+  - created_at
+  - updated_at
+  - web_user_id
+  - lat
+  - lng
+  - address
+  - rated
+  - ranked
+  - show_friends_only
+  - hide_blocked_users
+  records: 
+  - - "6"
+    - cheapcheap
+    - cheapcheap@cheapcheap.com
+    - 2008-09-04 00:28:51
+    - 2008-12-30 05:16:43
+    - 
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "7"
+    - superman
+    - superman@metropolis.gov
+    - 2008-09-04 07:34:17
+    - 2008-12-30 05:16:43
+    - 
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "10"
+    - batman
+    - batman@gothham.edu
+    - 2008-09-05 03:45:56
+    - 2008-12-30 05:16:44
+    - 
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "16"
+    - captainamerica
+    - america@whitehouse.gov
+    - 2008-09-05 21:51:27
+    - 2008-12-30 05:16:43
+    - "11"
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "18"
+    - thor
+    - thor@valhalla.org
+    - 2008-09-06 07:39:50
+    - 2008-09-11 05:47:16
+    - "13"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - false
+    - true
+  - - "21"
+    - odin
+    - odin@valhalla.org
+    - 2008-09-12 05:43:39
+    - 2008-09-22 23:02:04
+    - "16"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - false
+    - true
+  - - "22"
+    - thor
+    - thor@valhalla.org
+    - 2008-09-12 05:46:01
+    - 2008-09-12 05:46:01
+    - "17"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - false
+    - true
+  - - "24"
+    - hulk
+    - hulk@hobo.org
+    - 2008-09-12 05:50:53
+    - 2008-09-12 05:50:53
+    - "19"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - false
+    - true
+  - - "26"
+    - nkrym
+    - http://twitter.com/nkrym
+    - 2008-09-13 20:52:45
+    - 2008-12-30 05:16:43
+    - 
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "27"
+    - avatar
+    - airbender@youth.org
+    - 2008-09-17 05:45:22
+    - 2008-09-17 05:45:22
+    - "20"
+    - 
+    - 
+    - 
+    - 
+    - 
+    - false
+    - true
+  - - "28"
+    - aadriasola
+    - http://twitter.com/aadriasola
+    - 2008-09-18 04:01:54
+    - 2009-01-31 06:13:04.127524
+    - "21"
+    - "37.942282"
+    - "-122.029486"
+    - 891 Carthage Ct, Concord, CA
+    - "84.5463"
+    - rook
+    - true
+    - true
+  - - "29"
+    - chearp
+    - nkrym@yahoo.com
+    - 2008-10-14 19:27:44
+    - 2008-12-30 05:16:43
+    - "22"
+    - 
+    - 
+    - 
+    - "0"
+    - n00b
+    - false
+    - true
+  - - "30"
+    - leslie
+    - leslie.yuan@gmail.com
+    - 2008-10-15 02:48:00
+    - 2008-12-30 05:16:43
+    - "23"
+    - 
+    - 
+    - 
+    - "44"
+    - bishop
+    - false
+    - true
+  - - "31"
+    - geocode
+    - geocode@wwhow.com
+    - 2008-11-10 07:39:40
+    - 2008-11-10 08:13:06
+    - "26"
+    - "37.9423"
+    - "-122.029"
+    - 891 Carthage Ct, Concord, CA
+    - 
+    - 
+    - false
+    - true
+  - - "32"
+    - greenlantern
+    - alfonso.adriasola@astound.net
+    - 2008-11-14 07:36:38
+    - 2008-11-14 07:36:38
+    - "27"
+    - "47.621"
+    - "-122.347"
+    - seattle, wa
+    - 
+    - 
+    - false
+    - true
+
+--- 
+web_users: 
+  columns: 
+  - id
+  - login
+  - name
+  - email
+  - crypted_password
+  - salt
+  - created_at
+  - updated_at
+  - remember_token
+  - remember_token_expires_at
+  - activation_code
+  - activated_at
+  records: 
+  - - "5"
+    - batman
+    - ""
+    - batman@gotham.gov
+    - 8d5c0d954a67e56645bdffcd56a05b1cb835a07a
+    - c1d7ccd5a26389d46c5417c24a50e769cf66e01a
+    - 2008-09-04 07:35:49
+    - 2008-09-04 07:35:49
+    - 
+    - 
+    - 6eeda4b7c91a2200b3713f50e07152d9cbb11e45
+    - 
+  - - "11"
+    - captainamerica
+    - ""
+    - america@whitehouse.gov
+    - b28247c51aa77d57148df657e251220cfa72c8c3
+    - 86a62b03d3b9d5396483fb71d290e9bde724795b
+    - 2008-09-05 21:51:27
+    - 2008-09-05 22:00:34
+    - 
+    - 
+    - ""
+    - 2008-09-05 21:51:27
+  - - "16"
+    - odin
+    - ""
+    - odin@valhalla.org
+    - 99cbf2733d9200c2c9ab05fc0ca143be11191528
+    - d0e3bec60993163029f39b0be779f977fc4ed567
+    - 2008-09-12 05:43:39
+    - 2008-09-12 05:43:39
+    - 
+    - 
+    - 54689a13b41ea88ea9d8f297f83384066fc4fca2
+    - 
+  - - "17"
+    - thor
+    - ""
+    - thor@valhalla.org
+    - 227067b37013ff25d5900a34de5e559299cb7870
+    - cb0ef5067c934f00780e4e16e1d73702eadeffb0
+    - 2008-09-12 05:46:01
+    - 2008-09-12 05:46:01
+    - 
+    - 
+    - 9ec9e6bbed12d3c814968c886b9abcfc1d2c68a0
+    - 
+  - - "19"
+    - hulk
+    - ""
+    - hulk@hobo.org
+    - 79d6b27983dea26cc5218803a5c506daf3de102d
+    - f246c919cd2ee7808c48b14403b6d68fbc38043a
+    - 2008-09-12 05:50:53
+    - 2008-09-12 05:50:53
+    - 
+    - 
+    - 
+    - 2008-09-12 05:50:53
+  - - "20"
+    - avatar
+    - ""
+    - airbender@youth.org
+    - aa1dc177349f6740dfbb3c96dfd2d6c965231658
+    - 2619c1692194ee05321b0f8a89d29f7709596f8e
+    - 2008-09-17 05:45:22
+    - 2008-09-17 05:45:22
+    - 
+    - 
+    - 
+    - 2008-09-17 05:45:22
+  - - "21"
+    - aadriasola
+    - ""
+    - aadriasola@gmail.com
+    - 35eccec886a46cc96020e4b4af369910551e84cb
+    - ""
+    - 2008-09-18 04:01:54
+    - 2008-11-03 02:57:53
+    - 
+    - 
+    - ""
+    - 2008-09-18 04:01:54
+  - - "22"
+    - chearp
+    - ""
+    - nkrym@yahoo.com
+    - 530f6a435c82a6f77cdc7cba67b81e9c165e9043
+    - amigo
+    - 2008-10-14 19:27:44
+    - 2008-11-03 03:02:26
+    - 
+    - 
+    - 
+    - 2008-10-14 19:27:44
+  - - "23"
+    - leslie
+    - ""
+    - leslie.yuan@gmail.com
+    - 07b61146f3b50ebbac43decacee5aab80f0889b8
+    - hero
+    - 2008-10-15 02:48:00
+    - 2008-11-03 16:35:06
+    - 647ff465dbb75bd52d92e31e67fca3c65f57d7ce
+    - 2008-11-17 16:35:06
+    - 
+    - 2008-10-15 02:48:00
+  - - "26"
+    - geocode
+    - ""
+    - geocode@wwhow.com
+    - 2e2cbbbef561f9b2f2286fc84d93e35e746760e1
+    - 5376d870f1c3de563ceed8478ae3cf8bf7e267bf
+    - 2008-11-10 07:39:37
+    - 2008-11-10 08:17:41
+    - 
+    - 
+    - 
+    - 2008-11-10 07:39:45
+  - - "27"
+    - greenlantern
+    - ""
+    - alfonso.adriasola@astound.net
+    - 2b289a6b31c0d1aff289d0563887eb63f12ae7ab
+    - 719c61727792dbe87b6ba7774f07a094bd494558
+    - 2008-11-14 07:36:33
+    - 2008-11-14 07:39:08
+    - 
+    - 
+    - 
+    - 2008-11-14 07:39:08
