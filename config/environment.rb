@@ -117,7 +117,8 @@ GeoKit::Geocoders::geocoder_ca = false
 # geocoder you are going to use.
 GeoKit::Geocoders::provider_order = [:google]
 
-GOOGLEMAPKEY='ABQIAAAAWGXzUXEtiLXXpyFWhM1yRhQVCkJwfMzdIzmTHdHQY3nGrOdPfhTM0BFuB2r7ZjGurZwqeTnJYafOfQ';
+#herokugarden GOOGLEMAPKEY='ABQIAAAAWGXzUXEtiLXXpyFWhM1yRhQVCkJwfMzdIzmTHdHQY3nGrOdPfhTM0BFuB2r7ZjGurZwqeTnJYafOfQ';
+GOOGLEMAPKEY='ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRFiBdD6TtZ5BeLlD8kMi6Q';
 
 ENV['RECAPTCHA_PUBLIC_KEY'] ='6LfgtAQAAAAAAJiM_ECmc9YhOpXyxOH6NVsNdDqa'
 ENV['RECAPTCHA_PRIVATE_KEY'] ='6LfgtAQAAAAAADNGTeLcHbM_EDWVsv_xzFp9P6qI'
