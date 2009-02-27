@@ -16,10 +16,8 @@ class WebUsersController < ApplicationController
 
 
   def create
-    logout_keeping_session!
-    params[:web_user].each{|p| p.strip!}
+    logout_keeping_session!    
     @web_user = WebUser.new(params[:web_user])
-
     success = verify_recaptcha(@web_user) && @web_user.save if @web_user
     if success && @web_user.errors.empty?
       @web_user.create_user(:name=>@web_user.login, :uri => @web_user.email, :address => params[:web_user][:address])  
