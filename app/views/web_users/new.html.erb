@@ -38,13 +38,14 @@
             </p>
 
             <p><%= label_tag 'address', 'Default Location' %>
-                <input id="web_user_address" name="web_user[address]" type="text" size="30"/> <br/>
+
+                <input id="web_user_address" name="web_user[address]" type="text" size="30" value="<%=params[:web_user][:address] if params[:web_user] %>"/> <br/>
                 <span class="help"><%= h "(The place where you do most of your shopping, try an address or city)" %></span>
 
             </p>
 
             <div class="centered-xxs">
-                <%= recaptcha_tags({:display => {:theme => 'clean'}}) %>
+                <%= recaptcha_tags %>
                 <%= submit_tag 'Sign up', {:class=> "buttonRed"} %>
             </div>
         <% end -%>

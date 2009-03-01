@@ -16,12 +16,15 @@ class ListingsController < ApplicationController
     end
   end
 
-
   def search
+    if params[:blog_entry]
     flash[:notice] = flash[:error] = ""
     get_search_results
     prepare_tag_clouds
     render :action => 'index'
+    else
+     redirect_back_or_default '/' 
+    end
   end
 
 
