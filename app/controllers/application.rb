@@ -52,8 +52,12 @@ class ApplicationController < ActionController::Base
       session[:map] = false
     end
 
-    if logged_in? && params[:user]
-      @show_friends_only = params[:user][:show_friends_only] == "on"
+    if logged_in?
+      if params[:user]
+        @show_friends_only = params[:user][:show_friends_only] == "on"
+      else
+        @show_friends_only = current_web_user.user.show_friends_only
+      end
     end
 
   end
@@ -80,7 +84,7 @@ class ApplicationController < ActionController::Base
       else
         #prepare search input, look at things tagged with search terms as well
         search_from_bar = true;
-        @filter[:category_list] =  params[:blog_entry][:search].split(',')     
+        @filter[:category_list] =  params[:blog_entry][:search].split(',')
         @filter[:category_list].each{|item| item = item.strip} if @filter[:category_list].size  > 1
         @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?
       end
@@ -171,9 +175,13 @@ class ApplicationController < ActionController::Base
   def finish_search
     @ids = @messages.collect{|m| m.id}
     if @messages.empty?
-      flash[:error] = "Sorry could not find any entries like that.<br/> Please try again using different terms"
+      flash[:error] = "<p> Sorry, I could not find any entries  for that </p>"
       if @filter[:sliders] == true
-        flash[:notice] = "Your advanced filters may be too restrictive"
+        flash[:error]<< "<p>(your advanced filters may be too restrictive)</p>"
+      end
+      if (logged_in? && @show_friends_only == true )
+        flash[:error]<<"<p>( you may have to look outside of your favorite users )</p>"
+
       end
     end
 

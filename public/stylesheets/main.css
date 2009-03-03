@@ -100,8 +100,8 @@ body {
 #welcome {
     background: transparent url(/images/info-tipsy.png) no-repeat top center;
     height: 291px;
-    margin-top: -20px;
     cursor: pointer;
+    z-index: -1;
 }
 
 #tipsy {
@@ -135,19 +135,33 @@ body {
     z-index: 0;
 }
 
+#menu {
+    background: url(/images/toolButton.png) repeat-x left top;
+    line-height: 1.5em;
+    position: absolute;
+    top: 0px;
+    left: auto;
+    right: 2em;
+}
+
+#menuL {
+    background: transparent url(/images/menu-left.png) repeat-x scroll left top;
+    height: 32px;
+    left: -18px;
+    position: absolute;
+    width: 14px;
+    top: 0px;
+}
+
 #menu Table {
     font-size: .75em;
     font-weight: bold;
     text-align: right;
     display: inline-block;
-    right: 2em;
-    position: absolute;
-    top: 0px;
-    left: auto;
+
     white-space: nowrap;
-    background-color: #ffde00;
     z-index: 5;
-    line-height: 1.8em;
+
 }
 
 #menu .button {
@@ -157,12 +171,6 @@ body {
 
 #menu span {
     padding: .2em;
-}
-
-#menuLeft {
-    float: left;
-    width: 16px;
-    background-image: url(/images/menu-left.jpg)
 }
 
 #menu #web_user-bar-greeting a {
@@ -207,6 +215,7 @@ body {
     background: #ffde00;
     font-weight: bold;
     text-align: center;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
 }
 
 #notice, #errors {
@@ -657,10 +666,6 @@ a.buttonEdit {
 
 #tipsy-ashamed {
     background: url(/images/tipsy-ashamed.png) no-repeat top center;
-}
-
-#tipsy-pen {
-    background: url(/images/tipsy-pen.png) no-repeat top center;
 }
 
 #tipsy-headset {
