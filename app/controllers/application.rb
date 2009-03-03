@@ -176,15 +176,13 @@ class ApplicationController < ActionController::Base
     @ids = @messages.collect{|m| m.id}
     if @messages.empty?
       flash[:error] = "<p> Sorry, I could not find any entries  for that </p>"
-      if @filter[:sliders] == true
+      if session[:sliders]==true
         flash[:error]<< "<p>(your advanced filters may be too restrictive)</p>"
       end
       if (logged_in? && @show_friends_only == true )
         flash[:error]<<"<p>( you may have to look outside of your favorite users )</p>"
-
       end
     end
-
   end
 
   def clear_flash
