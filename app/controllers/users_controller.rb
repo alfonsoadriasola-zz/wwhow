@@ -190,6 +190,7 @@ class UsersController < ApplicationController
     @histmsg.what = params[:blog_entry][:what] unless params[:blog_entry][:what].nil?
     @histmsg.where = params[:blog_entry][:where] unless params[:blog_entry][:where].nil?
     @histmsg.category_list = params[:blog_entry][:category_list] unless params[:blog_entry][:category_list].nil?
+    @histmsg.price = params[:blog_entry][:price]
 
     if @histmsg.save
       clear_flash
