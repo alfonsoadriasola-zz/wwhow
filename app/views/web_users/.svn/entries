@@ -26,6 +26,40 @@ svn:special svn:externals svn:needs-lock
 
 e1533c94-a36f-8443-9f43-b16f603e8899
 
+new.html.erb
+file
+113
+
+
+
+2009-03-01T18:15:42.554000Z
+708f53dc67d27c4457dcbe9108169a0d
+2009-03-03T22:08:57.430000Z
+113
+Alfonso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2255
+
 _web_user_bar.html.erb
 file
 
@@ -59,40 +93,6 @@ Alfonso
 
 
 583
-
-after_forgot_password.html.erb
-file
-106
-
-
-
-2009-02-23T00:14:41.987000Z
-3ac0dbbefbcdd2dfcd2d777a28b832d7
-2009-02-23T00:20:43.619000Z
-106
-Alfonso
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-433
 
 forgot_password.html.erb
 file
@@ -128,14 +128,14 @@ Alfonso
 
 858
 
-new.html.erb
+after_forgot_password.html.erb
 file
 106
 
 
 
-2009-02-22T23:18:05.544000Z
-ba86a18428cf48af5249dec1a2d278f9
+2009-02-23T00:14:41.987000Z
+3ac0dbbefbcdd2dfcd2d777a28b832d7
 2009-02-23T00:20:43.619000Z
 106
 Alfonso
@@ -160,7 +160,7 @@ Alfonso
 
 
 
-2226
+433
 
 reset_password.html.erb
 file

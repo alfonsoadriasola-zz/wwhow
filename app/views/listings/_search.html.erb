@@ -10,12 +10,12 @@
 
     <table id="searchTable" cellspacing="0" cellpadding="4">
         <tr>
-            <td colspan=2>
+            <td colspan="2">
 
                 <input id="blog_entry_search" name="blog_entry[search]" onkeyup="tableFilter(this, 'messageListTable', '3')"
                        size="40" type="text" value="<%=@filter[:searchterms]%>"/>
             </td>
-            <td colspan=2>
+            <td colspan="2">
                 <input id="default_location" name="default_location"
                        size="40" type="text" value="<%= session[:geo_location].full_address unless session[:geo_location].nil? %>"/>
             </td>

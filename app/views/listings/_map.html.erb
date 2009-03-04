@@ -1,5 +1,5 @@
 <div>
-    <script>
+    <script type="text/javsacript">
         var scriptTag = '<' + 'script src="http://maps.google.com/maps?file=api&v=2&key=<%= GOOGLEMAPKEY %>">'+'<'+'/script>';
         document.write(scriptTag);
     </script>
@@ -31,7 +31,7 @@
                 }
 
         function addMarkers() {
-        <% mapevents=0; i=0; 20.times { i = i - 1;m=@messages[i]; %>
+        <% mapevents=0; i=0; 40.times { i = i - 1;m=@messages[i]; %>
             <% mapevents = mapevents +1 unless m.nil?||m.lat.nil? %>
             <%=    %Q{
             mArray.push('#{m.lat};#{m.lng};<strong>#{m.what.delete("'")}</strong> #{m.where.delete("'").downcase} $ #{number_with_precision(m.price,2)}; about #{number_with_precision(m.distance_to(session[:geo_location]),1)} miles away ');

@@ -137,12 +137,13 @@ body {
 
 #menu {
     background: url(/images/toolButton.png) repeat-x left top;
-    line-height: 1.5em;
+    line-height: 1.7em;
     position: absolute;
     top: 0px;
     left: auto;
     right: 2em;
 }
+
 
 #menuL {
     background: transparent url(/images/menu-left.png) repeat-x scroll left top;
@@ -515,12 +516,11 @@ table.sortable .nosort {
 
 #messageListTable td .button {
     padding: 0 .2em 0 .2em;
-    background-color: transparent;
-    background-image: none;
+    background: url(/images/toolButtonRed.png) repeat-x left top;
     line-height: .5em;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
-    color: #d50f10;
-    font-size: .420em;
+    color: white;
+    font-size: 0.8em;
 
 }
 

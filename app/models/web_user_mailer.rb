@@ -29,7 +29,7 @@ class WebUserMailer < ActionMailer::Base
   def setup_email(web_user)
     @recipients  = "#{web_user.email}"
     @from        = "wwhow.com "
-    @subject     = "WWHOW!!! "
+    @subject     = "WWHOW! "
     @sent_on     = Time.now
     @body[:web_user] = web_user
   end

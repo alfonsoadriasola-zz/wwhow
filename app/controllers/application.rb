@@ -175,7 +175,7 @@ class ApplicationController < ActionController::Base
   def finish_search
     @ids = @messages.collect{|m| m.id}
     if @messages.empty?
-      flash[:error] = "<p> Sorry, I could not find any entries  for that </p>"
+      flash[:error] = "<p>Sorry, I could not find any entries for that</p>"
       if session[:sliders]==true
         flash[:error]<< "<p>(your advanced filters may be too restrictive)</p>"
       end
