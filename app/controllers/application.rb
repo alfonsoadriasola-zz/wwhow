@@ -173,6 +173,7 @@ class ApplicationController < ActionController::Base
 
   def prepare_tag_clouds
     @tag_counts = BlogEntry.category_counts :limit => 50, :order => "count DESC, id DESC"
+    @active_users = User.find_active
   end
 
   protected

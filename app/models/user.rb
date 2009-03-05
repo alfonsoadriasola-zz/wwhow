@@ -8,14 +8,7 @@ class User < ActiveRecord::Base
     before_validation_on_update :geocode_address
 
     def self.find_active
-        sqlcmd = %Q{
-           SELECT 
-           u.id,u.name,count(m.id)
-           FROM  users u
-          INNER JOIN blog_entries m on u.id =  m.user_id  
-          GROUP BY u.id, u.name
-          ORDER BY 2 DESC LIMIT 50}
-        self.find_by_sql [sqlcmd]
+      User.find(:all, :order => "rated desc" , :limit => 50 )
     end
 
     private
