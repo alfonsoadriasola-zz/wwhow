@@ -3,22 +3,23 @@
     <div id="container" class="centered">
         <div id="welcome" onclick="window.location.assign('/signup');"
              <% if session[:sliders] && session[:sliders]==true then %>
-             class="hide" <% end %> > </div>
+             class="hide"
+             <% end %> >
+        </div>
+
         <%= render_partial 'layouts/leftbar' %>
 
-      <%= render_partial 'shared/system_messages' %>
+        <%= render_partial 'shared/system_messages' %>
         <div class="centered-sm">
-
             <% @last_id = 0 %>
             <%= render_partial '/listings/search_sliders' %>
             <div id="messageList">
                 <%= render_partial 'messagelist' %>
             </div>
-
         </div>
 
-      <%= render_partial 'layouts/rightbar' %>
-      <span style="position: absolute; z-index: 10; width: 175px; right: 0px; height: 268px; top: 74px; display:none;" id="tipsy-pen">  </span>
+        <%= render_partial 'layouts/rightbar' %>
+        <span style="position: absolute; z-index: 10; width: 225px; right: 0px; height: 268px; top: 74px;
+                <% if !session[:sliders] then %>display:none<% end %>;" id="tipsy-pen">  </span>
     </div>
 <% end %>
-

@@ -1,18 +1,20 @@
-<div id="userProfile">   
-    <div>
-       <label>Screen name:</label>
-        <%= link_to_function  h(@user.name.downcase).sub("'", "&rsquo"), "submitByUser('#{@user.id}');" %>
-    </div>
+<div id="userProfile">
+        <div>
+            <label>Screen name:</label>
+            <%= @user.name %>
+        </div>
 
-    <div><label>Posts:</label> <%= @user.blog_entries.count %> </div>
 
-    <div>
-        <label>Status:</label> <%= @user.ranked %>
-    </div>
+        <div  title=" your shopping voodoo is..">
+            <label>Mojo:</label> <%= @user.ranked %>
+        </div>
 
-    <div>
-        <label>Location:</label> <%= @user.address %>
-    </div>
+        <div>
+            <label>   <%= link_to_function  'Posts', "submitByUser('#{@user.id}');" %> </label> <%= @user.blog_entries.count %>
+        </div>
 
+        <div>
+            <label>Location:</label> <%= @user.address %>
+        </div>
 
 </div>

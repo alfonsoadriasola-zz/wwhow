@@ -16,4 +16,8 @@ class CommonController < ApplicationController
 
   end
 
+
+  def malformed
+    render :action => '404'
+  end
 end

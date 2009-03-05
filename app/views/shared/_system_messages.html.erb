@@ -1,11 +1,11 @@
-<div id="wwhowsays" class="centered-xxs">
+        <div id="wwhowsays" class="centered-xxs">
+            <div id="notice" style="text-align:center">
+                <%= flash[:notice] %>
+                <% flash[:notice] = "" %>
+            </div>
 
-    <div id="notice" style="text-align:center">
-        <%= flash[:notice] %>
-    </div>
-
-    <div id="errors" style="text-align:center">
-        <%= flash[:error] %>
-    </div>
-    
-</div>
+            <div id="errors" style="text-align:center">
+                <%= flash[:error] %>
+                <%  flash[:error] = "" %>
+            </div>
+        </div>

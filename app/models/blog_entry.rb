@@ -8,7 +8,7 @@ class BlogEntry < ActiveRecord::Base
   validates_length_of   :where,  :within => 2..400
 
   validates_presence_of :price, :message => "- How much did you say?"
-  validates_numericality_of :price, :message =>"Prince in dollars please, just the numbers."
+  validates_numericality_of :price, :message =>" - Please enter numbers only."
 
 
   include GeoKit::Geocoders

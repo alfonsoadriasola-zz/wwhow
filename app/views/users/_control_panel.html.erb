@@ -9,7 +9,7 @@
         <input id="ucp_user_show_friends_only" name="user[show_friends_only]"
                type="checkbox" <%= 'checked' if @user.show_friends_only? %>
                onclick="set_show_friends_only(<%=!@user.show_friends_only%>);"
-               title="to set this permanently click on your name"
+               title="only show posts by favorite users"
         />
     </div>
 

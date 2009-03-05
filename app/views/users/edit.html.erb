@@ -1,9 +1,6 @@
 <div id="container">
     <div class="centered-sm">
 
-
-        
-
         <div id="user-profile">
 
             <h2>WWHOW! Account For <%= @user.name %> </h2>
@@ -24,7 +21,6 @@
                     </li>
 
 
-
                     <li>
                         <%= f.label 'address', 'Default Location' %>
                         <%= f.text_field :address %>
@@ -38,7 +34,6 @@
                         <%= f.label 'URL' %>
                         <%= f.text_field :uri %>
                     </li>
-
 
 
                     <h3>Reset password (optional)</h3>
@@ -59,18 +54,18 @@
                     </li>
 
                     <!--<li>-->
-                        <!--<%= f.label :hide_blocked_users %>-->
-                        <!--<%= f.check_box :hide_blocked_users %>-->
+                    <!--<%= f.label :hide_blocked_users %>-->
+                    <!--<%= f.check_box :hide_blocked_users %>-->
                     <!--</li>-->
                     <li style="text-align:center;">
 
-                                           <%= f.submit "Update", :class=> "buttonRed" %>
-                                       </li>
-
+                        <%= f.submit "Update", :class=> "buttonRed" %>
+                    </li>
 
                 <% end %></ul>
 
 
+              <%= link_to 'Back', :back ,{:class=>"buttonRed"}%>
         </div>
 
     </div>

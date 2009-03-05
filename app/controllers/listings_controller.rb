@@ -8,6 +8,10 @@ class ListingsController < ApplicationController
 
   # GET /listings
   def index
+    if logged_in?
+      redirect_to current_web_user.user
+      return
+    end
     safe_get_twits
     get_initial_messages
     prepare_tag_clouds

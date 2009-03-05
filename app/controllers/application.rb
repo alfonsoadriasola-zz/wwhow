@@ -15,8 +15,9 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password").
   filter_parameter_logging :password
 
-  # Only search routine. All variations handled inside this app wide method.
 
+
+  #prepare filter, session
   def initialize_filter
 
     @user = current_web_user.user if logged_in?
@@ -55,6 +56,8 @@ class ApplicationController < ActionController::Base
     if logged_in?
       if params[:user]
         @show_friends_only = params[:user][:show_friends_only] == "on"
+        current_web_user.user.show_friends_only = @show_friends_only
+        current_web_user.user.save(false)
       else
         @show_friends_only = current_web_user.user.show_friends_only
       end
@@ -62,6 +65,8 @@ class ApplicationController < ActionController::Base
 
   end
 
+
+  # Only search routine. All variations handled inside this app wide method.
   def get_search_results
     initialize_filter
     # set default map location
