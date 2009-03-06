@@ -4,7 +4,7 @@
 
         <h5> Active Members </h5>
            <% min_size=50
-           max_size = 250
+           max_size = 150
            min_qty = @active_users.last.rated.to_i
            max_qty = @active_users.first.rated.to_i
            spread = max_qty - min_qty
