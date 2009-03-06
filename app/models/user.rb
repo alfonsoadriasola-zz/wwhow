@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     before_validation_on_update :geocode_address
 
     def self.find_active
-      User.find(:all , :conditions => ['rated is not null'], :order => "rated desc" , :limit => 50 )
+      User.find(:all , :conditions => ['rated > 0'], :order => "rated desc" , :limit => 50 )
     end
 
     private
