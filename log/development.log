@@ -24,3 +24,522 @@ WARNING: You're using the Ruby-based MySQL library that ships with Rails. This l
   [4;36;1mSQL (0.004000)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
   [4;35;1mSQL (0.004000)[0m   [0mdescribe `web_users`[0m
   [4;36;1mSQL (0.002000)[0m   [0;1mSHOW KEYS FROM `web_users`[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-03-06 09:22:01) [GET]
+  Session ID: 4e3a1e7d9291036e81714e757d14bc88
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.001000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'aadriasola') LIMIT 1[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Caught an error during Google geocoding call: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mBlogEntry Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mBlogEntry Load (0.002000)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`twit_id` = 1132532896) LIMIT 1[0m
+  [4;36;1mTagging Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (0.002000)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 81) AND (context='categories')) [0m
+  [4;36;1mTag Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Google geocoding. Address: San Francisco, CA, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>San Francisco, CA, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8120000" south="37.7034000" east="-122.3482000" west="-122.5270000" />
+    </ExtendedData>
+    <Point><coordinates>-122.4192040,37.7751960,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (0.010000)[0m   [0mSELECT * FROM `blog_entries` ORDER BY created_at desc LIMIT 500[0m
+  [4;36;1mUser Load (0.003000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.id IN ('6','7','26','16','28','29','30','10')) [0m
+  [4;35;1mTagging Load (0.007000)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (91,90,89,88,86,84,83,82,81,80,78,76,74,73,72,71,70,69,68,67,66,65,64,63,61,60,58,57,56,54,55,52,50,48,45,43,38,37,36,35,31,29,28,27,26,25) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (0.003000)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.id IN ('186','165','57','187','145','16','60','81','79','188','125','17','61','189','147','20','18','39','62','83','42','84','64','128','150','86','130','151','152','87','132','24','66','133','46','67','134','155','26','91','89','156','135','69','157','115','28','51','93','158','137','10','52','73','94','116','53','74','95','117','54','75','96','140','162','97','120','119','141','12','163','98','185','101','143','164','14')) [0m
+  [4;35;1mTag Load (0.005000)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.id IN ('165','186','57','16','145','187','60','81','79','17','125','188','61','18','39','147','20','189','62','83','42','84','64','150','128','86','130','151','87','152','132','24','66','46','133','67','26','134','155','91','89','135','156','69','115','157','51','28','93','10','137','158','52','73','94','116','117','53','74','95','54','75','96','140','12','97','120','141','119','162','98','163','14','101','143','164','185')) [0m
+  [4;36;1mRating Load (0.003000)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (91,90,89,88,86,84,83,82,81,80,78,76,74,73,72,71,70,69,68,67,66,65,64,63,61,60,58,57,56,54,55,52,50,48,45,43,38,37,36,35,31,29,28,27,26,25) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mRating Columns (0.005000)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mTag Load (0.013000)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 ORDER BY count DESC, id DESC LIMIT 50[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc LIMIT 50[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (0.00100)
+Rendered listings/_tags (0.00300)
+Rendered layouts/_leftbar (0.00600)
+Rendered shared/_system_messages (0.00100)
+Rendered listings/_search_sliders (0.00000)
+Rendered listings/_map (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.16000)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00400)
+Rendered listings/_message (0.00500)
+Rendered ratings/_rate (0.00400)
+Rendered listings/_message (0.00500)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.07100)
+Rendered listings/_message (0.07200)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered listings/_messagelist (0.43100)
+Rendered layouts/_rightbar (0.00000)
+Rendered layouts/_menu (0.00000)
+Rendered shared/_home (0.00000)
+Rendered layouts/_footer (0.00000)
+Completed in 2.24500 (0 reqs/sec) | Rendering: 0.47800 (21%) | DB: 0.07800 (3%) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-06 09:22:09) [GET]
+  Session ID: BAh7CjoIbWFwRjoRZ2VvX2xvY2F0aW9ubzoTR2VvS2l0OjpHZW9Mb2MQOg1A
+c3VjY2Vzc1Q6CUBsbmdmGy0xMjIuNDE5MjA0MDAwMDAwMDEAlo46CkBjaXR5
+IhJTYW4gRnJhbmNpc2NvOg9AcHJlY2lzaW9uIgljaXR5OhJAY291bnRyeV9j
+b2RlIgdVUzoOQHByb3ZpZGVyIgtnb29nbGU6CUBsYXRmGjM3Ljc3NTE5NjAw
+MDAwMDAwMQD+uToUQHN0cmVldF9hZGRyZXNzMDoSQGZ1bGxfYWRkcmVzcyIb
+U2FuIEZyYW5jaXNjbywgQ0EsIFVTQToJQHppcDA6C0BzdGF0ZSIHQ0E6DHNs
+aWRlcnNGIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxh
+c2hIYXNoewc6CmVycm9yIgA6C25vdGljZSIABjoKQHVzZWR7BzsVRjsWRjoM
+Y3NyZl9pZCIlYTA3ZmQxNTA2NzdmZWVhOGE2YTdmY2I3NjlmOTMyM2Y=--013f7795ff6981cb72ac6485053a03ae53e395a0
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_menu (0.00000)
+Rendered shared/_home (0.00000)
+Rendered shared/_system_messages (0.00000)
+Rendered layouts/_footer (0.00000)
+Completed in 0.01400 (71 reqs/sec) | Rendering: 0.01100 (78%) | DB: 0.00000 (0%) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-03-06 09:22:13) [POST]
+  Session ID: BAh7CjoIbWFwRjoRZ2VvX2xvY2F0aW9ubzoTR2VvS2l0OjpHZW9Mb2MQOg1A
+c3VjY2Vzc1Q6CkBjaXR5IhJTYW4gRnJhbmNpc2NvOglAbG5nZhstMTIyLjQx
+OTIwNDAwMDAwMDAxAJaOOhJAY291bnRyeV9jb2RlIgdVUzoPQHByZWNpc2lv
+biIJY2l0eToUQHN0cmVldF9hZGRyZXNzMDoJQGxhdGYaMzcuNzc1MTk2MDAw
+MDAwMDAxAP65Og5AcHJvdmlkZXIiC2dvb2dsZToSQGZ1bGxfYWRkcmVzcyIb
+U2FuIEZyYW5jaXNjbywgQ0EsIFVTQToJQHppcDA6C0BzdGF0ZSIHQ0E6DHNs
+aWRlcnNGIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxh
+c2hIYXNoewc6CmVycm9yIgA6C25vdGljZSIABjoKQHVzZWR7BzsVRjsWRjoM
+Y3NyZl9pZCIlYTA3ZmQxNTA2NzdmZWVhOGE2YTdmY2I3NjlmOTMyM2Y=--e2b315e36355c587a93c4e4a19c3dfbb3d4e4aeb
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"296629159769a80d186f9462cb2b3b813c0bb8cb", "controller"=>"sessions", "login"=>"aadriasola", "password"=>"[FILTERED]"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mWebUser Load (0.003000)[0m   [0;1mSELECT * FROM `web_users` WHERE (login = 'aadriasola' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mWebUser Columns (0.006000)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/
+  [4;36;1mBlogEntry Load (0.002000)[0m   [0;1mSELECT DISTINCT user_id as id FROM `blog_entries` WHERE (created_at > '2008-09-07 10:22:13') LIMIT 500[0m
+  [4;35;1mBlogEntry Columns (0.005000)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Columns (0.007000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 16 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 16) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 16) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 26) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 26 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 26) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 26) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 28) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 28 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 28) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 28) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 37.942282, `lng` = -122.029486, `rated` = 160.3616, `updated_at` = '2009-03-06 17:22:13' WHERE `id` = 28[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 29) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 29 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 29) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 29) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 30) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 30 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 30) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 30) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.003000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 21) LIMIT 1[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 28 ) ) [0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 28) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 28) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 37.942282, `lng` = -122.029486, `rated` = 160.3616, `updated_at` = '2009-03-06 17:22:14' WHERE `id` = 28[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/aadriasola
+Completed in 1.16500 (0 reqs/sec) | DB: 0.07900 (6%) | 302 Found [http://localhost/session]
+
+
+Processing UsersController#find_by_name (for 127.0.0.1 at 2009-03-06 09:22:15) [GET]
+  Session ID: BAh7DDoIbWFwRjoQd2ViX3VzZXJfaWRpGjoRZ2VvX2xvY2F0aW9ubzoTR2Vv
+S2l0OjpHZW9Mb2MQOg1Ac3VjY2Vzc1Q6CUBsbmdmGy0xMjIuNDE5MjA0MDAw
+MDAwMDEAlo46CkBjaXR5IhJTYW4gRnJhbmNpc2NvOg9AcHJlY2lzaW9uIglj
+aXR5OhJAY291bnRyeV9jb2RlIgdVUzoOQHByb3ZpZGVyIgtnb29nbGU6CUBs
+YXRmGjM3Ljc3NTE5NjAwMDAwMDAwMQD+uToUQHN0cmVldF9hZGRyZXNzMDoS
+QGZ1bGxfYWRkcmVzcyIbU2FuIEZyYW5jaXNjbywgQ0EsIFVTQToJQHppcDA6
+C0BzdGF0ZSIHQ0E6DnJldHVybl90bzA6DHNsaWRlcnNGIgpmbGFzaElDOidB
+Y3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewc6CmVycm9yIgA6
+C25vdGljZSIABjoKQHVzZWR7BzsXVDsYVDoMY3NyZl9pZCIlYTA3ZmQxNTA2
+NzdmZWVhOGE2YTdmY2I3NjlmOTMyM2Y=--0d6da5a279ac13bcfc53a2c1349a3bf53f47227d
+  Parameters: {"name"=>"aadriasola", "action"=>"find_by_name", "controller"=>"users"}
+  [4;35;1mWebUser Columns (0.006000)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (0.002000)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 21) LIMIT 1[0m
+  [4;35;1mUser Columns (0.007000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'aadriasola') LIMIT 1[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 21) LIMIT 1[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (0.006000)[0m   [0;1mSELECT * FROM `blog_entries` ORDER BY created_at desc LIMIT 500[0m
+  [4;35;1mBlogEntry Columns (0.005000)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (0.003000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.id IN ('6','7','26','16','28','29','30','10')) [0m
+  [4;35;1mTagging Load (0.006000)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (91,90,89,88,86,84,83,82,81,80,78,76,74,73,72,71,70,69,68,67,66,65,64,63,61,60,58,57,56,54,55,52,50,48,45,43,38,37,36,35,31,29,28,27,26,25) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (0.003000)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.id IN ('186','165','57','187','145','16','60','81','79','188','125','17','61','189','147','20','18','39','62','83','42','84','64','128','150','86','130','151','152','87','132','24','66','133','46','67','134','155','26','91','89','156','135','69','157','115','28','51','93','158','137','10','52','73','94','116','53','74','95','117','54','75','96','140','162','97','120','119','141','12','163','98','185','101','143','164','14')) [0m
+  [4;35;1mTag Load (0.003000)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.id IN ('165','186','57','16','145','187','60','81','79','17','125','188','61','18','39','147','20','189','62','83','42','84','64','150','128','86','130','151','87','152','132','24','66','46','133','67','26','134','155','91','89','135','156','69','115','157','51','28','93','10','137','158','52','73','94','116','117','53','74','95','54','75','96','140','12','97','120','141','119','162','98','163','14','101','143','164','185')) [0m
+  [4;36;1mRating Load (0.003000)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (91,90,89,88,86,84,83,82,81,80,78,76,74,73,72,71,70,69,68,67,66,65,64,63,61,60,58,57,56,54,55,52,50,48,45,43,38,37,36,35,31,29,28,27,26,25) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (0.006000)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 ORDER BY count DESC, id DESC LIMIT 50[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc LIMIT 50[0m
+Rendering template within layouts/users
+Rendering users/show
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 28) [0m
+Rendered users/_public (0.00200)
+Rendered users/_control_panel (0.00500)
+Rendered listings/_tags (0.00400)
+Rendered layouts/_leftbar (0.01100)
+Rendered listings/_search (0.00200)
+Rendered listings/_search_sliders (0.00000)
+Rendered shared/_system_messages (0.00000)
+Rendered users/_new_status (0.00200)
+Rendered users/_input_header (0.00400)
+Rendered listings/_map (0.00300)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.08200)
+Rendered listings/_message (0.08400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00500)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00500)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+  [4;36;1mSubscription Load (0.002000)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 28) [0m
+  [4;35;1mSubscription Columns (0.004000)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.04000)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00500)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00300)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00200)
+Rendered listings/_message (0.00400)
+Rendered ratings/_rate (0.00300)
+Rendered listings/_message (0.00400)
+Rendered listings/_messagelist (0.31000)
+Rendered layouts/_rightbar (0.00000)
+Rendered layouts/_menu (0.00000)
+Rendered shared/_home (0.00000)
+Rendered layouts/_footer (0.00000)
+Completed in 0.91600 (1 reqs/sec) | Rendering: 0.33400 (36%) | DB: 0.06300 (6%) | 200 OK [http://localhost/aadriasola]
+
+
+Processing UsersController#edit_blog_entry (for 127.0.0.1 at 2009-03-06 09:22:23) [POST]
+  Session ID: BAh7DDoIbWFwRjoRZ2VvX2xvY2F0aW9ubzoTR2VvS2l0OjpHZW9Mb2MQOg1A
+c3VjY2Vzc1Q6CUBsbmdmGy0xMjIuMDI5NDg1OTk5OTk5OTkAbCY6CkBjaXR5
+IgxDb25jb3JkOg9AcHJlY2lzaW9uIgxhZGRyZXNzOhJAY291bnRyeV9jb2Rl
+IgdVUzoOQHByb3ZpZGVyIgtnb29nbGU6CUBsYXRmGjM3Ljk0MjI4MTk5OTk5
+OTk5OQDOAzoUQHN0cmVldF9hZGRyZXNzIhQ4OTEgQ2FydGhhZ2UgQ3Q6EkBm
+dWxsX2FkZHJlc3MiLDg5MSBDYXJ0aGFnZSBDdCwgQ29uY29yZCwgQ0EgOTQ1
+MTgsIFVTQToJQHppcCIKOTQ1MTg6C0BzdGF0ZSIHQ0E6EHdlYl91c2VyX2lk
+aRo6DnJldHVybl90bzA6DHNsaWRlcnNGIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewc6CmVycm9yIgA6C25vdGljZSIA
+BjoKQHVzZWR7BzsXRjsYRjoMY3NyZl9pZCIlYTA3ZmQxNTA2NzdmZWVhOGE2
+YTdmY2I3NjlmOTMyM2Y=--3d4264cd3c72217ad93b50d93557fa35cc0cd479
+  Parameters: {"action"=>"edit_blog_entry", "authenticity_token"=>"296629159769a80d186f9462cb2b3b813c0bb8cb", "controller"=>"users", "blog_entry_id"=>"91"}
+  [4;36;1mWebUser Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (0.002000)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 21) LIMIT 1[0m
+  [4;36;1mUser Load (0.003000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 21) LIMIT 1[0m
+  [4;35;1mBlogEntry Columns (0.005000)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mBlogEntry Load (0.001000)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 91) [0m
+  [4;35;1mTag Load (0.001000)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 91) AND (context='categories')) [0m
+  [4;36;1mRating Load (0.001000)[0m   [0;1mSELECT * FROM `ratings` WHERE (`ratings`.rateable_id = 91 AND `ratings`.rateable_type = 'BlogEntry') [0m
+Rendered ratings/_rate (0.00400)
+Rendered users/_edit_blog_entry (0.01200)
+Completed in 0.06800 (14 reqs/sec) | Rendering: 0.01500 (22%) | DB: 0.01800 (26%) | 200 OK [http://localhost/users/edit_blog_entry?blog_entry_id=91]
+
+
+Processing UsersController#update_blog_entry (for 127.0.0.1 at 2009-03-06 09:22:34) [POST]
+  Session ID: BAh7DDoIbWFwRjoQd2ViX3VzZXJfaWRpGjoRZ2VvX2xvY2F0aW9ubzoTR2Vv
+S2l0OjpHZW9Mb2MQOg1Ac3VjY2Vzc1Q6CkBjaXR5IgxDb25jb3JkOglAbG5n
+ZhstMTIyLjAyOTQ4NTk5OTk5OTk5AGwmOhJAY291bnRyeV9jb2RlIgdVUzoP
+QHByZWNpc2lvbiIMYWRkcmVzczoUQHN0cmVldF9hZGRyZXNzIhQ4OTEgQ2Fy
+dGhhZ2UgQ3Q6CUBsYXRmGjM3Ljk0MjI4MTk5OTk5OTk5OQDOAzoOQHByb3Zp
+ZGVyIgtnb29nbGU6EkBmdWxsX2FkZHJlc3MiLDg5MSBDYXJ0aGFnZSBDdCwg
+Q29uY29yZCwgQ0EgOTQ1MTgsIFVTQToJQHppcCIKOTQ1MTg6C0BzdGF0ZSIH
+Q0E6DnJldHVybl90bzA6DHNsaWRlcnNGIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewc6CmVycm9yIgA6C25vdGljZSIA
+BjoKQHVzZWR7BzsXVDsYVDoMY3NyZl9pZCIlYTA3ZmQxNTA2NzdmZWVhOGE2
+YTdmY2I3NjlmOTMyM2Y=--460e67c47e036b2bd90f0e8c5f8fbc35b6ec3395
+  Parameters: {"commit"=>"save", "action"=>"update_blog_entry", "authenticity_token"=>"296629159769a80d186f9462cb2b3b813c0bb8cb", "controller"=>"users", "blog_entry"=>{"where"=>"Longs Drugs @ Bancroft Rd, Walnut Creek, CA", "price"=>"70% Off", "id"=>"91", "what"=>"journal", "category_list"=>"journal"}}
+  [4;35;1mWebUser Columns (0.005000)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (0.003000)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 21) LIMIT 1[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 21) LIMIT 1[0m
+  [4;36;1mBlogEntry Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mBlogEntry Load (0.001000)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 91) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlogEntry Update (0.001000)[0m   [0mUPDATE `blog_entries` SET `price_text` = '70% Off', `price` = 70.0, `updated_at` = '2009-03-06 17:22:34' WHERE `id` = 91[0m
+  [4;36;1mTag Load (0.001000)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 91) AND (context='categories')) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 91) AND (context='categories')) [0m
+  [4;36;1mSQL (0.003000)[0m   [0;1mCOMMIT[0m
+Google geocoding. Address:  Bancroft Rd, Walnut Creek, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name> Bancroft Rd, Walnut Creek, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Bancroft Rd, Walnut Creek, CA, USA</address>
+    <AddressDetails Accuracy="6" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Walnut Creek</LocalityName><Thoroughfare><ThoroughfareName>Bancroft Rd</ThoroughfareName></Thoroughfare></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9378990" south="37.9208400" east="-122.0343030" west="-122.0503670" />
+    </ExtendedData>
+    <Point><coordinates>-122.0423470,37.9292180,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+Rendering users/update_blog_entry
+  [4;35;1mTag Load (0.001000)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 91) AND ((context = 'categories'))) [0m
+  [4;36;1mUser Columns (0.005000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 28) [0m
+  [4;36;1mRating Load (0.002000)[0m   [0;1mSELECT * FROM `ratings` WHERE (`ratings`.rateable_id = 91 AND `ratings`.rateable_type = 'BlogEntry') [0m
+Rendered ratings/_rate (0.00500)
+Rendered listings/_message (0.02200)
+Completed in 0.76400 (1 reqs/sec) | Rendering: 0.02500 (3%) | DB: 0.03100 (4%) | 200 OK [http://localhost/users/update_blog_entry]

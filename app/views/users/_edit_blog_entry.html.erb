@@ -2,7 +2,7 @@
     <% form_remote_for(:blog_entry, @blog_entry, :url => {:controller => "users", :action =>"update_blog_entry"} ) do |f| %>
         <%= hidden_field :blog_entry, :id %>
 
-        <div id="errors-<%=@blog_entry.id%>" class="error"><%= f.error_messages %>
+        <div id="errors-<%=@blog_entry.id%>" class="error hide"><%= f.error_messages %>
         <%= flash[:error] %>
         </div>
         

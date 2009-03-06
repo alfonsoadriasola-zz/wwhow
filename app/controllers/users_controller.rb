@@ -126,8 +126,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:user][:id])
     whats =  params[:blog_entry][:what].strip
     wheres = params[:blog_entry][:where].strip
-    price = params[:blog_entry][:price]
 
+    price = params[:blog_entry][:price]
     if price.to_f == 0 && params[:blog_entry][:price] != 0
       price = params[:blog_entry][:price]
     end
@@ -200,7 +200,14 @@ class UsersController < ApplicationController
     @histmsg.what = params[:blog_entry][:what] unless params[:blog_entry][:what].nil?
     @histmsg.where = params[:blog_entry][:where] unless params[:blog_entry][:where].nil?
     @histmsg.category_list = params[:blog_entry][:category_list] unless params[:blog_entry][:category_list].nil?
-    @histmsg.price = params[:blog_entry][:price]
+
+
+    price = params[:blog_entry][:price]
+    if price.to_f == 0 && params[:blog_entry][:price] != 0
+      price = params[:blog_entry][:price]
+    end
+   @histmsg.price = price.to_f
+   @histmsg.price_text = price    
 
     if @histmsg.save
       clear_flash
