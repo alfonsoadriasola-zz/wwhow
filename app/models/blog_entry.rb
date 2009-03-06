@@ -4,7 +4,7 @@ class BlogEntry < ActiveRecord::Base
   validates_presence_of :what , :message => " - You surely meant to post something"
   validates_length_of   :what,  :within => 3..400
 
-  validates_presence_of :where, :message => " - did you see this deal? "
+  validates_presence_of :where,  :message => " - did you see this deal? "
   validates_length_of   :where,  :within => 2..400
 
   validates_presence_of :price, :message => "- How much did you say?"

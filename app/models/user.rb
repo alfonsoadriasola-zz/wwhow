@@ -33,8 +33,10 @@ class User < ActiveRecord::Base
 
     def self.rank(rating)
         case rating
-        when 0..199
+        when 0..10
             "meh"
+        when 10..100
+            "got some"
         when 200..399
             "pretty good"
         when 400..599
