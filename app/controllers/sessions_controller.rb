@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
     end
 
     def update_user_rankings
-        users = BlogEntry.find(:all, :select => 'DISTINCT user_id', :conditions =>['created_at > ?',Time.now - 60*60*24*180], :limit => 500)        
+        users = BlogEntry.find(:all, :select => 'DISTINCT user_id as id', :conditions =>['created_at > ?',Time.now - 60*60*24*180], :limit => 500)        
         users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save;}
         current_web_user.user.rated = User.rate(current_web_user.user);
         current_web_user.user.ranked = User.rank(current_web_user.user.rated);
