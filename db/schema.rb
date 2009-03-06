@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090208072916) do
+ActiveRecord::Schema.define(:version => 20090306063138) do
 
   create_table "blog_entries", :force => true do |t|
     t.integer  "user_id",    :limit => 11
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20090208072916) do
     t.float    "discount"
     t.float    "lat"
     t.float    "lng"
+    t.string   "price_text"
   end
 
   add_index "blog_entries", ["id"], :name => "index_blog_entries_on_id", :unique => true

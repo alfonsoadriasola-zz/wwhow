@@ -51,7 +51,11 @@ class BlogEntry < ActiveRecord::Base
       if loc.success
         self.lat= loc.lat
         self.lng= loc.lng
+      else
+        self.lat = nil
+        self.lng = nil         
       end
+
     end
   end
 

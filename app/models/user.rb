@@ -53,10 +53,15 @@ class User < ActiveRecord::Base
 
     private
 
-    def geocode_address        
+    def geocode_address
+        if address.blank?
+          self.lat = nil
+          self.lng = nil
+        else
         geo=GeoKit::Geocoders::MultiGeocoder.geocode(address)
         errors.add(:address, "Could not Geocode address") unless geo.success
         self.lat, self.lng = geo.lat, geo.lng if geo.success
+        end
     end
 
 

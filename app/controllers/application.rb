@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
 
   #prepare filter, session
+
   def initialize_filter
 
     @user = current_web_user.user if logged_in?
@@ -32,12 +33,25 @@ class ApplicationController < ActionController::Base
     @filter[:price_to]=500
     @filter[:radius]= 50
 
+
+    # Set default location
     if logged_in?
-      @address = current_web_user.user.address
-      session[:geo_location]= BlogEntry.get_geolocation(@address)
-    elsif session[:geo_location].nil?
-      session[:geo_location] = BlogEntry.get_geolocation('San Francisco, CA, USA')
-    end
+
+      if params[:default_location].nil? && current_web_user.user.address == ""        
+        @address = 'San Francisco, CA, USA'    
+      elsif !params[:default_location].nil? && params[:default_location] != current_web_user.user.address
+        @address = params[:default_location]
+      else
+        @address = current_web_user.user.address
+      end
+    else
+      if  params[:default_location] && params[:default_location] != ""
+        @address = params[:default_location]
+      else
+        @address = 'San Francisco, CA, USA' if session[:geo_location].nil?
+      end
+    end    
+    session[:geo_location] = BlogEntry.get_geolocation(@address)  if @address
 
     #set widgets
     unless params[:blog_entry].nil? then
@@ -67,14 +81,10 @@ class ApplicationController < ActionController::Base
 
 
   # Only search routine. All variations handled inside this app wide method.
+
   def get_search_results
     initialize_filter
-    # set default map location
-    if params[:default_location]!=""
-      if  params[:default_location]!=session[:geo_location].full_address
-        session[:geo_location]=BlogEntry.get_geolocation(params[:default_location])
-      end
-    end
+
     search_from_tag, search_from_bar, search_by_author = false
     cond = String.new
     search_by_author = params[:blog_entry][:author_id] != ""

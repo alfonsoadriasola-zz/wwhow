@@ -126,15 +126,25 @@ class UsersController < ApplicationController
     @user = User.find(params[:user][:id])
     whats =  params[:blog_entry][:what].strip
     wheres = params[:blog_entry][:where].strip
+    price = params[:blog_entry][:price]
+
+    if price.to_f == 0 && params[:blog_entry][:price] != 0
+      price = params[:blog_entry][:price]
+    end
+
     @msg = @user.blog_entries.new(
             :what => whats.downcase,
-                    :where => wheres,
-                    :price => params[:blog_entry][:price].to_f,
-                    :discount => params[:blog_entry][:discount].to_f
+            :where => wheres,
+            :price => price.to_f ,
+            :price_text => price
     )
 
     @msg.set_tags(whats)
     @msg.geocode_where
+    if @msg.lat.nil?  && @msg.where[/^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$/]!= @msg.where
+      @msg.where<<","<<session[:geo_location].city<<","<<session[:geo_location].state<<","<<session[:geo_location].country
+      @msg.geocode_where
+    end
 
     respond_to do |format|
       if @msg.save
