@@ -25,7 +25,7 @@
 
     <td>
         <span class="price">  <%=
-            if @histmsg.price.nil?
+            if @histmsg.price == 0 && !@histmsg.price_text.nil?
                 @histmsg.price_text                
             else
                 number_to_currency(@histmsg.price)
