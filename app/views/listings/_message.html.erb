@@ -25,10 +25,10 @@
 
     <td>
         <span class="price">  <%=
-            if @histmsg.price_text.nil?
-                number_to_currency(@histmsg.price)
+            if @histmsg.price.nil?
+                @histmsg.price_text                
             else
-                @histmsg.price_text
+                number_to_currency(@histmsg.price)
             end
         %> </span>
     </td>
