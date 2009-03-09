@@ -6,7 +6,7 @@
             <h2>WWHOW! Account For <%= @user.name %> </h2>
 
             <ul>
-                <li><label> Status </label> <%= @user.ranked %> </li>
+                <li><label> Mojo </label> <%= @user.ranked %> </li>
                 <%= "You have put up  #{@user.blog_entries.count} posts" %>  on WWHOW
 
                 <h3> Registration Info </h3>
@@ -49,7 +49,7 @@
                     <h3>Preferences</h3>
 
                     <li>
-                        <%= f.label :show_friends_only %>
+                        <%= f.label :show_friends_only. 'Always ' %>
                         <%= f.check_box :show_friends_only %>
                     </li>
 
@@ -58,14 +58,16 @@
                     <!--<%= f.check_box :hide_blocked_users %>-->
                     <!--</li>-->
                     <li style="text-align:center;">
-
                         <%= f.submit "Update", :class=> "buttonRed" %>
                     </li>
 
-                <% end %></ul>
+
+                <% end %>
+                <li>
+                    <%= link_to 'Back', :back, {:class=>"buttonRed"} %></li>
+            </ul>
 
 
-              <%= link_to 'Back', :back ,{:class=>"buttonRed"}%>
         </div>
 
     </div>
