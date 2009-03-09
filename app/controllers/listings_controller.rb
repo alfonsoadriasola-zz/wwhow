@@ -37,19 +37,8 @@ class ListingsController < ApplicationController
     @messages = BlogEntry.find :all, :conditions => "id > #{last_id||'id'}" #greather than the last one or none at all
     flash[:notice] = Time.now.strftime("updated at  %m/%d/%Y at %I:%M") 
     session[:last_id]= BlogEntry.maximum("id")
-   
-
   end
 
-  def safe_get_twits
-    begin
-     twits = Subscription.get_twits
-     Subscription.create_blog_entries(twits) if twits       
-    rescue
-     nil
-    end
-
-  end
 
 
 

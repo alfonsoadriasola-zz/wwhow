@@ -219,4 +219,15 @@ class ApplicationController < ActionController::Base
     users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save;}
   end
 
+
+  def safe_get_twits
+    begin
+      twits = Subscription.get_twits
+      Subscription.create_blog_entries(twits) if twits
+    rescue
+      nil
+    end
+
+  end
+
 end
