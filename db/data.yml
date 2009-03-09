@@ -1,4 +1,3 @@
-
 ---
 blog_entries:
   columns: 
@@ -52,27 +51,14 @@ users:
     - wwhow@wwhow.com
     - 2008-09-04 00:28:51
     - 2009-02-16 21:44:13.732137
-    - 
+    - "1"
     - 
     - 
     - 
     - "0"
     - meh
     - false
-    - true
-  - - "28"
-    - aadriasola
-    - http://twitter.com/aadriasola
-    - 2008-09-18 04:01:54
-    - 2009-02-28 18:57:02.16397
-    - "21"
-    - "37.942282"
-    - "-122.029486"
-    - 891 Carthage Ct, Concord, CA
-    - "113.454545454545"
-    - meh
-    - false
-    - true
+    - true 
 --- 
 web_users: 
   columns: 

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
     acts_as_mappable :auto_geocode => true
     before_validation_on_update :geocode_address
 
+    validates_uniqueness_of  :name
+
     def self.find_active
       User.find(:all , :conditions => ['rated > 0'], :order => "rated desc" , :limit => 50 )
     end

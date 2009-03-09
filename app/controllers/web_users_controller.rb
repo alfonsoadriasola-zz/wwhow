@@ -16,13 +16,16 @@ class WebUsersController < ApplicationController
 
 
   def create
-    logout_keeping_session!    
+    logout_keeping_session!
     @web_user = WebUser.new(params[:web_user])
-    success = verify_recaptcha(@web_user) && @web_user.save if @web_user
-    if success && @web_user.errors.empty?
-      @web_user.create_user(:name=>@web_user.login, :uri => @web_user.email, :address => params[:web_user][:address])  
-      redirect_to :action => 'activate', :activation_code => @web_user.activation_code
-    else     
+    success = verify_recaptcha(@web_user) if @web_user
+    if success && @web_user.save
+      if @web_user.create_user(:name=>@web_user.login, :uri => @web_user.email, :address => params[:web_user][:address])
+        redirect_to :action => 'activate', :activation_code => @web_user.activation_code
+      else
+        render :action => 'new'
+      end
+    else
       render :action => 'new'
     end
 
@@ -68,7 +71,7 @@ class WebUsersController < ApplicationController
         @web_user.delete_password_code
         flash[:notice] = "Password reset successfully for #{@web_user.email}"
         redirect_back_or_default("/#{@web_user.login}")
-      else     
+      else
         render :action => :reset_password
       end
     end

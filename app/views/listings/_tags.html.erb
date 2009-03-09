@@ -1,7 +1,8 @@
 <div id="popular_tags">
     <div>
         <h5> Popular Tags </h5>
-        <% min_size=50
+        <% unless @tag_counts.empty?
+           min_size=50
            max_size = 250
            min_qty = @tag_counts.last.count
            max_qty = @tag_counts.first.count
@@ -16,7 +17,8 @@
         <span style="font-size:<%= tag_size.to_i.to_s<<"%" %>">
           <% cleantag = t.name.downcase.gsub(/['.,:%]/, '') %>
             <%= link_to_function h(t.name.downcase).sub("'", "&rsquo"), "submitByTag('#{cleantag}');" %> </span>
-        <% } %>
+        <% }
+        end %>
     </div>
 
     <br/>
