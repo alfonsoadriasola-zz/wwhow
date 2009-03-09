@@ -137,11 +137,6 @@ class UsersController < ApplicationController
 
     @msg.set_tags(whats)
     @msg.geocode_where
-    if @msg.lat.nil?  && @msg.where[/^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$/]!= @msg.where
-      @msg.where<<","<<session[:geo_location].city<<","<<session[:geo_location].state<<","<<session[:geo_location].country
-      @msg.geocode_where
-    end
-
     respond_to do |format|
       if @msg.save
         format.html { redirect_to(@user) }

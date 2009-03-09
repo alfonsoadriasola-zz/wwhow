@@ -56,6 +56,10 @@ function submitByTag(tag) {
     $('searchTable').up('form').submit();
 }
 
+function submitByFavorites(){
+    $('searchTable').up('form').submit();    
+}
+
 function submitByUser(author_id) {
     $('blog_entry_author_id').setValue(author_id);
     $('searchTable').up('form').submit();
@@ -66,7 +70,10 @@ function slidersOn() {
     $('slidersOff').show();
     $('slidersOn').hide();
     $('blog_entry_sliders').setValue(true);
-    if($('welcome')){ new Effect.Shrink('welcome'); new Effect.Appear('tipsy-pen');}
+    if ($('welcome')) {
+        new Effect.Shrink('welcome');
+        new Effect.Appear('tipsy-pen');
+    }
 }
 
 function slidersOff() {
@@ -74,33 +81,37 @@ function slidersOff() {
     $('slidersOff').hide();
     $('slidersOn').show();
     $('blog_entry_sliders').setValue(false);
-    if($('welcome')){ new Effect.BlindDown('welcome'); $('tipsy-pen').hide();}
+    if ($('welcome')) {
+        new Effect.BlindDown('welcome');
+        $('tipsy-pen').hide();
+    }
 }
 
 function mapOn() {
     $('mapframe').show();
-    $('map').show(); 
+    $('map').show();
     $('mapOn').hide();
     $('mapOff').show();
-    $('blog_entry_map').setValue(true);   
+    $('blog_entry_map').setValue(true);
 }
 
 function mapOff() {
     new Effect.BlindUp('mapframe');
     $('mapOff').hide();
     $('mapOn').show();
-    $('blog_entry_map').setValue(false);   
+    $('blog_entry_map').setValue(false);
 }
 
-function set_show_friends_only(_value){
-  if(_value == true)
-    $('user_show_friends_only').setValue(1);
-  else
-    $('user_show_friends_only').setValue(0);
- 
+function set_show_friends_only(_value) {
+    if (_value == true)
+        $('user_show_friends_only').setValue(1);
+    else
+        $('user_show_friends_only').setValue(0);
+
+    submitByFavorites();    
 }
 
-function toggle_hide_blocked_users(_value){
+function toggle_hide_blocked_users(_value) {
     $('user_hide_blocked_users').setValue(_value);
 }
 
