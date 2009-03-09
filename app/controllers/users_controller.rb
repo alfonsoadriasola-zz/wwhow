@@ -127,18 +127,18 @@ class UsersController < ApplicationController
     whats =  params[:blog_entry][:what].strip
     wheres = params[:blog_entry][:where].strip
     price = params[:blog_entry][:price]
-
     @msg = @user.blog_entries.new(
             :what => whats.downcase,
             :where => wheres,
             :price => price.to_f ,
             :price_text => price
     )
-
+    
     @msg.set_tags(whats)
     @msg.geocode_where
     respond_to do |format|
       if @msg.save
+        update_current_user_ranking
         format.html { redirect_to(@user) }
         format.xml  { render :xml => @msg, :status => :created, :location => @user }
       else
@@ -165,6 +165,7 @@ class UsersController < ApplicationController
     @user = @current_user.user
     be.category_list = ""
     be.destroy;
+    update_current_user_ranking
     render :update do |page|
       page.remove("tr#{be.id}")
       page.visual_effect :highlight, "messageList"
@@ -199,6 +200,7 @@ class UsersController < ApplicationController
     if @histmsg.save
       clear_flash
       @histmsg.geocode_where
+      update_current_user_ranking
       respond_to do |format|
         format.js
         format.html {redirect_to @user}

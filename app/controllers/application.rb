@@ -37,8 +37,8 @@ class ApplicationController < ActionController::Base
     # Set default location
     if logged_in?
 
-      if params[:default_location].nil? && current_web_user.user.address == ""        
-        @address = 'San Francisco, CA, USA'    
+      if params[:default_location].nil? && current_web_user.user.address == ""
+        @address = 'San Francisco, CA, USA'
       elsif !params[:default_location].nil? && params[:default_location] != current_web_user.user.address
         @address = params[:default_location]
       else
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
       else
         @address = 'San Francisco, CA, USA' if session[:geo_location].nil?
       end
-    end    
+    end
     session[:geo_location] = BlogEntry.get_geolocation(@address)  if @address
 
     #set widgets
@@ -204,6 +204,19 @@ class ApplicationController < ActionController::Base
   def clear_flash
     flash[:notice] = ""
     flash[:error] = ""
+  end
+
+  def update_current_user_ranking
+    if logged_in?
+      current_web_user.user.rated = User.rate(current_web_user.user);
+      current_web_user.user.ranked = User.rank(current_web_user.user.rated);
+      current_web_user.user.save
+    end
+  end
+
+  def update_active_user_ranking
+    users = BlogEntry.find(:all, :select => 'DISTINCT user_id as id', :conditions =>['created_at > ?', Time.now - 60*60*24*180], :limit => 500)
+    users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save;}
   end
 
 end
