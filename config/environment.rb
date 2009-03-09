@@ -123,7 +123,7 @@ GOOGLEMAPKEY='ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRF
 ENV['RECAPTCHA_PUBLIC_KEY'] ='6LfgtAQAAAAAAJiM_ECmc9YhOpXyxOH6NVsNdDqa'
 ENV['RECAPTCHA_PRIVATE_KEY'] ='6LfgtAQAAAAAADNGTeLcHbM_EDWVsv_xzFp9P6qI'
 
-SITE='http://wwhow.herokugarden.com'
+SITE='http://wwhow.heroku.com'
 
 # Local mail configuration
 ActionMailer::Base.raise_delivery_errors = true
