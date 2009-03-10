@@ -118,27 +118,14 @@ GeoKit::Geocoders::geocoder_ca = false
 GeoKit::Geocoders::provider_order = [:google]
 
 #herokugarden GOOGLEMAPKEY='ABQIAAAAWGXzUXEtiLXXpyFWhM1yRhQVCkJwfMzdIzmTHdHQY3nGrOdPfhTM0BFuB2r7ZjGurZwqeTnJYafOfQ';
-GOOGLEMAPKEY='ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRFiBdD6TtZ5BeLlD8kMi6Q';
+#heroku wwhow GOOGLEMAPKEY='ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRFiBdD6TtZ5BeLlD8kMi6Q';
+GOOGLEMAPKEY='ABQIAAAAWGXzUXEtiLXXpyFWhM1yRhQqwhUQc-R7WJ8KwGyoHoGQN5B40xRxLpWrSI0aspuPSNawxoEIOOZJvQ'
 
 ENV['RECAPTCHA_PUBLIC_KEY'] ='6LfgtAQAAAAAAJiM_ECmc9YhOpXyxOH6NVsNdDqa'
 ENV['RECAPTCHA_PRIVATE_KEY'] ='6LfgtAQAAAAAADNGTeLcHbM_EDWVsv_xzFp9P6qI'
 
-SITE='http://wwhow.heroku.com'
+SITE='http://wwhow.com'
 
 # Local mail configuration
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.delivery_method = :msmtp
-module ActionMailer
-  class Base
-    def perform_delivery_msmtp(mail)
-      thread = Thread.new do
-        IO.popen("msmtp -t -a gmail –", "w") do
-        |sm|
-          sm.puts(mail.encoded.gsub(/\r/, ''))
-          sm.flush
-        end
-      end
-      thread.run
-    end
-  end
-end
+ActionMailer::Base.delivery_method = :sendmail
+ActionMailer::Base.raise_delivery_errors = false

@@ -18,8 +18,8 @@ development:
   adapter: mysql
   encoding: utf8
   database: wwhow
-  username: root
-  password: aiki
+  username: wwhow
+  password: cheapdeal
   host: localhost
 
 # Warning: The database defined as 'test' will be erased and
@@ -33,7 +33,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: movel-portal_production
-  username: root
-  password: aiki
+  database: wwhow_production
+  username: wwhow
+  password: cheapdeal
   host: localhost

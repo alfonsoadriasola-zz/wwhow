@@ -37,7 +37,8 @@ class WebUsersController < ApplicationController
     case
     when (!params[:activation_code].blank?) && web_user && !web_user.active?
       web_user.activate!
-      flash[:notice] = "Signup complete! Please sign in to continue."
+      @login = web_user.user.name
+      flash[:notice] = "Registration complete for #{@login}! <br/> Please log in to continue."
       redirect_to '/login'
     when params[:activation_code].blank?
       flash[:error] = "The activation code was missing.  Please follow the URL from your email."

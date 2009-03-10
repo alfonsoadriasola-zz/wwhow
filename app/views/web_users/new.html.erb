@@ -45,7 +45,7 @@
             </p>
 
             <div class="centered-xxs">
-                <%= recaptcha_tags %>
+                 <div class="centered-xxs">  <%= recaptcha_tags({:display => {:theme => 'clean'}}) %> </div>
                 <%= submit_tag 'Sign up', {:class=> "buttonRed"} %>
             </div>
         <% end -%>

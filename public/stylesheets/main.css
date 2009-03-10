@@ -646,27 +646,6 @@ a.buttonEdit {
     z-index: 2;
 }
 
-#tipsy_2, #tipsy_3 {
-    background: transparent url("/images/tipsy-pen.png") no-repeat top left;
-    width: 210px;
-    height: 308px;
-
-}
-
-#tipsy_2 {
-    position: absolute;
-    top: 210px;
-    right: 260px;
-    z-index: 0;
-}
-
-#tipsy_3 {
-    position: absolute;
-    top: 140px;
-    right: 260px;
-    z-index: 0;
-}
-
 #tipsy-pen {
     background: url(/images/tipsy-pen.png) no-repeat top center;
 }
