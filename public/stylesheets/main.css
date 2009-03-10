@@ -369,11 +369,11 @@ span.left {
 
 #widgetLinks a, #tableTop a {
     color: #d50f10;
-    font-size: .8em;
+    font-size: 1em;
     text-decoration: none;
     font-style: oblique;
     background-color: #ffde00;
-    padding: .2em .4em .2em 1.6em;
+    padding: .2em .4em .2em 2em;
 }
 
 #mapOn, #mapOff {
@@ -597,8 +597,10 @@ td.editing label {
 
 /*buttons*/
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
-    height: 14px;
-    width: 14px;
+    display:block;
+    float:right;
+    height: 28px;
+    width: 28px;
     text-decoration: none;
 }
 
@@ -610,6 +612,12 @@ span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
 span.hasMap {
     background: transparent url(/images/mappedPost.png) no-repeat center right;
     padding-right: 16px;
+}
+
+li span.hasMap{
+    text-indent:3.2em;
+    display:inline-block;
+    float:none;
 }
 
 a.buttonAddFave {
