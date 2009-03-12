@@ -104,8 +104,6 @@ body {
     z-index: -1;
 }
 
-
-
 #menu {
     background: url(/images/toolButton.png) repeat-x left top;
     line-height: 1.7em;
@@ -114,7 +112,6 @@ body {
     left: auto;
     right: 2em;
 }
-
 
 #menuL {
     background: transparent url(/images/menu-left.png) repeat-x scroll left top;
@@ -182,6 +179,16 @@ body {
     font-size: 1.3em;
 }
 
+#leftbar h5 , #rightbar h5 {
+    background: #ffde00;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+    border-top:solid 1px   #0045cf;
+    border-bottom:solid 1px #0045cf;
+
+}
+
 #wwhowsays {
     border: 0;
     background: #ffde00;
@@ -245,9 +252,18 @@ h2.error {
 }
 
 #messageListTable {
+    border-top: solid 1px #444;
+    border-right: solid 0;
+    border-left: solid 1px #444;
+    border-bottom: solid 1px #444;
     width: 100%;
     z-index: 2;
     table-layout: fixed;
+}
+
+#messageListTable td {
+    border-right: solid 1px #444;
+
 }
 
 #messageListTable th {
@@ -262,7 +278,8 @@ td.comment {
 
 #messageListTable td {
     text-align: left;
-    font-size: 1em;
+    font-size: .8em;
+    border: 0 1px 0 1px blue;
 }
 
 #messageListTable span.price, span.discount {
@@ -354,6 +371,10 @@ span.left {
     font-size: 100%;
 }
 
+#inputBox {
+    border: solid 1px blue;
+}
+
 #inputBox td {
     line-height: 1.7em;
     background-color: #d2e1f4;
@@ -420,7 +441,7 @@ table.sortable th a {
 }
 
 table.sortable {
-    border-spacing: 1px;
+    border-spacing: 0px;
 }
 
 table.sortable th, table.sortable td {
@@ -438,7 +459,7 @@ table.sortable td {
 }
 
 table.sortable tr.odd td {
-    background-color: transparent;
+    background-color: #fff;
 }
 
 table.sortable tr.even td {
@@ -585,6 +606,7 @@ td.editing label {
     background-color: #d2e1f4;
     padding: 20px 20px 20px 20px;
     line-height: 1.3em;
+    border: solid 1px blue;
 }
 
 #signupBox span.help {
@@ -597,8 +619,8 @@ td.editing label {
 
 /*buttons*/
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
-    display:block;
-    float:right;
+    display: block;
+    float: right;
     height: 28px;
     width: 28px;
     text-decoration: none;
@@ -614,10 +636,10 @@ span.hasMap {
     padding-right: 16px;
 }
 
-li span.hasMap{
-    text-indent:3.2em;
-    display:inline-block;
-    float:none;
+li span.hasMap {
+    text-indent: 3.2em;
+    display: inline-block;
+    float: none;
 }
 
 a.buttonAddFave {
@@ -665,4 +687,8 @@ a.buttonEdit {
 a {
     color: #d50f10;
     text-decoration: none;
+}
+
+span.what {
+    font-weight:bold;    
 }

@@ -1,7 +1,8 @@
 <tr id="tr<%= @histmsg.id %>" class="message">
 
     <td title="<%= h @histmsg.categories.join(',') -%>">
-        <%= h @histmsg.what.downcase -%>
+
+        <span class="what"> <%= h @histmsg.what.downcase -%> </span>
 
         <span style="display:none"> <%= h @histmsg.categories.join(' ') -%> </span>
 
