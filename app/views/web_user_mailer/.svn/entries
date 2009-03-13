@@ -26,6 +26,40 @@ svn:special svn:externals svn:needs-lock
 
 e1533c94-a36f-8443-9f43-b16f603e8899
 
+signup_notification.erb
+file
+118
+
+
+
+2009-03-12T21:33:10.925586Z
+da09dd06bdde190fa10e7cf41ae41588
+2009-03-12T23:40:15.103586Z
+118
+Alfonso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+173
+
 activation.erb
 file
 105
@@ -127,38 +161,4 @@ Alfonso
 
 
 66
-
-signup_notification.erb
-file
-105
-
-
-
-2009-02-16T21:27:16.545000Z
-17902e42e918f488bd3ee2e4767c86ce
-2009-02-16T21:27:50.601000Z
-105
-Alfonso
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-175
 
