@@ -61,5 +61,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
 
   map.connect '*anything', :controller => 'common', :action => 'malformed'  
+  map.error ':common',  :controller => 'common',  :action => 'malformed'  
 
 end
