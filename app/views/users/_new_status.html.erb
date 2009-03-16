@@ -2,24 +2,25 @@
 
     <%= hidden_field :user, :id %>
 
-    <strong>Here's your chance to share your savings!</strong>
+    <strong>Here's the chance to share your savings!</strong>
     <table id="inputBox" cellspacing="0px">
 
         <tr>
-            <td><label>What:</label> <br/> <%= f.text_field :what, :size => 30 %>   <br/>
-                <span class="help"> e.g Toy Drum </span>
+            <td><label>What:</label> <br/> <%= f.text_field :what, :size => 30 %> <br/>
+                <span class="help">e.g.,wine glasses, sofas, rugs </span>
             </td>
 
             <td><label>Where:</label> <br/><%= f.text_field :where, :size => 30 %>  <br/>
-                <span class="help"> The Toy Store @ 100 Pine, San Francisco, CA </span>
+                <span class="help">Crate and Barrel@55 Stockton St,San Francisco</span>
             </td>
 
             <td><label>How Much:</label> <br/> $<%= f.text_field :price, :size=>15 -%> <br/>
-                <span class="help">1, 5, 10.45, 70% off, 2 for 1 (get it?)</span>
+                <span class="help">$1.49 each, 50% off, BOGOF, etc (get it?)</span>
             </td>
 
-            <td style="vertical-align:middle">
+            <td style="vertical-align:middle;">
                 <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed'} %>
+                &nbsp;&nbsp;
             </td>
 
         </tr>      

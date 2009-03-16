@@ -38,7 +38,7 @@ body {
 /*font-family:'Lucida Sans Unicode','Lucida Grande','Lucida Sans','DejaVu Sans Condensed',sans-serif; */
     font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
     font-size: .9em;
-    background-color: transparent; /*font-variant:small-caps;*/
+    background-color: transparent;
 }
 
 #frame {
@@ -102,6 +102,14 @@ body {
     height: 291px;
     cursor: pointer;
     z-index: -1;
+
+}
+
+#welcome p {
+    position:absolute;
+    top: 90px;
+    left: 40px;
+    width: 70%;
 }
 
 #menu {
@@ -504,7 +512,7 @@ table.sortable .nosort {
 .buttonRed {
     background-color: #d50f10;
     color: #fff;
-    background: url(/images/toolButtonRed.png) repeat-x left top;
+    background: url(/images/toolButtonRed.png) repeat-x left top;    
 }
 
 #messageListTable td .button {
