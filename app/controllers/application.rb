@@ -63,16 +63,15 @@ class ApplicationController < ActionController::Base
       if params[:blog_entry][:map].nil? == false
         session[:map] = params[:blog_entry][:map] == "true"
       end
-
-      if logged_in?
-        @filter[:show_unmapped]= params[:user][:show_unmapped] == "on"
-      else
-        @filter[:show_unmapped] = true;
-      end
-
     else
       session[:sliders] = false
       session[:map] = false
+    end
+    
+    if logged_in?
+      @filter[:show_unmapped]= params[:user][:show_unmapped] == "on"
+    else
+      @filter[:show_unmapped] = true;
     end
 
     if logged_in?
@@ -211,7 +210,7 @@ class ApplicationController < ActionController::Base
       if (logged_in? && @filter[:show_unmapped]==false)
         flash[:error]<<"<em>( you are only seeing mapped posts)</em><br/>"
       end
-    flash[:error]<<"<p/>"
+      flash[:error]<<"<p/>"
     end
 
   end
