@@ -6,7 +6,7 @@ function tableFilter(phrase, _id) {
     var table = document.getElementById(_id);
     var rowcontent;
     for (var r = 1; r < table.rows.length; r++) {
-        var row = $(table.rows[r].id)
+        var row = $(table.rows[r].id);
         rowcontent = table.rows[r].innerHTML.replace(/<[^>]+>/g, "");
         for (var i = 0; i < words.length; i++) {
             if (rowcontent.toLowerCase().indexOf(words[i]) >= 0) {
@@ -103,12 +103,21 @@ function mapOff() {
 }
 
 function set_show_friends_only(_value) {
-    if (_value == true)
+    if (_value)
         $('user_show_friends_only').setValue(1);
     else
         $('user_show_friends_only').setValue(0);
 
     submitByFavorites();    
+}
+
+function set_show_unmapped  (_value) {
+    if (_value)
+        $('user_show_unmapped').setValue(1);
+    else
+        $('user_show_unmapped').setValue(0);
+
+    submitByFavorites();
 }
 
 function toggle_hide_blocked_users(_value) {

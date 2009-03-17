@@ -77,8 +77,8 @@ var SortableTable = {
             c.setStyle({width: cw + 'px'});
             $A(table.tBodies[0].rows).each(function(r) {
                 $(r.cells[i]).setStyle({width: cw + 'px'});
-            })
-        })
+            });
+        });
 
         // Fixed Head
         var head = (table.tHead && table.tHead.rows.length > 0) ? table.tHead : table.rows[0];
@@ -303,7 +303,7 @@ var SortableTable = {
                     var time = (Number(date) + (offset * 60 * 1000));
                     date.setTime(Number(time));
                 }
-                return date.valueOf();
+                return date.valueOf(date);
             }
             return SortableTable.compare(a ? calc(a) : 0, b ? calc(b) : 0);
 

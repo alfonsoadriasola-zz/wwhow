@@ -1,12 +1,16 @@
 <div id="searchrow">
 
     <%= hidden_field :user, :id %>
-    <%= hidden_field :user, :show_friends_only %>
-    <%= hidden_field :user, :hide_blocked_users %>
+    <%= hidden_field :user, :show_friends_only %>    
+    <%= hidden_field :user, :show_unmapped, :value => @filter[:show_unmapped]||false %>
+    
     <%= hidden_field :blog_entry, :category_list %>
     <%= hidden_field :blog_entry, :author_id %>
     <%= hidden_field :blog_entry, :sliders, :value => session[:sliders]||false %>
     <%= hidden_field :blog_entry, :map, :value => session[:map]||false %>
+
+
+
 
     <table id="searchTable" cellspacing="0" cellpadding="4">
         <tr>

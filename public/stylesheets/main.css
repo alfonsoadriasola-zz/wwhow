@@ -28,7 +28,7 @@ body div {
 }
 
 .centered-xxs {
-    width: 420px;
+    width: 530px;
     margin: 0 auto;
 }
 
@@ -106,7 +106,7 @@ body {
 }
 
 #welcome p {
-    position:absolute;
+    position: absolute;
     top: 90px;
     left: 40px;
     width: 70%;
@@ -187,31 +187,30 @@ body {
     font-size: 1.3em;
 }
 
-#leftbar h5 , #rightbar h5 {
+#leftbar h5, #rightbar h5 {
     background: #ffde00;
     font-weight: bold;
     text-align: center;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
-    border-top:solid 1px   #0045cf;
-    border-bottom:solid 1px #0045cf;
+    border-top: solid 1px #0045cf;
+    border-bottom: solid 1px #0045cf;
 
 }
 
 #wwhowsays {
     border: 0;
-    background: #ffde00;
     font-weight: bold;
     text-align: center;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
 }
 
 #notice, #errors {
+    background-color: #0045cf;
     font-weight: 600;
 }
 
 .error {
-    color: #d50f10;
-    background-color: #ffde00;
+    color: #fff;    
     text-align: center;
     padding: 1em;
     line-height: 1em;
@@ -222,11 +221,11 @@ h2.error {
 }
 
 #notice {
-    color: #0045cf;
+    color: #fff;
 }
 
 #errors {
-    color: #d50f10;
+     color: #fff;
 }
 
 #statusBox .label {
@@ -512,7 +511,7 @@ table.sortable .nosort {
 .buttonRed {
     background-color: #d50f10;
     color: #fff;
-    background: url(/images/toolButtonRed.png) repeat-x left top;    
+    background: url(/images/toolButtonRed.png) repeat-x left top;
 }
 
 #messageListTable td .button {
@@ -578,6 +577,10 @@ div.slider div.handle {
     float: left;
     font-size: .85em;
     font-weight: bold;
+}
+
+#user-control-panel strong {
+    font-size: .85em;
 }
 
 /* General */
@@ -698,5 +701,5 @@ a {
 }
 
 span.what {
-    font-weight:bold;    
+    font-weight: bold;
 }

@@ -1,4 +1,4 @@
-        <div id="wwhowsays" class="centered-xxs">
+        <div id="wwhowsays" class="centered-xxs <%= 'hide' if (flash[:notice].blank? && flash[:error].blank?)  %>" >
             <div id="notice" style="text-align:center">
                 <%= flash[:notice] %>
                 <% flash[:notice] = "" %>

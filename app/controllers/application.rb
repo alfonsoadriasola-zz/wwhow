@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
     @filter[:price_from]=0
     @filter[:price_to]=500
     @filter[:radius]= 50
+    @filter[:show_unmapped]=false
 
 
     # Set default location
@@ -62,6 +63,13 @@ class ApplicationController < ActionController::Base
       if params[:blog_entry][:map].nil? == false
         session[:map] = params[:blog_entry][:map] == "true"
       end
+
+      if logged_in?
+        @filter[:show_unmapped]= params[:user][:show_unmapped] == "on"
+      else
+        @filter[:show_unmapped] = false;
+      end
+
     else
       session[:sliders] = false
       session[:map] = false
@@ -76,6 +84,8 @@ class ApplicationController < ActionController::Base
         @show_friends_only = current_web_user.user.show_friends_only
       end
     end
+
+
 
   end
 
@@ -147,10 +157,11 @@ class ApplicationController < ActionController::Base
     if session[:sliders]==true
       @messages = @messages.find_all{|m| m.rating >=@filter[:rating_from].to_f && m.rating <= @filter[:rating_to].to_f }
       @messages = @messages.find_all{|m| m.price >= @filter[:price_from].to_f && m.price <= @filter[:price_to].to_f }
-      distance = @filter[:radius].to_f
-      @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance}
-      @messages.sort_by_distance_from(session[:geo_location])
     end
+
+    distance = @filter[:radius].to_f
+    @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
+    @messages.sort_by_distance_from(session[:geo_location])
 
     if (logged_in? && @show_friends_only== true)
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
@@ -166,10 +177,9 @@ class ApplicationController < ActionController::Base
     @messages = BlogEntry.find :all, :limit=>500, :order => 'created_at desc', :include =>[:user, :categories,  :ratings]
     distance = @filter[:radius].to_f
 
-    if session[:sliders]==true
-      @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance}
-      @messages.sort_by_distance_from(session[:geo_location])
-    end
+
+    @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
+    @messages.sort_by_distance_from(session[:geo_location])
 
     if (logged_in? && @show_friends_only == true )
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
@@ -193,12 +203,17 @@ class ApplicationController < ActionController::Base
     if @messages.empty?
       flash[:error] = "<p>Sorry, I could not find any entries for that</p>"
       if session[:sliders]==true
-        flash[:error]<< "<p>(your advanced filters may be too restrictive)</p>"
+        flash[:error]<< "<em>(your advanced filters may be too restrictive)</em><br/>"
       end
       if (logged_in? && @show_friends_only == true )
-        flash[:error]<<"<p>( you may have to look outside of your favorite users )</p>"
+        flash[:error]<<"<em>( you may have to look outside of your favorite users )</em><br/>"
       end
+      if (logged_in? && @filter[:show_unmapped]==false)
+        flash[:error]<<"<em>( you are only seeing mapped posts)</em><br/>"
+      end
+    flash[:error]<<"<p/>"
     end
+
   end
 
   def clear_flash

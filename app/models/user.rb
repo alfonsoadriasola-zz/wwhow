@@ -66,5 +66,8 @@ class User < ActiveRecord::Base
         end
     end
 
+  def show_unmapped
+    
+  end
 
 end
