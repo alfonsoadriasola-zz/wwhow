@@ -69,7 +69,8 @@ class ApplicationController < ActionController::Base
     end
     
     if logged_in?
-      @filter[:show_unmapped]= params[:user][:show_unmapped] == "on"
+      @filter[:show_unmapped] = params[:user][:show_unmapped] == "on" if params[:user]
+      @filter[:show_unmapped] = true if params[:user].nil?      
     else
       @filter[:show_unmapped] = true;
     end
