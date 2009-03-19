@@ -7,6 +7,19 @@ padding: 1em; }
 span { border:dotted .1px red ;
 padding: .2em; }
 */
+
+
+body {
+/*font-family:Comic Sans, Comic Sans MS, cursive;*/
+/*font-family:'Century Gothic',Futura,'URW Gothic L',sans-serif;*/
+/*font-family:'Lucida Sans Unicode','Lucida Grande','Lucida Sans','DejaVu Sans Condensed',sans-serif; */
+    font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
+    font-size: 100%;
+    background-color: transparent;
+}
+
+
+
 body div {
     padding: .01em;
 }
@@ -30,15 +43,6 @@ body div {
 .centered-xxs {
     width: 530px;
     margin: 0 auto;
-}
-
-body {
-/*font-family:Comic Sans, Comic Sans MS, cursive;*/
-/*font-family:'Century Gothic',Futura,'URW Gothic L',sans-serif;*/
-/*font-family:'Lucida Sans Unicode','Lucida Grande','Lucida Sans','DejaVu Sans Condensed',sans-serif; */
-    font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
-    font-size: .9em;
-    background-color: transparent;
 }
 
 #frame {
@@ -160,7 +164,7 @@ body {
     position: absolute;
     left: 214px;
     top: 78px;
-    font-size: 86%
+    font-size: .8em;
 }
 
 #rightbar {
@@ -229,7 +233,7 @@ h2.error {
 }
 
 #statusBox .label {
-    font-size: 120%;
+    font-size: 1.2em;
 }
 
 #messageList {
@@ -249,7 +253,7 @@ h2.error {
 }
 
 #headerTable th {
-    font-size: 180%;;
+    font-size: 1.8em;
     text-align: center;
     color: #E6F4FF;
 }
@@ -280,7 +284,7 @@ h2.error {
 }
 
 td.comment {
-    font-size: 80%;
+    font-size: .8em;
 }
 
 #messageListTable td {
@@ -325,7 +329,7 @@ td table {
     clear: both;
     width: 100%;
     text-align: center;
-    font-size: 75%;
+    font-size: .75em;
     color: #d50f10;
     background-color: #ffde00;
 
@@ -375,7 +379,7 @@ span.left {
 }
 
 #searchTable th {
-    font-size: 100%;
+    font-size: 1em;
 }
 
 #inputBox {
@@ -621,7 +625,7 @@ td.editing label {
 }
 
 #signupBox span.help {
-    font-size: 75%;
+    font-size: .75em;
     font-style: oblique;
     font-weight: 100;
     float: none;

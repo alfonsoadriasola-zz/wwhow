@@ -2,13 +2,13 @@
     <div>
         <h5> Popular Tags </h5>
         <% unless @tag_counts.empty?
-           min_size=50
-           max_size = 250
+           min_size=75
+           max_size = 150
            min_qty = @tag_counts.last.count
            max_qty = @tag_counts.first.count
            spread = max_qty - min_qty
            spread = 1 if spread== 0
-           step = (max_size - min_size)/spread
+           step = (max_size - min_size)/spread.to_f
             %>
         <% @tag_counts.each{|t|
            tag_size = min_size + (t.count - min_qty)* step

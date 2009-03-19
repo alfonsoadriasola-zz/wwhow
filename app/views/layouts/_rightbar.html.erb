@@ -5,13 +5,13 @@
         <h5> Active Members </h5>
            
            <% unless @active_users.empty? then
-               min_size=50
-               max_size = 250
+               min_size=75
+               max_size = 150
                min_qty = @active_users.last.rated.to_i
                max_qty = @active_users.first.rated.to_i
                spread = max_qty - min_qty
-               spread = 1 if spread== 0
-               step = (max_size - min_size)/spread
+               spread = 1 if spread == 0
+               step = (max_size - min_size)/spread.to_f
            end
             %>
 

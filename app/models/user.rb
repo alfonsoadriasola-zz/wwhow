@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of  :name
 
-  def self.find_active
+  def self.find_active    
     User.find(:all, :conditions => ['rated > 0'], :order => "rated desc", :limit => 50 )
   end
 
