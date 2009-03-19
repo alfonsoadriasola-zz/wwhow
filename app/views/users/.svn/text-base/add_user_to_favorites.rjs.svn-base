@@ -1,3 +1,0 @@
-page.replace_html 'notice',flash[:notice].to_s
-page.visual_effect :highlight, "notice"
-flash[:notice] =''

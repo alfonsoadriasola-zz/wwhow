@@ -1,9 +1,0 @@
-<% if @filter then %>
-    <div id="wwhowsays"><%= flash[:error] %> </div>
-<% end %>
-
-
-
-<table id="headerTable" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
- <tr><td colspan="3"> <%= render_partial 'new_status' %></td> </tr>
-</table>

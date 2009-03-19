@@ -1,46 +1,0 @@
-9
-
-dir
-100
-file:///c:/users/alfonso/work/nla/svn/wwhow/vendor/plugins
-file:///c:/users/alfonso/work/nla/svn
-
-
-
-2009-01-15T19:31:30.701783Z
-53
-Alfonso
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-e1533c94-a36f-8443-9f43-b16f603e8899
-
-acts_as_rateable
-dir
-
-acts_as_taggable_on
-dir
-
-auto_complete
-dir
-
-geokit
-dir
-
-recaptcha
-dir
-
-restful-authentication
-dir
-

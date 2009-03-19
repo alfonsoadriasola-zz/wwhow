@@ -1,6 +1,0 @@
-
-page.remove "tr#{@histmsg.id}"
-page.insert_html :after, 'tr0', :partial => '/listings/message', :locals => { :histmsg => @histmsg}
-page.visual_effect :highlight, "tr#{@histmsg.id}"
-flash[:notice] =''
-          

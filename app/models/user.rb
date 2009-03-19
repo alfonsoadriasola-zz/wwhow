@@ -26,18 +26,18 @@ class User < ActiveRecord::Base
         messagesRated = Rating.count(:conditions => "user_id = #{user.id}")
         averageRating = Rating.average(:rating, :conditions => "user_id = #{user.id}")
 
-        ratedMessages = 0 if ratedMessages.nil?
-        messagesRated = 0 if messagesRated.nil?
-        averageRating = 0 if averageRating.nil?
+        ratedMessages = 1 if ratedMessages.nil?
+        messagesRated = 1 if messagesRated.nil?
+        averageRating = 1 if averageRating.nil?
 
         averageRating  * ( ratedMessages * 2  + messagesRated )        
     end
 
     def self.rank(rating)
         case rating
-        when 0..9
+        when 0..20
             "got a bit"
-        when 10..199
+        when 19..199
             "got some"
         when 200..399
             "pretty good"
