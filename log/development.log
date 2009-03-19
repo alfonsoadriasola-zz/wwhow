@@ -1,0 +1,1354 @@
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.032000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.017000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.041000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mBlogEntry Load (0.040000)[0m   [0mSELECT DISTINCT user_id as id FROM `blog_entries` WHERE (created_at > '2008-09-19 22:21:34') LIMIT 500[0m
+  [4;36;1mBlogEntry Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 28) [0m
+  [4;36;1mRating Columns (0.019000)[0m   [0;1mSHOW FIELDS FROM `ratings`[0m
+  [4;35;1mSQL (0.003000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 28 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 28) [0m
+  [4;35;1mSQL (0.023000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 28) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'aadriasola' AND `users`.id <> 28) [0m
+  [4;36;1mUser Update (0.013000)[0m   [0;1mUPDATE `users` SET `lat` = 37.942282, `lng` = -122.029486, `rated` = 113.4536, `updated_at` = '2009-03-19 05:21:35' WHERE `id` = 28[0m
+  [4;35;1mSQL (0.003000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 16 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 16) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 16) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'captainamerica' AND `users`.id <> 16) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 29) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 29 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 29) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 29) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'chearp' AND `users`.id <> 29) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `rated` = 4.0, `updated_at` = '2009-03-19 05:21:35' WHERE `id` = 29[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 30) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 30 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 30) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 30) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie' AND `users`.id <> 30) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 33) [0m
+  [4;35;1mSQL (0.002000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 33 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 33) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 33) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: san francisco. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>san francisco</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8120000" south="37.7034000" east="-122.3482000" west="-122.5270000" />
+    </ExtendedData>
+    <Point><coordinates>-122.4192040,37.7751960,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.002000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie1' AND `users`.id <> 33) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 37.775196, `lng` = -122.419204, `updated_at` = '2009-03-19 05:21:35' WHERE `id` = 33[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 35) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 35 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 35) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 35) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa21' AND `users`.id <> 35) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `rated` = 14.0, `updated_at` = '2009-03-19 05:21:35' WHERE `id` = 35[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 36) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 36 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 36) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 36) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: 94111. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>94111</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="5" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8101030" south="37.7910800" east="-122.3912110" west="-122.4091110" />
+    </ExtendedData>
+    <Point><coordinates>-122.4000032,37.7983181,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'norm' AND `users`.id <> 36) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 37.7983181, `lng` = -122.4000032, `rated` = 64.9995, `updated_at` = '2009-03-19 05:21:35' WHERE `id` = 36[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 37) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 37 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 37) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 37) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: san francisco. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>san francisco</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8120000" south="37.7034000" east="-122.3482000" west="-122.5270000" />
+    </ExtendedData>
+    <Point><coordinates>-122.4192040,37.7751960,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.002000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie2' AND `users`.id <> 37) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 37.775196, `lng` = -122.419204, `rated` = 38.9997, `updated_at` = '2009-03-19 05:21:36' WHERE `id` = 37[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 38 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 38) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 38) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa3' AND `users`.id <> 38) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `updated_at` = '2009-03-19 05:21:36' WHERE `id` = 38[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 41) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 41 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 41) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 41) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: Va, Fairfax. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>Va, Fairfax</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Fairfax, VA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><Locality><LocalityName>Fairfax</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.8724180" south="38.8327800" east="-77.2686630" west="-77.3351630" />
+    </ExtendedData>
+    <Point><coordinates>-77.2981670,38.8515310,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa4' AND `users`.id <> 41) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 38.851531, `lng` = -77.298167, `updated_at` = '2009-03-19 05:21:37' WHERE `id` = 41[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 42) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 42 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 42) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 42) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa5' AND `users`.id <> 42) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `updated_at` = '2009-03-19 05:21:37' WHERE `id` = 42[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 46) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 46 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 46) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 46) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa9' AND `users`.id <> 46) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `lng` = 78.96288, `updated_at` = '2009-03-19 05:21:37' WHERE `id` = 46[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 47) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 47 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 47) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 47) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: indianapolis, indiana. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>indianapolis, indiana</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Indianapolis, IN, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName><Locality><LocalityName>Indianapolis</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9274360" south="39.6321820" east="-85.9374040" west="-86.3281190" />
+    </ExtendedData>
+    <Point><coordinates>-86.1562550,39.7670160,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa10' AND `users`.id <> 47) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 39.767016, `lng` = -86.156255, `rated` = 2.0, `updated_at` = '2009-03-19 05:21:37' WHERE `id` = 47[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 43) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 43 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 43) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 43) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: ny. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ny</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>New York, NY, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>NY</AdministrativeAreaName><Locality><LocalityName>New York</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.9174990" south="40.4773830" east="-73.6997930" west="-74.2590900" />
+    </ExtendedData>
+    <Point><coordinates>-73.9869510,40.7560540,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.002000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa6' AND `users`.id <> 43) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 40.756054, `lng` = -73.986951, `rated` = 108.7279, `updated_at` = '2009-03-19 05:21:37' WHERE `id` = 43[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 48) [0m
+  [4;35;1mSQL (0.002000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 48 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 48) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 48) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa13' AND `users`.id <> 48) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.004000)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mUser Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 6 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 6) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 6) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'cheapcheap' AND `users`.id <> 6) [0m
+  [4;35;1mUser Update (0.017000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 7 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 7) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 7) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'superman' AND `users`.id <> 7) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `rated` = 2.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 7[0m
+  [4;36;1mSQL (0.029000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 10 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 10) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 10) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'batman' AND `users`.id <> 10) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 10[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 16 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 16) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 16) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'captainamerica' AND `users`.id <> 16) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 18) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 18 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 18) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 18) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'thor' AND `users`.id <> 18) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 21) [0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 21 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 21) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 21) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'odin' AND `users`.id <> 21) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `rated` = 0.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 21[0m
+  [4;36;1mSQL (0.019000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 22) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 22 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 22) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 22) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'thor' AND `users`.id <> 22) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 24) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 24 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 24) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 24) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'hulk' AND `users`.id <> 24) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `ranked` = 'got a bit', `rated` = 0.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 24[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 26) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 26 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 26) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 26) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'nkrym' AND `users`.id <> 26) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 27) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 27 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 27) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 27) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'avatar' AND `users`.id <> 27) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `rated` = 0.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 27[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 28) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 28 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 28) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 28) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'aadriasola' AND `users`.id <> 28) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 37.942282, `lng` = -122.029486, `rated` = 113.4536, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 28[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 29) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 29 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 29) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 29) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'chearp' AND `users`.id <> 29) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 30) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 30 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 30) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 30) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie' AND `users`.id <> 30) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 31) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 31 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 31) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 31) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: 891 Carthage Ct, Concord, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 Carthage Ct, Concord, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'geocode' AND `users`.id <> 31) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 37.942282, `ranked` = 'got a bit', `lng` = -122.029486, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 31[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 32) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 32 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 32) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 32) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: seattle, wa. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>seattle, wa</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Seattle, WA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>WA</AdministrativeAreaName><Locality><LocalityName>Seattle</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="47.7345610" south="47.4918700" east="-122.2246590" west="-122.4594030" />
+    </ExtendedData>
+    <Point><coordinates>-122.3472760,47.6209730,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'greenlantern' AND `users`.id <> 32) [0m
+  [4;35;1mUser Update (0.002000)[0m   [0mUPDATE `users` SET `lat` = 47.620973, `ranked` = 'got a bit', `lng` = -122.347276, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:27' WHERE `id` = 32[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 33) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 33 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 33) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 33) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: san francisco. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>san francisco</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8120000" south="37.7034000" east="-122.3482000" west="-122.5270000" />
+    </ExtendedData>
+    <Point><coordinates>-122.4192040,37.7751960,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie1' AND `users`.id <> 33) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 37.775196, `lng` = -122.419204, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 33[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 34) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 34 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 34) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 34) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: Ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>Ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'sergioqa' AND `users`.id <> 34) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 36.778261, `ranked` = 'got a bit', `lng` = -119.4179324, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 34[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 35) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 35 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 35) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 35) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa21' AND `users`.id <> 35) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 35[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 36) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 36 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 36) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 36) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: 94111. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>94111</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="5" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8101030" south="37.7910800" east="-122.3912110" west="-122.4091110" />
+    </ExtendedData>
+    <Point><coordinates>-122.4000032,37.7983181,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'norm' AND `users`.id <> 36) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 37.7983181, `lng` = -122.4000032, `rated` = 64.9995, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 36[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 37) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 37 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 37) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 37) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: san francisco. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>san francisco</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.8120000" south="37.7034000" east="-122.3482000" west="-122.5270000" />
+    </ExtendedData>
+    <Point><coordinates>-122.4192040,37.7751960,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'leslie2' AND `users`.id <> 37) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 37.775196, `lng` = -122.419204, `rated` = 38.9997, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 37[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 38 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 38) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 38) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa3' AND `users`.id <> 38) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `updated_at` = '2009-03-19 05:23:28' WHERE `id` = 38[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 39) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 39 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 39) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 39) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: Walnut Creek, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>Walnut Creek, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Walnut Creek, CA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Walnut Creek</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9449650" south="37.8423680" east="-121.9805080" west="-122.1000220" />
+    </ExtendedData>
+    <Point><coordinates>-122.0643220,37.9062570,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'karina' AND `users`.id <> 39) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 37.906257, `ranked` = 'got a bit', `lng` = -122.064322, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 39[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 40) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 40 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 40) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 40) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: VA, Alexandria. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>VA, Alexandria</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Alexandria, VA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><Locality><LocalityName>Alexandria</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.8448050" south="38.7871140" east="-77.0357990" west="-77.1444350" />
+    </ExtendedData>
+    <Point><coordinates>-77.0878900,38.8272510,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa02' AND `users`.id <> 40) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 38.827251, `ranked` = 'got a bit', `lng` = -77.08789, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 40[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 41) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 41 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 41) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 41) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: Va, Fairfax. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>Va, Fairfax</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Fairfax, VA, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><Locality><LocalityName>Fairfax</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.8724180" south="38.8327800" east="-77.2686630" west="-77.3351630" />
+    </ExtendedData>
+    <Point><coordinates>-77.2981670,38.8515310,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.002000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa4' AND `users`.id <> 41) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 38.851531, `lng` = -77.298167, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 41[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 42) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 42 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 42) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 42) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>California, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="42.0095190" south="32.5288320" east="-114.1312120" west="-124.4820030" />
+    </ExtendedData>
+    <Point><coordinates>-119.4179324,36.7782610,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa5' AND `users`.id <> 42) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `lat` = 36.778261, `lng` = -119.4179324, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 42[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 43) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 43 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 43) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 43) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: ny. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>ny</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>New York, NY, USA</address>
+    <AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>NY</AdministrativeAreaName><Locality><LocalityName>New York</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.9174990" south="40.4773830" east="-73.6997930" west="-74.2590900" />
+    </ExtendedData>
+    <Point><coordinates>-73.9869510,40.7560540,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.002000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa6' AND `users`.id <> 43) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 40.756054, `lng` = -73.986951, `rated` = 108.7279, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 43[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 44) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 44 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 44) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 44) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa 7' AND `users`.id <> 44) [0m
+  [4;35;1mUser Update (0.001000)[0m   [0mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 44[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 45) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 45 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 45) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 45) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>620</code>
+    <request>geocode</request>
+  </Status>
+</Response></kml>
+Google was unable to geocode address: in
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = '' AND `users`.id <> 45) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `ranked` = 'got a bit', `updated_at` = '2009-03-19 05:23:29' WHERE `id` = 45[0m
+  [4;36;1mSQL (0.002000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 46) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 46 ) ) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 46) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 46) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>620</code>
+    <request>geocode</request>
+  </Status>
+</Response></kml>
+Google was unable to geocode address: in
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa9' AND `users`.id <> 46) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 47) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 47 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 47) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 47) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: indianapolis, indiana. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>indianapolis, indiana</name>
+  <Status>
+    <code>620</code>
+    <request>geocode</request>
+  </Status>
+</Response></kml>
+Google was unable to geocode address: indianapolis, indiana
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa10' AND `users`.id <> 47) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.002000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 48) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 48 ) ) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 48) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 48) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa13' AND `users`.id <> 48) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 49) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 49 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 49) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 49) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa17' AND `users`.id <> 49) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:30' WHERE `id` = 49[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 50) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 50 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 50) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 50) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = '1234567890123456789012345678901234567890' AND `users`.id <> 50) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:31' WHERE `id` = 50[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 51) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 51 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 51) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 51) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa100' AND `users`.id <> 51) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:31' WHERE `id` = 51[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 52) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 52 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 52) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 52) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa-' AND `users`.id <> 52) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `updated_at` = '2009-03-19 05:23:31' WHERE `id` = 52[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 53) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 53 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 53) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 53) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa18' AND `users`.id <> 53) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:31' WHERE `id` = 53[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 54) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 54 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 54) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 54) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa19' AND `users`.id <> 54) [0m
+  [4;36;1mUser Update (0.002000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `updated_at` = '2009-03-19 05:23:31' WHERE `id` = 54[0m
+  [4;35;1mSQL (0.003000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 55) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 55 ) ) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 55) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 55) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa20' AND `users`.id <> 55) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:32' WHERE `id` = 55[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.002000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 56) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 56 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 56) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 56) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: in. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>in</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>India</address>
+    <AddressDetails Accuracy="1" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>IN</CountryNameCode><CountryName>India</CountryName></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="35.5042110" south="6.7471350" east="97.4032970" west="67.3909760" />
+    </ExtendedData>
+    <Point><coordinates>78.9628800,20.5936840,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>Indiana, USA</address>
+    <AddressDetails Accuracy="2" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IN</AdministrativeAreaName></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.7613680" south="37.7717430" east="-84.7845800" west="-88.0978920" />
+    </ExtendedData>
+    <Point><coordinates>-85.6023643,40.5512165,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'testqa23' AND `users`.id <> 56) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 20.593684, `ranked` = 'got a bit', `lng` = 78.96288, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:32' WHERE `id` = 56[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 57) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 57 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 57) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 57) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: 94518. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>94518</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="5" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9753970" south="37.9317020" east="-121.9920750" west="-122.0518220" />
+    </ExtendedData>
+    <Point><coordinates>-122.0212337,37.9461207,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'alfonso' AND `users`.id <> 57) [0m
+  [4;36;1mUser Update (0.001000)[0m   [0;1mUPDATE `users` SET `lat` = 37.9461207, `ranked` = 'got a bit', `lng` = -122.0212337, `rated` = 0.0, `updated_at` = '2009-03-19 05:23:32' WHERE `id` = 57[0m
+  [4;35;1mSQL (0.001000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.001000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 58) [0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `ratings` WHERE (rateable_type='BlogEntry'
+ and rateable_id in
+ (select b.id
+ from blog_entries b
+ where b.user_id = 58 ) ) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mSELECT count(*) AS count_all FROM `ratings` WHERE (user_id = 58) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT avg(`ratings`.rating) AS avg_rating FROM `ratings` WHERE (user_id = 58) [0m
+  [4;36;1mSQL (0.001000)[0m   [0;1mBEGIN[0m
+Google geocoding. Address: 94518. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>94518</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="5" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9753970" south="37.9317020" east="-121.9920750" west="-122.0518220" />
+    </ExtendedData>
+    <Point><coordinates>-122.0212337,37.9461207,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT `name` FROM `users` WHERE (`users`.name = 'alfonso2' AND `users`.id <> 58) [0m
+  [4;36;1mUser Update (0.000000)[0m   [0;1mUPDATE `users` SET `lat` = 37.9461207, `lng` = -122.0212337, `updated_at` = '2009-03-19 05:23:32' WHERE `id` = 58[0m
+  [4;35;1mSQL (0.002000)[0m   [0mCOMMIT[0m
