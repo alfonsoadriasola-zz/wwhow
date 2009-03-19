@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   private
   def self.rate(user)
 
+    entries = user.blog_entries.count
     ratedMessags, messagesRated, averageRating = 0
     ratedMessages = Rating.count(:conditions =>
             %Q{rateable_type='BlogEntry'
@@ -30,22 +31,22 @@ class User < ActiveRecord::Base
     messagesRated = 1 if messagesRated.nil?
     averageRating = 1 if averageRating.nil?
 
-    averageRating  * ( ratedMessages * 2  + messagesRated )
+    averageRating  * (entries*2 + ratedMessages * 2  + messagesRated )
   end
 
   def self.rank(rating)
     case rating
-    when 0..20
+    when 0..169
       "got a bit"
-    when 19..199
+    when 170..399
       "got some"
-    when 200..399
+    when 400..899
       "pretty good"
-    when 400..599
+    when 900..1599
       "darn good"
-    when 600..799
+    when 1600..2799
       "really great"
-    when 800..1200
+    when 2800..3600
       "wwhow!"
     else
       "wwhow!!!"
