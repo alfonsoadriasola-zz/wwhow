@@ -32,21 +32,21 @@
                 }
 
         function addMarkers() {
-        <% mapevents=0; i=0; 40.times { i = i - 1;m=@messages[i]; %>
+        <% mapevents = 0
+           @messages.sort_by_distance_from(session[:geo_location])
+           @messages.each{|m| %>
             <% if not m.nil?||m.lat.nil?
-                mapevents = mapevents +1
                 if m.price
                     price = '$'+number_with_precision(m.price, 2)
                 else
                     price=m.price_text
                 end
+                mapevents = 1
             end
-
             %>
             <%= %Q{
-            mArray.push('#{m.lat};#{m.lng};#{m.what.delete("'")} : #{m.where.delete("'").downcase} #{ price }; about #{number_with_precision(m.distance_to(session[:geo_location]), 1)} miles away ');
-            } unless m.nil?||m.lat.nil? %>
-        <% } %>
+                 mArray.push('#{m.lat};#{m.lng};#{m.what.delete("'")} #{m.where.delete("'").downcase} #{price}; about #{number_with_precision(m.distance_to(session[:geo_location]), 1)} miles away ');} unless m.nil?||m.lat.nil? %>
+            <% } %>
 
         if (mArray.length) {
                 var bounds = new GLatLngBounds();
@@ -56,8 +56,7 @@
                 var markerOptions = { icon:homeIcon, title:'You are here!'};
                 var homeMarker = new GMarker(centerPoint, markerOptions);
                 bounds.extend(centerPoint);
-                map.addOverlay(homeMarker);
-                mArray.reverse();
+                map.addOverlay(homeMarker);               
                 var numberedIcon = new GIcon(G_DEFAULT_ICON);
                 var n=0;
                 for (n=0 ; n < mArray.length ; n++ ) {

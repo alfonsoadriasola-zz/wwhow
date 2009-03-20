@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   def find_by_name
     @user = User.find_by_name(params[:name])
     get_initial_messages
+    safe_get_twits
     prepare_tag_clouds
     respond_to do |format|
       if @user

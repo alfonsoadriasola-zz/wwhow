@@ -37,22 +37,34 @@ class ApplicationController < ActionController::Base
 
     # Set default location
     if logged_in?
-
       if params[:default_location].nil? && current_web_user.user.address == ""
         @address = 'San Francisco, CA, USA'
       elsif !params[:default_location].nil? && params[:default_location] != current_web_user.user.address
         @address = params[:default_location]
+      elsif session[:geo_location].nil?
+        @address = current_web_user.user.address
       else
         @address = current_web_user.user.address
       end
     else
       if  params[:default_location] && params[:default_location] != ""
         @address = params[:default_location]
+      elsif session[:geo_location].nil?
+        @address = 'San Francisco, CA, USA'
       else
-        @address = 'San Francisco, CA, USA' if session[:geo_location].nil?
+        @address = session[:geo_location]
       end
     end
-    session[:geo_location] = BlogEntry.get_geolocation(@address)  if @address
+
+    session[:debug] = session[:geo_location].nil?
+
+    if session[:geo_location].nil?
+      session[:geo_location] = BlogEntry.get_geolocation(@address)
+    else
+      unless session[:geo_location] == @address
+        session[:geo_location] = BlogEntry.get_geolocation(@address)
+      end
+    end
 
     #set widgets
     unless params[:blog_entry].nil? then
@@ -67,10 +79,10 @@ class ApplicationController < ActionController::Base
       session[:sliders] = false
       session[:map] = false
     end
-    
+
     if logged_in?
       @filter[:show_unmapped] = params[:user][:show_unmapped] == "on" if params[:user]
-      @filter[:show_unmapped] = true if params[:user].nil?      
+      @filter[:show_unmapped] = true if params[:user].nil?
     else
       @filter[:show_unmapped] = true;
     end
@@ -199,7 +211,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def finish_search
-    @ids = @messages.collect{|m| m.id}
+    @ids = @messages.collect{|m| m.id }
     if @messages.empty?
       flash[:error] = "<p>Sorry, I could not find any entries for that</p>"
       if session[:sliders]==true
@@ -225,7 +237,7 @@ class ApplicationController < ActionController::Base
     if logged_in?
       current_web_user.user.rated = User.rate(current_web_user.user);
       current_web_user.user.ranked = User.rank(current_web_user.user.rated);
-      current_web_user.user.save
+      current_web_user.user.save(false)
     end
   end
 

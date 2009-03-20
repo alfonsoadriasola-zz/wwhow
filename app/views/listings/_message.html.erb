@@ -15,7 +15,7 @@
 
     </td>
     <td title="<%= h("about "<<number_with_precision(@histmsg.distance_to(session[:geo_location]), 1) << " miles ")  if @histmsg.lat %>">
-
+         
         <%= h @histmsg.where.downcase %>
 
         <% if @histmsg.lat then %>
