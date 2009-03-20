@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of  :name
 
-  def self.find_active    
+  def self.find_active
     User.find(:all, :conditions => ['rated > 0'], :order => "rated desc", :limit => 50 )
   end
 
@@ -18,14 +18,18 @@ class User < ActiveRecord::Base
 
     entries = user.blog_entries.count
     ratedMessags, messagesRated, averageRating = 0
-    ratedMessages = Rating.count(:conditions =>
-            %Q{rateable_type='BlogEntry'
+    ratedMessages = Rating.count(:conditions => [ %Q{rateable_type='BlogEntry'
                                  and rateable_id in
                                         (select b.id
                                         from  blog_entries b
-                                        where b.user_id = #{user.id} ) } )
-    messagesRated = Rating.count(:conditions => "user_id = #{user.id}")
-    averageRating = Rating.average(:rating, :conditions => "user_id = #{user.id}")
+                                        where b.user_id = ? ) }, user.id ] )
+
+    messagesRated = Rating.count(:conditions =>[ "user_id = ?",user.id])
+    averageRating = Rating.average(:rating, :conditions => [ %Q{rateable_type='BlogEntry'
+                                 and rateable_id in
+                                        (select b.id
+                                        from  blog_entries b
+                                        where b.user_id = ? ) }, user.id ] )
 
     ratedMessages = 1 if ratedMessages.nil?
     messagesRated = 1 if messagesRated.nil?
