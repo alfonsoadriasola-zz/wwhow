@@ -27,7 +27,7 @@
                            else
                                price= number_to_currency(@blog_entry.price)
                            end %>
-                        <%= f.text_field :price, :size=> 6, :value => number_with_precision(price, 2) %>
+                        <%= f.text_field :price, :size=> 6, :value => price %>
                     </p>
 
                     <p><label>Rating:</label>
@@ -45,6 +45,9 @@
                             {:url => { :controller => 'users', :action => 'destroy_blog_entry', :blog_entry_id =>  @blog_entry.id },
                                     :confirm => "It will be gone! Sure?"},
                             {:class=> 'button'} %>
+
+                    <%= link_to "cancel", "/"<<current_web_user.login, {:class=> "button"} %>
+
                 </td>
             </tr>
         </table>

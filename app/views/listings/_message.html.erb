@@ -6,10 +6,10 @@
 
         <span style="display:none"> <%= h @histmsg.categories.join(' ') -%> </span>
 
-        <% if current_web_user && current_web_user.user.id == @histmsg.user_id %>
+        <% if logged_in? && ( current_web_user.user.id == @histmsg.user_id || current_web_user.is_admin  )%>
             <span><%= link_to_remote  "<em>edit</em>", {:update => "tr#{@histmsg.id}",
                     :url => { :controller => 'users', :action => 'edit_blog_entry',
-                            :blog_entry_id => @histmsg.id }}, {:class=>"buttonEdit", :title=>"edit"} %></span>
+                              :blog_entry_id => @histmsg.id }}, {:class=>"buttonEdit", :title=>"edit"} %></span>
 
         <% end %>
 
