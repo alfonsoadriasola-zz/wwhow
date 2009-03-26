@@ -189,13 +189,13 @@ class UsersController < ApplicationController
   def update_blog_entry
     return unless logged_in?
     @user = current_web_user.user
-    @histmsg= BlogEntry.find(params[:blog_entry][:id])
+    @histmsg= BlogEntry.find(params[:blog_entry_edit][:id])
 
-    @histmsg.what = params[:blog_entry][:what] unless params[:blog_entry][:what].nil?
-    @histmsg.where = params[:blog_entry][:where] unless params[:blog_entry][:where].nil?
-    @histmsg.category_list = params[:blog_entry][:category_list] unless params[:blog_entry][:category_list].nil?
+    @histmsg.what = params[:blog_entry_edit][:what] unless params[:blog_entry_edit][:what].nil?
+    @histmsg.where = params[:blog_entry_edit][:where] unless params[:blog_entry_edit][:where].nil?
+    @histmsg.category_list = params[:blog_entry_edit][:category_list] unless params[:blog_entry_edit][:category_list].nil?
 
-    price = params[:blog_entry][:price]
+    price = params[:blog_entry_edit][:price]
     @histmsg.price = price.to_f
     @histmsg.price_text = price
 
