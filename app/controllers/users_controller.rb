@@ -202,6 +202,7 @@ class UsersController < ApplicationController
     if @histmsg.save
       clear_flash
       @histmsg.geocode_where
+      @histmsg.save
       update_current_user_ranking
       respond_to do |format|
         format.js
