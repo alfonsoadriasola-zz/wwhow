@@ -21,12 +21,12 @@
                         <%= f.text_field :where, :size => 66 %>
                     </p>
 
-                    <p><label>How Much:</label>
+                    <p><label>How Much: $</label>
                         <% displaytext = @blog_entry.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless @blog_entry.price_text.nil?
                            if displaytext
                                price= @blog_entry.price_text
                            else
-                               price= number_to_currency(@blog_entry.price)
+                               price= number_with_precision(@blog_entry.price, 2)
                            end %>
                         <%= f.text_field :price, :size=> 6, :value => price %>
                     </p>
