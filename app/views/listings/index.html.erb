@@ -2,13 +2,18 @@
     <%= render_partial 'listings/search' %>
     <div id="container" class="centered">
         <div id="welcome" onclick="window.location.assign('/signup');"
-            
+
              <% if session[:sliders] && session[:sliders]==true then %>
              class="hide"
              <% end %> >
 
-      <div style="position:relative" >      <p><strong>Aren't we all trying to save some money, find discounts and then spread the word?</strong> <br/>
-            Maybe it's a little bit of bragging, but it feels great to find a good deal and then tell your friends about it so they can take advantage too.</p></div>
+            <div style="position:relative; font-size:1.2em;">
+                <p>
+                 Found a great deal? Looking to pinch some pennies? You&rsquo;ve come to the right place.
+                    From every day stuff like a great sale on milk, jeans, or shoes, to treasures found at a garage sale; post it all here on <strong>WWHOW!</strong>  
+
+                </p>
+            </div>
         </div>
 
         <%= render_partial 'layouts/leftbar' %>
