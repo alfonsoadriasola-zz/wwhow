@@ -158,10 +158,9 @@ class ApplicationController < ActionController::Base
       end
       @messages = @messages.uniq
       #search by author (only possible through tag)
-    elsif params[:blog_entry] && params[:blog_entry][:author_id]!= ""
-      @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 100
-
-    else
+   elsif params[:blog_entry] && params[:blog_entry][:author_id]!= ""
+      @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
+   else
       #fallback
       get_initial_messages
     end
@@ -171,9 +170,11 @@ class ApplicationController < ActionController::Base
       @messages = @messages.find_all{|m| m.price >= @filter[:price_from].to_f && m.price <= @filter[:price_to].to_f }
     end
 
-    distance = @filter[:radius].to_f
-    @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
-    @messages.sort_by_distance_from(session[:geo_location])
+    if !search_by_author then
+      distance = @filter[:radius].to_f
+      @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
+      @messages.sort_by_distance_from(session[:geo_location])
+    end
 
     if (logged_in? && @show_friends_only== true)
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
@@ -188,11 +189,8 @@ class ApplicationController < ActionController::Base
     initialize_filter
     @messages = BlogEntry.find :all, :limit=>500, :order => 'created_at desc', :include =>[:user, :categories,  :ratings]
     distance = @filter[:radius].to_f
-
-
     @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
     @messages.sort_by_distance_from(session[:geo_location])
-
     if (logged_in? && @show_friends_only == true )
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
     end
