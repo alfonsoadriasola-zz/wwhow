@@ -7,15 +7,16 @@
 
         <tr>
             <td><label>What:</label> <br/> <%= f.text_field :what, :size => 30 %> <br/>
-                <span class="help">e.g.,wine glasses, sofas, rugs </span>
+                <span class="help">e.g., diapers, t-shirts, books, bags, toys </span>
             </td>
 
             <td><label>Where:</label> <br/><%= f.text_field :where, :size => 30 %>  <br/>
-                <span class="help">Crate and Barrel@55 Stockton St,San Francisco</span>
+                <span class="help">walgreens  @ mission st and 3rd st, san francisco <br/>
+                (put in the store name @ address ) </span>
             </td>
 
             <td><label>How Much:</label> <br/> $<%= f.text_field :price, :size=>15 -%> <br/>
-                <span class="help">$1.49 each, 50% off, BOGOF, etc (get it?)</span>
+                <span class="help">$1.49 each, 50% off, BOGOF, etc.  (get it?)</span>
             </td>
 
             <td style="vertical-align:middle;">

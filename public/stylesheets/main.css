@@ -395,8 +395,7 @@ span.left {
     border: solid 1px blue;
 }
 
-#inputBox td {
-    line-height: 1.7em;
+#inputBox td {    
     background-color: #d2e1f4;
     margin: .2em .2em .2em .2em;
     vertical-align: top;
