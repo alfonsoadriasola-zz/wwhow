@@ -8,7 +8,7 @@
 
         <% form_for :web_user, :url => web_users_path do |f| -%>
             <% if error_messages_for(:web_user) != ""  then %>
-                <div class="error"> <%= error_messages_for :web_user %> </div>
+                <div id="wwhwosays" class="error"> <%= error_messages_for :web_user %> </div>
             <% end %>
 
             <p><%= label_tag 'login' %>
@@ -19,14 +19,14 @@
 
             <p><%= label_tag 'email' %>
                 <%= f.text_field :email %> <br/>
-                <span class="help"><%= h "(If you lose your password this is where we will rescue it from, make it real)" %></span>
-
+                <span class="help">(Better make this real. If you lose your password, you'll need to reset it from your email.
+                     Don't worry, we won't use it for useless messages and we won't sell it either.
+                    <br/> See our <%= link_to 'privacy policy','/privacy' %> )</span>
             </p>
-
 
             <p><%= label_tag 'password' %>
                 <%= f.password_field :password %> <br/>
-                <span class="help"><%= h "(You'll use this to log in, so it'd be good if it was easy to remember)" %></span>
+                <span class="help"><%= h "(Youll use this to log in, so it'd be good if it was easy to remember)" %></span>
 
             </p>
 
@@ -45,13 +45,25 @@
             </p>
 
             <div class="centered-xxs">
-                 <div class="centered-xxs">  <%= recaptcha_tags({:display => {:theme => 'clean'}}) %> </div>
+
+                
+                <%= recaptcha_tags({:display => {:theme => 'clean'}}) %>
+
+                 <em> I accept the  <%= link_to 'terms of service','/tos' %> </em>
+
+                 <%=check_box "web_user","accept_tos",{},1,0 %>
+                 
+                
                 <%= submit_tag 'Sign up', {:class=> "buttonRed"} %>
+
+
             </div>
+
         <% end -%>
 
+        <span style="position: absolute; z-index: 10; width: 312px; right: -175px; height: 268px; top: 0px;" id="tipsy-headset"></span>
 
-          <span style="position: absolute; z-index: 10; width: 312px; right: -175px; height: 268px; top: 0px;" id="tipsy-headset"></span>
+
     </div>
 </div>
 

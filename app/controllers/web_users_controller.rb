@@ -16,9 +16,14 @@ class WebUsersController < ApplicationController
 
 
   def create
+    success = true
     logout_keeping_session!
     @web_user = WebUser.new(params[:web_user])
-    success = verify_recaptcha(@web_user) if @web_user
+    if params[:web_user][:accept_tos] == "0"     
+      success=false
+      @web_user.errors.add("", "You must accept the terms of service to sign up") 
+    end
+    success = success && verify_recaptcha(@web_user) if @web_user
     if success && @web_user.save
       if @web_user.create_user(:name=>@web_user.login, :uri => @web_user.email, :address => params[:web_user][:address])
         redirect_to :action => 'activate', :activation_code => @web_user.activation_code

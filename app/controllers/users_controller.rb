@@ -97,7 +97,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if success
-        flash[:notice] = 'User was successfully updated.'
+        flash[:notice] = 'Thanks for keeping your profile up to date.'
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
       else
