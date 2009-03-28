@@ -43,6 +43,7 @@ class ApplicationController < ActionController::Base
         @address = params[:default_location]
       elsif session[:geo_location].nil?
         @address = current_web_user.user.address
+        session[:geo_location] = BlogEntry.get_geolocation(@address)
       else
         @address = current_web_user.user.address
       end
