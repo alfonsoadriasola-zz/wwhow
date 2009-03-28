@@ -1,6 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-
+    geocode_ip_address
     layout 'common'
 
     # Be sure to include AuthenticationSystem in Application Controller instead
