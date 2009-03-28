@@ -36,14 +36,13 @@ class ApplicationController < ActionController::Base
 
 
     # Set default location
-    if logged_in?
+    if current_web_user
       if params[:default_location].nil? && current_web_user.user.address == ""
         @address = 'San Francisco, CA, USA'
-      elsif !params[:default_location].nil? && params[:default_location] != current_web_user.user.address
+      elsif params[:default_location] && params[:default_location] != current_web_user.user.address
         @address = params[:default_location]
       elsif session[:geo_location].nil?
-        @address = current_web_user.user.address
-        session[:geo_location] = BlogEntry.get_geolocation(@address)
+        @address = current_web_user.user.address      
       else
         @address = current_web_user.user.address
       end
@@ -57,10 +56,8 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    session[:debug] = session[:geo_location].nil?
-
     if session[:geo_location].nil?
-      session[:geo_location] = BlogEntry.get_geolocation(@address)
+       session[:geo_location] = BlogEntry.get_geolocation(@address)
     else
       unless session[:geo_location] == @address
         session[:geo_location] = BlogEntry.get_geolocation(@address)
@@ -97,11 +94,7 @@ class ApplicationController < ActionController::Base
         @show_friends_only = current_web_user.user.show_friends_only
       end
     end
-
-
-
   end
-
 
   # Only search routine. All variations handled inside this app wide method.
 
