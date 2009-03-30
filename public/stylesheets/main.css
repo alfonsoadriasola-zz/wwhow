@@ -69,6 +69,7 @@ body div {
 #rightbar div, #leftbar div {
     border: none;
     padding: .2em;
+    overflow:hidden;
 }
 
 #container, #container-loggedin {
