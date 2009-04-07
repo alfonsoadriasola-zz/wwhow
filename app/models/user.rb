@@ -39,21 +39,21 @@ class User < ActiveRecord::Base
   end
 
   def self.rank(rating)
-    case rating
+    case rating.to_i
     when 0..169
       "got a bit"
     when 170..399
       "got some"
-    when 400..899
+    when 400..1899
       "pretty good"
-    when 900..1599
+    when 1900..4599
       "darn good"
-    when 1600..2799
+    when 4600..8279
       "really great"
-    when 2800..3600
+    when 8280..1660000
       "wwhow!"
     else
-      "wwhow!!!"
+      "lame"
     end
 
   end

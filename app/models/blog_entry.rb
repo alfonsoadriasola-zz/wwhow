@@ -1,7 +1,7 @@
 class BlogEntry < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :what , :message => " - You surely meant to post something"
+  validates_presence_of :what, :message => " - You surely meant to post something"
   validates_length_of   :what,  :within => 3..400
 
   validates_presence_of :where,  :message => " - did you see this deal? "
@@ -35,7 +35,11 @@ class BlogEntry < ActiveRecord::Base
   def set_tags(whats)
     whats.downcase!
     list = whats.split(',');
-    list.each{|item| item=item.strip; self.category_list.concat(item.split(' '))}
+    list.each{|item| item=item.strip;
+    if item.size >= 4
+      self.category_list.concat(item.split(' '))
+    end
+    }
   end
 
 
@@ -53,7 +57,7 @@ class BlogEntry < ActiveRecord::Base
         self.lng= loc.lng
       else
         self.lat = nil
-        self.lng = nil         
+        self.lng = nil
       end
 
     end
@@ -64,6 +68,16 @@ class BlogEntry < ActiveRecord::Base
     if loc.success
       loc
     end
+  end
+
+  def self.trim_tagcloud
+    Tag.find(:all).each do |t|
+      if t.name.size <= 4
+        t.taggings.destroy_all
+        t.destroy
+      end
+   end
+
   end
 
 

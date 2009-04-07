@@ -86,17 +86,8 @@ body div {
     background: url('/images/centerbgdark.jpg') transparent repeat-x;
 }
 
-#banner, #bannerLoggedIn {
-    z-index: 0;
-    display: block;
-}
-
-#banner {
-    background: transparent url(/images/top-tipsy.jpg) no-repeat center center;
-    height: 383px;
-}
-
-#bannerCommon, #bannerLoggedIn {
+#bannerLoggedIn, #bannerCommon {
+    z-index: 0;   
     background: transparent url(/images/banner-common.jpg) no-repeat center center;
     height: 117px;
     overflow-y: visible;
@@ -107,7 +98,6 @@ body div {
     height: 291px;
     cursor: pointer;
     z-index: -1;
-
 }
 
 #welcome p {
