@@ -35,11 +35,12 @@ class BlogEntry < ActiveRecord::Base
   def set_tags(whats)
     whats.downcase!
     list = whats.split(',');
-    list.each{|item| item=item.strip;
-    if item.size >= 4
-      self.category_list.concat(item.split(' '))
+    list.each do |item|
+      item=item.strip;
+      if item.size >= 2
+        self.category_list.concat(item.split(' '))
+      end
     end
-    }
   end
 
 
@@ -72,11 +73,11 @@ class BlogEntry < ActiveRecord::Base
 
   def self.trim_tagcloud
     Tag.find(:all).each do |t|
-      if t.name.size <= 4
+      if t.name.size <= 2
         t.taggings.destroy_all
         t.destroy
       end
-   end
+    end
 
   end
 
