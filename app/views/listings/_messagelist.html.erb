@@ -2,10 +2,13 @@
 
     <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p") %>
 
-        <% if session[:map] == true %>
+        <% mappables = @messages.select{|m| !m.lat.nil?} %>
+        <% show_map_icons =  session[:map] == true && !@messages.empty? && mappables.size > 0%>
+
+        <% if show_map_icons ==true  %>
             <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
             <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
-        <% else %>
+        <% elsif mappables.size > 0  %>
             <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
             <a id="mapOn" href="#" onclick="startMap();">Map it!</a>
         <% end %>
@@ -38,7 +41,9 @@
         <% for @histmsg in @messages %>
             <%= render_partial('listings/message') %>
         <% end %>
-
+        <% if @messages.empty? %>
+            <tr><td colspan = "7"> <%render_partial "shared/system_messages" %> </td></tr>
+        <% end %>
         
     </table>
 

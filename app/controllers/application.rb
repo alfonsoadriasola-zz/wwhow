@@ -34,33 +34,17 @@ class ApplicationController < ActionController::Base
     @filter[:radius]= 50
     @filter[:show_unmapped]=false
 
-
     # Set default location
-    if current_web_user
-      if params[:default_location].nil? && current_web_user.user.address == ""
-        @address = 'San Francisco, CA, USA'
-      elsif params[:default_location] && params[:default_location] != current_web_user.user.address
-        @address = params[:default_location]
-      elsif session[:geo_location].nil?
+    if params[:default_location]
+      @address = params[:default_location]
+    else
+      if logged_in?
         @address = current_web_user.user.address
       else
-        @address = current_web_user.user.address
-      end
-    else
-      if  params[:default_location] && params[:default_location] != ""
-        @address = params[:default_location]
-      elsif session[:geo_location].nil?
-        @address = 'San Francisco, CA, USA'
-      else
-        @address = session[:geo_location]
+        @adresss = 'San Francisco, CA, USA' if session[:geo_location].nil?
       end
     end
-
-    if session[:geo_location].nil?
-      session[:geo_location] = BlogEntry.get_geolocation(@address)
-    else
-      session[:geo_location] = BlogEntry.get_geolocation(@address)
-    end
+    session[:geo_location] = BlogEntry.get_geolocation(@address)   if @address
 
     #set widgets
     unless params[:blog_entry].nil? then
@@ -203,7 +187,7 @@ class ApplicationController < ActionController::Base
   def finish_search
     @ids = @messages.collect{|m| m.id }
     if @messages.empty?
-      flash[:error] = "Sorry, try again. Couldn&rsquo;t find a match for that <br/>"
+      flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "
       if session[:sliders]==true
         flash[:error]<< "<em>(your advanced filters may be too restrictive)</em><br/>"
       end
