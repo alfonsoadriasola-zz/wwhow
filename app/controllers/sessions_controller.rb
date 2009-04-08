@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
             new_cookie_flag = (params[:remember_me] == "1")
             handle_remember_cookie! new_cookie_flag
             update_user_rankings
-            session[:geo_location] = BlogEntry.get_geolocation(current_web_user.user.address)            
+            @address = User.find(current_web_user.user).address
+            session[:geo_location] = BlogEntry.get_geolocation(@address)
             redirect_back_or_default("/#{params[:login]}")            
             #flash[:notice] = "Logged in successfully"
         else
