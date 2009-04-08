@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
     if session[:geo_location].nil?
        session[:geo_location] = BlogEntry.get_geolocation(@address)
     else
-      unless session[:geo_location][:full_address] == @address
+       if session[:geo_location].nil?
         session[:geo_location] = BlogEntry.get_geolocation(@address)
       end
     end
