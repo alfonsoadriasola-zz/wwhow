@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
       elsif params[:default_location] && params[:default_location] != current_web_user.user.address
         @address = params[:default_location]
       elsif session[:geo_location].nil?
-        @address = current_web_user.user.address      
+        @address = current_web_user.user.address
       else
         @address = current_web_user.user.address
       end
@@ -57,11 +57,9 @@ class ApplicationController < ActionController::Base
     end
 
     if session[:geo_location].nil?
-       session[:geo_location] = BlogEntry.get_geolocation(@address)
+      session[:geo_location] = BlogEntry.get_geolocation(@address)
     else
-       if session[:geo_location].nil?
-        session[:geo_location] = BlogEntry.get_geolocation(@address)
-      end
+      session[:geo_location] = BlogEntry.get_geolocation(@address)
     end
 
     #set widgets
@@ -152,9 +150,9 @@ class ApplicationController < ActionController::Base
       end
       @messages = @messages.uniq
       #search by author (only possible through tag)
-   elsif params[:blog_entry] && params[:blog_entry][:author_id]!= ""
+    elsif params[:blog_entry] && params[:blog_entry][:author_id]!= ""
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
-   else
+    else
       #fallback
       get_initial_messages
     end
