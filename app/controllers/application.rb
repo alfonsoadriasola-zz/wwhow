@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
       if logged_in?
         @address = current_web_user.user.address
       else
-        @adresss = 'San Francisco, CA, USA' if session[:geo_location].nil?
+        @address = 'San Francisco, CA, USA' unless session[:geo_location] 
       end
     end
     session[:geo_location] = BlogEntry.get_geolocation(@address) if @address
