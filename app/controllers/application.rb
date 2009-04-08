@@ -218,7 +218,7 @@ class ApplicationController < ActionController::Base
 
   def update_active_user_ranking
     users = BlogEntry.find(:all, :select => 'DISTINCT user_id as id', :conditions =>['created_at > ?', Time.now - 60*60*24*180], :limit => 500)
-    users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save;}
+    users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save(false);}
   end
 
 
