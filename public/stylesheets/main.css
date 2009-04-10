@@ -104,7 +104,7 @@ body div {
     position: absolute;
     top: 90px;
     left: 40px;
-    width: 70%;
+    width: 66%;
 }
 
 #menu {
@@ -616,7 +616,7 @@ td.editing label {
     display: block;
 }
 
-#loginBox, #signupBox, #forgotBox, #usersBox {
+#loginBox, #signupBox, #forgotBox, #usersBox, .surface {
     background-color: #d2e1f4;
     padding: 20px 20px 20px 20px;
     line-height: 1.3em;

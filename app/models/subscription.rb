@@ -18,7 +18,7 @@ class Subscription < ActiveRecord::Base
 
 
   def self.create_blog_entries(twits)
-    twits.each{|t|
+    twits.each do|t|
       username = t.fetch('user').fetch('name')
       address = "http://twitter.com/#{username}"
       if user= User.find_by_name(username)
@@ -29,7 +29,7 @@ class Subscription < ActiveRecord::Base
         be.geocode_where
         be.save
       end
-    }
+    end
   end
 
 
