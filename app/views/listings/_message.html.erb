@@ -52,8 +52,9 @@
         <% end %>
     </td>
 
-    <td title="<%= distance_of_time_in_words(Time.now, @histmsg.created_at) %> ago">
-        <span class="small">
+    <td>
+        <em class="hide"><%=@histmsg.created_at.strftime("%m/%d/%Y %I:%M %p")%></em>
+        <span class="small" title="<%= distance_of_time_in_words(Time.now, @histmsg.created_at) %> ago">
             <%= @histmsg.created_at.strftime("%m/%d/%Y %I:%M %p") -%>
 
         </span>
