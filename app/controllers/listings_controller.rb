@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  geocode_ip_address
+  #geocode_ip_address
   layout "nonusers", :except => [:update_list]
 
   def show
