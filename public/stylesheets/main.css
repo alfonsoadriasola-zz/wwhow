@@ -8,7 +8,6 @@ span { border:dotted .1px red ;
 padding: .2em; }
 */
 
-
 body {
 /*font-family:Comic Sans, Comic Sans MS, cursive;*/
 /*font-family:'Century Gothic',Futura,'URW Gothic L',sans-serif;*/
@@ -67,7 +66,7 @@ body div {
 #rightbar div, #leftbar div {
     border: none;
     padding: .2em;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 #container, #container-loggedin {
@@ -85,7 +84,7 @@ body div {
 }
 
 #bannerLoggedIn, #bannerCommon {
-    z-index: 0;   
+    z-index: 0;
     background: transparent url(/images/banner-common.jpg) no-repeat center center;
     height: 117px;
     overflow-y: visible;
@@ -218,7 +217,7 @@ h2.error {
 }
 
 #errors {
-     color: #fff;
+    color: #fff;
 }
 
 #statusBox .label {
@@ -266,7 +265,6 @@ h2.error {
 
 }
 
-
 #messageListTable th {
     text-align: center;
     font-size: .8em;
@@ -280,20 +278,17 @@ td.comment {
 #messageListTable td {
     text-align: left;
     font-size: .8em;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 #messageListTable span.price, span.discount {
     font-size: small;
 }
 
-
 #messageListTable td.editing {
-    border:none;
-    font-size:1.2em;
+    border: none;
+    font-size: 1.2em;
 }
-
-
 
 #messageListTable tr {
     background-color: transparent;
@@ -348,16 +343,16 @@ span.right {
     text-align: left;
     float: right;
     width: 40%;
-    display:block;
-    line-height:2.2em;
+    display: block;
+    line-height: 2.2em;
 }
 
 span.left {
     text-align: right;
     float: left;
     width: 42%;
-    display:block;
-    line-height:2.2em;
+    display: block;
+    line-height: 2.2em;
 }
 
 #searchTable {
@@ -388,7 +383,7 @@ span.left {
     border: solid 1px blue;
 }
 
-#inputBox td {    
+#inputBox td {
     background-color: #d2e1f4;
     margin: .2em .2em .2em .2em;
     vertical-align: top;
@@ -420,7 +415,9 @@ span.left {
     height: 5em;
 }
 
-td.slider div { width:17.4em;}
+td.slider div {
+    width: 17.4em;
+}
 
 #sliderstable span {
     opacity: 1;
@@ -507,7 +504,7 @@ table.sortable .nosort {
 .button, .buttonRed {
     cursor: pointer;
     border: outset 1px #ccc;
-    background: #999;
+    background: #999999;
     color: #d50f10;
     font-weight: bold;
     padding: .2em .4em;
@@ -522,13 +519,17 @@ table.sortable .nosort {
 }
 
 #messageListTable td .button {
-    padding: 0 .2em 0 .2em;
     background: url(/images/toolButtonRed.png) repeat-x left top;
-    line-height: .5em;
+    line-height: 1em;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
     color: white;
-    font-size: 0.8em;
+    font-size: 1em;
+    float: right;
+    font-weight: bold;
+}
 
+#messageListTable td a.buttonRed, a.button {
+    height: 1.66em
 }
 
 #messageLisTable tr .hide {
