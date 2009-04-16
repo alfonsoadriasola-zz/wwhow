@@ -2,22 +2,23 @@
     <table id="slidersTable" cellspacing="2" cellpadding="0">
         <colgroup align="char" char=".">
 
-            <col width="33%" align="justify" />
-            <col width="33%" align="justify" />
-            <col width="33%" align="justify" />
+            <col width="33%" align="justify"/>
+            <col width="33%" align="justify"/>
+            <col width="33%" align="justify"/>
 
         </colgroup>
         <tr>
             <td class="slider">
 
                 <div>
-                        <span class="left"><span class="help">How much</span>
+                    <span class="left help">How much
                         <input id="blog_entry_search_price_from" name="blog_entry[price_from]"
                                size="2" type="text" value="<%= @filter[:price_from] %>"/></span>
-                        <span class="right"><span class="help">up to:$</span>
-                        <input id="blog_entry_search_price_to" name="blog_entry[price_to]"
-                               size="2" type="text" value="<%= @filter[:price_to] %>"/>
-                        </span>
+
+                    <span class="right help">up to $:
+                    <input id="blog_entry_search_price_to" name="blog_entry[price_to]"
+                           size="2" type="text" value="<%= @filter[:price_to] %>"/>
+                    </span>
                 </div>
                 <br/>
 
@@ -31,10 +32,10 @@
             </td>
 
             <td class="slider">
-                <div><span class="left">  <span class="help">Ratings </span>
+                <div><span class="left help">  Ratings:
                         <input id="blog_entry_search_rating_from" name="blog_entry[search_rating_from]"
                                size="2" type="text" value="<%= @filter[:rating_from] %>"/></span>
-                        <span class="right"><span class="help">to:</span>
+                        <span class="right help">to:
                             <input id="blog_entry_search_rating_to" name="blog_entry[search_rating_to]"
                                    size="2" type="text" value="<%= @filter[:rating_to] %>"/>
                         </span>
@@ -49,10 +50,12 @@
 
             </td>
             <td class="slider">
-                <div><span class="left"> <span class="help">Distance from me </span></span>
-
-                        <span class="right"> <input id="blog_entry_search_radius" name="blog_entry[radius]"
-                                                    size="6" type="text" value="<%= @filter[:radius] %>"/>  </span>
+                <div>
+                    <span class="left help">Distance to me:</span>
+                        <span class="right help">
+                            <input id="blog_entry_search_radius" name="blog_entry[radius]" size="4" type="text" value="<%= @filter[:radius] %>"/>
+                            miles. 
+                         </span>
                 </div>
                 <br/>
 
@@ -60,14 +63,15 @@
                     <div class="handle"></div>
                 </div>
 
+
             </td>
         </tr>
     </table>
 </div>
-  <div style="display:none">
-        <script type="text/javascript" language="javascript">
-            (function() {
-            var     zoom_slider = $('zoom_slider'),
+<div style="display:none">
+    <script type="text/javascript" language="javascript">
+        (function() {
+            var zoom_slider = $('zoom_slider'),
                     rating_slider = $('rgb_slider'),
                     price_slider = $('price_slider'),
                     search_from = $('blog_entry_search_rating_from'),
@@ -78,43 +82,51 @@
                     ;
 
             new Control.Slider(price_slider.select('.handle'), price_slider, {
-            range: $R(0, 500),
-            sliderValue: [<%= @filter[:price_from].to_s %>,<%= @filter[:price_to].to_s %>],
-            onSlide: function(values) {
+                range: $R(0, 500),
+                sliderValue: [
+                    <%= @filter[:price_from].to_s %>,
+                    <%= @filter[:price_to].to_s %>
+                ],
+                onSlide: function(values) {
                     price_from.setValue(values.map(Math.round)[0]);
                     price_to.setValue(values.map(Math.round)[1]);
-                    },
-            onChange: function(values) {
+                },
+                onChange: function(values) {
                     price_from.setValue(values.map(Math.round)[0]);
                     price_to.setValue(values.map(Math.round)[1]);
-                    },
-            restricted: true
+                },
+                restricted: true
             });
 
             new Control.Slider(rating_slider.select('.handle'), rating_slider, {
-            range: $R(0, 5),
-            sliderValue: [<%= @filter[:rating_from].to_s %>,<%= @filter[:rating_to].to_s %>],
-            onSlide: function(values) {
+                range: $R(0, 5),
+                sliderValue: [
+                    <%= @filter[:rating_from].to_s %>,
+                    <%= @filter[:rating_to].to_s %>
+                ],
+                onSlide: function(values) {
                     search_from.setValue(values.map(Math.round)[0]);
                     search_to.setValue(values.map(Math.round)[1]);
-                    },
-            onChange: function(values) {
+                },
+                onChange: function(values) {
                     search_from.setValue(values.map(Math.round)[0]);
                     search_to.setValue(values.map(Math.round)[1]);
-                    },
-            restricted: true
+                },
+                restricted: true
             });
 
             new Control.Slider(zoom_slider.down('.handle'), zoom_slider, {
-            range: $R(0, 50),
-            sliderValue:[<%= @filter[:radius] -%>],
-            onSlide: function(value) {
+                range: $R(0, 50),
+                sliderValue:[
+                    <%= @filter[:radius] -%>
+                ],
+                onSlide: function(value) {
                     search_radius.setValue(Math.round(value));
-                    },
-            onChange: function(value) {
+                },
+                onChange: function(value) {
                     search_radius.setValue(Math.round(value));
-                    }
+                }
             });
-            })();
-        </script>
-    </div>
+        })();
+    </script>
+</div>

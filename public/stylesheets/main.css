@@ -348,12 +348,16 @@ span.right {
     text-align: left;
     float: right;
     width: 40%;
+    display:block;
+    line-height:2.2em;
 }
 
 span.left {
     text-align: right;
     float: left;
     width: 42%;
+    display:block;
+    line-height:2.2em;
 }
 
 #searchTable {
@@ -415,6 +419,8 @@ span.left {
     width: 780px;
     height: 5em;
 }
+
+td.slider div { width:17.4em;}
 
 #sliderstable span {
     opacity: 1;
@@ -704,3 +710,4 @@ a {
 span.what {
     font-weight: bold;
 }
+
