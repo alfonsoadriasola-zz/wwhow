@@ -26,7 +26,7 @@ class BlogEntry < ActiveRecord::Base
     tokens.each{|t| t=t.split}
     self.what = tokens[0].sub('@wwhow', '').downcase
     list = self.what.split(',');
-    list.each{|item| self.category_list.concat(item.split(' '))}
+    list.each{|item| self.category_list.concat(item.split(' ').select{|w| w.size > 3 } )}
     self.where = tokens[1]
     self.price = tokens[2]
     self.discount = tokens[3]
@@ -37,9 +37,7 @@ class BlogEntry < ActiveRecord::Base
     list = whats.split(',');
     list.each do |item|
       item=item.strip;
-      if item.size >= 2
-        self.category_list.concat(item.split(' '))
-      end
+      self.category_list.concat(item.split(' ').select{|w| w.size > 3 } )
     end
   end
 

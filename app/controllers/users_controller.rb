@@ -7,10 +7,15 @@ class UsersController < ApplicationController
   before_filter :login_required
 
   def index
-    @users = User.find(:all)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
+    @user = User.find_by_web_user_id(current_web_user)
+    if current_web_user.is_admin?
+      @users = User.find(:all)
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @users }
+      end
+    else
+      redirect_to  @user
     end
   end
 
@@ -131,11 +136,11 @@ class UsersController < ApplicationController
     price = params[:blog_entry][:price]
     @msg = @user.blog_entries.new(
             :what => whats.downcase,
-            :where => wheres,
-            :price => price.to_f ,
-            :price_text => price
+                    :where => wheres,
+                    :price => price.to_f,
+                    :price_text => price
     )
-    
+
     @msg.set_tags(whats)
     @msg.geocode_where
     respond_to do |format|
@@ -154,10 +159,9 @@ class UsersController < ApplicationController
 
   def search
     flash[:notice] = flash[:error] = ""
-    @user = User.find params[:user][:id]
     get_search_results
     prepare_tag_clouds
-    render :action => 'show', :user_id => @user.id
+    render :action => 'show', :user_id => User.find_by_web_user_id(current_web_user.id)
   end
 
   def destroy_blog_entry

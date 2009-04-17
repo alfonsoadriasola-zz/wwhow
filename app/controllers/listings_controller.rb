@@ -25,9 +25,15 @@ class ListingsController < ApplicationController
     flash[:notice] = flash[:error] = ""
     get_search_results
     prepare_tag_clouds
-    render :action => 'index'
+
+    if logged_in?
+      render :controller => 'users', :action=>'show'
     else
-     redirect_back_or_default '/' 
+      render :action => 'index'
+    end
+
+    else
+     redirect_back_or_default '/'
     end
   end
 
@@ -35,7 +41,7 @@ class ListingsController < ApplicationController
   def update_list
     last_id = params[:last_id]
     @messages = BlogEntry.find :all, :conditions => "id > #{last_id||'id'}" #greather than the last one or none at all
-    flash[:notice] = Time.now.strftime("updated at  %m/%d/%Y at %I:%M") 
+    flash[:notice] = Time.now.strftime("updated at  %m/%d/%Y at %I:%M")
     session[:last_id]= BlogEntry.maximum("id")
   end
 
