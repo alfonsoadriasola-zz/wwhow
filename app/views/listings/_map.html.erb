@@ -33,7 +33,7 @@
 
         function addMarkers() {
         <% mapevents = 0
-           @messages.sort_by_distance_from(session[:geo_location])
+           @messages.sort_by_distance_from(location)
            @messages.each{|m| %>
             <% if not m.nil?||m.lat.nil?
                 if m.price
