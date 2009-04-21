@@ -45,7 +45,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    session[:geo_location] = BlogEntry.get_geolocation(@address) if @address
+    if @address && location = BlogEntry.get_geolocation(@address)
+      session[:geo_location] = location 
+    end
   
     #set widgets
     unless params[:blog_entry].nil? then
