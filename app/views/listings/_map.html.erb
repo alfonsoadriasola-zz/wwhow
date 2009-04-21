@@ -45,7 +45,7 @@
             end
             %>
             <%= %Q{
-                 mArray.push('#{m.lat};#{m.lng};#{m.what.delete("'")} #{m.where.delete("'").downcase} #{price}; about #{number_with_precision(m.distance_to(session[:geo_location]), 1)} miles away ');} unless m.nil?||m.lat.nil? %>
+                 mArray.push('#{m.lat};#{m.lng};#{m.what.delete("'")} #{m.where.delete("'").downcase} #{price}; about #{number_with_precision(m.distance_to(location), 1)} miles away ');} unless m.nil?||m.lat.nil? %>
             <% } %>
 
         if (mArray.length) {
