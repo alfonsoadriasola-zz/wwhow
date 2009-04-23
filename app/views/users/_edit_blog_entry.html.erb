@@ -3,11 +3,11 @@
         
        <input type="hidden" id="blog_entry_edit_id" name="blog_entry_edit[id]" value="<%=@blog_entry.id -%> />
 
-        <div <%='id="errors-'<<@blog_entry.id%>" class="error hide"><%= f.error_messages %>
+        <div <%='id="errors-'<<@blog_entry.id.to_s%>" class="error hide"><%= f.error_messages %>
             <%= flash[:error] %>
         </div>
 
-        <table id="edit-<%=@blog_entry.id %>">
+        <table id="edit-<%=@blog_entry.id.to_s %>">
             <tr>
                 <td class="editing">
                     <p><label> What:</label>
