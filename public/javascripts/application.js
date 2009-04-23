@@ -124,3 +124,17 @@ function toggle_hide_blocked_users(_value) {
     $('user_hide_blocked_users').setValue(_value);
 }
 
+function submitenter(myfield, e)
+{
+    var keycode;
+    if (window.event) keycode = window.event.keyCode;
+    else if (e) keycode = e.which;
+    else return true;
+    if (keycode == 13)
+    {
+        myfield.form.submit();
+        return false;
+    }
+    else
+        return true;
+}

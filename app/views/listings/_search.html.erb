@@ -1,40 +1,43 @@
 <div id="searchrow">
-
     <%= hidden_field :user, :id %>
-    <%= hidden_field :user, :show_friends_only %>    
+    <%= hidden_field :user, :show_friends_only %>
     <%= hidden_field :user, :show_unmapped, :value => @filter[:show_unmapped]||false %>
-    
     <%= hidden_field :blog_entry, :category_list %>
     <%= hidden_field :blog_entry, :author_id %>
     <%= hidden_field :blog_entry, :sliders, :value => session[:sliders]||false %>
     <%= hidden_field :blog_entry, :map, :value => session[:map]||false %>
-
-
-
-
     <table id="searchTable" cellspacing="0" cellpadding="4">
         <tr>
             <td colspan="2">
 
-                <input id="blog_entry_search" name="blog_entry[search]" onkeyup="tableFilter(this, 'messageListTable', '3')"
-                       size="40" type="text" value="<%=@filter[:searchterms]%>"/>
+                <input id="blog_entry_search" name="blog_entry[search]" onkeyup="tableFilter(this, 'messageListTable', '3');"
+                       size="40" type="text" value="<%= @filter[:searchterms] %>"
+                       onKeyPress="return submitenter(this,event);"
+                />
             </td>
             <td colspan="2">
                 <input id="default_location" name="default_location"
-                       size="40" type="text" value="<%= session[:geo_location].full_address unless session[:geo_location].nil? %>"/>
+                       size="40" type="text"
+                       onKeyPress="return submitenter(this,event);"
+                       value="<%= session[:geo_location].full_address unless session[:geo_location].nil? %>"/>
             </td>
 
             <td>
-                <%= link_to_function "<span>Search</span>", "$(this).up('form').submit()", {:class=>'buttonRed'} %>
+                <a class="buttonRed" onclick="$(this).up('form').submit(); return false;"
+                   href="#">
+                    <span>Search</span>
+                </a>
+
                 <%= link_to "<span>Reset</span>", "/#{@user.name unless @user.nil?}", {:class=>'button'} %>
-           
-                    <% if session[:sliders] == true %>
-                        <a id="slidersOff" class="button" href="#" onclick="slidersOff();">Filters Off</a>
-                        <a id="slidersOn"  class="button" href="#" onclick="slidersOn();" style="display:none">Filters</a>
-                    <% else %>
-                       <a id="slidersOff" class="button" href="#" onclick="slidersOff();" style="display:none">Filters Off </a>
-                       <a id="slidersOn"  class="button" href="#" onclick="slidersOn();">Filters</a>
-                    <% end %>
+
+                <% if session[:sliders] == true %>
+                    <a id="slidersOff" class="button" href="#" onclick="slidersOff();">Filters Off</a>
+                    <a id="slidersOn" class="button" href="#" onclick="slidersOn();" style="display:none">Filters</a>
+                <% else %>
+                    <a id="slidersOff" class="button" href="#" onclick="slidersOff();" style="display:none">Filters
+                        Off </a>
+                    <a id="slidersOn" class="button" href="#" onclick="slidersOn();">Filters</a>
+                <% end %>
 
             </td>
         </tr>
