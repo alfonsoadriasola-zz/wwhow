@@ -16,19 +16,16 @@
     </td>
     <% distance = number_with_precision(@histmsg.distance_to(session[:geo_location]), 1)  if @histmsg.lat %>
     <td class="where" title="<%=  h("about "<<distance << " miles ") if distance  %>">
-        <em class="hide"><%=distance%></em>
-
+        <em class="hide"><%=distance||9999999%></em>
         <span><%= h @histmsg.where.downcase %></span>
-
         <% if @histmsg.lat then %>
-            <span class="hasMap"><em>☼</em></span>
+            <span class="hasMap"><img src="<%="/images/markers/marker"+(@mapmessages.index(@histmsg)+1).to_s+".png" %>" /></span>
         <% end %>
 
     </td>
 
     <td>
         <span class="price">  <%=
-
             displaytext = @histmsg.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless @histmsg.price_text.nil?          
             if displaytext
                 @histmsg.price_text

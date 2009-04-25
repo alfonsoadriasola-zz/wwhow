@@ -41,14 +41,14 @@ class ApplicationController < ActionController::Base
       if logged_in?
         @address = current_web_user.user.address
       else
-        @address = 'San Francisco Bay, California' unless session[:geo_location] 
+        @address = 'San Francisco Bay, California' unless session[:geo_location]
       end
     end
 
     if @address && location = BlogEntry.get_geolocation(@address)
-      session[:geo_location] = location 
+      session[:geo_location] = location
     end
-  
+
     #set widgets
     unless params[:blog_entry].nil? then
       if params[:blog_entry][:sliders].nil? == false
@@ -150,13 +150,7 @@ class ApplicationController < ActionController::Base
     end
 
     if !search_by_author then
-      distance = @filter[:radius].to_f
-      @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
-      @messages.sort_by_distance_from(session[:geo_location])
-    end
-
-    if (logged_in? && @show_friends_only== true)
-      @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
+      @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
     end
 
     finish_search
@@ -167,13 +161,8 @@ class ApplicationController < ActionController::Base
   def get_initial_messages
     initialize_filter
     @messages = BlogEntry.find :all, :limit=>500, :order => 'created_at desc', :include =>[:user, :categories,  :ratings]
-    distance = @filter[:radius].to_f
-    @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= distance || ( @filter[:show_unmapped] && m.lat.nil?)}
-    @messages.sort_by_distance_from(session[:geo_location])
-    if (logged_in? && @show_friends_only == true )
-      @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
-    end
 
+    @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius] || ( @filter[:show_unmapped] && m.lat.nil?)}
     finish_search
 
   end
@@ -188,6 +177,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def finish_search
+    if (logged_in? && @show_friends_only== true)
+      @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
+    end
+    @messages.compact
+    @messages =  @messages.sort_by{|m| m.created_at}.reverse!
     @ids = @messages.collect{|m| m.id }
     if @messages.empty?
       flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "
