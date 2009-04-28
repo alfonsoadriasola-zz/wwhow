@@ -18,7 +18,7 @@
     <td class="where" title="<%=  h("about "<<distance << " miles ") if distance  %>">
         <em class="hide"><%=distance||9999999%></em>
         <span><%= h @histmsg.where.downcase %></span>
-        <% if @histmsg.lat then %>
+        <% if @histmsg.lat && @mapmessages then %>
             <span class="hasMap"><img src="<%="/images/markers/marker"+(@mapmessages.index(@histmsg)+1).to_s+".png" %>" /></span>
         <% end %>
 

@@ -1,3 +1,7 @@
+<% location = "37.775196,-122.419204"
+           location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat
+           mapevents = 0
+           @mapmessages = @messages.reject{|m| m.lat.nil?} %>
 <div>
     <script type="text/javascript">
         var scriptTag;
@@ -8,10 +12,6 @@
     <script type="text/javascript">
         var mArray = Array();
         var map;
-
-        <% location = "37.775196,-122.419204" %>
-        <% location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat %>
-
         var centerPoint = new GLatLng(<%= location %>);
 
         function loadMap() {
@@ -32,9 +32,7 @@
         }
 
         function addMarkers() {
-        <%  mapevents = 0
-           @mapmessages = @messages.reject{|m| m.lat.nil?}           
-           @mapmessages.each do |m| %>
+        <% @mapmessages.each do |m| %>
             <% if not m.nil?||m.lat.nil?
                 if m.price
                     price = '$'+number_with_precision(m.price, 2)
