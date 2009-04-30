@@ -160,11 +160,9 @@ class ApplicationController < ActionController::Base
 
   def get_initial_messages
     initialize_filter
-    @messages = BlogEntry.find :all, :limit=>500, :order => 'created_at desc', :include =>[:user, :categories,  :ratings]
-
+    @messages = BlogEntry.find :all, :limit=>100, :order => 'created_at desc', :include =>[:user, :categories,  :ratings]
     @messages = @messages.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius] || ( @filter[:show_unmapped] && m.lat.nil?)}
     finish_search
-
   end
 
   protected
@@ -181,7 +179,10 @@ class ApplicationController < ActionController::Base
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
     end
     @messages.compact
-    @messages =  @messages.sort_by{|m| m.created_at}.reverse!
+
+   @messages =  @messages.sort_by{|m| m.created_at}.reverse!
+   @location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat   
+   @mapmessages = @messages.reject{|m| m.lat.nil?}
     @ids = @messages.collect{|m| m.id }
     if @messages.empty?
       flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "

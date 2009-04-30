@@ -1,6 +1,7 @@
 <div id="container-loggedin">
     <% form_for :blog_entry, @message, :url => {:action => 'search'}  do |f| %>
         <%= render_partial 'layouts/leftbar' %>
+        <%= render_partial 'layouts/rightbar' %>
         <%= render_partial 'listings/search' %>
         <div class="centered-sm"><%= render_partial 'listings/search_sliders' %></div>
       
@@ -15,6 +16,6 @@
         <% end %>
     </div>
 
-    <%= render_partial 'layouts/rightbar' %>
+
 </div>
 

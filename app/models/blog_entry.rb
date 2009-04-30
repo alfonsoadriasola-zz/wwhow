@@ -44,12 +44,17 @@ class BlogEntry < ActiveRecord::Base
 
   def geocode_where
     if self.where.include?('@')
-      address= self.where.split('@')[1]
+      second = self.where.split('@')[1]
+      if second
+        address= second
+      else
+        address=self.where
+      end
     else
       address = self.where
     end
     #don't geocode internet address'
-    if  address[/^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$/]!= address then
+    if  cln=address[/^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$/].nil? && cln != address then
       loc= MultiGeocoder.geocode(address)
       if loc.success
         self.lat= loc.lat
