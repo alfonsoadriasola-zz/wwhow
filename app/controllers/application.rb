@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
       if logged_in?
         @address = current_web_user.user.address
       else
-        @address = 'San Francisco Bay, California' unless session[:geo_location]
+        @address = '100 Pine, San Francisco, CA' unless session[:geo_location]
       end
     end
 
