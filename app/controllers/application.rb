@@ -84,7 +84,6 @@ class ApplicationController < ActionController::Base
 
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
-
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
     search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "")
     search_from_tag = params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
@@ -94,7 +93,7 @@ class ApplicationController < ActionController::Base
     if !search_by_author && !search_by_location
       #did one click a tag?
       if params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
-         @filter[:category_list] = params[:blog_entry][:category_list]         
+        @filter[:category_list] = params[:blog_entry][:category_list]
       else
         #prepare search input, look at things tagged with search terms as well     
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
@@ -122,7 +121,7 @@ class ApplicationController < ActionController::Base
       end
 
       #conditions for distance
-      cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location],:miles,:sphere) << "<= #{@filter[:radius]}"
+      cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
       cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
       cond = cond + ")"
 
@@ -132,7 +131,7 @@ class ApplicationController < ActionController::Base
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       if search_from_tag
-        @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 500 , :include =>[:user, :ratings] }
+        @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 500, :include =>[:user, :ratings] }
         @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
         @filter[:searchterms]  = @filter[:category_list]
         @messages.concat(@messages2) if @messages2
@@ -162,7 +161,7 @@ class ApplicationController < ActionController::Base
 
   def get_initial_messages
     initialize_filter
-    cond=BlogEntry.distance_sql(session[:geo_location],:miles,:sphere) << "<= #{@filter[:radius]}"
+    cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
     cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
     @messages = BlogEntry.find :all,
             :conditions => cond,
