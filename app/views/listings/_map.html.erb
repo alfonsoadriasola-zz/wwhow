@@ -44,9 +44,7 @@
             end %>
            <%= %Q{mArray.push('#{m.lat};#{m.lng};#{description};#{detail}');} unless m.nil?||m.lat.nil? %>
          <% end %>
-
-            if (mArray.length) {
-                var bounds = new GLatLngBounds();
+           var bounds = new GLatLngBounds();
                 //create home location using centerPoint
                 var homeIcon = new GIcon(G_DEFAULT_ICON);
                 homeIcon.image = "/images/markers/homeMarker.png";
@@ -57,6 +55,7 @@
                 var homeMarker = new GMarker(centerPoint, markerOptions);
                 bounds.extend(centerPoint);
                 map.addOverlay(homeMarker);
+            if (mArray.length) {
                 var numberedIcon = new GIcon(G_DEFAULT_ICON);
                 var n = 0;
                 for (n = 0; n < mArray.length; n++) {

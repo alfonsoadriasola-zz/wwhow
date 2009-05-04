@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
                                         from  blog_entries b
                                         where b.user_id = ? ) }, user.id ] )
 
-    messagesRated = Rating.count(:conditions =>[ "user_id = ?",user.id])
+    messagesRated = Rating.count(:conditions =>[ "user_id = ?", user.id])
     averageRating = Rating.average(:rating, :conditions => [ %Q{rateable_type='BlogEntry'
                                  and rateable_id in
                                         (select b.id
@@ -40,20 +40,20 @@ class User < ActiveRecord::Base
 
   def self.rank(rating)
     case rating.to_i
-    when 0..169
-      "got a bit"
-    when 170..399
-      "got some"
-    when 400..1899
-      "pretty good"
-    when 1900..4599
-      "darn good"
-    when 4600..8279
-      "really great"
-    when 8280..1660000
-      "wwhow!"
-    else
-      "lame"
+      when 0..399
+        "got a bit"
+      when 400..1299
+        "got some"
+      when 1300..3799
+        "pretty good"
+      when 3800..7599
+        "darn good"
+      when 7600..13799
+        "really great"
+      when 13800..9999999
+        "wwhow!"
+      else
+        "lame"
     end
 
   end
@@ -77,7 +77,10 @@ class User < ActiveRecord::Base
   end
 
   def show_unmapped
+  end
 
+  def self.default_location
+    "100 Pine, San Francisco, CA"
   end
 
 end

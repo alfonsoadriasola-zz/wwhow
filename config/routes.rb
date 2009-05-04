@@ -21,8 +21,9 @@ ActionController::Routing::Routes.draw do |map|
 
   # The priority is based upon order of creation: first created -> highest priority.
 
-  # Sample of regular route:
-  map.connect ':name', :controller => 'users', :action => 'find_by_name'
+  # Named routes
+  map.connect 'who/:name', :controller => 'users', :action => 'find_by_name'
+  map.connect 'where/:default_location', :controller => 'listings', :action => 'search'
 
   # Keep in mind you can assign values other than :controller and :action
 

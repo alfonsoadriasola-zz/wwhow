@@ -1,6 +1,6 @@
 <div id="homeLink">
  <% if logged_in?
-     @homelink = "/#{current_web_user.user.name}"
+     @homelink = "/who/#{current_web_user.login}"
  else
      @homelink = "/"
  end %>

@@ -640,7 +640,7 @@ td.editing label {
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
     display: block;
     float: right;
-    height: 28px;
+    height: 36px;;
     width: 28px;
     text-decoration: none;
     background:no-repeat;
@@ -713,6 +713,7 @@ span.what {
     font-weight: bold;
 }
 
+#homeMarker {background:url(/images/markers/homeMarker.png ) no-repeat; }
 #marker1{background:url(/images/markers/marker1.png ) no-repeat; }
 #marker2{background:url(/images/markers/marker2.png ) no-repeat; }
 #marker3{background:url(/images/markers/marker3.png ) no-repeat; }

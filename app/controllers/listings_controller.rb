@@ -7,6 +7,7 @@ class ListingsController < ApplicationController
   end
 
   # GET /listings
+
   def index
     if logged_in?
       redirect_to current_web_user.user
@@ -21,20 +22,22 @@ class ListingsController < ApplicationController
   end
 
   def search
-    if params[:blog_entry]
-    flash[:notice] = flash[:error] = ""
-    get_search_results
-    prepare_tag_clouds
+    if params[:blog_entry] || params[:default_location]
+      flash[:notice] = flash[:error] = ""
+      get_search_results
+      prepare_tag_clouds
+      if logged_in?
+        @user = User.find_by_web_user_id(current_web_user.id);
+        render :template =>'/users/show', :layout => 'users'
+      else
+        render :action => 'index'
+      end
 
-    if logged_in?
-      render :controller => 'users', :action=>'show'
     else
-      render :action => 'index'
+      redirect_back_or_default '/'
     end
 
-    else
-     redirect_back_or_default '/'
-    end
+
   end
 
 

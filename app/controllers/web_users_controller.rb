@@ -11,7 +11,7 @@ class WebUsersController < ApplicationController
 
   def show
     @web_user = WebUser.find_by_id(params[:id])
-    redirect_to "/#{@web_user.user.name}"
+    redirect_to "/who/#{@web_user.login}"
   end
 
 
@@ -42,7 +42,7 @@ class WebUsersController < ApplicationController
     case
     when (!params[:activation_code].blank?) && web_user && !web_user.active?
       web_user.activate!
-      @login = web_user.user.name
+      @login = web_user.login
       flash[:notice] = "Registration complete for #{@login}! <br/> Please log in to continue."
       redirect_to '/login'
     when params[:activation_code].blank?
@@ -76,7 +76,7 @@ class WebUsersController < ApplicationController
         self.current_web_user = @web_user
         @web_user.delete_password_code
         flash[:notice] = "Password reset successfully for #{@web_user.email}"
-        redirect_back_or_default("/#{@web_user.login}")
+        redirect_back_or_default("/who/#{@web_user.login}")
       else
         render :action => :reset_password
       end

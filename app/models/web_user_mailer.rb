@@ -9,7 +9,7 @@ class WebUserMailer < ActionMailer::Base
   def activation(web_user)
     setup_email(web_user)
     @subject    += 'Your account has been activated!'
-    @body[:url]  = "#{SITE}/#{web_user.user.name}"
+    @body[:url]  = "#{SITE}/who/#{web_user.user.name}"
   end
 
   def forgot_password(web_user)

@@ -1,7 +1,7 @@
 <div id="container">
     <div class="centered-sm">
 
-        <div id="user-profile">
+        <div id="user-profile" class="surface">
 
             <h2>WWHOW! Account For <%= @user.name %> </h2>
 
@@ -26,7 +26,7 @@
                         <%= f.text_field :address %>
 
                         <% if @user.lat %>
-                            <span class="hasMap"> Mapped!</span>
+                            <span class="hasMap" id="homeMarker"> Mapped!</span>
                         <% end %>
                     </li>
 
@@ -42,9 +42,8 @@
 
 
                     <h3>Preferences</h3>
-
                     <li>
-                     <label>Always show <%= link_to "Favorites", :action => 'manage_favorites', :id => current_web_user.user.id %> only</label>
+                     <label> Always show <%= link_to "favorites", :action => 'manage_favorites', :id => current_web_user.user.id %> only</label>
                         <%= f.check_box :show_friends_only %>
                     </li>
 
@@ -56,7 +55,7 @@
 
                         <%= f.submit "Update", :class=> "buttonRed" %>
                         &nbsp;&nbsp;&nbsp;
-                        <%= link_to 'Back', "/"<<current_web_user.user.name, {:class=>"buttonRed"} %>
+                        <%= link_to 'Back', "/who/"<<current_web_user.login, {:class=>"buttonRed"} %>
 
                     </li>
 

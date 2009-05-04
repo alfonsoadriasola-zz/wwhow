@@ -28,7 +28,7 @@
                     <span>Search</span>
                 </a>
 
-                <%= link_to "<span>Reset</span>", "/#{@user.name unless @user.nil?}", {:class=>'button'} %>
+                <%= link_to "<span>Reset</span>", "/#{'who/'+current_web_user.login if logged_in?}", {:class=>'button'} %>
 
                 <% if session[:sliders] == true %>
                     <a id="slidersOff" class="button" href="#" onclick="slidersOff();">Filters Off</a>

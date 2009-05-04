@@ -9,7 +9,7 @@
 
     <div class="centered-sm">
         <% if logged_in? && current_web_user.user.id == @user.id %>
-            <%= render_partial 'input_header' %>
+            <%= render_partial '/users/input_header' %>
             <% @last_id = 0 %>
             <%= render_partial 'listings/messagelist' %>
 
