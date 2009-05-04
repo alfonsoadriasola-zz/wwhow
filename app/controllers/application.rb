@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
 
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
     search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "")
-    search_from_tag = params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
+    search_from_tag = params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
     search_from_bar = params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
 
