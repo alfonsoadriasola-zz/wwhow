@@ -644,6 +644,7 @@ span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
     width: 28px;
     text-decoration: none;
     background:no-repeat;
+    cursor:pointer;
 }
 
 span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {

@@ -102,6 +102,15 @@ function mapOff() {
     $('blog_entry_map').setValue(false);
 }
 
+function showMapIcon(mapIndex){
+    if(map == null){startMap();}
+    mapOn();
+    var theMapIcon=map.Hb[mapIndex].ja;
+    map.setZoom(14);
+    map.panTo(theMapIcon);
+}
+
+
 function set_show_friends_only(_value) {
     if (_value)
         $('user_show_friends_only').setValue(1);
