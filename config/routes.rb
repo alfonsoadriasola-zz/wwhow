@@ -24,6 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   # Named routes
   map.connect 'who/:name', :controller => 'users', :action => 'find_by_name'
   map.connect 'where/:default_location', :controller => 'listings', :action => 'search'
+  map.connect 'what/:category_list', :controller => 'listings', :action => 'search'
 
   # Keep in mind you can assign values other than :controller and :action
 

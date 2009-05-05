@@ -81,19 +81,20 @@ class ApplicationController < ActionController::Base
 
   def get_search_results
     initialize_filter
-
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
     search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "")
-    search_from_tag = params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
-    search_from_bar = params[:blog_entry] && !search_from_tag
+    search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
+    search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
 
     if !search_by_author && !search_by_location
+
       #did one click a tag?
-      if params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != ""
-        @filter[:category_list] = params[:blog_entry][:category_list]
+      if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" ) 
+        @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
+        @filter[:category_list] = params[:category_list] if params[:category_list]
       else
         #prepare search input, look at things tagged with search terms as well     
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
@@ -131,6 +132,7 @@ class ApplicationController < ActionController::Base
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       if search_from_tag
+        @filter[:category_list] = params[:category_list] if params[:category_list]
         @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 500, :include =>[:user, :ratings] }
         @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
         @filter[:searchterms]  = @filter[:category_list]
@@ -188,6 +190,7 @@ class ApplicationController < ActionController::Base
     @messages =  @messages.sort_by{|m| m.created_at}.reverse!
     @location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat
     @mapmessages = @messages.reject{|m| m.lat.nil?}
+    @mapmessages = @mapmessages[0..98] if @mapmessages.size > 98
     if @messages.empty?
       flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "
       if session[:sliders]==true

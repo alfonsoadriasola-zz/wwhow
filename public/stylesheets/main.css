@@ -651,11 +651,6 @@ span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
     font-size: 1.1em;
 }
 
-/*span.hasMap {*/
-    /*background: transparent url(/images/mappedPost.png) no-repeat center right;*/
-    /*padding-right: 16px;*/
-/*}*/
-
 li span.hasMap {
     text-indent: 3.2em;
     display: inline-block;
@@ -713,6 +708,7 @@ span.what {
     font-weight: bold;
 }
 
+#oldMapMarker {background:url(/images/mappedPost.png) no-repeat;}
 #homeMarker {background:url(/images/markers/homeMarker.png ) no-repeat; }
 #marker1{background:url(/images/markers/marker1.png ) no-repeat; }
 #marker2{background:url(/images/markers/marker2.png ) no-repeat; }

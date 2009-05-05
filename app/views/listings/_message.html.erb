@@ -21,6 +21,8 @@
         <% mapIndex=@mapmessages.index(@histmsg)
            if @histmsg.lat && @mapmessages && mapIndex && mapIndex < 99 then %>
             <span class="hasMap" id="marker<%=(mapIndex+1).to_s%>"/> </span>
+        <% elsif @histmsg.lat %>
+           <span class="hasMap" id="oldMapMarker"/> </span>
         <% end %>
 
     </td>
