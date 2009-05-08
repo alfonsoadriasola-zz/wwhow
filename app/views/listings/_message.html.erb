@@ -18,11 +18,11 @@
     <td class="where" title="<%=  h("about "<<distance << " miles ") if distance  %>">
         <em class="hide"><%=distance||9999999%></em>
         <span><%= h @histmsg.where.downcase %></span>
-        <% mapIndex=@mapmessages.index(@histmsg)
-           if @histmsg.lat && @mapmessages && mapIndex && mapIndex < 99 then %>
+        <% map_index=@mapmessages.index(@histmsg) if @mapmessages
+           if @histmsg.lat && @mapmessages && map_index && map_index < 99 then %>
             <span class="hasMap"
-                  id="marker<%=(mapIndex+1).to_s%>"
-                  onclick="showMapIcon(<%=mapIndex+1%>);"
+                  id="marker<%=(map_index+1).to_s%>"
+                  onclick="showMapIcon(<%=map_index+1%>);"
                   /> </span>
         <% elsif @histmsg.lat %>
            <span class="hasMap" id="oldMapMarker"/> </span>

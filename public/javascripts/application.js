@@ -105,10 +105,12 @@ function mapOff() {
 function showMapIcon(mapIndex){
     if(map == null){startMap();}
     mapOn();
-    var theMapIcon=map.Hb[mapIndex].ja;
-    map.setZoom(14);
-    map.panTo(theMapIcon);
+    var iconcount = map.Hb.length
+    var theMapIcon=map.Hb[iconcount - mapIndex].ja;
+    if(map.getZoom() < 14) map.setZoom(14);  
+    map.panTo(theMapIcon);  
 }
+
 
 
 function set_show_friends_only(_value) {
