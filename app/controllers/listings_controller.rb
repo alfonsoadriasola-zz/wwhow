@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
   end
 
   def search
-    if params[:blog_entry] || params[:default_location] || params[:category_list]
+    if params[:blog_entry] || params[:default_location] || params[:category_list]  || params[:author]
       flash[:notice] = flash[:error] = ""
       get_search_results
       prepare_tag_clouds

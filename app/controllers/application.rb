@@ -41,6 +41,8 @@ class ApplicationController < ActionController::Base
       end
     end
 
+
+
     if @address && location = BlogEntry.get_geolocation(@address)
       session[:geo_location] = location
     end
@@ -84,7 +86,7 @@ class ApplicationController < ActionController::Base
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
-    search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "")
+    search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "") || (params[:author] && params[:blog_entry].nil?)
     search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
     search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
@@ -92,7 +94,7 @@ class ApplicationController < ActionController::Base
     if !search_by_author && !search_by_location
 
       #did one click a tag?
-      if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" ) 
+      if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
         @filter[:category_list] = params[:category_list] if params[:category_list]
       else
@@ -142,6 +144,11 @@ class ApplicationController < ActionController::Base
       @messages = @messages.uniq
       #search by author (only possible through tag)
     elsif search_by_author
+      if params[:blog_entry].nil? && params[:author]
+        params[:blog_entry]=Hash.new
+        params[:blog_entry][:author_id] = User.find_by_name(params[:author]).id
+      end
+
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
     elsif search_by_location
       get_initial_messages
