@@ -1,37 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-//-------------------------------------------------------------------- filter
-function tableFilter(phrase, _id) {
-    var words = phrase.value.toLowerCase().split(" ");
-    var table = document.getElementById(_id);
-    var rowcontent;
-    for (var r = 1; r < table.rows.length; r++) {
-        var row = $(table.rows[r].id);
-        rowcontent = table.rows[r].innerHTML.replace(/<[^>]+>/g, "");
-        for (var i = 0; i < words.length; i++) {
-            if (rowcontent.toLowerCase().indexOf(words[i]) >= 0) {
-                if (row.className.indexOf("even") >= 0) {
-                    $(row.id).className = "show message even";
-                }
-                else {
-                    $(table.rows[r].id).className = "show message odd";
-                }
-            }
-            else {
-                if ($(table.rows[r].id).className.indexOf("even") >= 0)
-                {
-                    $(table.rows[r].id).className = "hide message even";
-                }
-                else
-                {
-                    $(table.rows[r].id).className = "hide message odd";
-                }
-            }
-        }
-    }
-}
-
-//--------------------------------------------------------------------toooltips
 function hide_tooltip() {
     var tip = $("tooltipper");
     tip.update("");

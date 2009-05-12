@@ -230,7 +230,7 @@ h2.error {
 }
 
 #tableTop {
-    line-height: 2em;
+    line-height: 2.4em;
     background-color: #0045cf;
     color: white;
     padding: 0 1em;
@@ -365,7 +365,6 @@ span.left {
     margin: .2em .2em .2em .2em;
     vertical-align: middle;
     height: 2.6em;
-    padding-left: 1em;
 }
 
 #searchTable td input {
@@ -405,7 +404,8 @@ span.left {
 }
 
 #mapOn, #mapOff {
-    background: transparent url(/images/mappedPost.png) no-repeat center left;
+    background: transparent url(/images/markers/marker.png) no-repeat center left;
+    overflow:hidden;
 }
 
 #slidersTable {
@@ -679,7 +679,7 @@ a.buttonEdit {
     width: 210px;
     height: 315px;
     position: absolute;
-    top: 80px;
+    top: 92px;
     right: 0px;
     z-index: 2;
 }

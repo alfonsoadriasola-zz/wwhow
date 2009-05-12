@@ -86,7 +86,7 @@ class ApplicationController < ActionController::Base
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
-    search_by_author = params[:blog_entry] && (params[:blog_entry][:author_id] != "") || (params[:author] && params[:blog_entry].nil?)
+    search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "") || (params[:author] && params[:blog_entry].nil?)
     search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
     search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
@@ -101,7 +101,7 @@ class ApplicationController < ActionController::Base
         #prepare search input, look at things tagged with search terms as well     
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
         @filter[:category_list].each{|item| item = item.strip} if @filter[:category_list].size  > 1
-        @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?
+        @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?       
       end
 
       #prepare filters for sliders
@@ -133,13 +133,11 @@ class ApplicationController < ActionController::Base
       @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
-      if search_from_tag
-        @filter[:category_list] = params[:category_list] if params[:category_list]
-        @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 500, :include =>[:user, :ratings] }
-        @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
-        @filter[:searchterms]  = @filter[:category_list]
-        @messages.concat(@messages2) if @messages2
-      end
+      @filter[:category_list] = params[:category_list] if params[:category_list]
+      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :ratings] }
+      @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
+      @filter[:searchterms]  = @filter[:category_list]
+      @messages.concat(@messages2) if @messages2
 
       @messages = @messages.uniq
       #search by author (only possible through tag)
