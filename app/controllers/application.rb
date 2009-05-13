@@ -86,12 +86,14 @@ class ApplicationController < ActionController::Base
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
     search_by_location = params[:default_location] && (params[:blog_entry].nil?)
-    search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "") || (params[:author] && params[:blog_entry].nil?)
+    search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
+    search_by_author_url = (params[:author] && params[:blog_entry].nil?)
+    default_logged_in_search = search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
     search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
     search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
 
-    if !search_by_author && !search_by_location
+    if (!search_by_author && !search_by_author_url && !search_by_location )
 
       #did one click a tag?
       if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
@@ -101,7 +103,7 @@ class ApplicationController < ActionController::Base
         #prepare search input, look at things tagged with search terms as well     
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
         @filter[:category_list].each{|item| item = item.strip} if @filter[:category_list].size  > 1
-        @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?       
+        @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?
       end
 
       #prepare filters for sliders
@@ -129,7 +131,7 @@ class ApplicationController < ActionController::Base
       cond = cond + ")"
 
       #conditions for searching at
-      cond = cond + %Q{ AND lower(what) LIKE '#{@filter[:searchterms].downcase.gsub(/[.,']/, '')}%' }
+      cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '')}%' }
       @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
@@ -141,14 +143,16 @@ class ApplicationController < ActionController::Base
 
       @messages = @messages.uniq
       #search by author (only possible through tag)
-    elsif search_by_author
+    elsif search_by_author  || search_by_author_url  && !default_logged_in_search      
       if params[:blog_entry].nil? && params[:author]
         params[:blog_entry]=Hash.new
-        params[:blog_entry][:author_id] = User.find_by_name(params[:author]).id
+        if author=  User.find_by_name(params[:author])
+          params[:blog_entry][:author_id] = author.id 
+        end
       end
 
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
-    elsif search_by_location
+    elsif search_by_location || default_logged_in_search
       get_initial_messages
     else
       #fallback
