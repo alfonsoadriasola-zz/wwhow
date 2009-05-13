@@ -138,7 +138,6 @@ class UsersController < ApplicationController
                     :price => price.to_f,
                     :price_text => price
     )
-
     @msg.set_tags(whats)
     @msg.geocode_where
     respond_to do |format|
@@ -181,6 +180,8 @@ class UsersController < ApplicationController
     return unless logged_in?
     @user = current_web_user.user
     @blog_entry= BlogEntry.find(params[:blog_entry_id])
+    @map_index = params[:map_index]
+
     respond_to do |format|
       format.js{
         render :partial => 'edit_blog_entry'}
@@ -191,27 +192,29 @@ class UsersController < ApplicationController
   def update_blog_entry
     return unless logged_in?
     @user = current_web_user.user
-    @histmsg= BlogEntry.find(params[:blog_entry_edit][:id])
+    @blog_entry= BlogEntry.find(params[:blog_entry_edit][:id])
+    @map_index = params[:blog_entry_edit][:map_index].to_i-1
 
-    @histmsg.what = params[:blog_entry_edit][:what] unless params[:blog_entry_edit][:what].nil?
-    @histmsg.where = params[:blog_entry_edit][:where] unless params[:blog_entry_edit][:where].nil?
-    @histmsg.category_list = params[:blog_entry_edit][:category_list] unless params[:blog_entry_edit][:category_list].nil?
+    @blog_entry.what = params[:blog_entry_edit][:what] unless params[:blog_entry_edit][:what].nil?
+    @blog_entry.where = params[:blog_entry_edit][:where] unless params[:blog_entry_edit][:where].nil?
+    @blog_entry.category_list = params[:blog_entry_edit][:category_list] unless params[:blog_entry_edit][:category_list].nil?
 
     price = params[:blog_entry_edit][:price]
-    @histmsg.price = price.to_f
-    @histmsg.price_text = price
+    @blog_entry.price = price.to_f
+    @blog_entry.price_text = price
 
-    if @histmsg.save
+    if @blog_entry.save
       clear_flash
-      @histmsg.geocode_where
-      @histmsg.save
+      @blog_entry.geocode_where
+      @mapmessages=[@blog_entry] if @blog_entry.lat
+      @blog_entry.save(false)
       update_current_user_ranking
       respond_to do |format|
         format.js
-        format.html {redirect_to @user}
+        format.html {redirect_to '/who/#{@user.name}'}
       end
     else
-      flash[:error] = @histmsg.errors.full_messages.collect{|m| "<li>#{m}</li>"}
+      flash[:error] = @blog_entry.errors.full_messages.collect{|m| "<li>#{m}</li>"}
       flash[:error] = "<ul>#{flash[:error]}</ul>"
       respond_to do |format|
         format.js   {render :action => 'edit_blog_entry'}

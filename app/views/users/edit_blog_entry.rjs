@@ -1,4 +1,4 @@
 page.replace_html 'notice',flash[:notice].to_s   
-page.replace_html "errors-#{@histmsg.id}",flash[:error].to_s
-page.visual_effect :highlight, "tr#{@histmsg.id}"
+page.replace_html "errors-#{@blog_entry.id}",flash[:error].to_s
+page.visual_effect :highlight, "tr#{@blog_entry.id}"
 flash[:notice] =''          

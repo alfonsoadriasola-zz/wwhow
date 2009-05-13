@@ -1,40 +1,43 @@
 <div id="container">
 
-    <%= render_partial '/shared/system_messages' %>
-    <div class="centered-xs">
-        <h2> My Favorite Users </h2>
+  <%= render_partial '/shared/system_messages' %>
+  <div class="centered-xs">
+    <h2> My Favorite Users </h2>
 
-        <ul id="usersBox">
+    <ul id="usersBox">
 
-            <% for user in @users %>
-                <li id="li<%= user.id %>">
-                    <label> Name: :</label> <%= h user.name %>    <br/>
-                    <label> Status :</label> <%= h user.ranked %>  <br/>
-                    <label> Posts :</label> <%= user.blog_entries.count %> <br/>
-                    <label> Joined :</label> <%= distance_of_time_in_words(Time.now, user.created_at) %> ago <br/>
-                    <% if current_web_user.is_admin? %>
-                        <label> Address :</label> <%= user.address %>
-                        <% if user.lat %>
-                            <span class="hasMap">&nbsp;</span>
-                        <% end %>
-                        <br/>
-                    <% end %>
-                    <% if @user.subscriptions.collect{|c| c.friend_id }.include?(user.id) %>
+      <% for user in @users %>
+          <li id="li<%= user.id %>">
+            <label> Name: :</label> <%= h user.name %>    <br/>
+            <label> Status :</label> <%= h user.ranked %>  <br/>
+            <label> Posts :</label> <%= user.blog_entries.count %> <br/>
+            <label> Joined :</label> <%= distance_of_time_in_words(Time.now, user.created_at) %> ago <br/>
+            <% if current_web_user.is_admin? %>
+                <label> Address :</label> <%= user.address %>
+                <% if user.lat %>
+                    <span class="hasMap">&nbsp;</span>
+                <% end %>
+                <br/>
+                <label> Email: </label> <%= h(user.web_user.email) %>
+                <br/>
+            <% end %>
+            <% if @user.subscriptions.collect{|c| c.friend_id }.include?(user.id) %>
                     <span><%= link_to_remote "<em>remove</em>", {
                             :url => { :controller => 'users', :action => 'remove_user_from_favorites',
                                     :friend_id => user.id }, :confirm => 'Remove  '+user.name + ' from my faves?'},
                             {:class=>"buttonOffFaves", :title => 'take off favorites'} %> </span>
-                    <% end %>
-                </li>
-                <h3>
-                    <hr/>
-                </h3>
-
             <% end %>
+          </li>
+          <br/>
+          <h3>
+            <hr/>
+          </h3>
 
-        </ul>
+      <% end %>
 
-        <%= link_to 'Back', :back, {:class=>"buttonRed"} %>
-    </div>
+    </ul>
+
+    <%= link_to 'Back', :back, {:class=>"buttonRed"} %>
+  </div>
 
 </div>

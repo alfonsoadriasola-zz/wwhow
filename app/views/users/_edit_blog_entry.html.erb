@@ -1,9 +1,10 @@
 <td colspan="7">
     <% form_remote_for(:blog_entry_edit, @blog_entry, :url => {:controller => "users", :action =>"update_blog_entry"} ) do |f| %>
         
-       <input type="hidden" id="blog_entry_edit_id" name="blog_entry_edit[id]" value="<%=@blog_entry.id -%> />
+       <input type="hidden" id="blog_entry_edit_id" name="blog_entry_edit[id]" value="<%=@blog_entry.id -%>" />
+       <input type="hidden" id="blog_entry_map_index" name="blog_entry_edit[map_index]" value="<%=@map_index -%>" />
 
-        <div <%='id="errors-'<<@blog_entry.id.to_s%>" class="error hide"><%= f.error_messages %>
+        <div id="<%='errors-'<<@blog_entry.id.to_s%>" class="error hide"><%= f.error_messages %>
             <%= flash[:error] %>
         </div>
 

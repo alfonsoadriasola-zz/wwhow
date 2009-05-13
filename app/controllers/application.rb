@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
     @user = current_web_user.user if logged_in?
     @filter=Hash.new
-    @ids = Array.new
+    @map_index = 0
 
     @filter[:category_list] = Array.new;
     @filter[:searchterms] = ""
