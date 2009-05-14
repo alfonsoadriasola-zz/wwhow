@@ -68,13 +68,12 @@ function mapOff() {
     $('blog_entry_map').setValue(false);
 }
 
-function showMapIcon(mapIndex){
+function showMapIcon(lat,lng){
     if(map == null){startMap();}
     mapOn();
-    var iconcount = map.Hb.length
-    var theMapIcon=map.Hb[iconcount - mapIndex].ja;
+    var theLoc = new GLatLng(lat,lng)
     if(map.getZoom() < 14) map.setZoom(14);  
-    map.panTo(theMapIcon);  
+    map.panTo(theLoc);  
 }
 
 

@@ -39,7 +39,7 @@
     <% if @blog_entry.lat && @mapmessages && map_index && map_index < 99 then %>
             <span class="hasMap"
                   id="marker<%= (map_index).to_s %>"
-                  onclick="showMapIcon(<%=map_index%>);"
+                  onclick="showMapIcon(<%=@blog_entry.lat%>,<%=@blog_entry.lng %>);"
             /> </span>
     <% elsif @blog_entry.lat %>
         <span class="hasMap" id="oldMapMarker"/> </span>
