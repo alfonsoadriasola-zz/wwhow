@@ -89,11 +89,12 @@
         function mapClick(marker, point) {
             if (!marker) {
                 oLat = document.getElementById("lat");
+                if(oLat){
                 oLat.value = point.lat().toFixed(6);
                 oLon = document.getElementById("lon");
                 oLon.value = point.lng().toFixed(6);
                 oDesc = document.getElementById("desc");
-                oDesc.value = 'New point';
+                oDesc.value = 'New point';  }
             }
         }
 

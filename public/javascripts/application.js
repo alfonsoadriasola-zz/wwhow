@@ -76,8 +76,6 @@ function showMapIcon(lat,lng){
     map.panTo(theLoc);  
 }
 
-
-
 function set_show_friends_only(_value) {
     if (_value)
         $('user_show_friends_only').setValue(1);
