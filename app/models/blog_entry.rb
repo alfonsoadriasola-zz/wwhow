@@ -26,11 +26,10 @@ class BlogEntry < ActiveRecord::Base
     tokens = self.text.split '#'
     tokens.each{|t| t=t.split}
     self.what = tokens[0].sub('@wwhow', '').downcase
-    list = self.what.split(',');
-    list.each{|item| self.category_list.concat(item.split(' ').select{|w| w.size > 3 } )}
     self.where = tokens[1]
-    self.price = tokens[2]
-    self.discount = tokens[3]
+    self.price_text = tokens[2].strip
+    self.price = tokens[2].to_f
+    set_tags(self.what)
   end
 
   def set_tags(whats)
@@ -70,7 +69,7 @@ class BlogEntry < ActiveRecord::Base
 
   def display_price()
     displaytext = String.new
-    displaytext = self.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless self.price_text.nil?
+    displaytext = self.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless self.price_text.nil?||self.price == 0
     if displaytext
       self.price_text
     else      
