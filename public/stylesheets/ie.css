@@ -1,3 +1,6 @@
+#rightbar{
+    z-index:3;
+}
 
 form {
     width: 100%;
@@ -29,5 +32,7 @@ span.right{
      width:49%;
 }
 
-#sliderTable { table-layout:fixed;}
+#sliderTable { table-layout:fixed;
+
+}
 

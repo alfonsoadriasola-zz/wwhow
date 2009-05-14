@@ -235,10 +235,10 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def safe_get_twits
+  def safe_get_tweets
     begin
-      twits = Subscription.get_twits
-      Subscription.create_blog_entries(twits) if twits
+      tweets = Subscription.get_tweets
+      Subscription.create_blog_entries(tweets) if tweets
     rescue
       nil
     end

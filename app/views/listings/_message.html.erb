@@ -15,7 +15,7 @@
   <td title="<%= h @blog_entry.categories.join(',') -%>">
 
 
-    <a href="mailto:?subject=WWHOW! look what I found!&body=<%= h(@blog_entry.set_text_from_attributes) %>%0A%0Abrought to you by http://wwhow.com&">
+    <a href="mailto:?subject=WWHOW! look what I found! A great deal on <%=u(@blog_entry.what)%> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0Abrought to you by http://wwhow.com&">
       <%= h(@blog_entry.what.downcase) -%>
     </a>
 
@@ -49,12 +49,7 @@
 
   <td>
         <span class="price">  <%=
-            displaytext = @blog_entry.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless @blog_entry.price_text.nil?
-            if displaytext
-                @blog_entry.price_text
-            else
-                number_to_currency(@blog_entry.price)
-            end
+            @blog_entry.display_price()
         %> </span>
   </td>
 

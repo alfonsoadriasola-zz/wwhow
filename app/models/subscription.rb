@@ -3,7 +3,7 @@ require 'uri'
 
 class Subscription < ActiveRecord::Base
   belongs_to :user
-  def self.get_twits
+  def self.get_tweets
     last_twit_id =0
     http = Net::HTTP.new('twitter.com', 80)
     http.use_ssl = false
@@ -11,14 +11,14 @@ class Subscription < ActiveRecord::Base
       request = Net::HTTP::Get.new("/statuses/replies.json?")
       request.basic_auth('wwhow', 'cheapdeal')
       response = h.request(request)
-      @twits = ActiveSupport::JSON.decode(response.body)
+      @tweets = ActiveSupport::JSON.decode(response.body)
     end
-    return @twits
+    return @tweets
   end
 
 
-  def self.create_blog_entries(twits)
-    twits.each do|t|
+  def self.create_blog_entries(tweets)
+    tweets.each do|t|
       username = t.fetch('user').fetch('name')
       address = "http://twitter.com/#{username}"
       if user= User.find_by_name(username)
@@ -27,7 +27,7 @@ class Subscription < ActiveRecord::Base
         be.set_tags(be.what)
         be.what = be.what.split(',')[0]
         be.geocode_where
-        be.save
+        be.save(false)
       end
     end
   end

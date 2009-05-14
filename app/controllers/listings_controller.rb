@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
       redirect_to current_web_user.user
       return
     end
-    safe_get_twits
+    safe_get_tweets
     get_initial_messages
     prepare_tag_clouds
     respond_to do |format|

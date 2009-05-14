@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     get_initial_messages
-    safe_get_twits
+    safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|
       if @user
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def find_by_name
     @user = User.find_by_name(params[:name])
     get_initial_messages
-    safe_get_twits
+    safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|
       if @user

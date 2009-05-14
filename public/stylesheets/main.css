@@ -157,7 +157,7 @@ body div {
 
 #rightbar {
     position: absolute;
-    top: 385px;
+    top: 415px;
     right: 0px;
     background-color: transparent;
     width: 183px;
@@ -679,7 +679,7 @@ a.buttonEdit {
     width: 210px;
     height: 315px;
     position: absolute;
-    top: 92px;
+    top: 120px;
     right: 0px;
     z-index: 2;
 }

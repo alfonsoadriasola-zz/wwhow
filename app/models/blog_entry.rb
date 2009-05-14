@@ -12,13 +12,14 @@ class BlogEntry < ActiveRecord::Base
 
 
   include GeoKit::Geocoders
+  include ActionView::Helpers::NumberHelper
 
   acts_as_taggable_on :categories
   acts_as_rateable
   acts_as_mappable   :default_formula => 'radius'
 
   def set_text_from_attributes
-    self.text = %Q{#{self.what} #{self.where} #{self.price} #{self.discount}}
+    self.text = %Q{#{self.what} #{self.where} #{self.display_price()} #{self.discount}}
   end
 
   def set_attributes_from_text
@@ -54,6 +55,7 @@ class BlogEntry < ActiveRecord::Base
       address = self.where
     end
     #don't geocode internet address'
+    cln=String.new
     if  cln=address[/^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$/].nil? && cln != address then
       loc= MultiGeocoder.geocode(address)
       if loc.success
@@ -63,7 +65,16 @@ class BlogEntry < ActiveRecord::Base
         self.lat = nil
         self.lng = nil
       end
+    end
+  end
 
+  def display_price()
+    displaytext = String.new
+    displaytext = self.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless self.price_text.nil?
+    if displaytext
+      self.price_text
+    else      
+      number_to_currency(self.price)
     end
   end
 
