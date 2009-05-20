@@ -23,7 +23,12 @@ class UsersController < ApplicationController
   # GET /users/1.xml
 
   def show
-    @user = User.find(params[:id])
+    if params[:id].to_i > 0
+      @user = User.find(params[:id])
+    else
+      @user = User.find_by_name(params[:id])      
+    end
+
     get_initial_messages
     safe_get_tweets
     prepare_tag_clouds
