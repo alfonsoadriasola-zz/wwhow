@@ -31,8 +31,10 @@ class ApplicationController < ActionController::Base
     @filter[:show_unmapped]=false
 
     # Set default location
-    if params[:default_location]
-      @address = params[:default_location]
+    if params[:default_location] || params[:entry_location]
+      unless @address = params[:default_location]
+             @address = params[:entry_location]              
+      end
     else
       if logged_in?
         @address = current_web_user.user.address
@@ -85,7 +87,7 @@ class ApplicationController < ActionController::Base
     initialize_filter
     search_from_tag, search_from_bar, search_by_author, search_by_location= false
     cond = String.new
-    search_by_location = params[:default_location] && (params[:blog_entry].nil?)
+    search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
     search_by_author_url = (params[:author] && params[:blog_entry].nil?)
     default_logged_in_search = search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )

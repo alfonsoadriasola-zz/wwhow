@@ -23,7 +23,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Named routes
   map.connect 'who/:author', :controller => 'listings', :action => 'search'
-  map.connect 'where/:default_location', :controller => 'listings', :action => 'search'
+  map.connect 'where/:entry_location', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list/where/:default_location', :controller => 'listings', :action => 'search'
 
