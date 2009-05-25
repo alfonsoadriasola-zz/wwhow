@@ -15,7 +15,7 @@
   <td title="<%= h @blog_entry.categories.join(',') -%>">
 
 
-    <a href="mailto:?subject=WWHOW! look what I found! A great deal on <%=u(@blog_entry.what)%> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0Abrought to you by http://wwhow.com&">
+    <a href="mailto:?subject=WWHOW! look what I found! A great deal on <%= u(@blog_entry.what) %> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0Abrought to you by http://wwhow.com&">
       <%= h(@blog_entry.what.downcase) -%>
     </a>
 
@@ -38,8 +38,8 @@
     <span><%= h @blog_entry.where.downcase %></span>
     <% if @blog_entry.lat && @mapmessages && map_index && map_index < 99 then %>
             <span class="hasMap"
-                  id="marker<%= (map_index).to_s %>"                  
-                  <%=%Q{onclick="showMapIcon(#{@blog_entry.lat},#{@blog_entry.lng});"} %>
+                  id="marker<%= (map_index).to_s %>"
+                  <%= %Q{onclick="showMapIcon(#{@blog_entry.lat},#{@blog_entry.lng});"} %>
             /> </span>
     <% elsif @blog_entry.lat %>
         <span class="hasMap" id="oldMapMarker"/> </span>
@@ -69,10 +69,8 @@
 
   <td>
     <em class="hide"><%= @blog_entry.created_at.strftime("%m/%d/%Y %I:%M %p") %></em>
-        <span class="small" title="<%= distance_of_time_in_words(Time.now, @blog_entry.created_at) %> ago">
-            <%= @blog_entry.created_at.strftime("%m/%d/%Y %I:%M %p") -%>
-
-        </span>
+        <span class="small" title="<%= @blog_entry.created_at.strftime("%m/%d/%Y %I:%M %p") -%>">
+          <%= distance_of_time_in_words(Time.now, @blog_entry.created_at) %>  ago </span>
   </td>
 
   <td>
