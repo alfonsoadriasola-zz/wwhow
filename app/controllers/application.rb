@@ -85,17 +85,18 @@ class ApplicationController < ActionController::Base
 
   def get_search_results
     initialize_filter
-    search_from_tag, search_from_bar, search_by_author, search_by_location= false
+    search_from_tag, search_from_bar, search_by_author, search_by_location, search_by_what_where_url,default_logged_in_search = false
     cond = String.new
     search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
-    search_by_author_url = (params[:author] && params[:blog_entry].nil?)
+    search_by_author_url = (params[:author] )
+    search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
     default_logged_in_search = search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
     search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
     search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
 
-    if (!search_by_author && !search_by_author_url && !search_by_location )
+    if (search_from_tag || search_from_bar || search_by_what_where_url) && !(search_by_author && search_by_author_url)
 
       #did one click a tag?
       if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
