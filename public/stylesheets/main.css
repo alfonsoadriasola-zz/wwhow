@@ -396,6 +396,7 @@ span.left {
     overflow-y: hidden;
     color: #666;
     font-size:80%;
+    border: solid 1px #666;
 }
 
 #widgetLinks {
