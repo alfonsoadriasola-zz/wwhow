@@ -72,7 +72,7 @@ class BlogEntry < ActiveRecord::Base
     displaytext = self.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless self.price_text.nil?||self.price == 0
     if displaytext
       self.price_text
-    else      
+    else
       number_to_currency(self.price)
     end
   end
@@ -92,6 +92,36 @@ class BlogEntry < ActiveRecord::Base
       end
     end
 
+  end
+
+  def self.master_category_list
+    ['Antiques and Hobbies',
+     'Clothing and Fashion',
+     'Arts and Crafts',
+     'Automotive',
+     'Baby Gear',
+     'Purses, Bags and Luggage',
+     'Bridal',
+     'Computers and PDAs',
+     'Electronics',
+     'Eyewear',
+     'Food',
+     'Freebies',
+     'Toys and Games',
+     'Flowers and Gifts',
+     'Health and Beauty',
+     'Home and Garden',
+     'Jewelry and watches',
+     'Maternity',
+     'Movies, Books and Music',
+     'Musical Instruments',
+     'Office',
+     'Cell phones',
+     'Photography',
+     'Shoes',
+     'Sport and Fitness',
+     'Wines and Spirits'
+    ]
   end
 
 

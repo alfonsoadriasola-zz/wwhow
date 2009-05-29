@@ -137,23 +137,26 @@ class UsersController < ApplicationController
     whats =  params[:blog_entry][:what].strip
     wheres = params[:blog_entry][:where].strip
     price = params[:blog_entry][:price]
+    categories = params[:category_list].join(",")
+
     @msg = @user.blog_entries.new(
             :what => whats.downcase,
-                    :where => wheres,
-                    :price => price.to_f,
-                    :price_text => price
-    )
-    @msg.set_tags(whats)
+            :where => wheres,
+            :price => price.to_f,
+            :price_text => price  )
+
+    @msg.set_tags(whats) unless @msg.set_tags(categories)
+    
     @msg.geocode_where
     respond_to do |format|
       if @msg.save
         update_current_user_ranking
-        format.html { redirect_to(@user) }
+        format.html { redirect_to "/who/#{@user.name}/"}
         format.xml  { render :xml => @msg, :status => :created, :location => @user }
       else
         flash[:error] = @msg.errors.full_messages.collect{|m| "<li>#{m}</li>"}
         flash[:error] = "<ul>#{flash[:error]}</ul>"
-        format.html { redirect_to(@user) }
+        format.html { redirect_to "/who/#{@user.name}/"} 
         format.xml  { render :xml => @msg.errors, :status => :unprocessable_entity }
       end
     end
@@ -216,14 +219,14 @@ class UsersController < ApplicationController
       update_current_user_ranking
       respond_to do |format|
         format.js
-        format.html {redirect_to '/who/#{@user.name}'}
+        format.html {redirect_to "/who/#{@user.name}/"}
       end
     else
       flash[:error] = @blog_entry.errors.full_messages.collect{|m| "<li>#{m}</li>"}
       flash[:error] = "<ul>#{flash[:error]}</ul>"
       respond_to do |format|
         format.js   {render :action => 'edit_blog_entry'}
-        format.html {redirect_to @user}
+        format.html { redirect_to "/who/#{@user.name}/"}
       end
     end
 

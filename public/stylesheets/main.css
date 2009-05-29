@@ -390,6 +390,14 @@ span.left {
     padding-left: 1em;
 }
 
+#inputBox select {
+    width: 19%;
+    background-color: #d2e1f4;
+    overflow-y: hidden;
+    color: #666;
+    font-size:80%;
+}
+
 #widgetLinks {
     float: right;
 }
@@ -405,7 +413,7 @@ span.left {
 
 #mapOn, #mapOff {
     background: transparent url(/images/markers/marker.png) no-repeat center left;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 #slidersTable {
@@ -637,14 +645,21 @@ td.editing label {
 }
 
 /*buttons*/
+
+#buttonPost {
+    display: block;
+    float: right;
+    height: 1.3em;    
+}
+
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
     display: block;
     float: right;
     height: 36px;;
     width: 28px;
     text-decoration: none;
-    background:no-repeat;
-    cursor:pointer;
+    background: no-repeat;
+    cursor: pointer;
 }
 
 span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
@@ -709,104 +724,406 @@ span.what {
     font-weight: bold;
 }
 
-#oldMapMarker {background:url(/images/mappedPost.png) no-repeat;}
-#homeMarker {background:url(/images/markers/homeMarker.png ) no-repeat; }
-#marker1{background:url(/images/markers/marker1.png ) no-repeat; }
-#marker2{background:url(/images/markers/marker2.png ) no-repeat; }
-#marker3{background:url(/images/markers/marker3.png ) no-repeat; }
-#marker4{background:url(/images/markers/marker4.png ) no-repeat; }
-#marker5{background:url(/images/markers/marker5.png ) no-repeat; }
-#marker6{background:url(/images/markers/marker6.png ) no-repeat; }
-#marker7{background:url(/images/markers/marker7.png ) no-repeat; }
-#marker8{background:url(/images/markers/marker8.png ) no-repeat; }
-#marker9{background:url(/images/markers/marker9.png ) no-repeat; }
-#marker10{background:url(/images/markers/marker10.png ) no-repeat; }
-#marker11{background:url(/images/markers/marker11.png ) no-repeat; }
-#marker12{background:url(/images/markers/marker12.png ) no-repeat; }
-#marker13{background:url(/images/markers/marker13.png ) no-repeat; }
-#marker14{background:url(/images/markers/marker14.png ) no-repeat; }
-#marker15{background:url(/images/markers/marker15.png ) no-repeat; }
-#marker16{background:url(/images/markers/marker16.png ) no-repeat; }
-#marker17{background:url(/images/markers/marker17.png ) no-repeat; }
-#marker18{background:url(/images/markers/marker18.png ) no-repeat; }
-#marker19{background:url(/images/markers/marker19.png ) no-repeat; }
-#marker20{background:url(/images/markers/marker20.png ) no-repeat; }
-#marker21{background:url(/images/markers/marker21.png ) no-repeat; }
-#marker22{background:url(/images/markers/marker22.png ) no-repeat; }
-#marker23{background:url(/images/markers/marker23.png ) no-repeat; }
-#marker24{background:url(/images/markers/marker24.png ) no-repeat; }
-#marker25{background:url(/images/markers/marker25.png ) no-repeat; }
-#marker26{background:url(/images/markers/marker26.png ) no-repeat; }
-#marker27{background:url(/images/markers/marker27.png ) no-repeat; }
-#marker28{background:url(/images/markers/marker28.png ) no-repeat; }
-#marker29{background:url(/images/markers/marker29.png ) no-repeat; }
-#marker30{background:url(/images/markers/marker30.png ) no-repeat; }
-#marker31{background:url(/images/markers/marker31.png ) no-repeat; }
-#marker32{background:url(/images/markers/marker32.png ) no-repeat; }
-#marker33{background:url(/images/markers/marker33.png ) no-repeat; }
-#marker34{background:url(/images/markers/marker34.png ) no-repeat; }
-#marker35{background:url(/images/markers/marker35.png ) no-repeat; }
-#marker36{background:url(/images/markers/marker36.png ) no-repeat; }
-#marker37{background:url(/images/markers/marker37.png ) no-repeat; }
-#marker38{background:url(/images/markers/marker38.png ) no-repeat; }
-#marker39{background:url(/images/markers/marker39.png ) no-repeat; }
-#marker40{background:url(/images/markers/marker40.png ) no-repeat; }
-#marker41{background:url(/images/markers/marker41.png ) no-repeat; }
-#marker42{background:url(/images/markers/marker42.png ) no-repeat; }
-#marker43{background:url(/images/markers/marker43.png ) no-repeat; }
-#marker44{background:url(/images/markers/marker44.png ) no-repeat; }
-#marker45{background:url(/images/markers/marker45.png ) no-repeat; }
-#marker46{background:url(/images/markers/marker46.png ) no-repeat; }
-#marker47{background:url(/images/markers/marker47.png ) no-repeat; }
-#marker48{background:url(/images/markers/marker48.png ) no-repeat; }
-#marker49{background:url(/images/markers/marker49.png ) no-repeat; }
-#marker50{background:url(/images/markers/marker50.png ) no-repeat; }
-#marker51{background:url(/images/markers/marker51.png ) no-repeat; }
-#marker52{background:url(/images/markers/marker52.png ) no-repeat; }
-#marker53{background:url(/images/markers/marker53.png ) no-repeat; }
-#marker54{background:url(/images/markers/marker54.png ) no-repeat; }
-#marker55{background:url(/images/markers/marker55.png ) no-repeat; }
-#marker56{background:url(/images/markers/marker56.png ) no-repeat; }
-#marker57{background:url(/images/markers/marker57.png ) no-repeat; }
-#marker58{background:url(/images/markers/marker58.png ) no-repeat; }
-#marker59{background:url(/images/markers/marker59.png ) no-repeat; }
-#marker60{background:url(/images/markers/marker60.png ) no-repeat; }
-#marker61{background:url(/images/markers/marker61.png ) no-repeat; }
-#marker62{background:url(/images/markers/marker62.png ) no-repeat; }
-#marker63{background:url(/images/markers/marker63.png ) no-repeat; }
-#marker64{background:url(/images/markers/marker64.png ) no-repeat; }
-#marker65{background:url(/images/markers/marker65.png ) no-repeat; }
-#marker66{background:url(/images/markers/marker66.png ) no-repeat; }
-#marker67{background:url(/images/markers/marker67.png ) no-repeat; }
-#marker68{background:url(/images/markers/marker68.png ) no-repeat; }
-#marker69{background:url(/images/markers/marker69.png ) no-repeat; }
-#marker70{background:url(/images/markers/marker70.png ) no-repeat; }
-#marker71{background:url(/images/markers/marker71.png ) no-repeat; }
-#marker72{background:url(/images/markers/marker72.png ) no-repeat; }
-#marker73{background:url(/images/markers/marker73.png ) no-repeat; }
-#marker74{background:url(/images/markers/marker74.png ) no-repeat; }
-#marker75{background:url(/images/markers/marker75.png ) no-repeat; }
-#marker76{background:url(/images/markers/marker76.png ) no-repeat; }
-#marker77{background:url(/images/markers/marker77.png ) no-repeat; }
-#marker78{background:url(/images/markers/marker78.png ) no-repeat; }
-#marker79{background:url(/images/markers/marker79.png ) no-repeat; }
-#marker80{background:url(/images/markers/marker80.png ) no-repeat; }
-#marker81{background:url(/images/markers/marker81.png ) no-repeat; }
-#marker82{background:url(/images/markers/marker82.png ) no-repeat; }
-#marker83{background:url(/images/markers/marker83.png ) no-repeat; }
-#marker84{background:url(/images/markers/marker84.png ) no-repeat; }
-#marker85{background:url(/images/markers/marker85.png ) no-repeat; }
-#marker86{background:url(/images/markers/marker86.png ) no-repeat; }
-#marker87{background:url(/images/markers/marker87.png ) no-repeat; }
-#marker88{background:url(/images/markers/marker88.png ) no-repeat; }
-#marker89{background:url(/images/markers/marker89.png ) no-repeat; }
-#marker90{background:url(/images/markers/marker90.png ) no-repeat; }
-#marker91{background:url(/images/markers/marker91.png ) no-repeat; }
-#marker92{background:url(/images/markers/marker92.png ) no-repeat; }
-#marker93{background:url(/images/markers/marker93.png ) no-repeat; }
-#marker94{background:url(/images/markers/marker94.png ) no-repeat; }
-#marker95{background:url(/images/markers/marker95.png ) no-repeat; }
-#marker96{background:url(/images/markers/marker96.png ) no-repeat; }
-#marker97{background:url(/images/markers/marker97.png ) no-repeat; }
-#marker98{background:url(/images/markers/marker98.png ) no-repeat; }
-#marker99{background:url(/images/markers/marker99.png ) no-repeat; }
+#oldMapMarker {
+    background: url(/images/mappedPost.png) no-repeat;
+}
+
+#homeMarker {
+    background: url(/images/markers/homeMarker.png) no-repeat;
+}
+
+#marker1 {
+    background: url(/images/markers/marker1.png) no-repeat;
+}
+
+#marker2 {
+    background: url(/images/markers/marker2.png) no-repeat;
+}
+
+#marker3 {
+    background: url(/images/markers/marker3.png) no-repeat;
+}
+
+#marker4 {
+    background: url(/images/markers/marker4.png) no-repeat;
+}
+
+#marker5 {
+    background: url(/images/markers/marker5.png) no-repeat;
+}
+
+#marker6 {
+    background: url(/images/markers/marker6.png) no-repeat;
+}
+
+#marker7 {
+    background: url(/images/markers/marker7.png) no-repeat;
+}
+
+#marker8 {
+    background: url(/images/markers/marker8.png) no-repeat;
+}
+
+#marker9 {
+    background: url(/images/markers/marker9.png) no-repeat;
+}
+
+#marker10 {
+    background: url(/images/markers/marker10.png) no-repeat;
+}
+
+#marker11 {
+    background: url(/images/markers/marker11.png) no-repeat;
+}
+
+#marker12 {
+    background: url(/images/markers/marker12.png) no-repeat;
+}
+
+#marker13 {
+    background: url(/images/markers/marker13.png) no-repeat;
+}
+
+#marker14 {
+    background: url(/images/markers/marker14.png) no-repeat;
+}
+
+#marker15 {
+    background: url(/images/markers/marker15.png) no-repeat;
+}
+
+#marker16 {
+    background: url(/images/markers/marker16.png) no-repeat;
+}
+
+#marker17 {
+    background: url(/images/markers/marker17.png) no-repeat;
+}
+
+#marker18 {
+    background: url(/images/markers/marker18.png) no-repeat;
+}
+
+#marker19 {
+    background: url(/images/markers/marker19.png) no-repeat;
+}
+
+#marker20 {
+    background: url(/images/markers/marker20.png) no-repeat;
+}
+
+#marker21 {
+    background: url(/images/markers/marker21.png) no-repeat;
+}
+
+#marker22 {
+    background: url(/images/markers/marker22.png) no-repeat;
+}
+
+#marker23 {
+    background: url(/images/markers/marker23.png) no-repeat;
+}
+
+#marker24 {
+    background: url(/images/markers/marker24.png) no-repeat;
+}
+
+#marker25 {
+    background: url(/images/markers/marker25.png) no-repeat;
+}
+
+#marker26 {
+    background: url(/images/markers/marker26.png) no-repeat;
+}
+
+#marker27 {
+    background: url(/images/markers/marker27.png) no-repeat;
+}
+
+#marker28 {
+    background: url(/images/markers/marker28.png) no-repeat;
+}
+
+#marker29 {
+    background: url(/images/markers/marker29.png) no-repeat;
+}
+
+#marker30 {
+    background: url(/images/markers/marker30.png) no-repeat;
+}
+
+#marker31 {
+    background: url(/images/markers/marker31.png) no-repeat;
+}
+
+#marker32 {
+    background: url(/images/markers/marker32.png) no-repeat;
+}
+
+#marker33 {
+    background: url(/images/markers/marker33.png) no-repeat;
+}
+
+#marker34 {
+    background: url(/images/markers/marker34.png) no-repeat;
+}
+
+#marker35 {
+    background: url(/images/markers/marker35.png) no-repeat;
+}
+
+#marker36 {
+    background: url(/images/markers/marker36.png) no-repeat;
+}
+
+#marker37 {
+    background: url(/images/markers/marker37.png) no-repeat;
+}
+
+#marker38 {
+    background: url(/images/markers/marker38.png) no-repeat;
+}
+
+#marker39 {
+    background: url(/images/markers/marker39.png) no-repeat;
+}
+
+#marker40 {
+    background: url(/images/markers/marker40.png) no-repeat;
+}
+
+#marker41 {
+    background: url(/images/markers/marker41.png) no-repeat;
+}
+
+#marker42 {
+    background: url(/images/markers/marker42.png) no-repeat;
+}
+
+#marker43 {
+    background: url(/images/markers/marker43.png) no-repeat;
+}
+
+#marker44 {
+    background: url(/images/markers/marker44.png) no-repeat;
+}
+
+#marker45 {
+    background: url(/images/markers/marker45.png) no-repeat;
+}
+
+#marker46 {
+    background: url(/images/markers/marker46.png) no-repeat;
+}
+
+#marker47 {
+    background: url(/images/markers/marker47.png) no-repeat;
+}
+
+#marker48 {
+    background: url(/images/markers/marker48.png) no-repeat;
+}
+
+#marker49 {
+    background: url(/images/markers/marker49.png) no-repeat;
+}
+
+#marker50 {
+    background: url(/images/markers/marker50.png) no-repeat;
+}
+
+#marker51 {
+    background: url(/images/markers/marker51.png) no-repeat;
+}
+
+#marker52 {
+    background: url(/images/markers/marker52.png) no-repeat;
+}
+
+#marker53 {
+    background: url(/images/markers/marker53.png) no-repeat;
+}
+
+#marker54 {
+    background: url(/images/markers/marker54.png) no-repeat;
+}
+
+#marker55 {
+    background: url(/images/markers/marker55.png) no-repeat;
+}
+
+#marker56 {
+    background: url(/images/markers/marker56.png) no-repeat;
+}
+
+#marker57 {
+    background: url(/images/markers/marker57.png) no-repeat;
+}
+
+#marker58 {
+    background: url(/images/markers/marker58.png) no-repeat;
+}
+
+#marker59 {
+    background: url(/images/markers/marker59.png) no-repeat;
+}
+
+#marker60 {
+    background: url(/images/markers/marker60.png) no-repeat;
+}
+
+#marker61 {
+    background: url(/images/markers/marker61.png) no-repeat;
+}
+
+#marker62 {
+    background: url(/images/markers/marker62.png) no-repeat;
+}
+
+#marker63 {
+    background: url(/images/markers/marker63.png) no-repeat;
+}
+
+#marker64 {
+    background: url(/images/markers/marker64.png) no-repeat;
+}
+
+#marker65 {
+    background: url(/images/markers/marker65.png) no-repeat;
+}
+
+#marker66 {
+    background: url(/images/markers/marker66.png) no-repeat;
+}
+
+#marker67 {
+    background: url(/images/markers/marker67.png) no-repeat;
+}
+
+#marker68 {
+    background: url(/images/markers/marker68.png) no-repeat;
+}
+
+#marker69 {
+    background: url(/images/markers/marker69.png) no-repeat;
+}
+
+#marker70 {
+    background: url(/images/markers/marker70.png) no-repeat;
+}
+
+#marker71 {
+    background: url(/images/markers/marker71.png) no-repeat;
+}
+
+#marker72 {
+    background: url(/images/markers/marker72.png) no-repeat;
+}
+
+#marker73 {
+    background: url(/images/markers/marker73.png) no-repeat;
+}
+
+#marker74 {
+    background: url(/images/markers/marker74.png) no-repeat;
+}
+
+#marker75 {
+    background: url(/images/markers/marker75.png) no-repeat;
+}
+
+#marker76 {
+    background: url(/images/markers/marker76.png) no-repeat;
+}
+
+#marker77 {
+    background: url(/images/markers/marker77.png) no-repeat;
+}
+
+#marker78 {
+    background: url(/images/markers/marker78.png) no-repeat;
+}
+
+#marker79 {
+    background: url(/images/markers/marker79.png) no-repeat;
+}
+
+#marker80 {
+    background: url(/images/markers/marker80.png) no-repeat;
+}
+
+#marker81 {
+    background: url(/images/markers/marker81.png) no-repeat;
+}
+
+#marker82 {
+    background: url(/images/markers/marker82.png) no-repeat;
+}
+
+#marker83 {
+    background: url(/images/markers/marker83.png) no-repeat;
+}
+
+#marker84 {
+    background: url(/images/markers/marker84.png) no-repeat;
+}
+
+#marker85 {
+    background: url(/images/markers/marker85.png) no-repeat;
+}
+
+#marker86 {
+    background: url(/images/markers/marker86.png) no-repeat;
+}
+
+#marker87 {
+    background: url(/images/markers/marker87.png) no-repeat;
+}
+
+#marker88 {
+    background: url(/images/markers/marker88.png) no-repeat;
+}
+
+#marker89 {
+    background: url(/images/markers/marker89.png) no-repeat;
+}
+
+#marker90 {
+    background: url(/images/markers/marker90.png) no-repeat;
+}
+
+#marker91 {
+    background: url(/images/markers/marker91.png) no-repeat;
+}
+
+#marker92 {
+    background: url(/images/markers/marker92.png) no-repeat;
+}
+
+#marker93 {
+    background: url(/images/markers/marker93.png) no-repeat;
+}
+
+#marker94 {
+    background: url(/images/markers/marker94.png) no-repeat;
+}
+
+#marker95 {
+    background: url(/images/markers/marker95.png) no-repeat;
+}
+
+#marker96 {
+    background: url(/images/markers/marker96.png) no-repeat;
+}
+
+#marker97 {
+    background: url(/images/markers/marker97.png) no-repeat;
+}
+
+#marker98 {
+    background: url(/images/markers/marker98.png) no-repeat;
+}
+
+#marker99 {
+    background: url(/images/markers/marker99.png) no-repeat;
+}
