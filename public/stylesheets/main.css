@@ -380,22 +380,20 @@ span.left {
 
 #inputBox {
     border: solid 1px blue;
+    width:780px;
 }
 
 #inputBox td {
     background-color: #d2e1f4;
     margin: .2em .2em .2em .2em;
     vertical-align: top;
-    height: 2.6em;
-    padding-left: 1em;
+    padding: 0.5em 1em;
+    font-size:66%;
 }
 
 #inputBox select {
-    width: 19%;
-    background-color: #d2e1f4;
     overflow-y: hidden;
     color: #666;
-    font-size:80%;
     border: solid 1px #666;
 }
 
@@ -650,7 +648,8 @@ td.editing label {
 #buttonPost {
     display: block;
     float: right;
-    height: 1.3em;    
+    height: 1.3em;
+    font-size:1.1em;
 }
 
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {

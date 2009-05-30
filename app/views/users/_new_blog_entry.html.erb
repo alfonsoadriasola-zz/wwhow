@@ -3,36 +3,36 @@
     <%= hidden_field :user, :id %>
     <strong>Here's the chance to share your savings!</strong>
     <table id="inputBox" cellspacing="0px">
-
+      <colgroup align="char" char=".">
+        <col width="35%" />
+        <col width="35%" />
+        <col width="15%" />
+        <col width="15%" />
+      </colgroup>
       <tr>
-        <td><label>What:</label> <br/> <%= f.text_field :what, :size => 30 %> <br/>
+
+        <td><label>What:</label> <br/> <%= f.text_field :what, :size => 22 %> <br/>
           <span class="help">e.g., diapers, t-shirts, books, bags, toys </span>
         </td>
 
-        <td><label>Where:</label> <br/><%= f.text_field :where, :size => 30 %>  <br/>
+        <td><label>Where:</label> <br/><%= f.text_field :where, :size => 22 %>  <br/>
           <span class="help">walgreens  @ mission st and 3rd st, san francisco (put in the store name @ address ) </span>
         </td>
 
-        <td><label>How Much:</label> <br/> $<%= f.text_field :price, :size=>15 -%> <br/>
+        <td><label>How Much:</label>$<%= f.text_field :price, :size=> 12 -%> <br/>
           <span class="help">$1.49 each, 50% off, BOGOF, etc.  (get it?)</span>
         </td>
 
+        <td>       
+          <label> Category:</label>
+          <%= select_tag 'category_list[]', options_for_select(BlogEntry.master_category_list), { :multiple => false } %>
+          <br/>
+          <br/>
+          <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed', :id => 'buttonPost'} %>
+        </td>
+
       </tr>
 
-      <tr>
-        <td colspan="4">
-          <br/>
-          <label> Category:</label> <span class="help"> choose all that apply </span> <br/>
-          <% BlogEntry.master_category_list.each_slice(6)do |cats| %>
-           <%= select_tag 'category_list[]', options_for_select(cats ), { :multiple => true, :size => 6} %>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="5" style="vertical-align:middle;">
-          <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed right', :id => 'buttonPost'} %>          
-        </td>
-      </tr>
 
     </table>
 <% end %>
