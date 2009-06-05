@@ -164,7 +164,7 @@ class ApplicationController < ActionController::Base
 
     if session[:sliders]==true
       @messages = @messages.find_all{|m| m.rating >=@filter[:rating_from].to_f && m.rating <= @filter[:rating_to].to_f }
-      @messages = @messages.find_all{|m| m.price|| 0  >= @filter[:price_from].to_f && m.price <= @filter[:price_to].to_f }
+      @messages = @messages.find_all{|m| m.price|| 0  >= @filter[:price_from].to_f && m.price||0 <= @filter[:price_to].to_f }
     end
 
 
