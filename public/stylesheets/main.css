@@ -203,6 +203,7 @@ body div {
 
 .error {
     color: #fff;
+    background-color:red;
     text-align: center;
     padding: 1em;
     line-height: 1em;
