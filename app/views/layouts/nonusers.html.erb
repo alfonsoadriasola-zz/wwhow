@@ -1,17 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="verify-v1" content="kCg9JsYN8ehbB90dmE0G9quuPyKgQfuVu32spc5MwQM=" />
-    <title>WWHOW!</title>
-    <%= javascript_include_tag :defaults %>
-    <%= javascript_include_tag 'fastinit' %>    
-    <%= javascript_include_tag 'tablesort' %>
-    <%= javascript_include_tag 'slider' %>
+  <%= render :partial => 'layouts/shared_meta' %>
+  <title>WWHOW!</title>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'fastinit' %>
+  <%= javascript_include_tag 'tablesort' %>
+  <%= javascript_include_tag 'slider' %>
 
-    <%= stylesheet_link_tag 'main' %>
-    <%= stylesheet_link_tag 'rating' %>
-    <!--[if IE]>
+  <%= stylesheet_link_tag 'main' %>
+  <%= stylesheet_link_tag 'rating' %>
+  <!--[if IE]>
        <%= stylesheet_link_tag 'ie' %>
 <![endif]-->
 
@@ -20,17 +19,17 @@
 
 <div id="frame">
 
-    <%= render_partial 'layouts/menu' %>
-    <div id="bannerCommon"><%=render_partial 'shared/home'%></div>
-   
-        <%= yield %>
+  <%= render_partial 'layouts/menu' %>
+  <div id="bannerCommon"><%= render_partial 'shared/home' %></div>
 
-    <%= render_partial 'layouts/footer' %>
+  <%= yield %>
+
+  <%= render_partial 'layouts/footer' %>
 </div>
 
 <div id="busy" style="display:none">please wait..</div>
 <div id="tooltip" style="display:none"></div>
-<%= render_partial 'layouts/endscripts' %> 
+<%= render_partial 'layouts/endscripts' %>
 </body>
 
 </html>
