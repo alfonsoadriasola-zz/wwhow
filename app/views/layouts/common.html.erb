@@ -14,21 +14,20 @@
 <div id="frame">
 
   <%= render_partial 'layouts/menu' %>
-  <div id="bannerCommon"><%= render_partial 'shared/home' %></div>
+  <div id="bannerCommon"><%= render_partial 'shared/home'%></div>
 
-  <div id="container" class="centered-sm">
+  <div id="container">
 
-    <%= render_partial '/shared/system_messages' %>
-
-    <%= yield %>
+   <%= render_partial '/shared/system_messages' %>
+    <%= yield %> 
 
   </div>
+
   <%= render_partial 'layouts/footer' %>
 
 </div>
 
-<div id="busy" style="display:none">please wait..</div>
-<div id="tooltip" style="display:none"></div>
+
 <%= render_partial 'layouts/endscripts' %>
 </body>
 
