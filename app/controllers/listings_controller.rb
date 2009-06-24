@@ -3,7 +3,11 @@ class ListingsController < ApplicationController
   layout "nonusers", :except => [:update_list]
 
   def show
-    redirect_to :url=>{:action => 'index'}
+    show_message
+    prepare_tag_clouds
+     respond_to do |format|
+      format.html  {render :action => 'index'}
+    end
   end
 
   # GET /listings

@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
     # Set default location
     if params[:default_location] || params[:entry_location]
       unless @address = params[:default_location]
-             @address = params[:entry_location]              
+        @address = params[:entry_location]
       end
     else
       if logged_in?
@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
 
   def get_search_results
     initialize_filter
-    search_from_tag, search_from_bar, search_by_author, search_by_location, search_by_what_where_url,default_logged_in_search = false
+    search_from_tag, search_from_bar, search_by_author, search_by_location, search_by_what_where_url, default_logged_in_search = false
     cond = String.new
     search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
@@ -130,7 +130,7 @@ class ApplicationController < ActionController::Base
 
       #conditions for distance
       cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
-      cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
+      #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
       cond = cond + ")"
 
       #conditions for searching at
@@ -140,17 +140,19 @@ class ApplicationController < ActionController::Base
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       @filter[:category_list] = params[:category_list] if params[:category_list]
       @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :ratings] }
+
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
+
       @filter[:searchterms]  = @filter[:category_list]
       @messages.concat(@messages2) if @messages2
 
       @messages = @messages.uniq
       #search by author (only possible through tag)
-    elsif search_by_author  || search_by_author_url  && !default_logged_in_search      
+    elsif search_by_author  || search_by_author_url  && !default_logged_in_search
       if params[:blog_entry].nil? && params[:author]
         params[:blog_entry]=Hash.new
         if author=  User.find_by_name(params[:author])
-          params[:blog_entry][:author_id] = author.id 
+          params[:blog_entry][:author_id] = author.id
         end
       end
 
@@ -172,15 +174,30 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def show_message
+    initialize_filter
+    @messages = [BlogEntry.find(params[:post_id]) ]
+    finish_search
+  end
 
   def get_initial_messages
     initialize_filter
     cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
-    cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
+    #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
     @messages = BlogEntry.find :all,
-            :conditions => cond,
-            :limit=>100,
-            :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
+                               :conditions => cond,
+                               :limit=>100,
+                               :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
+    r=1
+    while @messages.reject{|x| x.lat.nil?}.empty?
+      cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]=@filter[:radius]+25*r}"
+      #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
+      @messages = BlogEntry.find :all,
+                                 :conditions => cond,
+                                 :limit=>100,
+                                 :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
+      r=r+1
+    end
     finish_search
   end
 

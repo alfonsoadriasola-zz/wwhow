@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   before_validation_on_update :geocode_address
 
   validates_uniqueness_of  :name
+  acts_as_taggable_on :flags
 
   def self.find_active
     User.find(:all, :conditions => ['rated > 0'], :order => "rated desc", :limit => 50 )

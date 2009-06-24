@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'where/:entry_location', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list/where/:entry_location', :controller => 'listings', :action => 'search'
+  map.connect 'find/:post_id', :controller => 'listings', :action => 'show'
 
   # Keep in mind you can assign values other than :controller and :action
 
