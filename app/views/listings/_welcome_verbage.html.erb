@@ -1,0 +1,18 @@
+<div style="position:relative; font-size:1.2em;">
+  <% if @merchants then %>
+      <p>
+        <strong> Free online advertising for businesses near <%= session[:geo_location].full_address %> .</strong>  Post your best deals and have them show up locally.
+        Easy data entry , what where and how much, just the facts.  From every day stuff like a great sale on milk, jeans, or shoes, to must sell items; post it
+        all here on <strong>WWHOW!</strong>. 
+      </p>
+  <% else %>
+      <p>
+        Found a great deal? Looking to pinch some pennies? You&rsquo;ve come to the right place.
+        From every day stuff like a great sale on milk, jeans, or shoes, to treasures found at a garage sale; post it
+        all
+        here on <strong>WWHOW!</strong>
+      </p>
+
+  <% end %>
+
+</div>
