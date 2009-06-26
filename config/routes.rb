@@ -23,10 +23,17 @@ ActionController::Routing::Routes.draw do |map|
 
   # Named routes
   map.connect 'who/:author', :controller => 'listings', :action => 'search'
+
   map.connect 'where/:entry_location', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list', :controller => 'listings', :action => 'search'
   map.connect 'what/:category_list/where/:entry_location', :controller => 'listings', :action => 'search'
+  
   map.connect 'find/:post_id', :controller => 'listings', :action => 'show'
+
+  map.connect 'merchants/', :controller => 'listings', :action =>'index', :merchants => 'true'
+  map.connect 'merchants/where/:entry_location', :controller => 'listings', :action => 'search' , :merchants => 'true'
+  map.connect 'merchants/what/:category_list', :controller => 'listings', :action => 'search'  , :merchants => 'true'
+  map.connect 'merchants/what/:category_list/where/:entry_location', :controller => 'listings', :action => 'search'   , :merchants => 'true'
 
   # Keep in mind you can assign values other than :controller and :action
 

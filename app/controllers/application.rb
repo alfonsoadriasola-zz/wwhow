@@ -96,7 +96,7 @@ class ApplicationController < ActionController::Base
     search_from_bar =  params[:blog_entry] && !search_from_tag
     use_sliders = session[:sliders]
 
-    if (search_from_tag || search_from_bar || search_by_what_where_url) && !(search_by_author && search_by_author_url)
+    if (search_from_tag || search_from_bar || search_by_what_where_url) && !(search_by_author || search_by_author_url)
 
       #did one click a tag?
       if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )

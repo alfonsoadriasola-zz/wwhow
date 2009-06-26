@@ -1,26 +1,5 @@
  <div id="rightbar">
 
-    <div id="active_members">
-
-        <h5> Active Members </h5>
-           
-           <% unless @active_users.empty? then
-               min_size=75
-               max_size = 150
-               min_qty = @active_users.last.rated.to_i
-               max_qty = @active_users.first.rated.to_i
-               spread = max_qty - min_qty
-               spread = 1 if spread == 0
-               step = (max_size - min_size)/spread.to_f
-           end
-            %>
-
-        <% @active_users.each{|a| %>
-            <% tag_size = min_size + (a.rated.to_i - min_qty)* step %>
-               <span style="font-size:<%= tag_size.to_i.to_s<<"%" %>">
-                   <%= link_to_function  h(a.name.downcase).sub("'", "&rsquo"), "submitByUser('#{a.id}');" %></span>
-
-    <% } %>
-    </div>
+    <%= render :partial => 'layouts/_active_members' %>
     
 </div>

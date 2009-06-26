@@ -2,10 +2,11 @@ class ListingsController < ApplicationController
   #geocode_ip_address
   layout "nonusers", :except => [:update_list]
 
+
   def show
     show_message
     prepare_tag_clouds
-     respond_to do |format|
+    respond_to do |format|
       format.html  {render :action => 'index'}
     end
   end
@@ -13,6 +14,7 @@ class ListingsController < ApplicationController
   # GET /listings
 
   def index
+    @merchants = true if params[:merchants]
     if logged_in?
       redirect_to current_web_user.user
       return
@@ -26,6 +28,7 @@ class ListingsController < ApplicationController
   end
 
   def search
+    @merchants = true if params[:merchants]
     if params[:blog_entry] || params[:entry_location] || params[:category_list]  || params[:author]
       flash[:notice] = flash[:error] = ""
       get_search_results
