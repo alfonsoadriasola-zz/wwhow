@@ -1,6 +1,6 @@
 <div id="messageList">
 
-    <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p") %>
+    <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p")%>.  Showing <%=@messages.size %> posts, of  <%=BlogEntry.count%>
 
         <% mappables = @messages.select{|m| !m.lat.nil?} %>
         <% show_map_icons =  session[:map] == true && !@messages.empty? && mappables.size > 0%>

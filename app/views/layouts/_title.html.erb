@@ -1,0 +1,7 @@
+<% if @merchants then %>
+    <title>WWHOW! Advertise your sales to local buyers.</title>
+<% elsif params[:cateogory_list]  then %>
+    <title>WWHOW! Find and share great deals and savings on <%= params[:cateogory_list] %>.</title>
+<% else %>
+    <title>WWHOW! Find and share great deals and savings.</title>
+<% end %>
