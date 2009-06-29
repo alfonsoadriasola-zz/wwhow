@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  userid: 1
-  text: MyString
+  user_id: 1
+  text: what#where@94612#100
+
 
 two:
-  userid: 1
-  text: MyString
+  user_id: 1
+  text: what#where@94610#BOGOF
+
