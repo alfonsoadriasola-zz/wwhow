@@ -6,7 +6,7 @@
     <meta name="description" content="A great place to find deals  <%= "on" << params[:category_list] %> <%= "near" + params[:default_location] if params[:default_location] %>"/>
 <% end %>
 <% if params[:category_list] then %>
-    <meta name="keywords" content="deals on <%= params[:category_list] %>, savings on <%= params[:category_list] %>, sale on <%= params[:category_list] %>;, discount <%= params[:category_list] %>,<%= params[:category_list] %>bargains, frugal, local shopping, cheap <%= params[:category_list] %>"/>
+    <meta name="keywords" content="deals on <%= params[:category_list] %>, savings on <%= params[:category_list] %>, sale on <%= params[:category_list] %>, discount <%= params[:category_list] %>,<%= params[:category_list] %> bargains, frugal, local shopping, cheap <%= params[:category_list] %>"/>
 <% else %>
     <meta name="keywords" content="deals, savings, discounts, bargains, frugal, local shopping, sales"/>
 <% end %>
