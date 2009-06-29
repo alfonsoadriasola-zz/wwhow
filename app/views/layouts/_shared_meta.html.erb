@@ -1,4 +1,12 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="verify-v1" content="kCg9JsYN8ehbB90dmE0G9quuPyKgQfuVu32spc5MwQM="/>
-<meta name="keywords" content="Deals, Shopping,Local Business,Local,Map,Cheap,FREE,Buy One Get One Free,Fashion,<%= params[:category_list] %>"/>
-<meta name="description" content="A great place to find deals on <%= params[:category_list] %> <%= "near" + params[:default_location] if params[:default_location] %>"/>
+<% if @merchants then %>
+    <meta name="keywords" content="deals, savings, discounts, bargains, frugal, local shopping, sales"/>
+    <meta name="description" content="Advertise your sales, discounts and specials to local customers."/>
+<% else %>
+    <meta name="keywords" content="deals on XXX, savings on XXX, sale on XXX, discount XXX, XXX bargains, frugal, local shopping, cheap XXX"/>
+    <meta name="description" content="A great place to find deals on <%= params[:category_list] %> <%= "near" + params[:default_location] if params[:default_location] %>"/>
+<% end %>
+<% if params[:category_list] then %>
+    <meta name="keywords" content="deals on <%= params[:category_list] %>, savings on <%= params[:category_list] %>, sale on <%= params[:category_list] %>;, discount <%= params[:category_list] %>,<%= params[:category_list] %>bargains, frugal, local shopping, cheap <%= params[:category_list] %>"/>
+<% end %>
