@@ -21,7 +21,7 @@ class Subscription < ActiveRecord::Base
     tweets.each do|t|
       username = t.fetch('user').fetch('name')
       address = "http://twitter.com/#{username}"
-      if user= User.find_by_name(username)
+      if user= User.find_or_create_by_name(username)
         be = BlogEntry.find_or_create_by_twit_id( :twit_id => t.fetch('id'), :text=>t.fetch('text'), :where=>t.fetch('user').fetch('location'), :user_id => user.id )
         be.set_attributes_from_text
         be.set_tags(be.what)

@@ -10,5 +10,10 @@ two:
 
 three:
   name: Quentin
-  uri: quentin@monkey.com
+  uri: quentin@example.com
   web_user_id: 1
+
+aaronuser:
+  name: aaron
+  uri: aaron@example.com
+  web_user_id: 2

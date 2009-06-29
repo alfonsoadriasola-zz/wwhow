@@ -2,7 +2,13 @@ require File.dirname(__FILE__) + '/../test_helper'
 require 'web_users_controller'
 
 # Re-raise errors caught by the controller.
-class WebUsersController; def rescue_action(e) raise e end; end
+class WebUsersController;
+  def rescue_action(e)
+    raise e
+  end
+
+  ;
+end
 
 class WebUsersControllerTest < ActionController::TestCase
   # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead
@@ -49,23 +55,14 @@ class WebUsersControllerTest < ActionController::TestCase
       assert_response :success
     end
   end
-  
 
-  
+
   def test_should_sign_up_user_with_activation_code
     create_web_user
     assigns(:web_user).reload
     assert_not_nil assigns(:web_user).activation_code
   end
 
-  def test_should_activate_user
-    assert_nil WebUser.authenticate('aaron', 'test')
-    get :activate, :activation_code => web_users(:aaron).activation_code
-    assert_redirected_to '/session/new'
-    assert_not_nil flash[:notice]
-    assert_equal web_users(:aaron), WebUser.authenticate('aaron', 'monkey')
-  end
-  
   def test_should_not_activate_user_without_key
     get :activate
     assert_nil flash[:notice]
@@ -81,8 +78,9 @@ class WebUsersControllerTest < ActionController::TestCase
   end
 
   protected
-    def create_web_user(options = {})
-      post :create, :web_user => { :login => 'quire', :email => 'quire@example.com',
-        :password => 'quire69', :password_confirmation => 'quire69' }.merge(options)
-    end
+
+  def create_web_user(options = {})
+    post :create, :web_user => { :login => 'quire', :email => 'quire@example.com',
+                                 :password => 'quire69', :password_confirmation => 'quire69' }.merge(options)
+  end
 end
