@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-
-
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'web_users', :action => 'create'
@@ -13,7 +12,6 @@ ActionController::Routing::Routes.draw do |map|
   map.help  '/help' , :controller => 'common', :action => 'help'
   map.tos   '/tos', :controller =>  'common', :action => 'tos'
   map.privacy '/privacy', :controller => 'common', :action => 'privacy'
-
 
   map.resources :web_users
   map.resource  :session

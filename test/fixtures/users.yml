@@ -1,19 +1,29 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   name: Alfonso
   uri: aadriasola@gmail.com
+  rated: 1000
+  ranked: knight
 
 two:
+  id: 2
   name: Nick
   uri: nkrym@gmail.com
+  rated: 1000
+  ranked: knight
 
 three:
   name: Quentin
   uri: quentin@example.com
   web_user_id: 1
+  rated: 1000
+  ranked: knight
 
 aaronuser:
   name: aaron
   uri: aaron@example.com
   web_user_id: 2
+  rated: 1000
+  ranked: knight
