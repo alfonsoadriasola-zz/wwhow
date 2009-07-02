@@ -189,14 +189,14 @@ class ApplicationController < ActionController::Base
                                :limit=>100,
                                :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
     r=1
-    while @messages.reject{|x| x.lat.nil?}.empty?
+    while @messages.reject{|x| x.lat.nil?}.empty? || r==5
       cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]=@filter[:radius]+25*r}"
       #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
       @messages = BlogEntry.find :all,
                                  :conditions => cond,
                                  :limit=>100,
                                  :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
-      r=r+1
+      r=r*5
     end
     finish_search
   end

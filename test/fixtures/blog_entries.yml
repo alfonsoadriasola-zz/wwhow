@@ -7,8 +7,14 @@ one:
   what: spoon
   where: sfo
   price: 10  
-
+  lat: 40.4327
+  lng: -79.9249
 
 two:
   user_id: 1
   text: what#where@94610#BOGOF
+  what: spoon
+  where: sfo
+  price: 10
+  lat: 40.4327
+  lng: -79.9249
