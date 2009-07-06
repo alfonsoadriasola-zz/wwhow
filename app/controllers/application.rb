@@ -42,10 +42,8 @@ class ApplicationController < ActionController::Base
         @address = User.default_location unless session[:geo_location]
       end
     end
-
-
-
-    if @address && location = BlogEntry.get_geolocation(@address)
+    
+    if @address && (location = BlogEntry.get_geolocation(@address))
       session[:geo_location] = location
     end
 
