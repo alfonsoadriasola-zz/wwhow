@@ -12,70 +12,12 @@
 %>
 <tr id="tr<%= @blog_entry.id %>" class="message">
 
-  <td title="<%= h @blog_entry.categories.join(',') -%>">
+  <% unless @blog_entry.price.nil? then %>
+      <%= render :partial => 'user_entry_cells', :locals =>{:map_index => map_index} %>
+  <% else %>
+      <%= render :partial => 'user_bad_entry_cells', :locals =>{:map_index => map_index} %>
+  <% end %>
 
-
-    <a href="mailto:?subject=WWHOW! look what I found! A great deal on <%= u(@blog_entry.what) %> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0A Rate it at http://wwhow.com/find/<%=@blog_entry.id%>&">
-      <%= h(@blog_entry.what.downcase)[1..140] -%>
-    </a>
-
-
-    <span style="display:none"> <%= h @blog_entry.categories.join(' ') -%> </span>
-
-    <% if logged_in? && ( current_web_user.user.id == @blog_entry.user_id || current_web_user.is_admin  ) %>
-            <span><%= link_to_remote  "<em>edit</em>", {:update => "tr#{@blog_entry.id}",
-                    :url => { :controller => 'users', :action => 'edit_blog_entry',
-                            :blog_entry_id => @blog_entry.id,
-                            :map_index => map_index
-                    }}, {:class=>"buttonEdit", :title=>"edit"} %></span>
-
-    <% end %>
-
-  </td>
-  <% distance = number_with_precision(@blog_entry.distance_to(session[:geo_location]), 1)  if @blog_entry.lat %>
-  <td class="where" title="<%= h("about "<<distance << " miles ") if distance %>">
-    <em class="hide"><%= distance||9999999 %></em>
-    <span><%= h @blog_entry.where.downcase %></span>
-    <% if @blog_entry.lat && @mapmessages && map_index && map_index < 99 then %>
-            <span class="hasMap"
-                  id="marker<%= (map_index).to_s %>"
-                  <%= %Q{onclick="showMapIcon(#{@blog_entry.lat},#{@blog_entry.lng});"} %>
-            /> </span>
-    <% elsif @blog_entry.lat %>
-        <span class="hasMap" id="oldMapMarker"/> </span>
-    <% end %>
-
-  </td>
-
-  <td>
-        <span class="price">  <%=
-            @blog_entry.display_price()
-        %> </span>
-  </td>
-
-  <td title="<%= @blog_entry.user.ranked %>">
-
-    <%= @blog_entry.user.name %>
-
-    <% if logged_in? and @user.id != @blog_entry.user.id and !@user.subscriptions.collect{|f| f.friend_id}.include?(@blog_entry.user.id) %>
-            <span><%= link_to_remote  "<em>add to favorite</em>", {
-                    :url => { :controller => 'users', :action => 'add_user_to_favorites',
-                            :friend_id => @blog_entry.user.id }, :confirm => 'Add '+@blog_entry.user.name + ' to my favorite users?'},
-                    {:class=>"buttonAddFave", :title => 'add to favorites'} %>
-                </span>
-
-    <% end %>
-  </td>
-
-  <td>
-    <em class="hide"><%= @blog_entry.created_at.strftime("%m/%d/%Y %I:%M %p") %></em>
-        <span class="small" title="<%= @blog_entry.created_at.strftime("%m/%d/%Y %I:%M %p") -%>">
-          <%= distance_of_time_in_words(Time.now, @blog_entry.created_at) %>  ago </span>
-  </td>
-
-  <td>
-    <%= render :partial => "ratings/rate", :locals => { :asset => @blog_entry } %>
-  </td>
 
 </tr>
 <% last_id = @blog_entry.id  unless @blog_entry.nil? %>

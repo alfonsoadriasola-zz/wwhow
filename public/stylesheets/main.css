@@ -688,6 +688,11 @@ a.buttonEdit {
     background: transparent url(/images/editPost.png) no-repeat center left;
 }
 
+td.bad_post {
+    color:#999;
+    font-size: 70%;
+}
+
 /* tipsys */
 
 #tipsy {
