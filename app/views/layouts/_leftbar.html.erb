@@ -1,16 +1,12 @@
 <% if @tag_counts then %>
     <div id="leftbar">
 
-        <%= if logged_in? && @user
-                render_partial 'users/control_panel'
-             end %>
+      <%= if logged_in? && @user
+          render_partial 'users/control_panel'
+      end %>
 
-        <%=render_partial 'listings/tags'%>
+      <%= render_partial 'listings/tags' %>
 
-      <br/>
-
-        <%= render :partial => 'shared/ads'  %>
-        
     </div>
 
 <% end %>
