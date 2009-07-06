@@ -24,11 +24,13 @@ class Subscription < ActiveRecord::Base
       if user= User.find_or_create_by_name(username, {:address=> address})
         user.save(false)
         be = BlogEntry.find_or_create_by_twit_id( :twit_id => t.fetch('id'), :text=>t.fetch('text'), :where=>t.fetch('user').fetch('location'), :user_id => user.id )
-        be.set_attributes_from_text
-        be.set_tags(be.what)
-        be.what = be.what.split(',')[0]
-        be.geocode_where
-        be.save(false)
+        if be.lat.nil?
+          be.set_attributes_from_text
+          be.set_tags(be.what)
+          be.what = be.what.split(',')[0]
+          be.geocode_where
+          be.save(false)
+        end
       end
     end
   end
