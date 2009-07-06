@@ -31,22 +31,16 @@ class ApplicationController < ActionController::Base
     @filter[:show_unmapped]=false
 
     # Set default location
+    @address = User.default_location
     if params[:default_location] || params[:entry_location]
       unless @address = params[:default_location]
         @address = params[:entry_location]
       end
     else
-      if logged_in?
-        @address = current_web_user.user.address
-      else
-        @address = User.default_location unless session[:geo_location]
-      end
+      @address = current_web_user.user.address if logged_in?
     end
+    session[:geo_location] = BlogEntry.get_geolocation(@address)
     
-    if @address && (location = BlogEntry.get_geolocation(@address))
-      session[:geo_location] = location
-    end
-
     #set widgets
     unless params[:blog_entry].nil? then
       if params[:blog_entry][:sliders].nil? == false
@@ -252,13 +246,12 @@ class ApplicationController < ActionController::Base
     users.each{|ur| u= User.find(ur.id); u.rated = User.rate(u); u.ranked = User.rank(u.rated); u.save(false);}
   end
 
-
   def safe_get_tweets
     begin
       tweets = Subscription.get_tweets
       Subscription.create_blog_entries(tweets) if tweets
-    #rescue
-    #  nil
+      #rescue
+      #  nil
     end
 
   end

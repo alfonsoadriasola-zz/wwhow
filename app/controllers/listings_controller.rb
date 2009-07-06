@@ -12,7 +12,6 @@ class ListingsController < ApplicationController
   end
 
   # GET /listings
-
   def index
     @merchants = true if params[:merchants]
     if logged_in?
