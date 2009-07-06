@@ -218,7 +218,7 @@ class ApplicationController < ActionController::Base
 
     @messages =  @messages.sort_by{|m| m.created_at}.reverse!
     @location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat
-    @mapmessages = @messages.reject{|m| m.lat.nil?}
+    @mapmessages = @messages.reject{|m| m.lat.nil? || m.price.nil?}
     @mapmessages = @mapmessages[0..98] if @mapmessages.size > 98
     if @messages.empty?
       flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "
@@ -259,8 +259,8 @@ class ApplicationController < ActionController::Base
     begin
       tweets = Subscription.get_tweets
       Subscription.create_blog_entries(tweets) if tweets
-    rescue
-      nil
+    #rescue
+    #  nil
     end
 
   end

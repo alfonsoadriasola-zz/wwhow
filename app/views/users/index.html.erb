@@ -18,7 +18,7 @@
                     <span class="hasMap">&nbsp;</span>
                 <% end %>
                 <br/>
-                <label> Email: </label> <%= h(user.web_user.email) %>
+                <label> Email: </label> <%= begin h(user.web_user.email) rescue nil end %>
                 <br/>
             <% end %>
             <% if @user.subscriptions.collect{|c| c.friend_id }.include?(user.id) %>

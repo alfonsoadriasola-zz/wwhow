@@ -24,12 +24,16 @@ class BlogEntry < ActiveRecord::Base
 
   def set_attributes_from_text
     tokens = self.text.split '#'
-    tokens.each{|t| t=t.split}
-    self.what = tokens[0].sub('@wwhow', '').downcase
-    self.where = tokens[1]
-    self.price_text = tokens[2].strip
-    self.price = tokens[2].to_f
-    set_tags(self.what)
+    if tokens then
+      tokens.each{|t| t=t.split}
+      self.what = tokens[0].sub('@wwhow', '').downcase if tokens[0]
+      self.where = tokens[1] if tokens[1]
+      if tokens[2] then
+        self.price_text = tokens[2].strip
+        self.price = tokens[2].to_f
+      end
+      set_tags(self.what)
+    end
   end
 
   def set_tags(whats)

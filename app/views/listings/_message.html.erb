@@ -16,7 +16,7 @@
 
 
     <a href="mailto:?subject=WWHOW! look what I found! A great deal on <%= u(@blog_entry.what) %> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0A Rate it at http://wwhow.com/find/<%=@blog_entry.id%>&">
-      <%= h(@blog_entry.what.downcase) -%>
+      <%= h(@blog_entry.what.downcase)[1..140] -%>
     </a>
 
 
