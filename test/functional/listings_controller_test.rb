@@ -11,4 +11,5 @@ class ListingsControllerTest < ActionController::TestCase
     get :index
     assert_response :ok
   end
+
 end
