@@ -2,7 +2,6 @@ class ListingsController < ApplicationController
   #geocode_ip_address
   layout "nonusers", :except => [:update_list]
 
-
   def show
     show_message
     prepare_tag_clouds
@@ -15,7 +14,7 @@ class ListingsController < ApplicationController
   def index
     @merchants = true if params[:merchants]
     if logged_in?
-      redirect_to current_web_user.user
+      redirect_to "/who/#{current_web_user.user.name }"
       return
     end
     safe_get_tweets
@@ -45,7 +44,6 @@ class ListingsController < ApplicationController
 
 
   end
-
 
   def update_list
     last_id = params[:last_id]
