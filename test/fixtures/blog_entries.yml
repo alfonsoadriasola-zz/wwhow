@@ -27,3 +27,10 @@ three:
   price_text: Free
   lat: 40.4327
   lng: -79.9249
+    
+no_geo:
+  user_id: 1
+  text: what#where@94610#BOGOF
+  what: knife
+  where: oak
+  price_text: Free

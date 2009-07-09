@@ -10,10 +10,17 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
   end
 
   def test_simplest
-    get :controller => 'listings;', :action => :search
+    get_via_redirect "/"
     assert_response :success
-    assert assigns(:messages).nil?
-    end
+    assert assigns(:messages)
+  end
+
+  def test_should_log_in_and_move_around
+    get_via_redirect "/"
+    login_as :alfonso
+    assert_response :ok
+    actual =  assigns(:messages)    
+  end
 
   def test_search
     get_via_redirect "/where/sfo"
@@ -24,7 +31,7 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
   def test_far_search
     get_via_redirect "where/jfk"
     assert_response :success
-    assert assigns(:messages)    
+    assert assigns(:messages)
   end
 
 end
