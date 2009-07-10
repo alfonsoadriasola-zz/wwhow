@@ -34,3 +34,12 @@ no_geo:
   what: knife
   where: oak
   price_text: Free
+
+shoe:
+  user_id: 1
+  text: shoes#payless@94105#BOGOF
+  what: shoes
+  where: sfo
+  price: 12.00
+  lat: 40.4327
+  lng: -79.9249

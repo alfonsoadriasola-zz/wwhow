@@ -13,9 +13,9 @@
 <tr id="tr<%= @blog_entry.id %>" class="message">
 
   <% unless @blog_entry.price.nil? then %>
-      <%= render :partial => 'user_entry_cells', :locals =>{:map_index => map_index} %>
+      <%= render :partial => 'listings/good_message_by_user', :locals =>{:map_index => map_index} %>
   <% else %>
-      <%= render :partial => 'user_bad_entry_cells', :locals =>{:map_index => map_index} %>
+      <%= render :partial => 'listings/bad_message_by_user', :locals =>{:map_index => map_index} %>
   <% end %>
 
 

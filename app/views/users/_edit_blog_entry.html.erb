@@ -16,7 +16,12 @@
             </p>
 
             <p><label> Categories:</label>
-              <%= f.text_area :category_list, :size =>"20x3", :value => @blog_entry.category_list -%></p>
+              <%= select_tag 'master_category_list[]', options_for_select(BlogEntry.master_category_list), { :multiple => false } %>
+
+              <%= f.text_area :category_list, :size =>"20x1", :value => @blog_entry.category_list -%>
+
+            </p>
+
 
             <p><label> Where:</label>
               <%= f.text_field :where, :size => 66 %>
@@ -46,7 +51,12 @@
                                 :confirm => "It will be gone! Sure?"},
                                {:class=> 'button'} %>
 
-            <%= link_to "Cancel", "/who/"<<current_web_user.login, {:class=> "button"} %>
+            <%= link_to_remote "Cancel",
+                               {:url => { :controller => 'users',
+                                          :action => 'cancel_update_blog_entry',
+                                          :blog_entry_id =>  @blog_entry.id,
+                                          :map_index => @map_index},
+                                }, {:class=> 'button'} %>
 
             <a class="button" onclick="$(this).up('form').onsubmit();"
                href="#">

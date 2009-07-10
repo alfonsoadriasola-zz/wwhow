@@ -34,4 +34,14 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
     assert assigns(:messages)
   end
 
+
+  def test_merchant_landing
+    shoe=blog_entries(:shoe)
+    shoe.set_attributes_from_text
+    shoe.save(false)
+    get "merchants/what/shoes"
+    actual = assigns(:messages)
+    assert_equal shoe, actual
+  end
+
 end

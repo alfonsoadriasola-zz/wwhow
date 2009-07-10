@@ -77,7 +77,7 @@ class ApplicationController < ActionController::Base
 
   def get_search_results
     initialize_filter
-    search_from_tag, search_from_bar, search_by_author, search_by_location,
+    search_category_list, search_from_input_box, search_by_author, search_by_location,
              search_by_what_where_url, default_logged_in_search = false
     cond = String.new
     search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
@@ -85,14 +85,17 @@ class ApplicationController < ActionController::Base
     search_by_author_url = (params[:author] && params[:blog_entry].nil? )
     search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
     default_logged_in_search = search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
-    search_from_tag = params[:category_list] ||  ( params[:blog_entry] && params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
-    search_from_bar =  params[:blog_entry] && !search_from_tag
+    search_category_list = params[:category_list] ||
+              ( params[:blog_entry] && params[:blog_entry][:category_list] &&
+                       params[:blog_entry][:category_list] != "" )
+    search_from_input_box =  params[:blog_entry] && !search_category_list
     use_sliders = session[:sliders]
 
-    if (search_from_tag || search_from_bar || search_by_what_where_url) && !(search_by_author || search_by_author_url)
+    if (search_category_list || search_from_input_box || search_by_what_where_url) &&
+             !(search_by_author || search_by_author_url)
 
       #did one click a tag?
-      if params[:category_list] || ( params[:blog_entry][:category_list] && params[:blog_entry][:category_list] != "" )
+      if search_category_list
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
         @filter[:category_list] = params[:category_list] if params[:category_list]
       else
@@ -115,9 +118,9 @@ class ApplicationController < ActionController::Base
 
       #the second one is for tagged by searching
       @messages, @messages2 = Array.new
-      if search_from_bar
+      if search_from_input_box
         cond = "1=1 "
-      elsif search_from_tag
+      elsif search_category_list
         cond = "1=0 "
       end
 

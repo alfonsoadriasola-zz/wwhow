@@ -23,7 +23,7 @@
 <td class="where" title="<%= h("about "<<distance << " miles ") if distance %>">
   <em class="hide"><%= distance||9999999 %></em>
   <span><%= h @blog_entry.where.downcase %></span>
-  <% if @blog_entry.lat && @mapmessages && map_index && map_index < 99 then %>
+  <% if @blog_entry.lat &&  map_index && map_index < 99 then %>
             <span class="hasMap"
                   id="marker<%= (map_index).to_s %>"
                   <%= %Q{onclick="showMapIcon(#{@blog_entry.lat},#{@blog_entry.lng});"} %>

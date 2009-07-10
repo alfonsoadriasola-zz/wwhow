@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if params[:id].to_i > 0
       @user = User.find(params[:id])
     else
-      @user = User.find_by_name(params[:id])      
+      @user = User.find_by_name(params[:id])
     end
 
     get_initial_messages
@@ -146,7 +146,7 @@ class UsersController < ApplicationController
             :price_text => price  )
 
     @msg.set_tags(whats) unless @msg.set_tags(categories)
-    
+
     @msg.geocode_where
     respond_to do |format|
       if @msg.save
@@ -156,7 +156,7 @@ class UsersController < ApplicationController
       else
         flash[:error] = @msg.errors.full_messages.collect{|m| "<li>#{m}</li>"}
         flash[:error] = "<ul>#{flash[:error]}</ul>"
-        format.html { redirect_to "/who/#{@user.name}/"} 
+        format.html { redirect_to "/who/#{@user.name}/"}
         format.xml  { render :xml => @msg.errors, :status => :unprocessable_entity }
       end
     end
@@ -197,8 +197,8 @@ class UsersController < ApplicationController
 
   end
 
+  
   def update_blog_entry
-    return unless logged_in?
     @user = current_web_user.user
     @blog_entry= BlogEntry.find(params[:blog_entry_edit][:id])
     @map_index = params[:blog_entry_edit][:map_index].to_i-1
@@ -229,9 +229,17 @@ class UsersController < ApplicationController
         format.html { redirect_to "/who/#{@user.name}/"}
       end
     end
-
   end
 
+  def cancel_update_blog_entry
+    @user = current_web_user.user
+    @blog_entry= BlogEntry.find(params[:blog_entry_id])
+    @map_index = params[:map_index].to_i-1
+    respond_to do |format|
+      format.js
+      format.html {redirect_to "/who/#{@user.name}/"}
+    end
+  end
 
   def manage_favorites
     @user = User.find(params[:id])
@@ -260,7 +268,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   def add_user_to_favorites
     @user = current_web_user.user
     @friend = User.find(params[:friend_id]);
@@ -277,8 +284,7 @@ class UsersController < ApplicationController
     end
   end
 
-
-  # Blok user is not filterable on prefs, have to remove from blocked user list 
+  # Blok user is not filterable on prefs, have to remove from blocked user list
 
   def block_user
     @user = current_web_user.user
