@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
       @address = current_web_user.user.address if logged_in?
     end
     session[:geo_location] = BlogEntry.get_geolocation(@address)
-    
+
     #set widgets
     unless params[:blog_entry].nil? then
       if params[:blog_entry][:sliders].nil? == false
@@ -78,26 +78,25 @@ class ApplicationController < ActionController::Base
   def get_search_results
     initialize_filter
     search_category_list, search_from_input_box, search_by_author, search_by_location,
-             search_by_what_where_url, default_logged_in_search = false
+            search_by_what_where_url, default_logged_in_search = false
     cond = String.new
     search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
     search_by_author_url = (params[:author] && params[:blog_entry].nil? )
     search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
     default_logged_in_search = search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
-    search_category_list = params[:category_list] ||
-              ( params[:blog_entry] && params[:blog_entry][:category_list] &&
-                       params[:blog_entry][:category_list] != "" )
-    search_from_input_box =  params[:blog_entry] && !search_category_list
+    search_from_input_box =  params[:blog_entry][:search] if params[:blog_entry] && params[:blog_entry][:search]
+    search_category_list = !search_from_input_box && (params[:category_list] || ( params[:blog_entry] && params[:blog_entry][:category_list] != "" ))
+
     use_sliders = session[:sliders]
 
     if (search_category_list || search_from_input_box || search_by_what_where_url) &&
-             !(search_by_author || search_by_author_url)
+            !(search_by_author || search_by_author_url)
 
       #did one click a tag?
       if search_category_list
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
-        @filter[:category_list] = params[:category_list] if params[:category_list]
+        @filter[:category_list] = params[:category_list] if params[:category_list] &&( params[:blog_entry].nil? ||params[:blog_entry][:category_list]=="")
       else
         #prepare search input, look at things tagged with search terms as well     
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
@@ -135,6 +134,8 @@ class ApplicationController < ActionController::Base
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       @filter[:category_list] = params[:category_list] if params[:category_list]
+      @filter[:category_list] = params[:blog_entry][:search] if params[:blog_entry]&& params[:blog_entry][:search]!= ""
+      
       @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :ratings] }
 
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
