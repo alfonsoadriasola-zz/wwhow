@@ -212,7 +212,6 @@ class UsersController < ApplicationController
     @blog_entry.price_text = price
 
     if @blog_entry.save
-      clear_flash
       @blog_entry.geocode_where
       @mapmessages=[@blog_entry] if @blog_entry.lat
       @blog_entry.save(false)
@@ -256,7 +255,6 @@ class UsersController < ApplicationController
     @friend = User.find(params[:friend_id]);
     respond_to do |format|
       if @user.subscriptions.find_by_friend_id(@friend.id).destroy
-        clear_flash
         flash[:notice] = "  #{@friend.name} .. no longer special"
         format.html {redirect_to(@user) }
         format.js
@@ -273,7 +271,6 @@ class UsersController < ApplicationController
     @friend = User.find(params[:friend_id]);
     respond_to do |format|
       if @user.subscriptions.create(:friend_id => @friend.id)
-        clear_flash
         flash[:notice] = "  #{@friend.name} is now a favorite!"
         format.html {redirect_to(@user) }
         format.js

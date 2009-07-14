@@ -203,7 +203,7 @@ body div {
 
 .error {
     color: #fff;
-    background-color:red;
+    background-color: red;
     text-align: center;
     padding: 1em;
     line-height: 1em;
@@ -270,6 +270,7 @@ h2.error {
     text-align: center;
     font-size: .8em;
     background-color: #ffde00;
+    border-right: 1px solid #444;
 }
 
 td.comment {
@@ -381,7 +382,7 @@ span.left {
 
 #inputBox {
     border: solid 1px blue;
-    width:780px;
+    width: 780px;
 }
 
 #inputBox td {
@@ -389,7 +390,7 @@ span.left {
     margin: .2em .2em .2em .2em;
     vertical-align: top;
     padding: 0.5em 1em;
-    font-size:66%;
+    font-size: 66%;
 }
 
 #inputBox select {
@@ -650,7 +651,7 @@ td.editing label {
     display: block;
     float: right;
     height: 1.3em;
-    font-size:1.1em;
+    font-size: 1.1em;
 }
 
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
@@ -689,7 +690,7 @@ a.buttonEdit {
 }
 
 td.bad_post {
-    color:#999;
+    color: #999;
     font-size: 70%;
 }
 

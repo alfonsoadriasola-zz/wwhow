@@ -3,5 +3,7 @@
   <%= render :partial => 'layouts/active_members' %>
   <br/>
 
-  <%= render :partial => 'shared/ads' %>
+  <% if @messages.size>1 then %>
+      <%= render :partial => 'shared/ads' %>
+  <% end %>
 </div>

@@ -47,3 +47,4 @@ alfonso:
   remember_token:            77de68daecd823babbb58edb1c8e14d7106e83bb
   activation_code:
   activated_at:              <%= 5.days.ago.to_s :db %>
+  is_admin:                  true

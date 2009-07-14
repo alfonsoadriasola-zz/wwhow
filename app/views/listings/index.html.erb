@@ -15,8 +15,6 @@
         <span style="position: absolute; z-index: 10; width: 225px; right: 0px; height: 268px; top: 117px;
                 <% if !session[:sliders] then %>display:none<% end %>;" id="tipsy-pen">  </span>
 
-        <%= render_partial 'shared/system_messages' %>
-
         <div class="centered-sm">
             <% @last_id = 0 %>
             <%= render_partial '/listings/search_sliders' %>

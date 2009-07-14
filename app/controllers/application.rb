@@ -135,7 +135,7 @@ class ApplicationController < ActionController::Base
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       @filter[:category_list] = params[:category_list] if params[:category_list]
       @filter[:category_list] = params[:blog_entry][:search] if params[:blog_entry]&& params[:blog_entry][:search]!= ""
-      
+
       @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :ratings] }
 
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
@@ -185,15 +185,16 @@ class ApplicationController < ActionController::Base
                                :conditions => cond,
                                :limit=>100,
                                :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
-    r=1
-    while @messages.reject{|x| x.lat.nil?}.empty? || r==5
-      cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]=@filter[:radius]+25*r}"
+
+    radius_step=1
+    while @messages.reject{|x| x.lat.nil?}.empty? || radius_step==5
+      cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]=@filter[:radius]+25*radius_step}"
       #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
       @messages = BlogEntry.find :all,
                                  :conditions => cond,
                                  :limit=>100,
                                  :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
-      r=r*5
+      radius_step=radius_step*5
     end
     finish_search
   end
@@ -217,6 +218,10 @@ class ApplicationController < ActionController::Base
     @location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat
     @mapmessages = @messages.reject{|m| m.lat.nil? || m.price.nil?}
     @mapmessages = @mapmessages[0..98] if @mapmessages.size > 98
+    if @mapmessages.empty?
+      flash[:error] = " #{session[:geo_location].full_address } has no deals reported yet. <br/>
+                         You can get the ball rolling by spreading the word, post a deal! <br/>"
+    end
     if @messages.empty?
       flash[:error] = "Sorry, please try again, couldn&rsquo;t find a match for that near your location <br/> "
       if session[:sliders]==true
@@ -231,11 +236,6 @@ class ApplicationController < ActionController::Base
       flash[:error]<<"<p/>"
     end
 
-  end
-
-  def clear_flash
-    flash[:notice] = ""
-    flash[:error] = ""
   end
 
   def update_current_user_ranking

@@ -38,10 +38,11 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
   def test_merchant_landing
     shoe=blog_entries(:shoe)
     shoe.set_attributes_from_text
-    shoe.save(false)
-    get "merchants/what/shoes"
-    actual = assigns(:messages)
-    assert_equal shoe, actual
+    shoe.save
+    get_via_redirect "/what/shoes"
+    assert_response :success
+    assert assigns(:messages)
+    #assert_equal shoe, actual
   end
 
 end

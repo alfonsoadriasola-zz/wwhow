@@ -28,6 +28,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   def test_should_destroy_user
+    login_as :alfonso
     @current_user = users(:one)
     assert_difference('User.count', -1) do
       delete :destroy, :id => users(:two).id

@@ -41,8 +41,9 @@
         <% for @blog_entry in @messages %>
             <%= render_partial('listings/message') %>
         <% end %>
-        <% if @messages.empty? %>
-            <tr><td colspan = "7"> <%render_partial "shared/system_messages" %> </td></tr>
+
+      <% if @filter then %>
+            <tr><td colspan = "7"> <%= render_partial "shared/system_messages" %> </td></tr>
         <% end %>
         
     </table>
