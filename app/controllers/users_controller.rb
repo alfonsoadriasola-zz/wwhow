@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find_by_web_user_id(current_web_user)
     if current_web_user.is_admin?
-      @users = User.find(:all).order 
+      @users = User.find(:all) 
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @users }
