@@ -20,10 +20,7 @@
                 <br/>
                 <label> Email: </label> <%= begin h(user.web_user.email) rescue nil end %>
                 <br/>
-                <% if user.twitter_user? then %>
-                    <label> came from Twitter </label>
-                    <br/>
-                <% end %>
+              
             <% end %>
             <% if @user.subscriptions.collect{|c| c.friend_id }.include?(user.id) %>
                     <span><%= link_to_remote "<em>remove</em>", {
