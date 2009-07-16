@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find_by_web_user_id(current_web_user)
     if current_web_user.is_admin?
-      @users = User.find(:all)
+      @users = User.find(:all).order 
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @users }
@@ -206,6 +206,7 @@ class UsersController < ApplicationController
     @blog_entry.what = params[:blog_entry_edit][:what] unless params[:blog_entry_edit][:what].nil?
     @blog_entry.where = params[:blog_entry_edit][:where] unless params[:blog_entry_edit][:where].nil?
     @blog_entry.category_list = params[:blog_entry_edit][:category_list] unless params[:blog_entry_edit][:category_list].nil?
+    @blog_entry.category_list = params[:master_category_list] unless  params[:master_category_list].nil?
 
     price = params[:blog_entry_edit][:price]
     @blog_entry.price = price.to_f

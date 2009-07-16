@@ -1,702 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
-  <component name="AnalysisUIOptions">
-    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\arrow-none.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\init.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\application.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker63.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\cache\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker51.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\geoloc_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\text-base\reset_password.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20090208072916_password_reset.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker26.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker25.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker75.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\centerbg.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker39.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker1.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080823213539_blog_entry.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker50.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\top-tipsy.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\rails.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker61.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_single_user_messages.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\ratings\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker12.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker98.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\process\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080913205159_blog_entry_t.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\LICENSE.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\btn_blue_right.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\text-base\site_keys.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker36.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\sessions\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\text-base\rating.css.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\templates\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\ip_geocode_lookup_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_twitter.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker60.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\tasks\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_input_header.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\mappedPost.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker41.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-ashamed.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_search_sliders.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_public.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\toolButtonRed.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker8.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\assets\.svn\text-base\api_keys_template.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\logo.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker83.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\unFavorite.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\users_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-pen.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker33.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker06.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker90.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\lib\.svn\text-base\rating.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker16.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker77.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\arrow-down.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker3.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker45.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker09.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker34.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker50.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker42.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker45.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\toolButton.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\slider.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker04.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker46.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker74.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\yahoo_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker88.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\text-base\locations.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\text-base\tag_list_spec.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\plugin_assets\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker01.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker99.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\text-base\mime_types.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\web_user_mailer_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\.svn\text-base\spec_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker0.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_new_status.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\environments\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker1.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\yefounders.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker54.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker08.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker6.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker73.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\text-base\init.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\ratings\.svn\text-base\_rate.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker18.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\scriptaculous.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\process\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker4.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker36.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\ratings\.svn\text-base\rate.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\menu-left.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\fastinit.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker56.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\cache\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker03.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker01.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker44.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\404.html.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\MIT-LICENSE.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\login_url.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\lib\.svn\text-base\recaptcha.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker87.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080904063537_user.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker48.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker04.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\dragdrop.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-headset.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker00.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\performance\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\shared\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker51.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker11.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\shared\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker38.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\process\.svn\text-base\spawner.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\500.html.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker49.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker2.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker81.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker91.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-loggedin.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker92.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker27.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker79.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080921213726_blog_entry_discount.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker81.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\plugin_assets\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\init.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\lib\.svn\text-base\auto_complete_macros_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_edit_blog_entry.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker19.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker87.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_friends.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker46.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\sessions\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\ipgeocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\lib\.svn\text-base\auto_complete.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker40.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker59.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker41.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\blank.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\web_user_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\install.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080922164041_add_index.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20081110052008_add_geokit_blog_and_user.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\text-base\MIT-LICENSE.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\text-base\tag.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker56.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\test\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker0.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\runner.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\log\.svn\text-base\development.log.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\tasks\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\text-base\companies.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\shared\.svn\text-base\_ads.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\makeFavorite.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker64.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\text-base\ip_geocode_lookup.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\text-base\web_users.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker69.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker43.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\tasks\.svn\text-base\acts_as_rateable_tasks.rake.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\web_user_mailer.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\show.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\422.html.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker96.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\text-base\new.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\thumb-n.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\templates\.svn\text-base\migration.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\log\.svn\text-base\production.log.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker29.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\assets\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\info-tipsy.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\info-tipsy.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker59.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker5.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\text-base\stores.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\text-base\reset_password.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker23.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\text-base\main.css.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\text-base\tagging_spec.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\logo.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker7.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker03.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker09.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\process\.svn\text-base\inspector.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker02.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker76.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker54.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\test\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker91.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\plugin_assets\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker43.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\performance\.svn\text-base\benchmarker.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\sound.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker13.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\web_user.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker32.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20081103050225_acts_as_rateable.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker97.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-presents.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker28.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\_menu.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker2.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080904062826_create_web_users.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20090130231553_add_user_preferences.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\search_results.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-ashamed.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\listings_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker17.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\edit_blog_entry.rjs.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\unFavorite.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\text-base\.gitignore.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\_rightbar.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker4.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\add_user_to_favorites.rjs.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\application_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker94.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\multi_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\favicon.ico.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\database.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\homeMarker.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\text-base\tags_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\fixtures\.svn\text-base\custom_locations.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\text-base\forgot_password.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\text-base\tag_list.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\init.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\gems\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\base_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker9.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\text-base\forgot_password.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\text-base\environment.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\destroy.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\text-base\_web_user_bar.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\text-base\tagging.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\dbconsole.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\doc\.svn\text-base\README_FOR_APP.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker64.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker02.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker63.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\web_users_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker21.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\bg_button_a.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker67.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\_leftbar.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker74.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker86.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker94.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker52.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\log\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker34.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\pids\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\text-base\database.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\environments\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker18.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\text-base\defaults.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_tags.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\effects.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\test_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\sessions_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\sessions\.svn\text-base\new.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker52.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker8.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\doc\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker5.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\text-base\boot.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\uninstall.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\.svn\text-base\schema.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker06.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\bg-fader.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_control_panel.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\ca_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\update_blog_entry.rjs.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker47.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\performance\.svn\text-base\request.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker66.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\server.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\text-base\acts_as_taggable_on_spec.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\btn_blue_right.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker99.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\subscriptions_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\sockets\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker08.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker96.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker16.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker20.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker71.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker83.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\update_list.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\common\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\thumb-n.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\common\.svn\text-base\about.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\btn_blue_right_hover.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker71.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\environments\.svn\text-base\production.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-presents.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker35.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\about.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\tasks\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\test\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker32.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\builder.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\bg-fader.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\blog_entry.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\active_record\acts\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker84.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker95.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker69.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker84.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker13.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker85.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\text-base\mappable.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\edit.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\btn_blue_left_hover.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\assets\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\ratings\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker19.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\process\.svn\text-base\reaper.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\web_users_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\tasks\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\text-base\buttons.css.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\web_users_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker55.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker33.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker26.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\MIT-LICENSE.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\centerbgdark.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker53.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker98.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\users_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\user_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\test\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker38.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\star.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\btn_blue_left.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker60.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker15.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker89.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-loggedin.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\environments\.svn\text-base\test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker7.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\text-base\install.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\subscription.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\arrow-down.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\text-base\CHANGELOG.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\.svn\text-base\Rakefile.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker30.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\_subscribe.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\text-base\development.sqlite3.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\toolButtonRed.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker44.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker3.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\sessions_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\prop-base\common.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\btn_blue_left_hover.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker79.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_message.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\load.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker62.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\ratings_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\schema.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker76.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\Rakefile.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\latlng_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\arrow-up.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker88.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\bg_button_span.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\text-base\after_forgot_password.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\homeMarker.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\web_user_observer.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\btn_blue_right_hover.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\thumb-u.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\text-base\taggable_spec.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\VERSION_HISTORY.txt.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\thumb-u.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\.svn\text-base\Rakefile.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\environments\.svn\text-base\development.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker68.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker37.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\shared\.svn\text-base\_home.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker9.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\report_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\blank.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker22.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\bg_button_a.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker89.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_input_header.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_map.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker6.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker72.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\centerbg.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker31.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker07.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\text-base\users.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker28.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\.svn\text-base\test_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\text-base\schema.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker07.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\tasks\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker57.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\rails.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\performance\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20081110063539_add_address.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\README.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker27.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\geomap.html.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\text-base\heroku.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\star.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker40.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\yefounders.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\text-base\common_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker85.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\acts_as_mappable_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_search.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\text-base\geocoders.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker77.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker65.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker93.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\templates\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker47.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker05.png.svn-base" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker14.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\geo_kit\.svn\text-base\acts_as_mappable.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\test\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\centerbgdark.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-over.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\editPost.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker73.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker65.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\ratings_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker30.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\blog_entry_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\text-base\signup_notification.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker66.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker80.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-headset.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\us_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\shared\.svn\text-base\_system_messages.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker70.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\text-base\data.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\spec\acts_as_taggable_on\.svn\text-base\tag_spec.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\top-tipsy.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker24.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker42.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker93.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\tasks\.svn\text-base\acts_as_taggable_on_tasks.rake.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\Rakefile.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\uninstall.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker70.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\common\.svn\text-base\help.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\performance\.svn\text-base\profiler.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\test\.svn\text-base\recaptcha_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker67.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\banner-common.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\tasks\.svn\text-base\recaptcha_tasks.rake.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20080923225445_acts_as_taggable_on_migration.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\gems\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\text-base\inflections.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker92.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\test\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\common\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker24.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_users\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker10.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker37.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker57.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\pids\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\test\.svn\text-base\auto_complete_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\.svn\prop-base\development.sqlite3.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker35.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\common_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker49.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\controls.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\arrow-up.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\common_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker29.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\generate.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\text-base\new_rails_defaults.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker97.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker86.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\active_record\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\doc\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\new.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\tablesort.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\active_record\acts\.svn\text-base\taggable_on.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\prototype.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\bounds_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\sockets\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\remove_user_from_favorites.rjs.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\lib\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\tipsy-over.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\tipsy-pen.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker58.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\.svn\text-base\acts_as_taggable_on_migration_generator.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker14.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker20.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\models\.svn\text-base\user.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\console.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\banner-common.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker82.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\users\.svn\text-base\index.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker21.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\.svn\text-base\init.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\lib\.svn\text-base\acts_as_rateable.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\load.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker22.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\users.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\listings_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker80.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker00.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\text-base\google_geocoder_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\active_record\acts\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker75.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\tmp\sessions\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\lib\.svn\text-base\authenticated_test_helper.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\toolButton.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\.svn\text-base\robots.txt.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\stylesheets\.svn\text-base\ie.css.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\generators\acts_as_taggable_on_migration\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\lib\.svn\text-base\authenticated_system.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\text-base\sessions_controller.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker17.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker55.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\text-base\user_relationship_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\user_relationships_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\text-base\20081228105500_add_current_rank.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\sessions\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\initializers\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\unit\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker23.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker05.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker68.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\controllers\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\text-base\install.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\bg_button_span.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker61.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\_messagelist.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\btn_blue_left.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\auto_complete\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker10.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker31.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker15.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\menu-left.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\text-base\blog_entries.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker39.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker95.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker58.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\editPost.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\web_user_mailer\.svn\text-base\activation.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\db\migrate\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\mappedPost.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\about.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\text-base\install.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker48.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\application.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\javascripts\.svn\text-base\iuix.js.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\tasks\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\arrow-none.gif.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker90.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\helpers\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\functional\.svn\text-base\ratings_controller_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\log\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\common.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker12.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\nonusers.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_taggable_on\lib\active_record\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\test\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker53.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker78.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker78.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\acts_as_rateable\test\.svn\text-base\acts_as_rateable_test.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\script\.svn\text-base\plugin.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\layouts\.svn\text-base\_footer.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker25.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\lib\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\app\views\listings\.svn\text-base\index.html.erb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\recaptcha\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker62.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\text-base\banner-loggedin.jpg.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\test\fixtures\.svn\text-base\subscriptions.yml.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\config\.svn\text-base\routes.rb.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\text-base\marker82.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\vendor\plugins\geokit\.svn\format" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker11.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\.svn\prop-base\makeFavorite.png.svn-base" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alfonso\RubymineProjects\wwhow\public\images\markers\.svn\prop-base\marker72.png.svn-base" afterPath="" />
-    </list>
-    <list name="ignore" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wwhow.iml" afterPath="$PROJECT_DIR$/.idea/wwhow.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" afterPath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/_good_message_by_user.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/_good_message_by_user.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/subscription.rb" afterPath="$PROJECT_DIR$/app/models/subscription.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_edit_blog_entry.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_edit_blog_entry.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/boxcar-conductor/install.rb" afterPath="$PROJECT_DIR$/vendor/plugins/boxcar-conductor/install.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" afterPath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application.rb" afterPath="$PROJECT_DIR$/app/controllers/application.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
     </list>
     <ignored path="wwhow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -714,19 +34,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="39" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.6725275">
+            <state line="22" column="99" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application.rb">
+      <file leaf-file-name="_edit_blog_entry.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/_edit_blog_entry.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="48" selection-start="7834" selection-end="7834" vertical-scroll-proportion="0.0">
+            <state line="22" column="14" selection-start="879" selection-end="879" vertical-scroll-proportion="-11.333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_good_message_by_user.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/listings/_good_message_by_user.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="55" selection-start="1395" selection-end="1395" vertical-scroll-proportion="-15.583333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="20" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="198" column="19" selection-start="5048" selection-end="5048" vertical-scroll-proportion="0.24113475">
               <folding />
             </state>
           </provider>
@@ -742,20 +89,15 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <array>
-        <option value="Alfonso" />
+        <option value="Alfonso Adriasola &lt;aadriasola@gmail.com&gt;" />
       </array>
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/views/layouts/_menu.html.erb" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/views/users/edit.html.erb" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/views/layouts/_leftbar.html.erb" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="true" />
-    <option name="CUSTOM_FILTER" value="" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="true" id="Add" />
@@ -774,6 +116,34 @@
           <option name="myItemId" value="wwhow" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="wwhow" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="wwhow" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="wwhow" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="wwhow" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
     </subPane>
   </component>
@@ -782,91 +152,30 @@
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="0.5" version="1" splitterProportion="0.5">
-      <flattenPackages ProjectPane="false" />
+      <flattenPackages />
       <showMembers />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <showStructure RailsProjectView="false" ProjectPane="false" />
+      <showStructure ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="220" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="214" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="18" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="114" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="217" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="137" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="183" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="186" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="185" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="144" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="810" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="818" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="304" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="185" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="137" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="184" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="145" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="219" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="339" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="editor.preferences.completion" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Rake.log:clear">
-    <tempConfiguration default="false" name="All in: wwhow" type="TestUnitRunConfigurationType" factoryName="Ruby test">
-      <module name="wwhow" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-      </envs>
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </tempConfiguration>
+  <component name="RunManager" selected="Rails.Development: wwhow">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
@@ -880,24 +189,26 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
     </configuration>
     <configuration default="true" type="RailsRunConfigurationType" factoryName="Server">
+      <predefined_log_file id="RAILS_SERVER" enabled="true" />
       <module name="wwhow" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="C:\Users\Alfonso\RubymineProjects\wwhow" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="true" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Ruby SDK 1.8.6 (C:\ruby\bin\ruby.exe)" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_PATH" VALUE="C:\Users\Alfonso\RubymineProjects\wwhow\script\server" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/script/server" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="CHOOSE_MANUALLY" VALUE="true" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="DEVELOPMENT" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <method />
     </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
@@ -910,12 +221,13 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
     </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Ruby test">
       <module name="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
@@ -929,21 +241,40 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+    </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
       <module name="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="true" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="Ruby SDK 1.8.6 (C:\ruby\bin\ruby.exe)" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <envs />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
     </configuration>
     <configuration default="false" name="Production: wwhow" type="RailsRunConfigurationType" factoryName="Server">
       <predefined_log_file id="RAILS_SERVER" enabled="true" />
       <module name="wwhow" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
@@ -955,9 +286,7 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="CHOOSE_MANUALLY" VALUE="true" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="PRODUCTION" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -965,10 +294,10 @@
     <configuration default="false" name="Development: wwhow" type="RailsRunConfigurationType" factoryName="Server">
       <predefined_log_file id="RAILS_SERVER" enabled="true" />
       <module name="wwhow" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="Ruby SDK 1.8.6 (C:\ruby\bin\ruby.exe)" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/script/server" />
@@ -977,7 +306,7 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="CHOOSE_MANUALLY" VALUE="true" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="DEVELOPMENT" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method>
@@ -986,12 +315,14 @@
     </configuration>
     <configuration default="false" name="test" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
@@ -1004,12 +335,14 @@
     </configuration>
     <configuration default="false" name="spec" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
@@ -1020,115 +353,14 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="db:schema:load" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:schema:load" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="db:data:load" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:data:load" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="tmp:clear" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="tmp:clear" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="log:clear" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="wwhow" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e &quot;STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)&quot;" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="log:clear" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <list size="10">
-      <item index="0" class="java.lang.String" itemvalue="Test::Unit.All in: wwhow" />
-      <item index="1" class="java.lang.String" itemvalue="Rails.Production: wwhow" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Development: wwhow" />
-      <item index="3" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.db:schema:load" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="7" class="java.lang.String" itemvalue="Rake.db:data:load" />
-      <item index="8" class="java.lang.String" itemvalue="Rake.tmp:clear" />
-      <item index="9" class="java.lang.String" itemvalue="Rake.log:clear" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Rails.Production: wwhow" />
+      <item index="1" class="java.lang.String" itemvalue="Rails.Development: wwhow" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="StructureViewFactory">
-    <option name="AUTOSCROLL_MODE" value="true" />
-    <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
-    <option name="ACTIVE_ACTIONS" value="" />
-  </component>
   <component name="SvnConfiguration">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -1138,8 +370,11 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <configuration useDefault="false">C:\Users\Alfonso\AppData\Roaming\Subversion</configuration>
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <configuration useDefault="true">C:\Users\Alfonso\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1162,26 +397,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="353" y="83" width="1177" height="873" extended-state="0" />
-    <editor active="false" />
+    <frame x="78" y="0" width="1544" height="1020" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3250346" sideWeight="0.5" order="11" side_tool="false" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827103" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24766356" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19360675" sideWeight="0.7708333" order="1" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45697674" sideWeight="0.5" order="1" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2045654" sideWeight="0.66528356" order="0" side_tool="false" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
-      <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271028" sideWeight="0.5" order="10" side_tool="false" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6621773" order="1" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.250332" sideWeight="0.6621773" order="0" side_tool="false" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023256" sideWeight="0.9920174" order="2" side_tool="false" x="655" y="532" width="269" height="201" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41860464" sideWeight="0.5" order="8" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.072782874" sideWeight="0.5742358" order="2" side_tool="false" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -1194,7 +429,7 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing cruft" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1205,128 +440,12 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="change layout 3&#10;" />
-    <MESSAGE value="ie7 layout compat&#10;" />
-    <MESSAGE value="&#10;" />
-    <MESSAGE value="lotsa layout tweaks, and some mail stuff" />
-    <MESSAGE value="lotsa layout tweaks, and some mail stuff, and a lot of bug fixes&#10;" />
-    <MESSAGE value="cleanup&#10;" />
-    <MESSAGE value="icons on maps etc" />
-    <MESSAGE value="bugs&#10;" />
-    <MESSAGE value="relable WWHOW!&#10;" />
-    <MESSAGE value="updates, bug fixes" />
-    <MESSAGE value="update to about" />
-    <MESSAGE value="bugs qa" />
-    <MESSAGE value="replaced table sorting" />
-    <MESSAGE value="&#10;# Brief commit desciption here&#10;&#10;# bugs&#10;&#10;" />
-    <MESSAGE value="&#10;# Brief commit desciption here&#10;&#10;# Full commit description here (comment lines starting with '#' will not be included)&#10;&#10;" />
-    <MESSAGE value="error page" />
-    <MESSAGE value="change error code" />
-    <MESSAGE value="Error Page" />
-    <MESSAGE value="updated text for welcome and posting" />
-    <MESSAGE value="Added css cleanup default limit to search radius" />
-    <MESSAGE value="duh" />
-    <MESSAGE value="drats" />
-    <MESSAGE value="damn" />
-    <MESSAGE value="updated rankings, removed svn" />
-    <MESSAGE value="removing cruft" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="44" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_public.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/tablesort.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="11" selection-start="3393" selection-end="3393" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_control_panel.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="833" selection-end="833" vertical-scroll-proportion="-12.041667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="30" selection-start="3746" selection-end="3746" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_map.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_messagelist.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_search_sliders.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="10" selection-start="2723" selection-end="2723" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_system_messages.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="50" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/users.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -1335,58 +454,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="48" selection-start="7834" selection-end="7834" vertical-scroll-proportion="0.0">
+        <state line="22" column="99" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="39" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.6725275">
+        <state line="24" column="20" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <option name="states">
-      <map>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl>
-                  <option name="proportions">
-                    <list>
-                      <option value="0.2" />
-                    </list>
-                  </option>
-                </SplitterProportionsDataImpl>
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="myStates">
-      <map>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl>
-                  <option name="proportions">
-                    <list>
-                      <option value="0.2" />
-                    </list>
-                  </option>
-                </SplitterProportionsDataImpl>
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
+    <entry file="file://$PROJECT_DIR$/app/views/listings/_good_message_by_user.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="55" selection-start="1395" selection-end="1395" vertical-scroll-proportion="-15.583333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_edit_blog_entry.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="14" selection-start="879" selection-end="879" vertical-scroll-proportion="-11.333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="19" selection-start="5048" selection-end="5048" vertical-scroll-proportion="0.24113475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
 

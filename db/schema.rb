@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090306063138) do
+ActiveRecord::Schema.define(:version => 20090715190253) do
 
   create_table "blog_entries", :force => true do |t|
     t.integer  "user_id",    :limit => 11
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20090306063138) do
     t.string   "ranked"
     t.boolean  "show_friends_only",                :default => false, :null => false
     t.boolean  "hide_blocked_users",               :default => true,  :null => false
+    t.boolean  "twitter_user"
   end
 
   add_index "users", ["id"], :name => "index_users_on_id", :unique => true

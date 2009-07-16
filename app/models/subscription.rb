@@ -21,7 +21,7 @@ class Subscription < ActiveRecord::Base
     tweets.each do|t|
       username = t.fetch('user').fetch('screen_name')
       address =  t.fetch('user').fetch('location')
-      if user= User.find_or_create_by_name(username, {:address=> address})
+      if user= User.find_or_create_by_name(username, {:address=> address, :twitter_user => true})
         user.save(false)
         be = BlogEntry.find_or_create_by_twit_id( :twit_id => t.fetch('id'), :text=>t.fetch('text'), :where=>t.fetch('user').fetch('location'), :user_id => user.id )
         if be.lat.nil?

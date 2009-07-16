@@ -6,23 +6,8 @@
   <component name="ProjectDetails">
     <option name="projectName" value="wwhow" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Ruby SDK 1.8.6 (C:\ruby\bin\ruby.exe)" project-jdk-type="RUBY_SDK" />
-  <component name="RailsProjectViewPane">
-    <subPane />
-  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Ruby SDK 1.8.6 (C:\Ruby\bin\ruby.exe)" project-jdk-type="RUBY_SDK" />
   <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$PROJECT_DIR$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="trunkUrl" value="file:///c:/users/alfonso/work/nla/svn/wwhow" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>

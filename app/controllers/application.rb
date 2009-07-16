@@ -255,8 +255,8 @@ class ApplicationController < ActionController::Base
     begin
       tweets = Subscription.get_tweets
       Subscription.create_blog_entries(tweets) if tweets
-      #rescue
-      #  nil
+      rescue
+        nil
     end
 
   end
