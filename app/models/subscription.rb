@@ -4,7 +4,7 @@ require 'uri'
 class Subscription < ActiveRecord::Base
   belongs_to :user
   def self.get_tweets
-    last_twit_id =0
+    last_twit_id = Subscription.find_by_sql("select max(twit_id) twit_id from blog_entries")[0].twit_id
     http = Net::HTTP.new('twitter.com', 80)
     http.use_ssl = false
     http.start do |h|
