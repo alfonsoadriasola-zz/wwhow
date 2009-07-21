@@ -31,7 +31,7 @@
         function addMarkers() {
         <% @mapmessages.each do |m|
            mapevents = true
-           description = "#{h m.what.gsub(/'/, "").chomp } #{h m.where.gsub(/'/, "").chomp} #{h m.display_price()}".downcase.gsub(/015/,"").gsub(/012/,"")
+           description = "#{h m.what.gsub(/'/, "").chomp } #{h m.where.gsub(/'/, "").chomp} #{h m.display_price()}".downcase.gsub(/015/,"").gsub(/\n/,"")
            detail = "#{number_with_precision(m.distance_to(session[:geo_location]), 1)} miles away"
            search_url = "http://www.google.com/maps?source=uds&daddr=#{u(m.where)}&saddr=#{u(session[:geo_location].full_address)}"
            detail = detail + '<a href="'+search_url+'" target="_blank"> directions! </a>'
