@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
   end
 
   def self.default_location
-    "100 Pine St, San Francisco, CA"
+    "100 Pine Street, San Francisco, CA"
   end
 
 end
