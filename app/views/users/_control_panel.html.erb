@@ -6,7 +6,7 @@
     <%= render_partial '/users/public' %>
     <div id="user_preferences">
         <div>
-            <strong><%= link_to "Favorites", :action => 'manage_favorites', :id => current_web_user.user.id %>
+            <strong><%= link_to "Favorites", :action => 'manage_favorites', :controller=>'users', :id => current_web_user.user.id %>
                 only </strong>   &nbsp;
             <input id="ucp_user_show_friends_only" name="user[show_friends_only]"
                    type="checkbox" <%= 'checked' if @user.show_friends_only? %>
