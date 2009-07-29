@@ -16,7 +16,7 @@
         <% @tag_counts.each do |t|
             tag_size = min_size + (t.count - min_qty)* step
         %>
-        
+
         <h1 style="font-size:<%= tag_size.to_i.to_s<<"%" %>">
           <% cleantag = h(t.name) %>
 

@@ -4,10 +4,16 @@
         <h2>Oops!</h2>
     </div>
     
-    <p class="error"> I am sorry . I have no idea what you're looking for </p>
-    
+    <p class="error"> I am sorry . I have no idea what you're looking for.
+       Why don't you try our most popular categories? </p>
+
+
+    <%= render_partial "listings/tags" %>
+
+
     <%= link_to 'Back', :back ,{:class=>"buttonRed"}%>
     <em style="position: absolute; z-index: 10; width: 225px; right: -175px; height: 268px; top: 0px;" id="tipsy-ashamed"></em>
+
 </div>
 
 

@@ -18,6 +18,7 @@ class CommonController < ApplicationController
 
 
   def malformed
+    prepare_tag_clouds
     render :action => '404'
   end
 end
