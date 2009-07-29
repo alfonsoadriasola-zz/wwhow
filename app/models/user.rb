@@ -78,7 +78,13 @@ class User < ActiveRecord::Base
   end
 
   def show_unmapped
+
   end
+
+  def show_ads
+
+  end
+  
 
   def self.default_location
     "100 Pine Street, San Francisco, CA"

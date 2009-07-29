@@ -104,7 +104,7 @@ class WebUser < ActiveRecord::Base
   end
 
   def accept_tos
-    
+
   end
 
   protected

@@ -1,90 +1,117 @@
 <div style="position:relative; font-size:1.2em;">
-  
+
 
   <div style="padding:1em; width:780px">
     <% if @merchants then %>
-      <% dice_toss =  1+ rand(3) %>
-      <% case dice_toss when 1 %>
-          <h3> WWHOW! Advertise your Sale Events to Local Shoppers</h3>
-          Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW! It
-          costs nothing and it's easy. Sign up and start posting! Reach 1000s of shoppers looking for deals in your
-          neighborhood.
-      <% when 2 %>
-          <h3> WWHOW! Tell Local Shoppers about Bargains in your Store</h3>
+        <% dice_toss =  1+ rand(3) %>
+        <% case dice_toss when 1 %>
+            <h1> WWHOW! Advertise your Sale Events to Local Shoppers</h1>
 
-          Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW! It's
-          free and easy. Sign up and start posting! Reach 1000s of shoppers looking for deals now.
-      <% when 3 %>
-          <h3> WWHOW! Start in 1 minute. Pay 0. Reach 1000s</h3>
-          Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW! It
-          costs nothing and it's easy. Sign up and start posting! Reach 1000s of shoppers looking for deals in your
-          neighborhood.
-      <% end %>
-  <% elsif @merchants.nil? && params[:category_list].nil? %>
+            <h2> Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW!
+              It
+              costs nothing and it's easy. Sign up and start posting! Reach 1000s of shoppers looking for deals in your
+              neighborhood. </h2>
+        <% when 2 %>
+            <h1> WWHOW! Tell Local Shoppers about Bargains in your Store</h1>
 
-      <% case 1+rand(5)  when 1 %>
-          <h3> WWHOW! The Latest and Greatest Deals in your Neighborhood</h3>
+            <h2>
+              Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW! It's
+              free and easy. Sign up and start posting! Reach 1000s of shoppers looking for deals now. </h2>
+        <% when 3 %>
+            <h1> WWHOW! Start in 1 minute. Pay 0. Reach 1000s</h1>
 
-          Do you like finding Great Deals? Discover the The Latest and Greatest local bargains, from specials in large
-          stores to garage sale treasures. Want to share the savings that you find? Sign up and start posting - it's free (and
-          easy)!
-      <% when 2 %>
-          <h3> WWHOW! The Latest and Greatest Bargains in your Neighborhood</h3>
+            <h2>
+              Have anything on sale today? Planning to hold a sale soon? If so, post details of your sale on WWHOW! It
+              costs nothing and it's easy. Sign up and start posting! Reach 1000s of shoppers looking for deals in your
+              neighborhood. </h2>
+        <% end %>
+    <% elsif @merchants.nil? && params[:category_list].nil? %>
 
-          Are you a Bargain Hunter? Discover the The Latest and Greatest local deals from specials in large stores to
-          garage sale treasures. Want to share the savings that you find? Sign up and start posting - it's free (and easy)!
-      <% when 3 %>
-          <h3> WWHOW! Everyday Savings in your Neighborhood </h3>
+        <% case 1+rand(5)  when 1 %>
+            <h1> WWHOW! The Latest and Greatest Deals in your Neighborhood</h1>
 
-          Love to Save Money? Discover great deals from specials in large stores to garage sale treasures found by
-          bargain hunters in your neighborhood. Want to share the savings that you find? Sign up and start posting - it's free
-          (and easy)!
+            <h2>
+              Do you like finding Great Deals? Discover the The Latest and Greatest local bargains, from specials in
+              large
+              stores to garage sale treasures. Want to share the savings that you find? Sign up and start posting - it's
+              free (and
+              easy)!
+            </h2>
+        <% when 2 %>
+            <h1> WWHOW! The Latest and Greatest Bargains in your Neighborhood</h1>
 
-      <% when 4 %>
-          <h3> WWHOW! Find and Share the The Latest and Greatest Bargains</h3>
+            <h2>
+              Are you a Bargain Hunter? Discover the The Latest and Greatest local deals from specials in large stores
+              to
+              garage sale treasures. Want to share the savings that you find? Sign up and start posting - it's free (and
+              easy)!</h2>
+        <% when 3 %>
+            <h1> WWHOW! Everyday Savings in your Neighborhood </h1>
 
-          Welcome to a great community of Bargain Hunters! Discover the The Latest and Greatest deals in your neighborhood
-          (and all over the map). Want to brag about your own bargains? Sign up and share the deals you find - it's free
-          (and easy)!
-      <% when 5 %>
-          <h3> WWHOW! Deals in your Neighborhood and All over the Map</h3>
+            <h2>
+              Love to Save Money? Discover great deals from specials in large stores to garage sale treasures found by
+              bargain hunters in your neighborhood. Want to share the savings that you find? Sign up and start posting -
+              it's free
+              (and easy)! </h2>
 
-          Love to Save Money? Discover great deals on all kind of products - from specials in large stores to garage
-          sale treasures found by local shoppers. Want to share the savings that you find? Sign up and start posting - it's
-          free (and easy)!
-      <% end %>
-  <% elsif params[:category_list] then %>
-      <% case 1+rand(5)  when 1 %>
-          <h3> WWHOW! Great Local Deals on <%= params[:category_list].titleize %></h3>
-          Do you like finding Great Deals? Discover the The Latest and Greatest local bargains on
-          <%= params[:category_list].titleize %>. Want to share the savings that you find? Sign up and start posting -
-          it's free (and easy)!
-      <% when 2 %>
-          <h3>WWHOW! The Latest and Greatest Bargains in your Neighborhood</h3>
+        <% when 4 %>
+            <h1> WWHOW! Find and Share the The Latest and Greatest Bargains</h1>
 
-          Are you a Bargain Hunter? Discover the The Latest and Greatest local deals
-          on <%= params[:category_list].titleize %>.
-          Want to share the savings that you find? Sign up and start posting - it's free (and easy)!
-      <% when 3 %>
-          <h3>WWHOW! Everyday Savings in your Neighborhood</h3>
+            <h2>
+              Welcome to a great community of Bargain Hunters! Discover the The Latest and Greatest deals in your
+              neighborhood
+              (and all over the map). Want to brag about your own bargains? Sign up and share the deals you find - it's
+              free
+              (and easy)! </h2>
+        <% when 5 %>
+            <h1> WWHOW! Deals in your Neighborhood and All over the Map</h1>
 
-          Love to Save Money? Discover great deals on <%= params[:category_list].titleize %> found by bargain hunters
-          in your neighborhood. Want to share the savings that you find? Sign up and start posting - it's free (and easy)!
-      <% when 4 %>
-          <h3> WWHOW! Find and Share the The Latest and Greatest Bargains</h3>
+            <h2>
+              Love to Save Money? Discover great deals on all kind of products - from specials in large stores to garage
+              sale treasures found by local shoppers. Want to share the savings that you find? Sign up and start posting
+              - it's
+              free (and easy)! </h2>
+        <% end %>
+    <% elsif params[:category_list] then %>
+        <% case 1+rand(5)  when 1 %>
+            <h1> WWHOW! Great Local Deals on <%= params[:category_list].titleize %></h1>
+            Do you like finding Great Deals? Discover the The Latest and Greatest local bargains on
+            <%= params[:category_list].titleize %>. Want to share the savings that you find? Sign up and start posting -
+            it's free (and easy)!       </h2>
+        <% when 2 %>
+            <h1>WWHOW! The Latest and Greatest Bargains in your Neighborhood</h1>
 
-          Welcome to a great community of Bargain Hunters! Discover the The Latest and Greatest deals
-          on <%= params[:category_list].titleize %> in your neighborhood and all over the map. Want to brag about your
-          own bargains? Sign up and share the deals you find - it's free (and easy)!
-      <% when 5 %>
-          <h3>WWHOW! Deals in your Neighborhood and all over the Map</h3>
+            <h2>
+              Are you a Bargain Hunter? Discover the The Latest and Greatest local deals
+              on <%= params[:category_list].titleize %>.
+              Want to share the savings that you find? Sign up and start posting - it's free (and easy)! </h2>
+        <% when 3 %>
+            <h1>WWHOW! Everyday Savings in your Neighborhood</h1>
 
-          Love to Save Money? Discover great deals on <%= params[:category_list].titleize %> and all kind of other
-          products found by local shoppers. Want to share the savings that you find? Sign up and start posting - it's
-          free (and easy)!
-      <% end %>
+            <h2>
+              Love to Save Money? Discover great deals on <%= params[:category_list].titleize %> found by bargain
+              hunters
+              in your neighborhood. Want to share the savings that you find? Sign up and start posting - it's free (and
+              easy)! </h2>
+        <% when 4 %>
+            <h1> WWHOW! Find and Share the The Latest and Greatest Bargains</h1>
 
-  <% end %>
+            <h2>
+              Welcome to a great community of Bargain Hunters! Discover the The Latest and Greatest deals
+              on <%= params[:category_list].titleize %> in your neighborhood and all over the map. Want to brag about
+              your
+              own bargains? Sign up and share the deals you find - it's free (and easy)! </h2>
+        <% when 5 %>
+            <h1>WWHOW! Deals in your Neighborhood and all over the Map</h1>
+
+            <h2>
+              Love to Save Money? Discover great deals on <%= params[:category_list].titleize %> and all kind of other
+              products found by local shoppers. Want to share the savings that you find? Sign up and start posting -
+              it's
+              free (and easy)! </h2>
+        <% end %>
+
+    <% end %>
 
   </div>
 </div>

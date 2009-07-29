@@ -21,8 +21,7 @@ class SessionsController < ApplicationController
             # reset_session
             self.current_web_user = web_user
             new_cookie_flag = (params[:remember_me] == "1")
-            handle_remember_cookie! new_cookie_flag
-            update_user_rankings
+            handle_remember_cookie! new_cookie_flag            
             redirect_back_or_default("/who/#{params[:login]}")
         else
             note_failed_signin
