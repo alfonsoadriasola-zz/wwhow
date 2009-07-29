@@ -21,4 +21,9 @@ class CommonController < ApplicationController
     prepare_tag_clouds
     render :action => '404'
   end
+
+  def locations
+
+  end
+  
 end

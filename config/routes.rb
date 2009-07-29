@@ -12,13 +12,13 @@ ActionController::Routing::Routes.draw do |map|
   map.help  '/help' , :controller => 'common', :action => 'help'
   map.tos   '/tos', :controller =>  'common', :action => 'tos'
   map.privacy '/privacy', :controller => 'common', :action => 'privacy'
+  map.locations '/locations', :controller => 'common', :action => 'locations'
 
   map.resources :web_users
   map.resource  :session
   map.resources :users
-
+ 
   # The priority is based upon order of creation: first created -> highest priority.
-
   # Named routes
   map.connect 'who/:author', :controller => 'listings', :action => 'search'
 
@@ -66,6 +66,7 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 
