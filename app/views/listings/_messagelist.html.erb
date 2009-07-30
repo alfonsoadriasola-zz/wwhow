@@ -15,7 +15,7 @@
     </div>
 
     <div id="mapframe">
-        <%= render_partial('listings/map') %>
+        <%= render :partial => ('listings/map') %>
     </div>
 
     <table id="messageListTable" class="sortable" cellspacing=0 cellpadding=4>
@@ -39,11 +39,11 @@
         </thead>
         
         <% for @blog_entry in @messages %>
-            <%= render_partial('listings/message') %>
+            <%= render :partial => ('listings/message') %>
         <% end %>
 
       <% if @filter then %>
-            <tr><td colspan = "7"> <%= render_partial "shared/system_messages" %> </td></tr>
+            <tr><td colspan = "7"> <%= render :partial =>  "shared/system_messages" %> </td></tr>
         <% end %>
         
     </table>

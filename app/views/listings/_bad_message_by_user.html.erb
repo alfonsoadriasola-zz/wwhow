@@ -1,4 +1,4 @@
-<% distance = number_with_precision(@blog_entry.distance_to(session[:geo_location]), 1)  if @blog_entry.lat %>
+<% distance = number_with_precision(@blog_entry.distance_to(session[:geo_location]), :precision => 1)  if @blog_entry.lat %>
 <td title="<%= h @blog_entry.categories.join(',') -%>" class="bad_post">
 
   <%= h(@blog_entry.what.downcase)[0..140] -%>

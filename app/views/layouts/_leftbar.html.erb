@@ -2,10 +2,10 @@
     <div id="leftbar">
 
       <%= if logged_in? && @user
-          render_partial 'users/control_panel'
+          render :partial =>  'users/control_panel'
       end %>
 
-      <%= render_partial 'listings/tags' %>
+      <%= render :partial =>  'listings/tags' %>
 
       <br/>
 

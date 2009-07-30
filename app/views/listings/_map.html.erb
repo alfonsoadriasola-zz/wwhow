@@ -32,7 +32,7 @@
         <% @mapmessages.each do |m|
            mapevents = true
            description = "#{h m.what.gsub(/'/, "")} #{h m.where.gsub(/'/, "")} #{h m.display_price()}".downcase.gsub(/[\n]/," ").gsub(/[\r]/," ").strip.chomp
-           detail = "#{number_with_precision(m.distance_to(session[:geo_location]), 1)} miles away"
+           detail = "#{number_with_precision(m.distance_to(session[:geo_location]), :precision => 1)} miles away"
            search_url = "http://www.google.com/maps?source=uds&daddr=#{u(m.where)}&saddr=#{u(session[:geo_location].full_address)}"
            detail = detail + '<a href="'+search_url+'" target="_blank"> directions! </a>'
            image_name = "/images/markers/marker" + (@mapmessages.index(m) + 1).to_s + ".png" %>

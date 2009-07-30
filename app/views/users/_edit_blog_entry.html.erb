@@ -34,7 +34,7 @@
                  if displaytext
                      price= @blog_entry.price_text
                  else
-                     price= number_with_precision(@blog_entry.price, 2)
+                     price= number_with_precision(@blog_entry.price, :precision => 2)
                  end %>
               <%= f.text_field :price, :size=> 6, :value => price %>
             </p>

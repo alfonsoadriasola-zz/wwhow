@@ -1,5 +1,5 @@
 <% form_for :blog_entry, @message, :url => {:action => 'search'}  do |f| %>
-    <%= render_partial 'listings/search' %>
+    <%= render :partial =>  'listings/search' %>
     <div id="container" class="centered">
         <div id="welcome" onclick="window.location.assign('/signup');"
 
@@ -10,16 +10,16 @@
             <%= render :partial => 'welcome_verbage' %>
         </div>
 
-        <%= render_partial 'layouts/leftbar' %>
-        <%= render_partial 'layouts/rightbar' %>
+        <%= render :partial =>  'layouts/leftbar' %>
+        <%= render :partial =>  'layouts/rightbar' %>
         <span style="position: absolute; z-index: 10; width: 225px; right: 0px; height: 268px; top: 117px;
                 <% if !session[:sliders] then %>display:none<% end %>;" id="tipsy-pen">  </span>
 
         <div class="centered-sm">
             <% @last_id = 0 %>
-            <%= render_partial '/listings/search_sliders' %>
+            <%= render :partial => '/listings/search_sliders' %>
 
-            <%= render_partial 'messagelist' %>
+            <%= render :partial => 'messagelist' %>
 
         </div>
 

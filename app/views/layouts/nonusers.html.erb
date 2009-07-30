@@ -19,17 +19,17 @@
 
 <div id="frame">
 
-  <%= render_partial 'layouts/menu' %>
-  <div id="bannerCommon"><%= render_partial 'shared/home' %></div>
+  <%= render :partial =>  'layouts/menu' %>
+  <div id="bannerCommon"><%= render :partial =>  'shared/home' %></div>
 
   <%= yield %>
 
-  <%= render_partial 'layouts/footer' %>
+  <%= render :partial =>  'layouts/footer' %>
 </div>
 
 <div id="busy" style="display:none">please wait..</div>
 <div id="tooltip" style="display:none"></div>
-<%= render_partial 'layouts/endscripts' %>
+<%= render :partial =>  'layouts/endscripts' %>
 </body>
 
 </html>

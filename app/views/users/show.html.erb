@@ -1,17 +1,17 @@
 <div id="container-loggedin">
     <% form_for :blog_entry, @message, :url => {:action => 'search'}  do |f| %>
-        <%= render_partial 'layouts/leftbar' %>
-        <%= render_partial 'layouts/rightbar' %>
-        <%= render_partial 'listings/search' %>
-        <div class="centered-sm"><%= render_partial 'listings/search_sliders' %></div>
+        <%= render :partial =>  'layouts/leftbar' %>
+        <%= render :partial =>  'layouts/rightbar' %>
+        <%= render :partial =>  'listings/search' %>
+        <div class="centered-sm"><%= render :partial =>  'listings/search_sliders' %></div>
       
     <% end %>
 
     <div class="centered-sm">
         <% if logged_in? && current_web_user.user.id == @user.id %>
-            <%= render_partial '/users/input_header' %>
+            <%= render :partial =>  '/users/input_header' %>
             <% @last_id = 0 %>
-            <%= render_partial 'listings/messagelist' %>
+            <%= render :partial =>  'listings/messagelist' %>
 
         <% end %>
     </div>

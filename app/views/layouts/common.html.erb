@@ -13,22 +13,22 @@
 <body>
 <div id="frame">
 
-  <%= render_partial 'layouts/menu' %>
-  <div id="bannerCommon"><%= render_partial 'shared/home'%></div>
+  <%= render :partial =>  'layouts/menu' %>
+  <div id="bannerCommon"><%= render :partial =>  'shared/home'%></div>
 
   <div id="container">
 
-   <%= render_partial '/shared/system_messages' %>
+   <%= render :partial =>  '/shared/system_messages' %>
     <%= yield %> 
 
   </div>
 
-  <%= render_partial 'layouts/footer' %>
+  <%= render :partial =>  'layouts/footer' %>
 
 </div>
 
 
-<%= render_partial 'layouts/endscripts' %>
+<%= render :partial =>  'layouts/endscripts' %>
 </body>
 
 </html>

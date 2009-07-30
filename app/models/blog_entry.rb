@@ -26,7 +26,7 @@ class BlogEntry < ActiveRecord::Base
     tokens = self.text.split '#'
     if tokens then
       tokens.each{|t| t=t.split}
-      self.what = tokens[0].sub('@wwhow', '').downcase if tokens[0]
+      self.what = tokens[0].downcase.sub('@wwhow', '') if tokens[0]
       self.where = tokens[1] if tokens[1]
       if tokens[2] then
         self.price_text = tokens[2].strip

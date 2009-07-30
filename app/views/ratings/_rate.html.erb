@@ -1,9 +1,9 @@
 <% @convert = %w[one two three four five] %>
 <span id="star-ratings-block-<%= asset.id %>" class="star-ratings-block">
-   <span class="small"> <%= number_with_precision(asset.rating, 1) %>/5 Stars (<%= asset.ratings.size %> votes)</span><br/>
+   <span class="small"> <%= number_with_precision(asset.rating, :precision => 1) %>/5 Stars (<%= asset.ratings.size %> votes)</span><br/>
     <ul class="star-rating">
         <li class='current-rating' style='width:<%= (asset.rating * 20).to_i -%>%;'>
-            Currently <%= number_with_precision(asset.rating, 1) %>/5 Stars.
+            Currently <%= number_with_precision(asset.rating, :precision => 1) %>/5 Stars.
         </li>
         <% 1.upto(5) do |x| -%>
         <li>
