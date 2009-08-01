@@ -27,9 +27,12 @@ class CommonController < ApplicationController
 
   def sitemap
     @headers = {}
+    @pages = []
     @headers['Content-Type'] = "application/xml"
-    @pages = [{:url => 'what/shoes/where/san francisco', :updated_at => Date.today },
-              {:url => 'what/food/where/oakland', :updated_at => Date.today}]
+
+    BlogEntry.master_category_list.each{|c|
+      BlogEntry.browse_locations.each{|l| @pages <<{:url => "what/#{c}/where/#{l}/", :updated_at => DateTime.new(Date.today.year, Date.today.month, 1) } unless c == " "  }}
+
     respond_to do |format|
       format.xml # sitemap.rxml
     end
