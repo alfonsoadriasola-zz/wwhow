@@ -1,7 +1,7 @@
 <% if @merchants then %>
     <title>WWHOW! Advertise your sales to local buyers.</title>
 <% elsif params[:cateogory_list]  then %>
-    <title>WWHOW! Find and share great deals and savings on <%= params[:cateogory_list] %>.</title>
+    <title>WWHOW! Find and share great deals and savings on <%= "near #{params[:entry_location]}" if params[:entry_location] %> </title>
 <% else %>
-    <title>WWHOW! Find and share great deals and savings.</title>
+    <title>WWHOW! Find and share great deals and savings. <%= "near #{params[:entry_location]}" if params[:entry_location] %> </title>
 <% end %>

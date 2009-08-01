@@ -104,8 +104,8 @@ body div {
     width: 66%;
 }
 
-#welcome h1 { font-size:1.2em}
-#welcome h2 { font-size:1.2em ; font-weight:normal;}    
+#welcome h1 { font-size:1em}
+#welcome h2 { font-size:1em ; font-weight:normal;}
 #menu {
     background: url(/images/toolButton.png) repeat-x left top;
     line-height: 1.7em;
