@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.tos   '/tos', :controller =>  'common', :action => 'tos'
   map.privacy '/privacy', :controller => 'common', :action => 'privacy'
   map.locations '/locations', :controller => 'common', :action => 'locations'
+  map.site_map  '/sitemap.xml', :controller => 'common', :action => 'sitemap'
 
   map.resources :web_users
   map.resource  :session
