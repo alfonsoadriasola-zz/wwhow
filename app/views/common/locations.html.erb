@@ -2,7 +2,7 @@
 
   <ul>
 
-    <% Subscription.browse_locations.each{|place| %>
+    <% BlogEntry.browse_locations.each{|place| %>
 
         <li>  <%= link_to "Find great bargains near #{place.titleize}", "/where/#{place}" %> </li>
 
