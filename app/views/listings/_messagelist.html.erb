@@ -3,7 +3,7 @@
     <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p")%>.  Showing <%=@messages.size %> posts, out of  <%=BlogEntry.count%>
 
     
-        <% show_map_icons =  session[:map] == true && !@messages.empty? && mappables.size > 0%>
+        <% show_map_icons =  session[:map] == true && !@messages.empty? && @mapmessages.size > 0%>
 
         <% if show_map_icons ==true  %>
             <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
