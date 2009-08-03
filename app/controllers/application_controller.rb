@@ -87,12 +87,12 @@ class ApplicationController < ActionController::Base
 
 
     @search_category_list, @search_from_input_box, @search_by_author, @search_by_author_url, @search_by_location,
-            @search_by_what_where_url, default_logged_in_search = false
+            @search_by_what_where_url, @default_logged_in_search = false
     @search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     @search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
     @search_by_author_url = (params[:author] && params[:blog_entry].nil? )
     @search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
-    default_logged_in_search = @search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
+    @default_logged_in_search = @search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
     @search_from_input_box =  params[:blog_entry][:search] if params[:blog_entry] && params[:blog_entry][:search]
     @search_category_list = !@search_from_input_box && (params[:category_list] || ( params[:blog_entry] && params[:blog_entry][:category_list] != "" ))
 
@@ -148,7 +148,7 @@ class ApplicationController < ActionController::Base
 
       @messages = @messages.uniq
       #search by author (only possible through tag)
-    elsif @search_by_author  || @search_by_author_url  && !default_logged_in_search
+    elsif @search_by_author  || @search_by_author_url  && !@default_logged_in_search
       if params[:blog_entry].nil? && params[:author]
         params[:blog_entry]=Hash.new
         if author=  User.find_by_name(params[:author])
@@ -157,7 +157,7 @@ class ApplicationController < ActionController::Base
       end
 
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
-    elsif @search_by_location || default_logged_in_search
+    elsif @search_by_location || @default_logged_in_search
       get_initial_messages
     else
       #fallback
