@@ -77,7 +77,7 @@ class ApplicationController < ActionController::Base
 
     if logged_in?
       if params[:user]
-        @show_friends_only = params[:user][:show_friends_only] == "on"
+        @show_friends_only = params[:user][:show_friends_only] == "1"
         current_web_user.user.show_friends_only = @show_friends_only
         current_web_user.user.save(false)
       else

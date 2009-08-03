@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ApplicationFlowsTest < ActionController::IntegrationTest
+
+  include AuthenticatedTestHelper
   fixtures :all
 
   def test_should_get_index
@@ -12,14 +14,18 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
   def test_simplest
     get_via_redirect "/"
     assert_response :success
-    assert assigns(:messages)
+    actual =  assigns(:messages)
+    assert !actual.nil?
   end
 
   def test_should_log_in_and_move_around
-    get_via_redirect "/"
+    get_via_redirect "/login"
     login_as :alfonso
+    get_via_redirect "/"
     assert_response :ok
     actual =  assigns(:messages)
+    assert !actual.nil?
+
   end
 
   def test_search

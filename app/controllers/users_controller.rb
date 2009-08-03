@@ -162,8 +162,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
-    flash[:notice] = flash[:error] = ""
+  def search 
     get_search_results
     prepare_tag_clouds
     render :action => 'show', :user_id => User.find_by_web_user_id(current_web_user.id)
