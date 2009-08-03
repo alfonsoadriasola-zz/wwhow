@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ApplicationFlowsTest < ActionController::IntegrationTest
-  fixtures :web_users, :users, :blog_entries
+  fixtures :all
 
   def test_should_get_index
     blog_entries(:one).geocode_where
@@ -19,7 +19,7 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
     get_via_redirect "/"
     login_as :alfonso
     assert_response :ok
-    actual =  assigns(:messages)    
+    actual =  assigns(:messages)
   end
 
   def test_search
@@ -33,7 +33,6 @@ class ApplicationFlowsTest < ActionController::IntegrationTest
     assert_response :success
     assert assigns(:messages)
   end
-
 
   def test_merchant_landing
     shoe=blog_entries(:shoe)

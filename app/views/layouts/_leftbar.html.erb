@@ -9,7 +9,7 @@
 
       <br/>
 
-        <% if @messages.size>1 then %>
+        <% if @messages.size>1 && RAILS_ENV == "production" then %>
             <%= render :partial => 'shared/ads'  %>
         <% end %>
 

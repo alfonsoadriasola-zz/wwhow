@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @user = User.find_by_name(params[:id])
     end
 
-    get_initial_messages
+    get_results_by_what_where_who_or_id
     safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   def find_by_name
     @user = User.find_by_name(params[:name])
-    get_initial_messages
+    get_results_by_what_where_who_or_id
     safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|

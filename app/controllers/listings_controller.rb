@@ -18,7 +18,7 @@ class ListingsController < ApplicationController
       return
     end
     safe_get_tweets
-    get_initial_messages
+    get_results_by_what_where_who_or_id
     prepare_tag_clouds
     respond_to do |format|
       format.html # index.html.erb

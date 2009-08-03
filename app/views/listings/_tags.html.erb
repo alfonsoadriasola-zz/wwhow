@@ -1,10 +1,12 @@
 <div id="popular_tags">
   <div>
     <h5> Popular Categories </h5>
-    <% def tagname(t)
+    <%
+     def tagname(t)
         h(t.name.downcase).sub("'", "&rsquo;")
-       end
-       unless @tag_counts.empty?
+     end
+
+     unless @tag_counts.empty?
            min_size=85
            max_size = 135
            min_qty = @tag_counts.last.count
@@ -12,19 +14,15 @@
            spread = max_qty - min_qty
            spread = 1 if spread== 0
            step = (max_size - min_size)/spread.to_f
-    %>
-        <% @tag_counts.each do |t|
-            tag_size = min_size + (t.count - min_qty)* step
-        %>
+           @tag_counts.each do |t|
+               tag_size = min_size + (t.count - min_qty)* step %>
 
-        <h1 style="font-size:<%= tag_size.to_i.to_s<<"%" %>">
-          <% cleantag = h(t.name) %>
-
-          <%= link_to tagname(t), "/what/#{ tagname(t) }" %>
-            </h1>
+            <h2 style="font-size:<%= tag_size.to_i.to_s<<"%" %>">
+              <%= link_to tagname(t), "/what/#{ tagname(t) }" %>
+            </h2>
 
         <% end
-           end %>
+     end %>
   </div>
 
   <br/>

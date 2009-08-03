@@ -180,8 +180,13 @@ class ApplicationController < ActionController::Base
     finish_search
   end
 
-  def get_initial_messages
+  def get_results_by_what_where_who_or_id
     initialize_filter
+    get_initial_messages
+  end
+
+  def get_initial_messages
+
     cond=BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
     #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
     @messages = BlogEntry.find :all,
@@ -200,13 +205,6 @@ class ApplicationController < ActionController::Base
       radius_step=radius_step+5
     end
     finish_search
-  end
-
-  protected
-
-  def prepare_tag_clouds
-    @tag_counts = BlogEntry.category_counts(:limit => 48, :order => "count DESC, id DESC", :at_least => 10)
-    @active_users = User.find_active
   end
 
   protected
@@ -273,5 +271,15 @@ class ApplicationController < ActionController::Base
     end
 
   end
+
+  protected
+
+  def prepare_tag_clouds
+    @tag_counts = BlogEntry.category_counts(:limit => 48, :order => "count DESC, id DESC", :at_least => 18)
+    #@tag_counts = @tag_counts.sort_by{|tag| tag.name.downcase }
+    @active_users = User.find_active
+  end
+
+
 
 end
