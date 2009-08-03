@@ -55,6 +55,19 @@ class ApplicationController < ActionController::Base
       session[:map] = false
     end
 
+    use_sliders = session[:sliders]
+    #prepare filters for sliders
+    if use_sliders
+      @filter[:price_from]=params[:blog_entry][:price_from] unless params[:blog_entry][:price_from].nil?
+      @filter[:price_to]=params[:blog_entry][:price_to] unless params[:blog_entry][:price_to].nil?
+
+      @filter[:rating_from] = params[:blog_entry][:search_rating_from] unless params[:blog_entry][:search_rating_from].nil?
+      @filter[:rating_to]= params[:blog_entry][:search_rating_to] unless params[:blog_entry][:search_rating_to].nil?
+
+      @filter[:radius] = params[:blog_entry][:radius] unless params[:blog_entry][:radius].nil?
+    end
+
+
     if logged_in?
       @filter[:show_unmapped] = params[:user][:show_unmapped] == "on" if params[:user]
       @filter[:show_unmapped] = true if params[:user].nil?
@@ -71,30 +84,32 @@ class ApplicationController < ActionController::Base
         @show_friends_only = current_web_user.user.show_friends_only
       end
     end
+
+
+    @search_category_list, @search_from_input_box, @search_by_author, @search_by_author_url, @search_by_location,
+            @search_by_what_where_url, default_logged_in_search = false
+    @search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
+    @search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
+    @search_by_author_url = (params[:author] && params[:blog_entry].nil? )
+    @search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
+    default_logged_in_search = @search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
+    @search_from_input_box =  params[:blog_entry][:search] if params[:blog_entry] && params[:blog_entry][:search]
+    @search_category_list = !@search_from_input_box && (params[:category_list] || ( params[:blog_entry] && params[:blog_entry][:category_list] != "" ))
+
   end
 
   # Only search routine. All variations handled inside this app wide method.
 
   def get_search_results
+
     initialize_filter
-    search_category_list, search_from_input_box, @search_by_author, @search_by_author_url, search_by_location,
-            search_by_what_where_url, default_logged_in_search = false
+
     cond = String.new
-    search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
-    @search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
-    @search_by_author_url = (params[:author] && params[:blog_entry].nil? )
-    search_by_what_where_url = params[:category_list] && params[:entry_location] && (params[:blog_entry].nil?)
-    default_logged_in_search = @search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
-    search_from_input_box =  params[:blog_entry][:search] if params[:blog_entry] && params[:blog_entry][:search]
-    search_category_list = !search_from_input_box && (params[:category_list] || ( params[:blog_entry] && params[:blog_entry][:category_list] != "" ))
-
-    use_sliders = session[:sliders]
-
-    if (search_category_list || search_from_input_box || search_by_what_where_url) &&
+    if (@search_category_list || @search_from_input_box || @search_by_what_where_url) &&
             !(@search_by_author || @search_by_author_url)
 
       #did one click a tag?
-      if search_category_list
+      if @search_category_list
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
         @filter[:category_list] = params[:category_list] if params[:category_list] &&( params[:blog_entry].nil? ||params[:blog_entry][:category_list]=="")
       else
@@ -104,40 +119,27 @@ class ApplicationController < ActionController::Base
         @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?
       end
 
-      #prepare filters for sliders
-      if use_sliders
-        @filter[:price_from]=params[:blog_entry][:price_from] unless params[:blog_entry][:price_from].nil?
-        @filter[:price_to]=params[:blog_entry][:price_to] unless params[:blog_entry][:price_to].nil?
-
-        @filter[:rating_from] = params[:blog_entry][:search_rating_from] unless params[:blog_entry][:search_rating_from].nil?
-        @filter[:rating_to]= params[:blog_entry][:search_rating_to] unless params[:blog_entry][:search_rating_to].nil?
-
-        @filter[:radius] = params[:blog_entry][:radius] unless params[:blog_entry][:radius].nil?
-      end
-
       #the second one is for tagged by searching
       @messages, @messages2 = Array.new
-      if search_from_input_box
+      if @search_from_input_box
         cond = "1=1 "
-      elsif search_category_list
+      elsif @search_category_list
         cond = "1=0 "
       end
 
-      #conditions for distance
-      cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}"
-      #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
-      cond = cond + ")"
-      distancecond=cond
+      #conditions for distance, no unmapped being supported here
+      cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}" + ")"
 
-      #conditions for searching at
       cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '')}%' }
-      @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :categories, :ratings]
+      @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       @filter[:category_list] = params[:category_list] if params[:category_list]
+
+      # wait input box overrides tag search
       @filter[:category_list] = params[:blog_entry][:search] if params[:blog_entry]&& params[:blog_entry][:search]!= ""
 
-      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 200, :include =>[:user, :ratings] }
+      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :ratings] }
 
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
 
@@ -155,7 +157,7 @@ class ApplicationController < ActionController::Base
       end
 
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
-    elsif search_by_location || default_logged_in_search
+    elsif @search_by_location || default_logged_in_search
       get_initial_messages
     else
       #fallback
@@ -203,39 +205,39 @@ class ApplicationController < ActionController::Base
   protected
 
   def prepare_tag_clouds
-    @tag_counts = BlogEntry.category_counts :limit => 50, :order => "count DESC, id DESC"
+    @tag_counts = BlogEntry.category_counts(:limit => 48, :order => "count DESC, id DESC", :at_least => 10)
     @active_users = User.find_active
   end
 
   protected
 
   def finish_search
+
     if (logged_in? && @show_friends_only == true)
       @messages = @messages.find_all{ |m| @user.subscriptions.collect{|s|s.friend_id}.insert(0, @user.id).include?(m.user_id) }
     end
 
     @messages.compact
-
     @messages =  @messages.sort_by{|m| m.created_at}.reverse!
-
     @location = "#{session[:geo_location].lat},#{session[:geo_location].lng}" if session[:geo_location]&&session[:geo_location].lat
-
     @mapmessages = @messages.reject{|m| m.lat.nil? || m.price.nil?}
+    @mapmessages = @mapmessages[0..99] if @mapmessages.size > 99
 
-    @mapmessages = @mapmessages[0..98] if @mapmessages.size > 98
 
     if @mapmessages.empty?
-      if !(@search_by_author||@search_by_author_url)
+      if @search_by_what_where_url then
         flash[:error] = " #{session[:geo_location].full_address } has no deals reported nearby yet. <br/>
-                         You can get the ball rolling by spreading the word, post a deal! <br/>"
-      else
+                            You can get the ball rolling by spreading the word, post a deal! <br/> "
+      end
+      if @search_by_author || @search_by_author_url then
         flash[:error] = " this user doesnt have any posts mappable to this location  <br/> "
+      end
+      if @search_from_input_box  then
+        flash[:error] = " I couldnt find anything with those search terms. Please try something else  <br/> "
       end
     end
 
-
     if @messages.empty?
-
       if session[:sliders]==true
         flash[:error]<< "<em>(your advanced filters may be too restrictive)</em><br/>"
       end
@@ -245,7 +247,6 @@ class ApplicationController < ActionController::Base
       if (logged_in? && @filter[:show_unmapped]==false)
         flash[:error]<<"<em>( you are only seeing mapped posts)</em><br/>"
       end
-      flash[:error]<<"<p/>"
     end
 
   end

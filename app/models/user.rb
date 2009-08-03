@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   acts_as_taggable_on :flags
 
   def self.find_active
-    User.find(:all, :conditions => ['rated > 0'], :order => "rated desc", :limit => 30 )
+    User.find(:all, :conditions => ['rated > 0'], :order => "rated desc, updated_at desc", :limit => 30 )
   end
 
   private

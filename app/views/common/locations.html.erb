@@ -1,10 +1,12 @@
-<div class="centered-sm surface"><h1> We can help you find deals on all these locations </h1>
+<div class="centered-sm surface">
+
+  <h1 style="font-size:1em;"> We can help you find deals on all these locations </h1>
 
   <ul>
 
     <% BlogEntry.browse_locations.each{|place| %>
 
-        <li>  <%= link_to "Find great bargains near #{place.titleize}", "/where/#{place}" %> </li>
+        <li>  <%= link_to "#{place.titleize}", "/where/#{place}" %> </li>
 
     <% } %>
 

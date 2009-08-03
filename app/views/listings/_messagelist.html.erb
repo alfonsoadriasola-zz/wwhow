@@ -1,14 +1,14 @@
 <div id="messageList">
 
-    <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p")%>.  Showing <%=@messages.size %> posts, of  <%=BlogEntry.count%>
+    <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p")%>.  Showing <%=@messages.size %> posts, out of  <%=BlogEntry.count%>
 
-        <% mappables = @messages.select{|m| !m.lat.nil?} %>
+    
         <% show_map_icons =  session[:map] == true && !@messages.empty? && mappables.size > 0%>
 
         <% if show_map_icons ==true  %>
             <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
             <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
-        <% elsif mappables.size > 0  %>
+        <% elsif @mapmessages.size > 0  %>
             <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
             <a id="mapOn"  href="#" onclick="startMap();">Map it!</a>
         <% end %>
