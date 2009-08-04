@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
     # Set default location
     @address = User.default_location
     if params[:default_location] && params[:default_location] != "" || params[:entry_location]
-      unless @address = params[:default_location]
-        @address = params[:entry_location]
+      unless @address = params[:entry_location]
+        @address = params[:default_location]
       end
     else
       @address = current_web_user.user.address if logged_in?
@@ -129,6 +129,7 @@ class ApplicationController < ActionController::Base
 
       #conditions for distance, no unmapped being supported here
       cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}" + ")"
+      distcond = cond
 
       cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '%')}%' }  if  @filter[:searchterms]
       @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :categories, :ratings]
@@ -139,7 +140,7 @@ class ApplicationController < ActionController::Base
       # wait input box overrides tag search
       @filter[:category_list] = params[:blog_entry][:search] if params[:blog_entry]&& params[:blog_entry][:search]!= ""
 
-      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :ratings] }
+      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :conditions=> distcond,  :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :ratings] }
 
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
 
