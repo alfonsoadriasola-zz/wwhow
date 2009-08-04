@@ -111,7 +111,7 @@ class ApplicationController < ActionController::Base
       #did one click a tag?
       if @search_category_list
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
-        @filter[:category_list] = params[:category_list] if params[:category_list] &&( params[:blog_entry].nil? ||params[:blog_entry][:category_list]=="")
+        @filter[:searchterms] = @filter[:category_list] = params[:category_list] if params[:category_list] &&( params[:blog_entry].nil? ||params[:blog_entry][:category_list]=="")
       else
         #prepare search input, look at things tagged with search terms as well
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
@@ -124,13 +124,13 @@ class ApplicationController < ActionController::Base
       if @search_from_input_box
         cond = "1=1 "
       elsif @search_category_list
-        cond = "1=0 "
+        cond = "1=1 "
       end
 
       #conditions for distance, no unmapped being supported here
       cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}" + ")"
 
-      cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '%')}%' }
+      cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '%')}%' }  if  @filter[:searchterms]
       @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
