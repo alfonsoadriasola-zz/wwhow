@@ -32,17 +32,22 @@ class BlogEntry < ActiveRecord::Base
         self.price_text = tokens[2].strip
         self.price = tokens[2].to_f
       end
-      set_tags(self.what)
+      set_tags_from_what(self.what)
     end
   end
 
-  def set_tags(whats)
+  def set_tags_from_what(whats)
     whats.downcase!
     list = whats.split(',');
     list.each do |item|
       item=item.strip;
       self.category_list.concat(item.split(' ').select{|w| w.size > 3 } )
     end
+  end
+
+  def set_tags_from_list(list)
+    list[0].downcase!
+    self.category_list.concat(list)
   end
 
   def geocode_where

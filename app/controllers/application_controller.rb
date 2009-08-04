@@ -243,7 +243,7 @@ class ApplicationController < ActionController::Base
         flash[:error]<<"<em>( you may have to look outside of your favorite users )</em><br/>"
       end
       if (logged_in? && @filter[:show_unmapped]==false)
-        flash[:error]<<"<em>( at least nothing within #{@filter[:radius]} miles of #{session[:geo_location].ful_address })</em><br/>"
+        flash[:error]<<"<em>( at least nothing within #{@filter[:radius]} miles of #{session[:geo_location].full_address })</em><br/>"
       end
     end
 

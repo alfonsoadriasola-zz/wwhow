@@ -137,7 +137,7 @@ class UsersController < ApplicationController
     whats =  params[:blog_entry][:what].strip
     wheres = params[:blog_entry][:where].strip
     price = params[:blog_entry][:price]
-    categories = params[:category_list].join(",")
+    categories = params[:category_list]
 
     @msg = @user.blog_entries.new(
             :what => whats.downcase,
@@ -145,7 +145,7 @@ class UsersController < ApplicationController
             :price => price.to_f,
             :price_text => price  )
 
-    @msg.set_tags(whats) unless @msg.set_tags(categories)
+    @msg.set_tags_from_what(whats) unless @msg.set_tags_from_list(categories)
 
     @msg.geocode_where
     respond_to do |format|
