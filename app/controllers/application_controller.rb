@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
 
     # Set default location
     @address = User.default_location
-    if params[:default_location] || params[:entry_location]
+    if params[:default_location] && params[:default_location] != "" || params[:entry_location]
       unless @address = params[:default_location]
         @address = params[:entry_location]
       end
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
       @filter[:show_unmapped] = params[:user][:show_unmapped] == "on" if params[:user]
       @filter[:show_unmapped] = true if params[:user].nil?
     else
-      @filter[:show_unmapped] = true;
+      @filter[:show_unmapped] = false;
     end
 
     if logged_in?
@@ -243,7 +243,7 @@ class ApplicationController < ActionController::Base
         flash[:error]<<"<em>( you may have to look outside of your favorite users )</em><br/>"
       end
       if (logged_in? && @filter[:show_unmapped]==false)
-        flash[:error]<<"<em>( you are only seeing mapped posts)</em><br/>"
+        flash[:error]<<"<em>( you are only looking for mapped posts)</em><br/>"
       end
     end
 

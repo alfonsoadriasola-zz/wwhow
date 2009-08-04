@@ -3,7 +3,7 @@
 <% if @merchants then %>
     <meta name="description" content="Advertise your sales, discounts and specials to local customers."/>
 <% else %>
-    <meta name="description" content="A great place to find deals  <%= "on" << params[:category_list] if params[:category_list] %> <%= "near" + params[:default_location] if params[:default_location] %>"/>
+    <meta name="description" content="A great place to find deals  <%= "on" << params[:category_list] if params[:category_list] %> <%= "near" + params[:entry_location] if params[:entry_location] %>"/>
 <% end %>
 <% if params[:category_list] then %>
     <meta name="keywords" content="deals on <%= params[:category_list] %>, savings on <%= params[:category_list] %>, sale on <%= params[:category_list] %>, discount <%= params[:category_list] %>,<%= params[:category_list] %> bargains, frugal, local shopping, cheap <%= params[:category_list] %>"/>
