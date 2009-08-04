@@ -29,18 +29,6 @@ class ApplicationController < ActionController::Base
     @filter[:price_to]=500
     @filter[:radius]= 50
     @filter[:show_unmapped]=false
-
-    # Set default location
-    @address = User.default_location
-    if params[:default_location] && params[:default_location] != "" || params[:entry_location]
-      unless @address = params[:entry_location]
-        @address = params[:default_location]
-      end
-    else
-      @address = current_web_user.user.address if logged_in?
-    end
-    session[:geo_location] = BlogEntry.get_geolocation(@address)
-
     #set widgets
     unless params[:blog_entry].nil? then
       if params[:blog_entry][:sliders].nil? == false
@@ -95,6 +83,19 @@ class ApplicationController < ActionController::Base
     @default_logged_in_search = @search_by_author_url && ( logged_in? && current_web_user.login == params[:author] )
     @search_from_input_box =  params[:blog_entry][:search] if params[:blog_entry] && params[:blog_entry][:search]
     @search_category_list = !@search_from_input_box && (params[:category_list] || ( params[:blog_entry] && params[:blog_entry][:category_list] != "" ))
+
+    # Set default location
+    @address = session[:geo_location].full_address if session[:geo_location]
+    @address = User.default_location unless @address  
+    if params[:default_location] && params[:default_location] != "" || params[:entry_location]
+      unless @address = params[:entry_location]
+        @address = params[:default_location]
+      end
+    else
+      @address = current_web_user.user.address if logged_in? && @default_logged_in_search
+    end
+    session[:geo_location] = BlogEntry.get_geolocation(@address)
+
 
   end
 

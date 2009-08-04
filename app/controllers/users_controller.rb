@@ -41,20 +41,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def find_by_name
-    @user = User.find_by_name(params[:name])
-    get_results_by_where_who_or_id
-    safe_get_tweets
-    prepare_tag_clouds
-    respond_to do |format|
-      if @user
-        format.html {render :action => 'show'}
-      else
-        format.html {redirect_to :controller => 'listings', :action => 'index' }
-      end
-    end
-  end
-
   # GET /users/new
   # GET /users/new.xml
 
