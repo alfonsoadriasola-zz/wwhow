@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @user = User.find_by_name(params[:id])
     end
 
-    get_results_by_what_where_who_or_id
+    get_results_by_where_who_or_id
     safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   def find_by_name
     @user = User.find_by_name(params[:name])
-    get_results_by_what_where_who_or_id
+    get_results_by_where_who_or_id
     safe_get_tweets
     prepare_tag_clouds
     respond_to do |format|
@@ -163,7 +163,7 @@ class UsersController < ApplicationController
   end
 
   def search 
-    get_search_results
+    get_results_by_what
     prepare_tag_clouds
     render :action => 'show', :user_id => User.find_by_web_user_id(current_web_user.id)
   end

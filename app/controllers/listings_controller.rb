@@ -18,7 +18,7 @@ class ListingsController < ApplicationController
       return
     end
     safe_get_tweets
-    get_results_by_what_where_who_or_id
+    get_results_by_where_who_or_id
     prepare_tag_clouds
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +29,7 @@ class ListingsController < ApplicationController
     @merchants = true if params[:merchants]
     if params[:blog_entry] || params[:entry_location] || params[:category_list]  || params[:author]
       flash[:notice] = flash[:error] = ""
-      get_search_results
+      get_results_by_what
       prepare_tag_clouds
       if logged_in?
         @user = User.find_by_web_user_id(current_web_user.id);

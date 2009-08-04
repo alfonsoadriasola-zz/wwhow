@@ -100,7 +100,7 @@ class ApplicationController < ActionController::Base
 
   # Only search routine. All variations handled inside this app wide method.
 
-  def get_search_results
+  def get_results_by_what
 
     initialize_filter
 
@@ -113,7 +113,7 @@ class ApplicationController < ActionController::Base
         @filter[:category_list] = params[:blog_entry][:category_list] if params[:blog_entry]
         @filter[:category_list] = params[:category_list] if params[:category_list] &&( params[:blog_entry].nil? ||params[:blog_entry][:category_list]=="")
       else
-        #prepare search input, look at things tagged with search terms as well     
+        #prepare search input, look at things tagged with search terms as well
         @filter[:category_list] =  params[:blog_entry][:search].split(',')
         @filter[:category_list].each{|item| item = item.strip} if @filter[:category_list].size  > 1
         @filter[:searchterms] = params[:blog_entry][:search].strip unless params[:blog_entry][:search].nil?
@@ -130,7 +130,7 @@ class ApplicationController < ActionController::Base
       #conditions for distance, no unmapped being supported here
       cond = cond + "AND (" + BlogEntry.distance_sql(session[:geo_location], :miles, :sphere) << "<= #{@filter[:radius]}" + ")"
 
-      cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '')}%' }
+      cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '%')}%' }
       @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
@@ -180,7 +180,7 @@ class ApplicationController < ActionController::Base
     finish_search
   end
 
-  def get_results_by_what_where_who_or_id
+  def get_results_by_where_who_or_id
     initialize_filter
     get_initial_messages
   end
@@ -243,7 +243,7 @@ class ApplicationController < ActionController::Base
         flash[:error]<<"<em>( you may have to look outside of your favorite users )</em><br/>"
       end
       if (logged_in? && @filter[:show_unmapped]==false)
-        flash[:error]<<"<em>( you are only looking for mapped posts)</em><br/>"
+        flash[:error]<<"<em>( at least nothing within #{@filter[:radius]} miles of #{session[:geo_location].ful_address })</em><br/>"
       end
     end
 
