@@ -357,8 +357,7 @@ span.right {
 
 span.left {
     text-align: right;
-    float: left;
-    width: 42%;
+    float: left; 
     display: block;
     line-height: 2.2em;
 }
