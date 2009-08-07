@@ -86,7 +86,7 @@ class ApplicationController < ActionController::Base
 
     # Set default location
     @address = session[:geo_location].full_address if session[:geo_location]
-    @address = User.default_location unless @address  
+    @address = User.default_location unless @address
     if params[:default_location] && params[:default_location] != "" || params[:entry_location]
       unless @address = params[:entry_location]
         @address = params[:default_location]
@@ -266,8 +266,10 @@ class ApplicationController < ActionController::Base
 
   def safe_get_tweets
     begin
-      tweets = Subscription.get_tweets
-      Subscription.create_blog_entries(tweets) if tweets
+      Timeout::timeout(3) do
+        tweets = Subscription.get_tweets
+        Subscription.create_blog_entries(tweets) if tweets
+      end
     rescue
       nil
     end
