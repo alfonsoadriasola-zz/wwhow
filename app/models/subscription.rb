@@ -35,5 +35,11 @@ class Subscription < ActiveRecord::Base
     end
   end
 
+  def self.get_price_spider
+
+    response =Net::HTTP.get URI.parse("http://mobi.pricespider.com/Service.svc/GetLocalSellerData?uid=a37267d473ab43d5a9037b9a840fa97c&productId=1297114&geoLocation=37.8118,-122.2553")
+    @price_spiders = ActiveSupport::JSON.decode(response)
+  end
+
 
 end
