@@ -1,52 +1,63 @@
 <div id="messageList">
 
-    <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p")%>.  Showing <%=@messages.size %> posts, out of  <%=BlogEntry.count%>
+  <div id="tableTop">Recent updates : <%= Time.now.strftime("%m/%d/%y at %I:%M%p") %>. Showing <%= @messages.size %>
+    posts, out of  <%= BlogEntry.count %>
 
-    
-        <% show_map_icons =  session[:map] == true && !@messages.empty? && @mapmessages.size > 0%>
 
-        <% if show_map_icons ==true  %>
-            <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
-            <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
-        <% elsif @mapmessages.size > 0  %>
-            <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
-            <a id="mapOn"  href="#" onclick="startMap();">Map it!</a>
-        <% end %>
-    </div>
+    <% show_map_icons =  session[:map] == true && !@messages.empty? && @mapmessages.size > 0 %>
 
-    <div id="mapframe">
-        <%= render :partial => ('listings/map') %>
-    </div>
+    <% if show_map_icons ==true %>
+        <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
+        <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
+    <% elsif @mapmessages.size > 0 %>
+        <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
+        <a id="mapOn" href="#" onclick="startMap();">Map it!</a>
+    <% end %>
+  </div>
 
-    <table id="messageListTable" class="sortable" cellspacing=0 cellpadding=4>
-        <colgroup align="char" char=".">
-            <col width="23%" align="left"/>
-            <col width="23%" align="justify"/>
-            <col width="14%" align="char" char="."/>
-            <col width="10%" align="center" char="."/>
-            <col width="10%" align="center" char="."/>
-            <col width="20%"/>
-        </colgroup>
-        <thead>
-        <tr id="tr0">
-            <th>What</th>
-            <th>Where</th>
-            <th>How Much</th>
-            <th>Who</th>
-            <th class="date-us sortcol sortdesc">When</th>
-            <th>Rating</th>
+  <div id="mapframe">
+    <%= render :partial => ('listings/map') %>
+  </div>
+
+  <table id="messageListTable" class="sortable" cellspacing=0 cellpadding=4>
+    <colgroup align="char" char=".">
+      <col width="23%" align="left"/>
+      <col width="23%" align="justify"/>
+      <col width="14%" align="char" char="."/>
+      <col width="10%" align="center" char="."/>
+      <col width="10%" align="center" char="."/>
+      <col width="20%"/>
+    </colgroup>
+    <thead>
+    <tr id="tr0">
+      <th>What</th>
+      <th>Where</th>
+      <th>How Much</th>
+      <th>Who</th>
+      <th class="date-us sortcol sortdesc">When</th>
+      <th>Rating</th>
+    </tr>
+    </thead>
+
+    <% for @blog_entry in @messages %>
+        <%= render :partial => ('listings/message') %>
+    <% end %>
+
+    <% if @messages then %>
+        <tr>
+          <td colspan = "7"><a class="buttonRed" onclick="$('blog_entry_post_limit').setValue(<%=@filter[:post_limit].to_i + 22 %>); $('blog_entry_post_limit').up('form').submit(); return false;" href="#">
+            <span> More </span>
+          </a></td>
         </tr>
-        </thead>
-        
-        <% for @blog_entry in @messages %>
-            <%= render :partial => ('listings/message') %>
-        <% end %>
+    <% end %>
 
-      <% if @filter then %>
-            <tr><td colspan = "7"> <%= render :partial =>  "shared/system_messages" %> </td></tr>
-        <% end %>
-        
-    </table>
+    <% if @filter then %>
+        <tr>
+          <td colspan="7"> <%= render :partial =>  "shared/system_messages" %> </td>
+        </tr>
+    <% end %>
+
+  </table>
 
 </div>
 

@@ -21,6 +21,8 @@ class ApplicationController < ActionController::Base
     @filter=Hash.new
     @map_index = 0
 
+    @filter[:post_limit] = 22
+
     @filter[:category_list] = Array.new;
     @filter[:searchterms] = ""
     @filter[:rating_from] = 0
@@ -29,6 +31,7 @@ class ApplicationController < ActionController::Base
     @filter[:price_to]=500
     @filter[:radius]= 50
     @filter[:show_unmapped]=false
+
     #set widgets
     unless params[:blog_entry].nil? then
       if params[:blog_entry][:sliders].nil? == false
@@ -38,6 +41,11 @@ class ApplicationController < ActionController::Base
       if params[:blog_entry][:map].nil? == false
         session[:map] = params[:blog_entry][:map] == "true"
       end
+
+      if params[:blog_entry][:post_limit] then
+        @filter[:post_limit] = params[:blog_entry][:post_limit] 
+      end
+
     else
       session[:sliders] = false
       session[:map] = false
@@ -133,7 +141,8 @@ class ApplicationController < ActionController::Base
       distcond = cond
 
       cond = cond + %Q{ AND lower(what) LIKE '%#{@filter[:searchterms].downcase.gsub(/[.,']/, '%')}%' }  if  @filter[:searchterms]
-      @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :categories, :ratings]
+
+      @messages = BlogEntry.find :all, :conditions => cond, :order => 'blog_entries.created_at desc', :limit => @filter[:post_limit], :include =>[:user, :categories, :ratings]
 
       # but you also need to check tags because not only is the what a good candidate, the tags are there for search too
       @filter[:category_list] = params[:category_list] if params[:category_list]
@@ -141,7 +150,7 @@ class ApplicationController < ActionController::Base
       # wait input box overrides tag search
       @filter[:category_list] = params[:blog_entry][:search] if params[:blog_entry]&& params[:blog_entry][:search]!= ""
 
-      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :conditions=> distcond,  :order => 'blog_entries.created_at desc', :limit => 88, :include =>[:user, :ratings] }
+      @messages2 = BlogEntry.find_tagged_with @filter[:category_list], {:on=> :categories, :conditions=> distcond,  :order => 'blog_entries.created_at desc', :limit => @filter[:post_limit], :include =>[:user, :ratings] }
 
       @messages2 = @messages2.find_all{|m| m.distance_to(session[:geo_location]) <= @filter[:radius].to_f || ( @filter[:show_unmapped] && m.lat.nil?)}
 
@@ -158,7 +167,8 @@ class ApplicationController < ActionController::Base
         end
       end
 
-      @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => 500
+      @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => @filter[:post_limit]
+
     elsif @search_by_location || @default_logged_in_search
       get_initial_messages
     else
@@ -193,7 +203,7 @@ class ApplicationController < ActionController::Base
     #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
     @messages = BlogEntry.find :all,
                                :conditions => cond,
-                               :limit=>88,
+                               :limit=>@filter[:post_limit],
                                :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
 
     radius_step=1
@@ -265,9 +275,9 @@ class ApplicationController < ActionController::Base
   end
 
   def safe_get_tweets
-    begin      
-        tweets = Subscription.get_tweets
-        Subscription.create_blog_entries(tweets) if tweets
+    begin
+      tweets = Subscription.get_tweets
+      Subscription.create_blog_entries(tweets) if tweets
     rescue
       nil
     end

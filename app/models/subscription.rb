@@ -43,7 +43,6 @@ class Subscription < ActiveRecord::Base
 
 
   def self.get_price_spider ( category, location )
-
     price_spider_categories = [{:product_id => "100162", :description => "Desktops & Workstations"},
                                {:product_id => "100160", :description => "Notebooks & Laptops"},
                                {:product_id => "100099", :description => "Computer and Notebook Memory"},
@@ -78,13 +77,10 @@ class Subscription < ActiveRecord::Base
                                {:product_id => "100219", :description => "Software"},
                                {:product_id => "100081", :description => "LCD / Flat Panel Displays"}]
 
-    products = price_spider_categories.find_all{|x| x[:description] == "Software"}
-
-    products.each |product|
+    price_spider_categories.each |product|
             begin
-              response =Net::HTTP.get URI.parse("http://mobi.pricespider.com/Service.svc/GetLocalSellerData?uid=#{ENV['PRICE_SPIDER_API_KEY']}&productId=#{product_id}&geoLocation=#{location.lat},#{location.lng}")
+              response =Net::HTTP.get URI.parse("http://mobi.pricespider.com/Service.svc/GetLocalSellerData?uid=#{ENV['PRICE_SPIDER_API_KEY']}&productId=#{product[:product_id]}&geoLocation=#{location.lat},#{location.lng}")
               @price_spiders = ActiveSupport::JSON.decode(response)
-
             end
 
 

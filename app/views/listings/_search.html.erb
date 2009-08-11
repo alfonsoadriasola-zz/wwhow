@@ -6,6 +6,7 @@
   <%= hidden_field :blog_entry, :author_id %>
   <%= hidden_field :blog_entry, :sliders, :value => session[:sliders]||false %>
   <%= hidden_field :blog_entry, :map, :value => session[:map]||false %>
+  <%= hidden_field :blog_entry, :post_limit, :value => @filter[:post_limit] %>
   <table id="searchTable" cellspacing="0" cellpadding="4">
     <tr>
       <td colspan="2">
