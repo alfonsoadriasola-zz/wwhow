@@ -265,11 +265,9 @@ class ApplicationController < ActionController::Base
   end
 
   def safe_get_tweets
-    begin
-      Timeout::timeout(3) do
+    begin      
         tweets = Subscription.get_tweets
         Subscription.create_blog_entries(tweets) if tweets
-      end
     rescue
       nil
     end
