@@ -6,13 +6,17 @@ class Subscription < ActiveRecord::Base
   def self.get_tweets
     last_twit_id = Subscription.find_by_sql("select max(twit_id) twit_id from blog_entries")[0].twit_id
     Timeout::timeout(8) do
-      http = Net::HTTP.new('twitter.com', 80)
-      http.use_ssl = false
-      http.start do |h|
-        request = Net::HTTP::Get.new("/statuses/replies.json?")
-        request.basic_auth('wwhow', 'cheapdeal')
-        response = h.request(request)
-        @tweets = ActiveSupport::JSON.decode(response.body)
+      begin
+        http = Net::HTTP.new('twitter.com', 80)
+        http.use_ssl = false
+        http.start do |h|
+          request = Net::HTTP::Get.new("/statuses/replies.json?")
+          request.basic_auth('wwhow', 'cheapdeal')
+          response = h.request(request)
+          @tweets = ActiveSupport::JSON.decode(response.body)
+        end
+      rescue
+        nil
       end
     end
     return @tweets
@@ -80,6 +84,7 @@ class Subscription < ActiveRecord::Base
             begin
               response =Net::HTTP.get URI.parse("http://mobi.pricespider.com/Service.svc/GetLocalSellerData?uid=#{ENV['PRICE_SPIDER_API_KEY']}&productId=#{product_id}&geoLocation=#{location.lat},#{location.lng}")
               @price_spiders = ActiveSupport::JSON.decode(response)
+
             end
 
 
