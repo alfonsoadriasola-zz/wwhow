@@ -5,8 +5,8 @@ xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.tag! 'url' do
       xml.tag! 'loc', "#{base_url}#{page[:url]}"
       xml.tag! 'lastmod', page[:updated_at].strftime("%Y-%m-%d")
-      xml.tag! 'changefreq', 'monthly'
-      xml.tag! 'priority', '0.8'
+      xml.tag! 'changefreq', 'daily'
+      xml.tag! 'priority', '0.5'
     end
   end
 end

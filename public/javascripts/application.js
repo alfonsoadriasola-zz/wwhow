@@ -22,8 +22,8 @@ function submitByTag(tag) {
     $('searchTable').up('form').submit();
 }
 
-function submitByFavorites(){
-    $('searchTable').up('form').submit();    
+function submitByFavorites() {
+    $('searchTable').up('form').submit();
 }
 
 function submitByUser(author_id) {
@@ -40,6 +40,19 @@ function slidersOn() {
         new Effect.Shrink('welcome');
         new Effect.Appear('tipsy-pen');
     }
+}
+
+
+function inputOn() {    
+    new Effect.Appear('inputBox');
+    new Effect.Fade('inputVerbage');
+
+}
+
+function inputOff() {
+    new Effect.Appear('inputVerbage')
+    new Effect.Fade('inputBox');
+
 }
 
 function slidersOff() {
@@ -68,12 +81,14 @@ function mapOff() {
     $('blog_entry_map').setValue(false);
 }
 
-function showMapIcon(lat,lng){
-    if(map == null){startMap();}
+function showMapIcon(lat, lng) {
+    if (map == null) {
+        startMap();
+    }
     mapOn();
-    var theLoc = new GLatLng(lat,lng)
-    if(map.getZoom() < 14) map.setZoom(14);  
-    map.panTo(theLoc);  
+    var theLoc = new GLatLng(lat, lng)
+    if (map.getZoom() < 14) map.setZoom(14);
+    map.panTo(theLoc);
 }
 
 function set_show_friends_only(_value) {
@@ -82,10 +97,10 @@ function set_show_friends_only(_value) {
     else
         $('user_show_friends_only').setValue(0);
 
-    submitByFavorites();    
+    submitByFavorites();
 }
 
-function set_show_unmapped  (_value) {
+function set_show_unmapped(_value) {
     if (_value)
         $('user_show_unmapped').setValue(1);
     else
@@ -93,6 +108,7 @@ function set_show_unmapped  (_value) {
 
     submitByFavorites();
 }
+
 
 function toggle_hide_blocked_users(_value) {
     $('user_hide_blocked_users').setValue(_value);
@@ -111,7 +127,6 @@ function submitenter(myfield, e)
     }
     else
         return true;
-
 
 
 }

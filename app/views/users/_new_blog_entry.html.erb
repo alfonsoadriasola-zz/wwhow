@@ -1,13 +1,16 @@
+<p id="inputVerbage"><strong>Here's the chance to <a id="inputOn" class="buttonRed" href="#" onclick="inputOn();">Share</a> your savings!</strong></p>
 <% form_for(:blog_entry, @msg, :url => {:controller => "users", :action =>"new_msg"} ) do |f| %>
 
     <%= hidden_field :user, :id %>
-    <strong>Here's the chance to share your savings!</strong>
-    <table id="inputBox" cellspacing="0px">
+
+
+    
+    <table id="inputBox" cellspacing="0px" style="display:none">
       <colgroup align="char" char=".">
-        <col width="35%" />
-        <col width="35%" />
-        <col width="15%" />
-        <col width="15%" />
+        <col width="35%"/>
+        <col width="35%"/>
+        <col width="15%"/>
+        <col width="15%"/>
       </colgroup>
       <tr>
 
@@ -23,12 +26,13 @@
           <span class="help">$1.49 each, 50% off, BOGOF, etc.  (get it?)</span>
         </td>
 
-        <td>       
+        <td>
           <label> Category:</label>
           <%= select_tag 'category_list[]', options_for_select(BlogEntry.master_category_list), { :multiple => false } %>
           <br/>
           <br/>
           <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed', :id => 'buttonPost'} %>
+          <a id="inputOn" class="buttonRed" href="#" onclick="inputOff();">Cancel</a>
         </td>
 
       </tr>
