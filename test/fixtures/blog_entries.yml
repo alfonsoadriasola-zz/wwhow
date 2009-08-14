@@ -25,8 +25,8 @@ three:
   what: knife
   where: oak
   price_text: Free
-  lat: 40.4327
-  lng: -79.9249
+  lat: 37.942
+  lng: -122.029
     
 no_geo:
   user_id: 1
