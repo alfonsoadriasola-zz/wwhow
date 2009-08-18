@@ -103,15 +103,27 @@ class PriceSpider < Subscription
     where = seller[0]['SellerName']<<'@'<<local_store['StoreAddress1'] <<','<< local_store['City']<<','<< local_store['Zip']
     what  = product['Title']
     lat = local_store['Latitude']
-    lng = local_store['Longitude']  
+    lng = local_store['Longitude']
     category_list  = product['CategoryName']
     price = seller[0]['Price']
 
     if user= User.find_or_create_by_name(username)
       user.save(false)
-      be = BlogEntry.create( :what => what, :where => where, :price => price , :lat => lat, :lng => lng, :user_id => user.id )
+      be = BlogEntry.create( :what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id )
       be.save(false)
     end
+
+  end
+
+  def self.seed_location(location, limit)
+    productids = PriceSpider.get_all_products_list
+    productids = productids[0..limit] if limit> 0
+    productids.each do |p|
+      product = PriceSpider.get_product_summary({'ProductId' => p})['Product']
+      seller = PriceSpider.get_local_sellers(product, location);
+      PriceSpider.create_post_by_product_seller(product, seller) if product && seller     
+    end
+
 
   end
 

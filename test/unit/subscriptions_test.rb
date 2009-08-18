@@ -50,4 +50,10 @@ class PriceSpidersTest < SubscriptionsTest
   end
 
 
+  def test_should_seed_a_location
+     location =  @location 
+     PriceSpider.seed_location(location,1)
+
+  end
+
 end
