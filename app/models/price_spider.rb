@@ -104,12 +104,16 @@ class PriceSpider < Subscription
     what  = product['Title']
     lat = local_store['Latitude']
     lng = local_store['Longitude']
-    category_list  = product['CategoryName']
+    category_list  = []
+    category_list << 'Electronics'
+    category_list << product['CategoryName']
+
     price = seller[0]['Price']
 
     if user= User.find_or_create_by_name(username)
       user.save(false)
-      be = BlogEntry.create( :what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id )
+      be = BlogEntry.create(:what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id, :price_text => price )
+      be.category_list = category_list.join(",")
       be.save(false)
     end
 
