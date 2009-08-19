@@ -101,8 +101,13 @@ class PriceSpider < Subscription
     username = 'pricespider'
     begin
 
-      if local_store = seller[0]['LocalStores'][0] && product['Title'] && product['CategoryName']
-        where = %Q{#{seller[0]['SellerName']}@#{local_store['StoreAddress1']} #{','+ local_store['City'] if local_store['City']}, #{local_store['Zip']}}
+      if (local_store = seller[0]['LocalStores'][0])&& product['Title'] && product['CategoryName']
+        sellername = seller[0]['SellerName']
+        address1 = local_store['StoreAddress1']
+        city = local_store['City']
+        zip = local_store['Zip']
+        
+        where = sellername<<'@'<<address1<<','<<city<<','<< zip
         what  = product['Title']
         lat = local_store['Latitude']
         lng = local_store['Longitude']
@@ -129,7 +134,7 @@ class PriceSpider < Subscription
   def self.seed_location(location, limit)
 
     productids = PriceSpider.get_all_products_list
-    dice_toss =  rand(productids.size)
+    dice_toss =  rand(productids.size-limit)
     productids = productids[dice_toss..dice_toss+limit] if limit> 0
     productids.each do |p|
       product = PriceSpider.get_product_summary({'ProductId' => p})['Product']
