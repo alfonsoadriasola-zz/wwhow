@@ -99,22 +99,29 @@ class PriceSpider < Subscription
   def self.create_post_by_product_seller(product, seller)
 
     username = 'pricespider'
-    local_store = seller[0]['LocalStores'][0]
-    where = seller[0]['SellerName']<<'@'<<local_store['StoreAddress1'] <<','<< local_store['City']<<','<< local_store['Zip']
-    what  = product['Title']
-    lat = local_store['Latitude']
-    lng = local_store['Longitude']
-    category_list  = []
-    category_list << 'Electronics'
-    category_list << product['CategoryName']
+    begin
 
-    price = seller[0]['Price']
+      if local_store = seller[0]['LocalStores'][0] && product['Title'] && product['CategoryName']
+        where = %Q{#{seller[0]['SellerName']}@#{local_store['StoreAddress1']} #{','+ local_store['City'] if local_store['City']}, #{local_store['Zip']}}
+        what  = product['Title']
+        lat = local_store['Latitude']
+        lng = local_store['Longitude']
+        category_list  = []
+        category_list << 'Electronics'
+        category_list << product['CategoryName']
+        price = seller[0]['Price']
 
-    if user= User.find_or_create_by_name(username)
-      user.save(false)
-      be = BlogEntry.create(:what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id, :price_text => price )
-      be.category_list = category_list.join(",")
-      be.save(false)
+        if user= User.find_or_create_by_name(username)
+          user.save(false)
+          be = BlogEntry.create(:what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id, :price_text => price )
+          be.category_list = category_list.join(",")
+          be.save(false)
+        end
+      end
+    rescue   SyntaxError, NameError => error
+      y error
+      y seller
+      y product
     end
 
   end
@@ -127,9 +134,52 @@ class PriceSpider < Subscription
     productids.each do |p|
       product = PriceSpider.get_product_summary({'ProductId' => p})['Product']
       seller = PriceSpider.get_local_sellers(product, location);
-      #y product
-      #y seller['Price']
       PriceSpider.create_post_by_product_seller(product, seller) if product && seller
+    end
+
+
+
+  end
+
+  def self.seed_big_cities
+
+    ["New York,New York",
+     "Los Angeles,California",
+     "Chicago,Illinois",
+     "Houston,Texas",
+     "Phoenix,Arizona",
+     "Philadelphia,Pennsylvania",
+     "San Antonio,Texas",
+     "Dallas,Texas",
+     "San Diego,California",
+     "San Jose,California",
+     "Detroit,Michigan",
+     "San Francisco,California",
+     "Jacksonville,Florida",
+     "Indianapolis,Indiana",
+     "Austin,Texas",
+     "Columbus,Ohio",
+     "Fort Worth,Texas",
+     "Charlotte,North Carolina",
+     "Memphis,Tennessee",
+     "Baltimore,Maryland",
+     "El Paso,Texas",
+     "Boston,Massachusetts",
+     "Milwaukee,Wisconsin",
+     "Denver,Colorado",
+     "Seattle,Washington",
+     "Nashville,Tennessee",
+     "Washington,District of Columbia",
+     "Las Vegas,Nevada",
+     "Portland,Oregon",
+     "Louisville,Kentucky",
+     "Oklahoma City,Oklahoma",
+     "Tucson,Arizona",
+     "Atlanta,Georgia"].each do |city|
+      puts city
+      puts PriceSpider.seed_location(User.geocode(city), 8).size
+
+
     end
 
 
