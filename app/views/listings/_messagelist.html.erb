@@ -45,7 +45,7 @@
 
     <% if @messages then %>
         <tr>
-          <td colspan = "7"><a class="buttonRed" onclick="$('blog_entry_post_limit').setValue(<%=@filter[:post_limit].to_i + 22 %>); $('blog_entry_post_limit').up('form').submit(); return false;" href="#">
+          <td colspan = "7"><a class="buttonRed" onclick="$('user_post_limit').setValue(<%=@filter[:post_limit].to_i + 22 %>); $('user_post_limit').up('form').submit(); return false;" href="#">
             <span> More </span>
           </a></td>
         </tr>

@@ -98,35 +98,35 @@ class PriceSpider < Subscription
 
   def self.create_post_by_product_seller(product, seller)
 
+    username, sellername, address1, city, zip, where, what=''
+    local_store = {}
+    category_list = []
+
     username = 'pricespider'
     begin
 
-      if (local_store = seller[0]['LocalStores'][0])&& product['Title'] && product['CategoryName']
-        sellername = seller[0]['SellerName']
-        address1 = local_store['StoreAddress1']
-        city = local_store['City']
-        zip = local_store['Zip']
-        
-        where = sellername<<'@'<<address1<<','<<city<<','<< zip
-        what  = product['Title']
-        lat = local_store['Latitude']
-        lng = local_store['Longitude']
-        category_list  = []
-        category_list << 'Electronics'
-        category_list << product['CategoryName']
-        price = seller[0]['Price']
+      local_store = seller[0]['LocalStores'][0]      
+      sellername = seller[0]['SellerName']
+      address1 = local_store['StoreAddress1']
+      city = local_store['City']
+      zip = local_store['Zip']
 
-        if user= User.find_or_create_by_name(username)
-          user.save(false)
-          be = BlogEntry.create(:what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id, :price_text => price )
-          be.category_list = category_list.join(",")
-          be.save(false)
-        end
-      end
+      where = sellername<<'@'<<address1<<', '<<city<<', '<< zip
+      what  = product['Title']
+      lat = local_store['Latitude']
+      lng = local_store['Longitude']
+
+      category_list << 'Electronics'
+      category_list << product['CategoryName']
+      price = seller[0]['Price']
+
+      user= User.find_or_create_by_name(username)
+      user.save(false)
+      be = BlogEntry.create(:what => what, :where => where, :price => price, :lat => lat, :lng => lng, :user_id => user.id, :price_text => price )
+      be.category_list = category_list.join(",")
+      be.save
     rescue   SyntaxError, NameError => error
-      y error
-      y seller
-      y product
+      y error, sellername, address1, city, zip, where, what, local_store, be
     end
 
   end

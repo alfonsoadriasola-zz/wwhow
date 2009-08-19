@@ -42,8 +42,8 @@ class ApplicationController < ActionController::Base
         session[:map] = params[:blog_entry][:map] == "true"
       end
 
-      if params[:blog_entry][:post_limit] then
-        @filter[:post_limit] = params[:blog_entry][:post_limit] 
+      if params[:user][:post_limit] then
+        @filter[:post_limit] = params[:user][:post_limit]
       end
 
     else
@@ -84,6 +84,7 @@ class ApplicationController < ActionController::Base
 
     @search_category_list, @search_from_input_box, @search_by_author, @search_by_author_url, @search_by_location,
             @search_by_what_where_url, @default_logged_in_search = false
+
     @search_by_location = (params[:entry_location] ||  params[:default_location]) && (params[:blog_entry].nil?)
     @search_by_author = (params[:blog_entry] && params[:blog_entry][:author_id] != "")
     @search_by_author_url = (params[:author] && params[:blog_entry].nil? )
@@ -167,6 +168,7 @@ class ApplicationController < ActionController::Base
         end
       end
 
+      @filter[:post_limit] = 500 if logged_in?
       @messages =BlogEntry.find :all, :conditions => {:user_id => params[:blog_entry][:author_id]}, :order => 'blog_entries.created_at desc', :include =>[:user, :ratings], :limit => @filter[:post_limit]
 
     elsif @search_by_location || @default_logged_in_search
@@ -276,8 +278,8 @@ class ApplicationController < ActionController::Base
 
   def safe_get_tweets
     begin
-      tweets = Subscription::Twitter.get_tweets
-      Subscription::Twitter.create_blog_entries(tweets) if tweets
+      tweets = Twitter.get_tweets
+      Twitter.create_blog_entries(tweets) if tweets
     rescue
       nil
     end
