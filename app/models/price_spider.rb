@@ -120,12 +120,16 @@ class PriceSpider < Subscription
   end
 
   def self.seed_location(location, limit)
+
     productids = PriceSpider.get_all_products_list
-    productids = productids[0..limit] if limit> 0
+    dice_toss =  rand(productids.size)
+    productids = productids[dice_toss..dice_toss+limit] if limit> 0
     productids.each do |p|
       product = PriceSpider.get_product_summary({'ProductId' => p})['Product']
       seller = PriceSpider.get_local_sellers(product, location);
-      PriceSpider.create_post_by_product_seller(product, seller) if product && seller     
+      #y product
+      #y seller['Price']
+      PriceSpider.create_post_by_product_seller(product, seller) if product && seller
     end
 
 
