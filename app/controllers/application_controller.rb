@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     @map_index = 0
 
     @filter[:post_limit] = 22
-
+    @filter[:author_id] = nil?
     @filter[:category_list] = Array.new;
     @filter[:searchterms] = ""
     @filter[:rating_from] = 0
@@ -165,6 +165,7 @@ class ApplicationController < ActionController::Base
         params[:blog_entry]=Hash.new
         if author=  User.find_by_name(params[:author])
           params[:blog_entry][:author_id] = author.id
+          @filter[:author_id] = author.id
         end
       end
 
