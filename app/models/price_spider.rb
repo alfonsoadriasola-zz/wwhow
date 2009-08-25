@@ -132,19 +132,23 @@ class PriceSpider < Subscription
   end
 
   def self.seed_location(location, limit)
-    newposts = 0
     productids = PriceSpider.get_all_products_list
-    dice_toss =  rand(productids.size-limit)
-    productids = productids[dice_toss..dice_toss+limit] if limit> 0
-    productids.each do |p|
-      product = {'ProductId' => p}
-      product = PriceSpider.get_product_summary(product)['Product']
-      seller = PriceSpider.get_local_sellers(product, location);
-      seller = seller[0] if seller
-      lowest_price = PriceSpider.get_product_history(product)['LowestPrices'].uniq[0]
-      if product && seller && lowest_price >= seller['Price']
-        PriceSpider.create_post_by_product_seller(product, seller)
-        newposts += 1
+    selection = []
+    newposts = 0
+    while newposts < limit do
+      dice_toss =  rand(productids.size-limit)
+      selection = productids[dice_toss..dice_toss+limit] if limit> 0
+      selection.each do |p|
+        product = {'ProductId' => p}
+        product = PriceSpider.get_product_summary(product)['Product']
+        seller = PriceSpider.get_local_sellers(product, location);
+        seller = seller[0] if seller
+        lowest_price = PriceSpider.get_product_history(product)['LowestPrices'].uniq[0]
+        if product && seller && lowest_price >= seller['Price']
+          PriceSpider.create_post_by_product_seller(product, seller)
+          newposts += 1
+        end
+        productids = productids - selection
       end
     end
     newposts
@@ -186,7 +190,7 @@ class PriceSpider < Subscription
      "Tucson,Arizona",
      "Atlanta,Georgia"].each do |city|
       puts city
-      puts PriceSpider.seed_location(User.geocode(city), 8).size
+      puts PriceSpider.seed_location(User.geocode(city), 7).size
     end
 
 
