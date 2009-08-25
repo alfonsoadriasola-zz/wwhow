@@ -1,4 +1,9 @@
+require 'yaml'
 class PriceSpider < Subscription
+
+  def self.config
+    config=YAML::load(File.open("#{RAILS_ROOT}/config/pricespider.yml"))
+  end
 
   def self.get_products_by_category(category)
     products = []
@@ -134,8 +139,8 @@ class PriceSpider < Subscription
   def self.seed_location(location, limit)
     productids = PriceSpider.get_all_products_list
     selection = []
-    newposts = 0
-    while newposts < limit do
+    newposts = tries = 0
+    while (newposts < limit && tries < 3)  do
       dice_toss =  rand(productids.size-limit)
       selection = productids[dice_toss..dice_toss+limit] if limit> 0
       selection.each do |p|
@@ -144,57 +149,31 @@ class PriceSpider < Subscription
         seller = PriceSpider.get_local_sellers(product, location);
         seller = seller[0] if seller
         lowest_price = PriceSpider.get_product_history(product)['LowestPrices'].uniq[0]
-        if product && seller && lowest_price >= seller['Price']
+        if product && seller && lowest_price >= seller['Price'] && seller['Price'] != 0
           PriceSpider.create_post_by_product_seller(product, seller)
           newposts += 1
         end
         productids = productids - selection
       end
+      tries +=1
     end
     newposts
   end
 
   def self.seed_big_cities
-
-    ["New York,New York",
-     "Los Angeles,California",
-     "Chicago,Illinois",
-     "Houston,Texas",
-     "Phoenix,Arizona",
-     "Philadelphia,Pennsylvania",
-     "San Antonio,Texas",
-     "Dallas,Texas",
-     "San Diego,California",
-     "San Jose,California",
-     "Detroit,Michigan",
-     "San Francisco,California",
-     "Jacksonville,Florida",
-     "Indianapolis,Indiana",
-     "Austin,Texas",
-     "Columbus,Ohio",
-     "Fort Worth,Texas",
-     "Charlotte,North Carolina",
-     "Memphis,Tennessee",
-     "Baltimore,Maryland",
-     "El Paso,Texas",
-     "Boston,Massachusetts",
-     "Milwaukee,Wisconsin",
-     "Denver,Colorado",
-     "Seattle,Washington",
-     "Nashville,Tennessee",
-     "Washington,District of Columbia",
-     "Las Vegas,Nevada",
-     "Portland,Oregon",
-     "Louisville,Kentucky",
-     "Oklahoma City,Oklahoma",
-     "Tucson,Arizona",
-     "Atlanta,Georgia"].each do |city|
+    big_cities= config['big_cities'].split(",\r ")
+    big_cities.each do |city|
       puts city
       puts PriceSpider.seed_location(User.geocode(city), 7).size
     end
-
-
   end
 
+  def self.seed_more_locations
+    cities=config['wwhow_locations'].split(",\r")
+    cities.each do |city|
+      puts city
+      puts PriceSpider.seed_location(User.geocode(city), 7).size
+    end
+  end
 end
 
