@@ -34,10 +34,8 @@ class PriceSpidersTest < SubscriptionsTest
   def test_should_get_product_summary
     products = []
     @product_list[0..1].each{|p| products << {'ProductId'=> p}}
-
     result = []
     products.each{|p| result << PriceSpider.get_product_summary(p) }
-
     assert result
   end
 
@@ -52,8 +50,9 @@ class PriceSpidersTest < SubscriptionsTest
 
   def test_should_seed_a_location
      location =  @location 
-     PriceSpider.seed_location(location,1)
-
+     PriceSpider.seed_location(location,15)
+     actual = User.find_by_name('pricespider').blog_entries.count
+     assert actual >= 0
   end
 
 end

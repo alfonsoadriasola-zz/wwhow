@@ -40,8 +40,8 @@ class PriceSpider < Subscription
 #
 #-          Returns the median and lowest prices recorded for the specified number of lookback Days from today
 #
-  def get_product_history(product)
-    url = "http://mobi.pricespider.com/Service.svc/GetProductHistoryData?productId=#{product[:product_id]}&lookbackDays=30&aggregateByHour=false"
+  def self.get_product_history(product)
+    url = "http://mobi.pricespider.com/Service.svc/GetProductHistoryData?productId=#{product['ProductId']}&lookbackDays=30&aggregateByHour=false"
 
     response = Net::HTTP.get URI.parse(url)
     result = ActiveSupport::JSON.decode(response)
@@ -105,8 +105,8 @@ class PriceSpider < Subscription
     username = 'pricespider'
     begin
 
-      local_store = seller[0]['LocalStores'][0]      
-      sellername = seller[0]['SellerName']
+      local_store = seller['LocalStores'][0]
+      sellername = seller['SellerName']
       address1 = local_store['StoreAddress1']
       city = local_store['City']
       zip = local_store['Zip']
@@ -118,7 +118,7 @@ class PriceSpider < Subscription
 
       category_list << 'Electronics'
       category_list << product['CategoryName']
-      price = seller[0]['Price']
+      price = seller['Price']
 
       user= User.find_or_create_by_name(username)
       user.save(false)
@@ -132,18 +132,22 @@ class PriceSpider < Subscription
   end
 
   def self.seed_location(location, limit)
-
+    newposts = 0
     productids = PriceSpider.get_all_products_list
     dice_toss =  rand(productids.size-limit)
     productids = productids[dice_toss..dice_toss+limit] if limit> 0
     productids.each do |p|
-      product = PriceSpider.get_product_summary({'ProductId' => p})['Product']
+      product = {'ProductId' => p}
+      product = PriceSpider.get_product_summary(product)['Product']
       seller = PriceSpider.get_local_sellers(product, location);
-      PriceSpider.create_post_by_product_seller(product, seller) if product && seller
+      seller = seller[0] if seller
+      lowest_price = PriceSpider.get_product_history(product)['LowestPrices'].uniq[0]
+      if product && seller && lowest_price >= seller['Price']
+        PriceSpider.create_post_by_product_seller(product, seller)
+        newposts += 1
+      end
     end
-
-
-
+    newposts
   end
 
   def self.seed_big_cities
@@ -183,8 +187,6 @@ class PriceSpider < Subscription
      "Atlanta,Georgia"].each do |city|
       puts city
       puts PriceSpider.seed_location(User.geocode(city), 8).size
-
-
     end
 
 
