@@ -161,7 +161,7 @@ class PriceSpider < Subscription
   end
 
   def self.seed_big_cities
-    big_cities= config['big_cities'].split(",\r ")
+    big_cities= config['big_cities'].split(",: ")
     big_cities.each do |city|
       puts city
       puts PriceSpider.seed_location(User.geocode(city), 7).size
@@ -169,7 +169,7 @@ class PriceSpider < Subscription
   end
 
   def self.seed_more_locations
-    cities=config['wwhow_locations'].split(",\r")
+    cities=config['wwhow_locations'].split(",;")
     cities.each do |city|
       puts city
       puts PriceSpider.seed_location(User.geocode(city), 7).size
