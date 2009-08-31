@@ -103,7 +103,7 @@ class ApplicationController < ActionController::Base
     else
       @address = current_web_user.user.address if logged_in? && @default_logged_in_search
     end
-    session[:geo_location] = BlogEntry.get_geolocation(@address)
+    session[:geo_location] = BlogEntry.geocode(@address)
 
 
   end
