@@ -85,14 +85,7 @@ class BlogEntry < ActiveRecord::Base
     end
   end
 
-  def self.get_geolocation(address)
-    loc=MultiGeocoder.geocode(address)
-    if loc.success
-      loc
-    end
-  end
-
-  def self.trim_tagcloud
+ def self.trim_tagcloud
     Tag.find(:all).each do |t|
       if t.name.size <= 2
         t.taggings.destroy_all

@@ -215,7 +215,7 @@ class ApplicationController < ActionController::Base
       #cond = cond + " OR blog_entries.lat is null " if @filter[:show_unmapped]
       @messages = BlogEntry.find :all,
                                  :conditions => cond,
-                                 :limit=>88,
+                                 :limit=>@filter[:post_limit],
                                  :order => 'blog_entries.created_at desc', :include =>[:user, :categories,  :ratings]
       radius_step=radius_step+5
     end
