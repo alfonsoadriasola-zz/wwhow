@@ -10,6 +10,25 @@ class ListingsController < ApplicationController
     end
   end
 
+
+  def expand       
+   @blog_entry = BlogEntry.find(params[:post_id])
+   map_index = params[:map_index]
+   respond_to do |format|
+     format.js{
+        render :partial => 'expand', :locals=>{:map_index => map_index} }
+    end
+  end
+
+  def minimize_post
+    @blog_entry= BlogEntry.find(params[:post_id])
+    map_index = params[:map_index]
+    respond_to do |format|
+     format.js{
+        render :partial => 'minimize_post', :locals=>{:map_index => map_index} }
+    end
+  end
+
   # GET /listings
   def index
     @merchants = true if params[:merchants]

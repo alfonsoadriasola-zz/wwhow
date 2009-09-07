@@ -219,7 +219,7 @@ class UsersController < ApplicationController
   def cancel_update_blog_entry
     @user = current_web_user.user
     @blog_entry= BlogEntry.find(params[:blog_entry_id])
-    @map_index = params[:map_index].to_i-1
+    @map_index = params[:map_index].to_i
     respond_to do |format|
       format.js
       format.html {redirect_to "/who/#{@user.name}/"}

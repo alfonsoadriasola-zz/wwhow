@@ -12,354 +12,369 @@ body {
 /*font-family:Comic Sans, Comic Sans MS, cursive;*/
 /*font-family:'Century Gothic',Futura,'URW Gothic L',sans-serif;*/
 /*font-family:'Lucida Sans Unicode','Lucida Grande','Lucida Sans','DejaVu Sans Condensed',sans-serif; */
-    font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
-    font-size: 90%;
-    background-color: white;
+  font-family: Verdana, Geneva, 'Bitstream Vera Sans', 'DejaVu Sans', sans-serif;
+  font-size: 90%;
+  background-color: white;
 }
 
 body div {
-    padding: .01em;
+  padding: .01em;
 }
 
 .centered {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .centered-sm {
-    width: 780px;
-    margin: 0 auto;
+  width: 780px;
+  margin: 0 auto;
 }
 
 .centered-xs {
-    width: 580px;
-    margin: 0 auto;
-    background: url(/images/centerbgdark.jpg) transparent repeat-x;
+  width: 580px;
+  margin: 0 auto;
+  background: url(/images/centerbgdark.jpg) transparent repeat-x;
 }
 
 .centered-xxs {
-    width: 530px;
-    margin: 0 auto;
+  width: 530px;
+  margin: 0 auto;
 }
 
 #frame {
-    width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 #homeLink {
-    height: 6.5em;
-    width: 188px;
+  height: 6.5em;
+  width: 188px;
 }
 
 #homeLink a {
-    text-decoration: none;
-    font-size: 5.5em;
+  text-decoration: none;
+  font-size: 5.5em;
 }
 
 #homeLink a em {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #rightbar div, #leftbar div {
-    border: none;
-    padding: .2em;
-    overflow: hidden;
+  border: none;
+  padding: .2em;
+  overflow: hidden;
 }
 
 #container, #container-loggedin {
-    width: 1200px;
-    padding-bottom: 20px;
-    min-height: 800px;
+  width: 1200px;
+  padding-bottom: 20px;
+  min-height: 800px;
 }
 
 #container {
-    background: url('/images/centerbgdark.jpg') transparent repeat-x;
+  background: url('/images/centerbgdark.jpg') transparent repeat-x;
 }
 
 #container-loggedin {
-    background: url('/images/centerbgdark.jpg') transparent repeat-x;
+  background: url('/images/centerbgdark.jpg') transparent repeat-x;
 }
 
 #bannerLoggedIn, #bannerCommon {
-    z-index: 0;
-    background: transparent url(/images/banner-common.jpg) no-repeat center center;
-    height: 117px;
-    overflow-y: visible;
+  z-index: 0;
+  background: transparent url(/images/banner-common.jpg) no-repeat center center;
+  height: 117px;
+  overflow-y: visible;
 }
 
 #welcome {
-    background: transparent url(/images/info-tipsy.png) no-repeat top center;
-    height: 291px;
-    cursor: pointer;
-    z-index: -1;
+  background: transparent url(/images/info-tipsy.png) no-repeat top center;
+  height: 291px;
+  cursor: pointer;
+  z-index: -1;
 }
 
 #welcome p {
-    position: absolute;
-    top: 90px;
-    left: 40px;
-    width: 66%;
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  width: 66%;
 }
 
-#welcome h1 { font-size:1em}
-#welcome h2 { font-size:1em ; font-weight:normal;}
+#welcome h1 {
+  font-size: 1em
+}
+
+#welcome h2 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
 #menu {
-    background: url(/images/toolButton.png) repeat-x left top;
-    line-height: 1.7em;
-    position: absolute;
-    top: 0px;
-    left: auto;
-    right: 2em;
+  background: url(/images/toolButton.png) repeat-x left top;
+  line-height: 1.7em;
+  position: absolute;
+  top: 0px;
+  left: auto;
+  right: 2em;
 }
 
 #menuL {
-    background: transparent url(/images/menu-left.png) repeat-x scroll left top;
-    height: 32px;
-    left: -18px;
-    position: absolute;
-    width: 14px;
-    top: 0px;
+  background: transparent url(/images/menu-left.png) repeat-x scroll left top;
+  height: 32px;
+  left: -18px;
+  position: absolute;
+  width: 14px;
+  top: 0px;
 }
 
 #menu Table {
-    font-size: .75em;
-    font-weight: bold;
-    text-align: right;
-    display: inline-block;
+  font-size: .75em;
+  font-weight: bold;
+  text-align: right;
+  display: inline-block;
 
-    white-space: nowrap;
-    z-index: 5;
+  white-space: nowrap;
+  z-index: 5;
 
 }
 
 #menu .button {
-    border: none;
-    line-height: 1.6em;
+  border: none;
+  line-height: 1.6em;
 }
 
 #menu span {
-    padding: .2em;
+  padding: .2em;
 }
 
 #menu #web_user-bar-greeting a {
-    text-decoration: none;
-    color: #d50f10;
+  text-decoration: none;
+  color: #d50f10;
 }
 
 #searchrow {
-    width: 880px;
-    position: absolute;
-    left: 214px;
-    top: 78px;
-    font-size: .8em;
+  width: 880px;
+  position: absolute;
+  left: 214px;
+  top: 78px;
+  font-size: .8em;
 }
 
 #rightbar {
-    position: absolute;
-    top: 415px;
-    right: 0px;
-    background-color: transparent;
-    width: 183px;
+  position: absolute;
+  top: 415px;
+  right: 0px;
+  background-color: transparent;
+  width: 183px;
 }
 
 #leftbar {
-    position: absolute;
-    width: 176px;
-    left: 24px;
-    background-color: transparent;
+  position: absolute;
+  width: 176px;
+  left: 24px;
+  background-color: transparent;
 }
 
 #popular_tags {
-    text-align: left;
-    display: block;
+  text-align: left;
+  display: block;
 }
 
 #popular_tags h2 {
-    display:inline;
-    font-weight:normal;
+  display: inline;
+  font-weight: normal;
 }
+
 #active_members a {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 #leftbar h5, #rightbar h5 {
-    background: #ffde00;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
-    border-top: solid 1px #0045cf;
-    border-bottom: solid 1px #0045cf;
+  background: #ffde00;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+  border-top: solid 1px #0045cf;
+  border-bottom: solid 1px #0045cf;
 
 }
 
 #wwhowsays {
-    border: 0;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+  border: 0;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
 }
 
 #notice, #errors {
-    background-color: #0045cf;
-    font-weight: 600;
+  background-color: #0045cf;
+  font-weight: 600;
 }
 
 .error {
-    color: #fff;
-    background-color: red;
-    text-align: center;
-    padding: 1em;
-    line-height: 1em;
+  color: #fff;
+  background-color: red;
+  text-align: center;
+  padding: 1em;
+  line-height: 1em;
 }
 
 h2.error {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 #notice {
-    color: #fff;
+  color: #fff;
 }
 
 #errors {
-    color: #fff;
+  color: #fff;
 }
 
 #statusBox .label {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 #messageList {
-    min-height: 500px;
+  min-height: 500px;
 
 }
 
 #tableTop {
-    line-height: 2.4em;
-    background-color: #0045cf;
-    color: white;
-    padding: 0 1em;
+  line-height: 2.4em;
+  background-color: #0045cf;
+  color: white;
+  padding: 0 1em;
 }
 
 #headerTable {
-    width: 780px;
+  width: 780px;
 }
 
 #headerTable th {
-    font-size: 1.8em;
-    text-align: center;
-    color: #E6F4FF;
+  font-size: 1.8em;
+  text-align: center;
+  color: #E6F4FF;
 }
 
 #headerTable td {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 #messageListTable {
-    border-top: solid 1px #444;
-    border-right: solid 0;
-    border-left: solid 1px #444;
-    border-bottom: solid 1px #444;
-    width: 100%;
-    z-index: 2;
-    table-layout: fixed;
+  border-top: solid 1px #444;
+  border-right: solid 0;
+  border-left: solid 1px #444;
+  border-bottom: solid 1px #444;
+  width: 100%;
+  z-index: 2;
+  table-layout: fixed;
 }
 
 #messageListTable td {
-    border-right: solid 1px #444;
+  border-right: solid 1px #444;
 
 }
 
 #messageListTable th {
-    text-align: center;
-    font-size: .8em;
-    background-color: #ffde00;
-    border-right: 1px solid #444;
+  text-align: center;
+  font-size: .8em;
+  background-color: #ffde00;
+  border-right: 1px solid #444;
 }
 
 td.comment {
-    font-size: .8em;
+  font-size: .8em;
 }
 
 #messageListTable td {
-    text-align: left;
-    font-size: .8em;
-    overflow: hidden;
+  text-align: left;
+  font-size: .8em;
+  overflow: hidden;
 }
 
 #messageListTable span.price, span.discount {
-    font-size: small;
+  font-size: small;
 }
 
 #messageListTable td.editing {
-    border: none;
-    font-size: 1.2em;
+  border: none;
+  font-size: 1.2em;
+  background: url(/images/centerbgdark.jpg) repeat-x left top;
+}
+
+#messageListTable td.buttonTd {
+  border: none;
+  font-size: 1.2em;
+  background: url(/images/centerbgdark.jpg) repeat-x left top;
 }
 
 #messageListTable tr {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #input_header, #messageList {
-    display: block;
+  display: block;
 }
 
 ul {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .buttonstrip {
-    display: inline;
+  display: inline;
 }
 
 table tr td {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 td table {
-    width: 100%;
+  width: 100%;
 }
 
 #footer {
-    clear: both;
-    width: 100%;
-    text-align: center;
-    font-size: .75em;
-    color: #d50f10;
-    background-color: #ffde00;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  font-size: .75em;
+  color: #d50f10;
+  background-color: #ffde00;
 
 }
 
 #footer a {
-    color: #d50f10;
-    text-decoration: none;
+  color: #d50f10;
+  text-decoration: none;
 }
 
 span.help {
-    font-weight: bold;
-    display: run-in;
-    font-size: .7em;
+  font-weight: bold;
+  display: run-in;
+  font-size: .7em;
 }
 
 span.right {
-    text-align: left;
-    float: right;
-    width: 40%;
-    display: block;
-    line-height: 2.2em;
+  text-align: left;
+  float: right;
+  width: 40%;
+  display: block;
+  line-height: 2.2em;
 }
 
 span.left {
-    text-align: right;
-    float: left; 
-    display: block;
-    line-height: 2.2em;
+  text-align: right;
+  float: left;
+  display: block;
+  line-height: 2.2em;
 }
 
 #searchTable {
@@ -367,264 +382,264 @@ span.left {
 }
 
 #searchTable td {
-    line-height: 1.7em;
-    background-color: transparent;
-    margin: .2em .2em .2em .2em;
-    vertical-align: middle;
-    height: 2.6em;
+  line-height: 1.7em;
+  background-color: transparent;
+  margin: .2em .2em .2em .2em;
+  vertical-align: middle;
+  height: 2.6em;
 }
 
 #searchTable td input {
-    line-height: 1.3em;
-    font-size: 1.1em;
-    color: #666;
-    width: 18em;
+  line-height: 1.3em;
+  font-size: 1.1em;
+  color: #666;
+  width: 18em;
 }
 
 #searchTable th {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 #inputBox {
-    border: solid 1px blue;
-    width: 780px;
+  border: solid 1px blue;
+  width: 780px;
 }
 
 #inputBox td {
-    background-color: #d2e1f4;
-    margin: .2em .2em .2em .2em;
-    vertical-align: top;
-    padding: 0.5em 1em;
-    font-size: 66%;
+  background-color: #d2e1f4;
+  margin: .2em .2em .2em .2em;
+  vertical-align: top;
+  padding: 0.5em 1em;
+  font-size: 66%;
 }
 
 #inputBox select {
-    overflow-y: hidden;
-    color: #666;
-    border: solid 1px #666;
+  overflow-y: hidden;
+  color: #666;
+  border: solid 1px #666;
 }
 
 #widgetLinks {
-    float: right;
+  float: right;
 }
 
 #widgetLinks a, #tableTop a {
-    color: #d50f10;
-    font-size: 1em;
-    text-decoration: none;
-    font-style: oblique;
-    background-color: #ffde00;
-    padding: .2em .4em .2em 2em;
+  color: #d50f10;
+  font-size: 1em;
+  text-decoration: none;
+  font-style: oblique;
+  background-color: #ffde00;
+  padding: .2em .4em .2em 2em;
 }
 
 #mapOn, #mapOff {
-    background: transparent url(/images/markers/marker.png) no-repeat center left;
-    overflow: hidden;
+  background: transparent url(/images/markers/marker.png) no-repeat center left;
+  overflow: hidden;
 }
 
 #slidersTable {
-    background-color: #ffde00;
-    border: solid 0 2px 0 2px #0045cf;
-    width: 780px;
-    height: 5em;
+  background-color: #ffde00;
+  border: solid 0 2px 0 2px #0045cf;
+  width: 780px;
+  height: 5em;
 }
 
 td.slider div {
-    width: 17.4em;
+  width: 17.4em;
 }
 
 #sliderstable span {
-    opacity: 1;
+  opacity: 1;
 }
 
 #slider.hide {
-    display: none;
+  display: none;
 }
 
 #popular_tags a, #messageListTable tags a,
-    #user-control-panel a, #login a, #active_members a {
-    text-decoration: none;
-    color: #d50f10;
+  #user-control-panel a, #login a, #active_members a {
+  text-decoration: none;
+  color: #d50f10;
 }
 
 table tr.show {
-    display: table-row;
+  display: table-row;
 }
 
 table tr.hide {
-    display: none !important;
+  display: none !important;
 }
 
 a img {
-    border: 0;
+  border: 0;
 }
 
 table.sortable th a {
-    text-decoration: none;
-    color: black;
-    font-size: 1em;
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
 }
 
 table.sortable {
-    border-spacing: 0px;
+  border-spacing: 0px;
 }
 
 table.sortable th, table.sortable td {
-    text-align: left;
-    padding: 2px 4px 2px 4px;
-    border-color: #444;
+  text-align: left;
+  padding: 2px 4px 2px 4px;
+  border-color: #444;
 }
 
 table.sortable th {
-    border-width: 0px 1px 1px 1px;
-    background-color: transparent;;
+  border-width: 0px 1px 1px 1px;
+  background-color: transparent;;
 }
 
 table.sortable td {
 }
 
 table.sortable tr.odd td {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 table.sortable tr.even td {
-    background-color: #edf5fe;
+  background-color: #edf5fe;
 }
 
 table.sortable tr.sortbottom td {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 table.sortable .sortcol {
-    background-position: right center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    padding-right: 20px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding-right: 20px;
 }
 
 table.sortable .sortasc {
-    background-image: url(/images/arrow-up.gif);
+  background-image: url(/images/arrow-up.gif);
 }
 
 table.sortable .sortdesc {
-    background-image: url(/images/arrow-down.gif);
+  background-image: url(/images/arrow-down.gif);
 }
 
 table.sortable .nosort {
-    cursor: default;
-    background-image: url(/images/arrow-none.gif);
+  cursor: default;
+  background-image: url(/images/arrow-none.gif);
 }
 
 .button, .buttonRed {
-    cursor: pointer;
-    border: outset 1px #ccc;
-    background: #999999;
-    color: #d50f10;
-    font-weight: bold;
-    padding: .2em .4em;
-    background: url(/images/toolButton.png) repeat-x left top;
-    line-height: 1.3em;
+  cursor: pointer;
+  border: outset 1px #ccc;
+  background: #999999;
+  color: #d50f10;
+  font-weight: bold;
+  padding: .2em .4em;
+  background: url(/images/toolButton.png) repeat-x left top;
+  line-height: 1.3em;
 }
 
 .buttonRed {
-    background-color: #d50f10;
-    color: #fff;
-    background: url(/images/toolButtonRed.png) repeat-x left top;
+  background-color: #d50f10;
+  color: #fff;
+  background: url(/images/toolButtonRed.png) repeat-x left top;
 }
 
 #messageListTable td .button {
-    background: url(/images/toolButtonRed.png) repeat-x left top;
-    line-height: 1em;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
-    color: white;
-    font-size: 1em;
-    float: right;
-    font-weight: bold;
+  background: url(/images/toolButtonRed.png) repeat-x left top;
+  line-height: 1em;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+  color: white;
+  font-size: 1em;
+  float: right;
+  font-weight: bold;
 }
 
 #messageListTable td a.buttonRed, a.button {
-    height: 1.66em
+  height: 1.66em
 }
 
 #messageLisTable tr .hide {
-    display: none;
+  display: none;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 #messageListTable tr .show {
-    display: table-row;
+  display: table-row;
 }
 
 a.buttonRed, a.button {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 div.slider {
-    margin: 10px 0;
-    background-color: transparent;
-    width: 228px;
-    height: 29px;
-    position: relative;
-    background-image: url(/images/bg-fader.gif);
-    z-index: 4;
+  margin: 10px 0;
+  background-color: transparent;
+  width: 228px;
+  height: 29px;
+  position: relative;
+  background-image: url(/images/bg-fader.gif);
+  z-index: 4;
 }
 
 div.slider div.handle {
-    width: 18px;
-    height: 20px;
-    background-color: transparent;
-    cursor: move;
-    position: absolute;
-    background-image: url(/images/thumb-u.gif);
-    z-index: 5;
+  width: 18px;
+  height: 20px;
+  background-color: transparent;
+  cursor: move;
+  position: absolute;
+  background-image: url(/images/thumb-u.gif);
+  z-index: 5;
 }
 
 #loginBox label, #signupBox label, #user-profile label, #forgotBox label, #usersBox label {
-    width: 30%;
-    float: left;
-    text-align: right;
-    padding-right: 1em;
-    font-weight: bold;
+  width: 30%;
+  float: left;
+  text-align: right;
+  padding-right: 1em;
+  font-weight: bold;
 }
 
 #user-profile ul li {
-    line-height: 2.3em;
+  line-height: 2.3em;
 }
 
 #user-control-panel label {
-    width: 88%;
-    float: left;
-    font-size: .85em;
-    font-weight: bold;
+  width: 88%;
+  float: left;
+  font-size: .85em;
+  font-weight: bold;
 }
 
 #user-control-panel strong {
-    font-size: .85em;
+  font-size: .85em;
 }
 
 /* General */
 div.info {
-    background-color: #d2e1f4;
-    padding: 20px 20px 20px 20px;
-    line-height: 1.3em;
+  background-color: #d2e1f4;
+  padding: 20px 20px 20px 20px;
+  line-height: 1.3em;
 }
 
 td.editing {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 td.editing label {
-    width: 25%;
-    float: left;
-    font-weight: bolder;
-    text-align: right;
+  width: 25%;
+  float: left;
+  font-weight: bolder;
+  text-align: right;
 }
 
 .small {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 #tooltip {
@@ -632,510 +647,510 @@ td.editing label {
 }
 
 #mapframe {
-    display: block;
+  display: block;
 }
 
 #loginBox, #signupBox, #forgotBox, #usersBox, .surface {
-    background-color: #d2e1f4;
-    padding: 20px 20px 20px 20px;
-    line-height: 1.3em;
-    border: solid 1px blue;
+  background-color: #d2e1f4;
+  padding: 20px 20px 20px 20px;
+  line-height: 1.3em;
+  border: solid 1px blue;
 }
 
 #signupBox span.help {
-    font-size: .75em;
-    font-style: oblique;
-    font-weight: 100;
-    float: none;
-    text-align: center;
+  font-size: .75em;
+  font-style: oblique;
+  font-weight: 100;
+  float: none;
+  text-align: center;
 }
 
 /*buttons*/
 
 #buttonPost {
-    display: block;
-    float: right;
-    height: 1.3em;
-    font-size: 1.1em;
+  display: block;
+  float: right;
+  height: 1.3em;
+  font-size: 1.1em;
 }
 
 span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
-    display: block;
-    float: right;
-    height: 36px;;
-    width: 28px;
-    text-decoration: none;
-    background: no-repeat;
-    cursor: pointer;
+  display: block;
+  float: right;
+  height: 36px;;
+  width: 28px;
+  text-decoration: none;
+  background: no-repeat;
+  cursor: pointer;
 }
 
 span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
-    visibility: hidden;
-    font-size: 1.1em;
+  visibility: hidden;
+  font-size: 1.1em;
 }
 
 li span.hasMap {
-    text-indent: 3.2em;
-    display: inline-block;
-    float: none;
+  text-indent: 3.2em;
+  display: inline-block;
+  float: none;
 }
 
 a.buttonAddFave {
-    background: transparent url(/images/makeFavorite.png) no-repeat center left;
+  background: transparent url(/images/makeFavorite.png) no-repeat center left;
 
 }
 
 a.buttonOffFaves {
-    background: transparent url(/images/unFavorite.png) no-repeat center left;
+  background: transparent url(/images/unFavorite.png) no-repeat center left;
 
 }
 
 a.buttonEdit {
-    background: transparent url(/images/editPost.png) no-repeat center left;
+  background: transparent url(/images/editPost.png) no-repeat center left;
 }
 
 td.bad_post {
-    color: #999;
-    font-size: 70%;
+  color: #999;
+  font-size: 70%;
 }
 
 /* tipsys */
 
 #tipsy {
-    background: url(/images/tipsy-pen.png) no-repeat top left;
-    width: 210px;
-    height: 315px;
-    position: absolute;
-    top: 120px;
-    right: 0px;
-    z-index: 2;
+  background: url(/images/tipsy-pen.png) no-repeat top left;
+  width: 210px;
+  height: 315px;
+  position: absolute;
+  top: 120px;
+  right: 0px;
+  z-index: 2;
 }
 
 #tipsy-pen {
-    background: url(/images/tipsy-pen.png) no-repeat top center;
+  background: url(/images/tipsy-pen.png) no-repeat top center;
 }
 
 #tipsy-presents {
-    background: url(/images/tipsy-presents.png) no-repeat top center;
+  background: url(/images/tipsy-presents.png) no-repeat top center;
 }
 
 #tipsy-ashamed {
-    background: url(/images/tipsy-ashamed.png) no-repeat top center;
+  background: url(/images/tipsy-ashamed.png) no-repeat top center;
 }
 
 #tipsy-headset {
-    background: url(/images/tipsy-headset.png) no-repeat top center;
+  background: url(/images/tipsy-headset.png) no-repeat top center;
 }
 
 a {
-    color: #d50f10;
-    text-decoration: none;
+  color: #d50f10;
+  text-decoration: none;
 }
 
 span.what {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #oldMapMarker {
-    background: url(/images/mappedPost.png) no-repeat;
+  background: url(/images/mappedPost.png) no-repeat;
 }
 
 #homeMarker {
-    background: url(/images/markers/homeMarker.png) no-repeat;
+  background: url(/images/markers/homeMarker.png) no-repeat;
 }
 
 #marker1 {
-    background: url(/images/markers/marker1.png) no-repeat;
+  background: url(/images/markers/marker1.png) no-repeat;
 }
 
 #marker2 {
-    background: url(/images/markers/marker2.png) no-repeat;
+  background: url(/images/markers/marker2.png) no-repeat;
 }
 
 #marker3 {
-    background: url(/images/markers/marker3.png) no-repeat;
+  background: url(/images/markers/marker3.png) no-repeat;
 }
 
 #marker4 {
-    background: url(/images/markers/marker4.png) no-repeat;
+  background: url(/images/markers/marker4.png) no-repeat;
 }
 
 #marker5 {
-    background: url(/images/markers/marker5.png) no-repeat;
+  background: url(/images/markers/marker5.png) no-repeat;
 }
 
 #marker6 {
-    background: url(/images/markers/marker6.png) no-repeat;
+  background: url(/images/markers/marker6.png) no-repeat;
 }
 
 #marker7 {
-    background: url(/images/markers/marker7.png) no-repeat;
+  background: url(/images/markers/marker7.png) no-repeat;
 }
 
 #marker8 {
-    background: url(/images/markers/marker8.png) no-repeat;
+  background: url(/images/markers/marker8.png) no-repeat;
 }
 
 #marker9 {
-    background: url(/images/markers/marker9.png) no-repeat;
+  background: url(/images/markers/marker9.png) no-repeat;
 }
 
 #marker10 {
-    background: url(/images/markers/marker10.png) no-repeat;
+  background: url(/images/markers/marker10.png) no-repeat;
 }
 
 #marker11 {
-    background: url(/images/markers/marker11.png) no-repeat;
+  background: url(/images/markers/marker11.png) no-repeat;
 }
 
 #marker12 {
-    background: url(/images/markers/marker12.png) no-repeat;
+  background: url(/images/markers/marker12.png) no-repeat;
 }
 
 #marker13 {
-    background: url(/images/markers/marker13.png) no-repeat;
+  background: url(/images/markers/marker13.png) no-repeat;
 }
 
 #marker14 {
-    background: url(/images/markers/marker14.png) no-repeat;
+  background: url(/images/markers/marker14.png) no-repeat;
 }
 
 #marker15 {
-    background: url(/images/markers/marker15.png) no-repeat;
+  background: url(/images/markers/marker15.png) no-repeat;
 }
 
 #marker16 {
-    background: url(/images/markers/marker16.png) no-repeat;
+  background: url(/images/markers/marker16.png) no-repeat;
 }
 
 #marker17 {
-    background: url(/images/markers/marker17.png) no-repeat;
+  background: url(/images/markers/marker17.png) no-repeat;
 }
 
 #marker18 {
-    background: url(/images/markers/marker18.png) no-repeat;
+  background: url(/images/markers/marker18.png) no-repeat;
 }
 
 #marker19 {
-    background: url(/images/markers/marker19.png) no-repeat;
+  background: url(/images/markers/marker19.png) no-repeat;
 }
 
 #marker20 {
-    background: url(/images/markers/marker20.png) no-repeat;
+  background: url(/images/markers/marker20.png) no-repeat;
 }
 
 #marker21 {
-    background: url(/images/markers/marker21.png) no-repeat;
+  background: url(/images/markers/marker21.png) no-repeat;
 }
 
 #marker22 {
-    background: url(/images/markers/marker22.png) no-repeat;
+  background: url(/images/markers/marker22.png) no-repeat;
 }
 
 #marker23 {
-    background: url(/images/markers/marker23.png) no-repeat;
+  background: url(/images/markers/marker23.png) no-repeat;
 }
 
 #marker24 {
-    background: url(/images/markers/marker24.png) no-repeat;
+  background: url(/images/markers/marker24.png) no-repeat;
 }
 
 #marker25 {
-    background: url(/images/markers/marker25.png) no-repeat;
+  background: url(/images/markers/marker25.png) no-repeat;
 }
 
 #marker26 {
-    background: url(/images/markers/marker26.png) no-repeat;
+  background: url(/images/markers/marker26.png) no-repeat;
 }
 
 #marker27 {
-    background: url(/images/markers/marker27.png) no-repeat;
+  background: url(/images/markers/marker27.png) no-repeat;
 }
 
 #marker28 {
-    background: url(/images/markers/marker28.png) no-repeat;
+  background: url(/images/markers/marker28.png) no-repeat;
 }
 
 #marker29 {
-    background: url(/images/markers/marker29.png) no-repeat;
+  background: url(/images/markers/marker29.png) no-repeat;
 }
 
 #marker30 {
-    background: url(/images/markers/marker30.png) no-repeat;
+  background: url(/images/markers/marker30.png) no-repeat;
 }
 
 #marker31 {
-    background: url(/images/markers/marker31.png) no-repeat;
+  background: url(/images/markers/marker31.png) no-repeat;
 }
 
 #marker32 {
-    background: url(/images/markers/marker32.png) no-repeat;
+  background: url(/images/markers/marker32.png) no-repeat;
 }
 
 #marker33 {
-    background: url(/images/markers/marker33.png) no-repeat;
+  background: url(/images/markers/marker33.png) no-repeat;
 }
 
 #marker34 {
-    background: url(/images/markers/marker34.png) no-repeat;
+  background: url(/images/markers/marker34.png) no-repeat;
 }
 
 #marker35 {
-    background: url(/images/markers/marker35.png) no-repeat;
+  background: url(/images/markers/marker35.png) no-repeat;
 }
 
 #marker36 {
-    background: url(/images/markers/marker36.png) no-repeat;
+  background: url(/images/markers/marker36.png) no-repeat;
 }
 
 #marker37 {
-    background: url(/images/markers/marker37.png) no-repeat;
+  background: url(/images/markers/marker37.png) no-repeat;
 }
 
 #marker38 {
-    background: url(/images/markers/marker38.png) no-repeat;
+  background: url(/images/markers/marker38.png) no-repeat;
 }
 
 #marker39 {
-    background: url(/images/markers/marker39.png) no-repeat;
+  background: url(/images/markers/marker39.png) no-repeat;
 }
 
 #marker40 {
-    background: url(/images/markers/marker40.png) no-repeat;
+  background: url(/images/markers/marker40.png) no-repeat;
 }
 
 #marker41 {
-    background: url(/images/markers/marker41.png) no-repeat;
+  background: url(/images/markers/marker41.png) no-repeat;
 }
 
 #marker42 {
-    background: url(/images/markers/marker42.png) no-repeat;
+  background: url(/images/markers/marker42.png) no-repeat;
 }
 
 #marker43 {
-    background: url(/images/markers/marker43.png) no-repeat;
+  background: url(/images/markers/marker43.png) no-repeat;
 }
 
 #marker44 {
-    background: url(/images/markers/marker44.png) no-repeat;
+  background: url(/images/markers/marker44.png) no-repeat;
 }
 
 #marker45 {
-    background: url(/images/markers/marker45.png) no-repeat;
+  background: url(/images/markers/marker45.png) no-repeat;
 }
 
 #marker46 {
-    background: url(/images/markers/marker46.png) no-repeat;
+  background: url(/images/markers/marker46.png) no-repeat;
 }
 
 #marker47 {
-    background: url(/images/markers/marker47.png) no-repeat;
+  background: url(/images/markers/marker47.png) no-repeat;
 }
 
 #marker48 {
-    background: url(/images/markers/marker48.png) no-repeat;
+  background: url(/images/markers/marker48.png) no-repeat;
 }
 
 #marker49 {
-    background: url(/images/markers/marker49.png) no-repeat;
+  background: url(/images/markers/marker49.png) no-repeat;
 }
 
 #marker50 {
-    background: url(/images/markers/marker50.png) no-repeat;
+  background: url(/images/markers/marker50.png) no-repeat;
 }
 
 #marker51 {
-    background: url(/images/markers/marker51.png) no-repeat;
+  background: url(/images/markers/marker51.png) no-repeat;
 }
 
 #marker52 {
-    background: url(/images/markers/marker52.png) no-repeat;
+  background: url(/images/markers/marker52.png) no-repeat;
 }
 
 #marker53 {
-    background: url(/images/markers/marker53.png) no-repeat;
+  background: url(/images/markers/marker53.png) no-repeat;
 }
 
 #marker54 {
-    background: url(/images/markers/marker54.png) no-repeat;
+  background: url(/images/markers/marker54.png) no-repeat;
 }
 
 #marker55 {
-    background: url(/images/markers/marker55.png) no-repeat;
+  background: url(/images/markers/marker55.png) no-repeat;
 }
 
 #marker56 {
-    background: url(/images/markers/marker56.png) no-repeat;
+  background: url(/images/markers/marker56.png) no-repeat;
 }
 
 #marker57 {
-    background: url(/images/markers/marker57.png) no-repeat;
+  background: url(/images/markers/marker57.png) no-repeat;
 }
 
 #marker58 {
-    background: url(/images/markers/marker58.png) no-repeat;
+  background: url(/images/markers/marker58.png) no-repeat;
 }
 
 #marker59 {
-    background: url(/images/markers/marker59.png) no-repeat;
+  background: url(/images/markers/marker59.png) no-repeat;
 }
 
 #marker60 {
-    background: url(/images/markers/marker60.png) no-repeat;
+  background: url(/images/markers/marker60.png) no-repeat;
 }
 
 #marker61 {
-    background: url(/images/markers/marker61.png) no-repeat;
+  background: url(/images/markers/marker61.png) no-repeat;
 }
 
 #marker62 {
-    background: url(/images/markers/marker62.png) no-repeat;
+  background: url(/images/markers/marker62.png) no-repeat;
 }
 
 #marker63 {
-    background: url(/images/markers/marker63.png) no-repeat;
+  background: url(/images/markers/marker63.png) no-repeat;
 }
 
 #marker64 {
-    background: url(/images/markers/marker64.png) no-repeat;
+  background: url(/images/markers/marker64.png) no-repeat;
 }
 
 #marker65 {
-    background: url(/images/markers/marker65.png) no-repeat;
+  background: url(/images/markers/marker65.png) no-repeat;
 }
 
 #marker66 {
-    background: url(/images/markers/marker66.png) no-repeat;
+  background: url(/images/markers/marker66.png) no-repeat;
 }
 
 #marker67 {
-    background: url(/images/markers/marker67.png) no-repeat;
+  background: url(/images/markers/marker67.png) no-repeat;
 }
 
 #marker68 {
-    background: url(/images/markers/marker68.png) no-repeat;
+  background: url(/images/markers/marker68.png) no-repeat;
 }
 
 #marker69 {
-    background: url(/images/markers/marker69.png) no-repeat;
+  background: url(/images/markers/marker69.png) no-repeat;
 }
 
 #marker70 {
-    background: url(/images/markers/marker70.png) no-repeat;
+  background: url(/images/markers/marker70.png) no-repeat;
 }
 
 #marker71 {
-    background: url(/images/markers/marker71.png) no-repeat;
+  background: url(/images/markers/marker71.png) no-repeat;
 }
 
 #marker72 {
-    background: url(/images/markers/marker72.png) no-repeat;
+  background: url(/images/markers/marker72.png) no-repeat;
 }
 
 #marker73 {
-    background: url(/images/markers/marker73.png) no-repeat;
+  background: url(/images/markers/marker73.png) no-repeat;
 }
 
 #marker74 {
-    background: url(/images/markers/marker74.png) no-repeat;
+  background: url(/images/markers/marker74.png) no-repeat;
 }
 
 #marker75 {
-    background: url(/images/markers/marker75.png) no-repeat;
+  background: url(/images/markers/marker75.png) no-repeat;
 }
 
 #marker76 {
-    background: url(/images/markers/marker76.png) no-repeat;
+  background: url(/images/markers/marker76.png) no-repeat;
 }
 
 #marker77 {
-    background: url(/images/markers/marker77.png) no-repeat;
+  background: url(/images/markers/marker77.png) no-repeat;
 }
 
 #marker78 {
-    background: url(/images/markers/marker78.png) no-repeat;
+  background: url(/images/markers/marker78.png) no-repeat;
 }
 
 #marker79 {
-    background: url(/images/markers/marker79.png) no-repeat;
+  background: url(/images/markers/marker79.png) no-repeat;
 }
 
 #marker80 {
-    background: url(/images/markers/marker80.png) no-repeat;
+  background: url(/images/markers/marker80.png) no-repeat;
 }
 
 #marker81 {
-    background: url(/images/markers/marker81.png) no-repeat;
+  background: url(/images/markers/marker81.png) no-repeat;
 }
 
 #marker82 {
-    background: url(/images/markers/marker82.png) no-repeat;
+  background: url(/images/markers/marker82.png) no-repeat;
 }
 
 #marker83 {
-    background: url(/images/markers/marker83.png) no-repeat;
+  background: url(/images/markers/marker83.png) no-repeat;
 }
 
 #marker84 {
-    background: url(/images/markers/marker84.png) no-repeat;
+  background: url(/images/markers/marker84.png) no-repeat;
 }
 
 #marker85 {
-    background: url(/images/markers/marker85.png) no-repeat;
+  background: url(/images/markers/marker85.png) no-repeat;
 }
 
 #marker86 {
-    background: url(/images/markers/marker86.png) no-repeat;
+  background: url(/images/markers/marker86.png) no-repeat;
 }
 
 #marker87 {
-    background: url(/images/markers/marker87.png) no-repeat;
+  background: url(/images/markers/marker87.png) no-repeat;
 }
 
 #marker88 {
-    background: url(/images/markers/marker88.png) no-repeat;
+  background: url(/images/markers/marker88.png) no-repeat;
 }
 
 #marker89 {
-    background: url(/images/markers/marker89.png) no-repeat;
+  background: url(/images/markers/marker89.png) no-repeat;
 }
 
 #marker90 {
-    background: url(/images/markers/marker90.png) no-repeat;
+  background: url(/images/markers/marker90.png) no-repeat;
 }
 
 #marker91 {
-    background: url(/images/markers/marker91.png) no-repeat;
+  background: url(/images/markers/marker91.png) no-repeat;
 }
 
 #marker92 {
-    background: url(/images/markers/marker92.png) no-repeat;
+  background: url(/images/markers/marker92.png) no-repeat;
 }
 
 #marker93 {
-    background: url(/images/markers/marker93.png) no-repeat;
+  background: url(/images/markers/marker93.png) no-repeat;
 }
 
 #marker94 {
-    background: url(/images/markers/marker94.png) no-repeat;
+  background: url(/images/markers/marker94.png) no-repeat;
 }
 
 #marker95 {
-    background: url(/images/markers/marker95.png) no-repeat;
+  background: url(/images/markers/marker95.png) no-repeat;
 }
 
 #marker96 {
-    background: url(/images/markers/marker96.png) no-repeat;
+  background: url(/images/markers/marker96.png) no-repeat;
 }
 
 #marker97 {
-    background: url(/images/markers/marker97.png) no-repeat;
+  background: url(/images/markers/marker97.png) no-repeat;
 }
 
 #marker98 {
-    background: url(/images/markers/marker98.png) no-repeat;
+  background: url(/images/markers/marker98.png) no-repeat;
 }
 
 #marker99 {
-    background: url(/images/markers/marker99.png) no-repeat;
+  background: url(/images/markers/marker99.png) no-repeat;
 }

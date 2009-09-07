@@ -1,0 +1,47 @@
+<td colspan="7">
+
+  <table id="show-<%= @blog_entry.id.to_s %>">
+    <tr>
+      <td class="editing">
+        <p><label> What : </label>
+          <%= @blog_entry.what -%>
+        </p>
+
+        <p><label> Categories : </label>
+          <%= @blog_entry.category_list.join(", ")-%>
+        </p>
+
+        <p><label> Where : </label>
+          <%= @blog_entry.where -%>
+        </p>
+
+        <p><label>How Much : $</label>
+          <% displaytext = @blog_entry.price_text.downcase.index(/[aeioubcdfghjklmnpqrstvxxyz]/)  unless @blog_entry.price_text.nil?
+             if displaytext
+               price= @blog_entry.price_text
+             else
+               price= number_with_precision(@blog_entry.price, :precision => 2)
+             end %>
+          <%= price %>
+        </p>
+
+        <p><label>Rating:</label>
+          <%= render :partial => "ratings/rate", :locals => { :asset => @blog_entry } %>
+        </p>
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan="7" class="buttonTd">
+
+            <span><%= link_to_remote  "<em>Min</em>", {:update => "tr#{@blog_entry.id}",
+                                                       :url => { :controller => 'listings', :action => 'minimize_post',
+                                                                 :post_id => @blog_entry.id,
+                                                                 :map_index => map_index
+                                                       }}, {:class=>"buttonEdit", :title=>"minimize"} %></span>
+
+      </td>
+    </tr>
+
+  </table>
+</td>
