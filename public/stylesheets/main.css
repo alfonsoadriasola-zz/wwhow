@@ -277,7 +277,6 @@ h2.error {
 
 #messageListTable td {
   border-right: solid 1px #444;
-
 }
 
 #messageListTable th {
@@ -674,7 +673,7 @@ td.editing label {
   font-size: 1.1em;
 }
 
-span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
+span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit , a.buttonMail{
   display: block;
   float: right;
   height: 36px;;
@@ -683,6 +682,18 @@ span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit {
   background: no-repeat;
   cursor: pointer;
 }
+
+
+/*span.hasMap, a.buttonAddFave:link, a.buttonOffFaves:link, a.buttonEdit:link {*/
+   /*visibility:hidden;*/
+/*}*/
+/*span.hasMap, a.buttonAddFave:visited, a.buttonOffFaves:visited, a.buttonEdit:visited {*/
+   /*visibility:hidden;*/
+/*}*/
+/*span.hasMap, a.buttonAddFave:hover, a.buttonOffFaves:hover, a.buttonEdit:hover {*/
+   /*visibility:visible;*/
+/*}*/
+
 
 span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
   visibility: hidden;

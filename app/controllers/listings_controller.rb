@@ -25,7 +25,7 @@ class ListingsController < ApplicationController
     map_index = params[:map_index]
     respond_to do |format|
      format.js{
-        render :partial => 'minimize_post', :locals=>{:map_index => map_index} }
+        render :partial => 'good_message_by_user', :locals=>{:map_index => map_index} }
     end
   end
 
