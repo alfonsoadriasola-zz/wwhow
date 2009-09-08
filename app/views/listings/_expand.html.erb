@@ -8,11 +8,21 @@
         </p>
 
         <p><label> Categories : </label>
-          <%= @blog_entry.category_list.join(", ")-%>
+          <%= @blog_entry.category_list.join(", ") -%> <br/>
         </p>
 
         <p><label> Where : </label>
           <%= @blog_entry.where -%>
+
+          <% if @blog_entry.lat &&  map_index && map_index.to_i < 99 then %>
+            <span class="hasMap"
+                  id="marker<%= (map_index).to_s %>"
+                  <%= %Q{onclick="showMapIcon(#{@blog_entry.lat},#{@blog_entry.lng});"} %>
+            /> </span>
+          <% elsif @blog_entry.lat %>
+            <span class="hasMap" id="oldMapMarker"/> </span>
+          <% end %>
+
         </p>
 
         <p><label>How Much : $</label>
@@ -33,12 +43,17 @@
     </tr>
     <tr>
       <td colspan="7" class="buttonTd">
-
-            <span><%= link_to_remote  "<em>Min</em>", {:update => "tr#{@blog_entry.id}",
+            <span>
+            <a class="buttonMail"
+            href="mailto:?subject=WWHOW! look what I found! A great deal on <%= u(@blog_entry.what) %> &body=<%= u(@blog_entry.set_text_from_attributes) %>%0A%0A Rate it at http://wwhow.com/find/<%= @blog_entry.id %>&">
+            <em>email</em>
+            </a>
+            </span>
+            <span><%= link_to_remote  "<em>-</em>", {:update => "tr#{@blog_entry.id}",
                                                        :url => { :controller => 'listings', :action => 'minimize_post',
                                                                  :post_id => @blog_entry.id,
                                                                  :map_index => map_index
-                                                       }}, {:class=>"buttonEdit", :title=>"minimize"} %></span>
+                                                       }}, {:class=>"button", :title=>"minimize"} %></span>
 
       </td>
     </tr>

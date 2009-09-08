@@ -695,7 +695,10 @@ span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit , a.buttonMail{
 /*}*/
 
 
-span.hasMap em, a.buttonAddFave em, a.buttonOffFaves em, a.buttonEdit em {
+span.hasMap em, a.buttonAddFave em,
+  a.buttonOffFaves em, a.buttonEdit em,
+  a.buttonMail em
+ {
   visibility: hidden;
   font-size: 1.1em;
 }
@@ -718,6 +721,10 @@ a.buttonOffFaves {
 
 a.buttonEdit {
   background: transparent url(/images/editPost.png) no-repeat center left;
+}
+
+a.buttonMail {
+  background: transparent url(/images/email.png) no-repeat center left;
 }
 
 td.bad_post {

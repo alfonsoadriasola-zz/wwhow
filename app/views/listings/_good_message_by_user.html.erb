@@ -1,11 +1,16 @@
 <% distance = number_with_precision(@blog_entry.distance_to(session[:geo_location]), :precision=> 1)  if @blog_entry.lat %>
 <td title="<%= h @blog_entry.categories.join(',') -%>">
 
-   <span><%= link_to_remote h(@blog_entry.what.downcase)[0..140], {:update => "tr#{@blog_entry.id}",
-                                                                     :url => { :controller => 'listings', :action => 'expand',
-                                                                               :post_id => @blog_entry.id,
-                                                                               :map_index => map_index
-                                                                     }} %></span>
+   <% if !logged_in? then %>
+     <span><%= link_to_remote h(@blog_entry.what.downcase)[0..140], {:update => "tr#{@blog_entry.id}",
+                                                                       :url => { :controller => 'listings', :action => 'expand',
+                                                                                 :post_id => @blog_entry.id,
+                                                                                 :map_index => map_index
+                                                                       }} %></span>
+    <%else %>
+      <%= h(@blog_entry.what.downcase)[0..140] -%>     
+
+   <% end %>
 
   <% if logged_in? && ( current_web_user.user.id == @blog_entry.user_id || current_web_user.is_admin  ) %>
             <span><%= link_to_remote  "<em>edit</em>", {:update => "tr#{@blog_entry.id}",

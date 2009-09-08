@@ -22,6 +22,7 @@ class ListingsController < ApplicationController
 
   def minimize_post
     @blog_entry= BlogEntry.find(params[:post_id])
+    @user = current_web_user.user  if logged_in?
     map_index = params[:map_index]
     respond_to do |format|
      format.js{
