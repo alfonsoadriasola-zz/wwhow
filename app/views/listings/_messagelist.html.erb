@@ -7,11 +7,11 @@
     <% show_map_icons =  session[:map] == true && !@messages.empty? && @mapmessages.size > 0 %>
 
     <% if show_map_icons ==true %>
-        <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
-        <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
+      <a class="button" id="mapOff" href="#" onclick="mapOff();">Map Off</a>
+      <a class="button" id="mapOn" href="#" onclick="mapOn();" style="display:none">Map On</a>
     <% elsif @mapmessages.size > 0 %>
-        <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
-        <a id="mapOn" href="#" onclick="startMap();">Map it!</a>
+      <a id="mapOff" href="#" onclick="mapOff();" style="display:none">Map Off</a>
+      <a id="mapOn" href="#" onclick="startMap();">Map it!</a>
     <% end %>
   </div>
 
@@ -21,12 +21,12 @@
 
   <table id="messageListTable" class="sortable" cellspacing=0 cellpadding=4>
     <colgroup align="char" char=".">
-      <col width="23%" align="left"/>
-      <col width="23%" align="justify"/>
-      <col width="14%" align="char" char="."/>
-      <col width="10%" align="center" char="."/>
-      <col width="10%" align="center" char="."/>
-      <col width="20%"/>
+      <col id="colwhat" width="20%" align="left"/>
+      <col id="colwhere" width="22%" align="justify"/>
+      <col id="colhowmuch" width="16%" align="char" char="."/>
+      <col id="colwho" width="12%" align="center" char="."/>
+      <col id="colwhen" width="10%" align="center" char="."/>
+      <col id="colratings" width="20%"/>
     </colgroup>
     <thead>
     <tr id="tr0">
@@ -40,25 +40,27 @@
     </thead>
 
     <% for @blog_entry in @messages %>
-        <%= render :partial => ('listings/message') %>
-    <% end %>
-
-    <% if @messages then %>
-        <tr>
-          <td colspan = "7"><a class="buttonRed" onclick="$('user_post_limit').setValue(<%=@filter[:post_limit].to_i + 22 %>); $('user_post_limit').up('form').submit(); return false;" href="#">
-            <span> More </span>
-          </a></td>
-        </tr>
+      <%= render :partial => ('listings/message') %>
     <% end %>
 
     <% if @filter then %>
-        <tr>
-          <td colspan="7"> <%= render :partial =>  "shared/system_messages" %> </td>
-        </tr>
+      <tr>
+        <td colspan="7"> <%= render :partial =>  "shared/system_messages" %> </td>
+      </tr>
     <% end %>
-
   </table>
+  <table>
+    <tr>
+      <td colspan="7">
+        <% if @messages  then %>
+          <a class="buttonRed" onclick="$('user_post_limit').setValue(<%=@filter[:post_limit].to_i + 22 %>); $('user_post_limit').up('form').submit(); return false;" href="#">
+            <span> More </span>
+          </a>
+        <% end %>
 
+      </td>
+    </tr>
+  </table>
 </div>
 
 

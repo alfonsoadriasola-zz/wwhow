@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     @filter[:rating_to]=  5
     @filter[:price_from]=0
     @filter[:price_to]=500
-    @filter[:radius]= 50
+    @filter[:radius]= 20
     @filter[:show_unmapped]=false
 
     #set widgets
