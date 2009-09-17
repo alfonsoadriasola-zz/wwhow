@@ -28,11 +28,9 @@
 
         <td>
           <label> Category:</label>
-          <%= select_tag 'category_list[]', options_for_select(BlogEntry.master_category_list), { :multiple => false } %>
-          <br/>
-          <br/>
-          <%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed', :id => 'buttonPost'} %>
-          <a id="inputOn" class="buttonRed" href="#" onclick="inputOff();">Cancel</a>
+          <span><%= select_tag 'category_list[]', options_for_select(BlogEntry.master_category_list), { :multiple => false } %></span>
+          <span><%= link_to_function "Post", "$(this).up('form').submit()", {:class=>'buttonRed', :id => 'buttonPost'} %></span>
+          <span><a id="buttonCancel" class="buttonRed" href="#" onclick="inputOff();">Cancel</a></span>
         </td>
 
       </tr>
