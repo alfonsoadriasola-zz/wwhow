@@ -19227,3 +19227,2314 @@ Rendered shared/_home (0.0ms)
 Rendered layouts/_footer (0.0ms)
 Rendered layouts/_endscripts (0.0ms)
 Completed in 2432ms (View: 1025, DB: 989) | 200 OK [http://localhost/listings/search]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-09-17 09:29:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (1.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+  [4;36;1mTwitter Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (26.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (48,49,52,53,54)) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (5837,1010,1300,5820,5831,1215,17,563,5701,894,1770)) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (772.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (2.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (5.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (86.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (218.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1694ms (View: 232, DB: 834) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-17 09:29:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 51ms (View: 47, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-09-17 09:29:43) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"LJuFNbHHFv51PuCw+fGkw8JEuFR9lQ1SFke6ngfGDSc=", "controller"=>"sessions", "login"=>"alfonso", "password"=>"[FILTERED]"}
+  [4;35;1mWebUser Load (57.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (login = 'alfonso' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mWebUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/who/alfonso
+Completed in 97ms (DB: 88) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:29:44) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;35;1mWebUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (26.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (12.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;36;1mRating Load (12.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (771.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (14.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;36;1mSQL (14.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (18.0ms)
+Rendered users/_control_panel (32.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (40.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (3.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (17.0ms)
+Rendered users/_input_header (23.0ms)
+  [4;35;1mSQL (9.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (104.0ms)
+  [4;36;1mSubscription Load (11.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (52.0ms)
+Rendered listings/_message (52.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (8.0ms)
+Rendered listings/_message (8.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (8.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (298.0ms)
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1540ms (View: 365, DB: 889) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:30:30) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;36;1mWebUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (25.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (761.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (3.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (8.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (2.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (1.0ms)
+Rendered users/_input_header (2.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (91.0ms)
+  [4;35;1mSubscription Load (1.0ms)[0m   [0mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;36;1mSubscription Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (39.0ms)
+Rendered listings/_message (40.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (261.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1385ms (View: 270, DB: 831) | 200 OK [http://localhost/who/alfonso]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:32:40) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;35;1mWebUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (5.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mUser Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (26.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;36;1mRating Load (13.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (779.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (3.0ms)
+Rendered layouts/_leftbar (7.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (3.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (5.0ms)
+Rendered users/_input_header (8.0ms)
+  [4;35;1mSQL (8.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+  [4;36;1mSubscription Load (1.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (37.0ms)
+Rendered listings/_message (37.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered listings/_messagelist (185.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (1.0ms)
+Completed in 1443ms (View: 201, DB: 868) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:33:39) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;36;1mWebUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (27.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;35;1mRating Load (13.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (783.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (7.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (2.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (2.0ms)
+Rendered users/_input_header (2.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+  [4;35;1mSubscription Load (1.0ms)[0m   [0mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;36;1mSubscription Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (40.0ms)
+Rendered listings/_message (40.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (75.0ms)
+Rendered listings/_good_message_by_user (77.0ms)
+Rendered listings/_message (78.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (266.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1389ms (View: 276, DB: 855) | 200 OK [http://localhost/who/alfonso]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:34:53) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;35;1mWebUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (26.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;36;1mRating Load (11.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (763.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (6.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (2.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (1.0ms)
+Rendered users/_input_header (1.0ms)
+  [4;35;1mSQL (7.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+  [4;36;1mSubscription Load (1.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (38.0ms)
+Rendered listings/_message (38.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (72.0ms)
+Rendered listings/_good_message_by_user (73.0ms)
+Rendered listings/_message (74.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (255.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1370ms (View: 266, DB: 829) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:35:22) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;36;1mWebUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (2.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Load (4.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mUser Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (38.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (23.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;35;1mRating Load (15.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (790.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (76.0ms)
+Rendered layouts/_leftbar (80.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (2.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (1.0ms)
+Rendered users/_input_header (3.0ms)
+  [4;36;1mSQL (10.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+  [4;35;1mSubscription Load (1.0ms)[0m   [0mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;36;1mSubscription Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (39.0ms)
+Rendered listings/_message (39.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (5.0ms)
+Rendered listings/_good_message_by_user (8.0ms)
+Rendered listings/_message (8.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered listings/_messagelist (196.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1504ms (View: 277, DB: 915) | 200 OK [http://localhost/who/alfonso]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:35:25) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;35;1mWebUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (26.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;36;1mTagging Load (3.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;36;1mRating Load (13.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (765.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (3.0ms)
+Rendered listings/_tags (3.0ms)
+Rendered layouts/_leftbar (7.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (3.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (2.0ms)
+Rendered users/_input_header (2.0ms)
+  [4;35;1mSQL (8.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+  [4;36;1mSubscription Load (1.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (39.0ms)
+Rendered listings/_message (39.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (194.0ms)
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1435ms (View: 204, DB: 842) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:35:44) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'alfonso') LIMIT 1[0m
+  [4;36;1mBlogEntry Load (0.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`user_id` = 4) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (10852,10851,2903,46,3) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (799.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (2.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (5.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10852) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10851) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 2903) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 46) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 3) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (54.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1229ms (View: 62, DB: 833) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:35:46) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'alfonso') LIMIT 1[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`user_id` = 4) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mRating Load (12.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (10852,10851,2903,46,3) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (778.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (4.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10852) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10851) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 2903) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (83.0ms)
+Rendered listings/_good_message_by_user (90.0ms)
+Rendered listings/_message (93.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 46) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (16.0ms)
+Rendered listings/_good_message_by_user (39.0ms)
+Rendered listings/_message (42.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 3) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (14.0ms)
+Rendered listings/_good_message_by_user (36.0ms)
+Rendered listings/_message (39.0ms)
+Rendered shared/_system_messages (2.0ms)
+Rendered listings/_messagelist (218.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (4.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1390ms (View: 254, DB: 817) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:36:25) [POST]
+  Parameters: {"user"=>{"show_friends_only"=>"", "id"=>"", "show_unmapped"=>"", "post_limit"=>"22"}, "default_location"=>"100 Pine St, San Francisco, CA 94111, USA", "author"=>"alfonso", "action"=>"search", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"listings", "blog_entry"=>{"radius"=>"5", "price_from"=>"0", "sliders"=>"", "search"=>"", "map"=>"", "author_id"=>"4", "category_list"=>"", "search_rating_to"=>"5", "search_rating_from"=>"0", "price_to"=>"2000"}}
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (2.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`user_id` = '4') ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;36;1mRating Load (11.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (10852,10851,2903,46,3) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (793.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (2.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;35;1mSQL (8.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10852) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (9.0ms)
+Rendered listings/_message (9.0ms)
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10851) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (8.0ms)
+Rendered listings/_message (8.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 2903) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 46) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 3) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (75.0ms)
+Rendered listings/_message (76.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (126.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1265ms (View: 133, DB: 830) | 200 OK [http://localhost/who/alfonso]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:38:01) [POST]
+  Parameters: {"user"=>{"show_friends_only"=>"", "id"=>"", "show_unmapped"=>"", "post_limit"=>"22"}, "default_location"=>"100 Pine St, San Francisco, CA 94111, USA", "author"=>"alfonso", "action"=>"search", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"listings", "blog_entry"=>{"radius"=>"5", "price_from"=>"0", "sliders"=>"", "search"=>"", "map"=>"", "author_id"=>"4", "category_list"=>"", "search_rating_to"=>"5", "search_rating_from"=>"0", "price_to"=>"2000"}}
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`user_id` = '4') ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mRating Load (12.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (10852,10851,2903,46,3) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (767.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (5.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10852) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 10851) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 2903) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 46) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 3) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (51.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1112ms (View: 61, DB: 798) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:38:33) [POST]
+  Parameters: {"user"=>{"show_friends_only"=>"", "id"=>"", "show_unmapped"=>"", "post_limit"=>"44"}, "default_location"=>"100 Pine St, San Francisco, CA 94111, USA", "author"=>"alfonso", "action"=>"search", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"listings", "blog_entry"=>{"radius"=>"5", "price_from"=>"0", "sliders"=>"", "search"=>"", "map"=>"true", "author_id"=>"", "category_list"=>"", "search_rating_to"=>"5", "search_rating_from"=>"0", "price_to"=>"2000"}}
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (30.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (1=1 AND ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) AND lower(what) LIKE '%%' ) ORDER BY blog_entries.created_at desc LIMIT 44[0m
+  [4;35;1mBlogEntry Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (55,48,49,51,52,53,54)) [0m
+  [4;36;1mTagging Load (41.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570,8569,8565,8564,8563,8559,8558,8557,8554,8555,8553,8552,8551,8550,8549,8548,8547,8437,8433,8422,8421,8420,8416) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (5837,4847,1925,930,6674,1010,1431,161,6675,833,1300,592,735,1257,2808,1268,1137,2501,131,813,5820,5831,715,1215,6767,1469,17,2054,5790,6768,563,5701,508,894,531,6770,6769,1582,1770,6771,6772)) [0m
+  [4;36;1mRating Load (15.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570,8569,8565,8564,8563,8559,8558,8557,8554,8555,8553,8552,8551,8550,8549,8548,8547,8437,8433,8422,8421,8420,8416) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (771.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (6.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;35;1mSQL (8.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (30.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (72.0ms)
+Rendered listings/_good_message_by_user (74.0ms)
+Rendered listings/_message (74.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (80.0ms)
+Rendered listings/_good_message_by_user (84.0ms)
+Rendered listings/_message (84.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered listings/_messagelist (417.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1615ms (View: 430, DB: 878) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:39:15) [GET]
+  Parameters: {"action"=>"search", "controller"=>"listings", "category_list"=>"fashion"}
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (42.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (1=1 AND ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) AND lower(what) LIKE '%fashion%' ) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Load (121.0ms)[0m   [0mSELECT DISTINCT blog_entries.* FROM `blog_entries` LEFT OUTER JOIN taggings blog_entries_taggings ON blog_entries_taggings.taggable_id = blog_entries.id AND blog_entries_taggings.taggable_type = 'BlogEntry' LEFT OUTER JOIN tags blog_entries_tags ON blog_entries_tags.id = blog_entries_taggings.tag_id WHERE (1=1 AND ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) AND context = 'categories' AND blog_entries_tags.name LIKE 'fashion') ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (55,49,52,53,54)) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (9507,9506,9242,9241,8570,8565,8563,8559,8557,8422,8421,8420,8060,8046,8045,8044,8043,8042,7853,7852,7832,7830) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (768.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (64.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (15.0ms)
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 9507) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (8.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 9506) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 9242) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 9241) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8570) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8565) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8563) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8559) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8557) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8422) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8421) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8420) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8060) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8046) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8045) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8044) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8043) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 8042) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 7853) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 7852) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 7832) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 7830) AND ((context = 'categories'))) [0m
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (175.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1672ms (View: 304, DB: 975) | 200 OK [http://localhost/what/fashion]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-09-17 09:39:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (1.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+  [4;36;1mTwitter Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (29.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (48,49,52,53,54)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (5837,1010,1300,5820,5831,1215,17,563,5701,894,1770)) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (775.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (3.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (15.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (78.0ms)
+Rendered listings/_good_message_by_user (80.0ms)
+Rendered listings/_message (81.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (213.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1689ms (View: 224, DB: 843) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-09-17 09:46:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (1.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+  [4;36;1mTwitter Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (26.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (48,49,52,53,54)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (5837,1010,1300,5820,5831,1215,17,563,5701,894,1770)) [0m
+  [4;35;1mRating Load (12.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (9900,9899,9898,9615,9614,9613,9609,9608,9605,9606,9604,9507,9506,9505,9288,9286,9285,9283,9243,9242,9241,8570) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (801.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (1.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (3.0ms)
+Rendered layouts/_active_members (6.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (16.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (79.0ms)
+Rendered listings/_message (81.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (219.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1955ms (View: 232, DB: 868) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-17 09:47:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-09-17 09:48:00) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"sessions", "login"=>"alfonso", "password"=>"[FILTERED]"}
+  [4;35;1mWebUser Load (2.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (login = 'alfonso' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mWebUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/who/alfonso
+Completed in 19ms (DB: 8) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:48:01) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;35;1mWebUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (26.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;36;1mTagging Load (2.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;36;1mRating Load (11.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (778.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (4.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (8.0ms)
+Rendered layouts/_active_members (2.0ms)
+Rendered layouts/_rightbar (2.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (2.0ms)
+Rendered users/_input_header (2.0ms)
+  [4;35;1mSQL (8.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (16.0ms)
+  [4;36;1mSubscription Load (1.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (38.0ms)
+Rendered listings/_message (40.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (4.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (7.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (194.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1393ms (View: 205, DB: 851) | 200 OK [http://localhost/who/alfonso]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-17 09:50:28) [GET]
+  Parameters: {"author"=>"alfonso", "action"=>"search", "controller"=>"listings"}
+  [4;36;1mWebUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Google geocoding. Address: 891 carthage ct, concord, ca. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>891 carthage ct, concord, ca</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>891 Carthage Ct, Concord, CA 94518, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Concord</LocalityName><Thoroughfare><ThoroughfareName>891 Carthage Ct</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94518</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.9454296" south="37.9391344" east="-122.0263384" west="-122.0326336" />
+    </ExtendedData>
+    <Point><coordinates>-122.0294860,37.9422820,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (32.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.662217746620179)*COS(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.662217746620179)*SIN(-2.12981631521633)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.662217746620179)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 5) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (57,71,65,4,291)) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (1010,7494,1215,5820,17,519,5767,5681,894,1770,566)) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10246,9897,9896,9892,9889,9534,9533,9532,8898,8891,8889,8888,8887,8482,8481,8480) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (765.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`web_user_id` = 8) LIMIT 1[0m
+Rendering template within layouts/users
+Rendering /users/show
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 4) [0m
+Rendered users/_public (2.0ms)
+Rendered users/_control_panel (4.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (7.0ms)
+Rendered layouts/_active_members (1.0ms)
+Rendered layouts/_rightbar (3.0ms)
+Rendered listings/_search (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+Rendered users/_new_blog_entry (5.0ms)
+Rendered users/_input_header (8.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (16.0ms)
+  [4;35;1mSubscription Load (1.0ms)[0m   [0mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;36;1mSubscription Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (38.0ms)
+Rendered listings/_message (38.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (186.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1475ms (View: 203, DB: 843) | 200 OK [http://localhost/who/alfonso]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit_blog_entry (for 127.0.0.1 at 2009-09-17 09:50:48) [POST]
+  Parameters: {"action"=>"edit_blog_entry", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"users", "map_index"=>"1", "blog_entry_id"=>"12849"}
+  [4;35;1mWebUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `web_users`[0m
+  [4;36;1mWebUser Load (2.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;36;1mBlogEntry Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 12849) [0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 12849) AND (context='categories')) [0m
+  [4;35;1mRating Load (11.0ms)[0m   [0mSELECT * FROM `ratings` WHERE (`ratings`.rateable_id = 12849 AND `ratings`.rateable_type = 'BlogEntry') [0m
+Rendered ratings/_rate (15.0ms)
+Rendered users/_edit_blog_entry (42.0ms)
+Completed in 105ms (View: 32, DB: 28) | 200 OK [http://localhost/users/edit_blog_entry?blog_entry_id=12849&map_index=1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#cancel_update_blog_entry (for 127.0.0.1 at 2009-09-17 09:50:52) [POST]
+  Parameters: {"action"=>"cancel_update_blog_entry", "authenticity_token"=>"G6vFIDQpjlVgH91tsshZzLlm7etDM6UMJivYtARn6Us=", "controller"=>"users", "map_index"=>"1", "blog_entry_id"=>"12849"}
+  [4;36;1mWebUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `web_users`[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mBlogEntry Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 12849) [0m
+Rendering users/cancel_update_blog_entry
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 12849) AND ((context = 'categories'))) [0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 291) [0m
+  [4;36;1mSubscription Load (1.0ms)[0m   [0;1mSELECT * FROM `subscriptions` WHERE (`subscriptions`.user_id = 4) [0m
+  [4;35;1mSubscription Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+  [4;36;1mRating Load (11.0ms)[0m   [0;1mSELECT * FROM `ratings` WHERE (`ratings`.rateable_id = 12849 AND `ratings`.rateable_type = 'BlogEntry') [0m
+Rendered ratings/_rate (15.0ms)
+Rendered listings/_good_message_by_user (72.0ms)
+Completed in 137ms (View: 58, DB: 34) | 200 OK [http://localhost/users/cancel_update_blog_entry?blog_entry_id=12849&map_index=1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
