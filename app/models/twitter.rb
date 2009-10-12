@@ -2,8 +2,8 @@ class Twitter < Subscription
 
   def self.get_tweets
     last_twit_id = Twitter.find_by_sql("select max(twit_id) twit_id from blog_entries")[0].twit_id
-    Timeout::timeout(8) do
-      begin
+    begin
+      Timeout::timeout(8) do
         http = Net::HTTP.new('twitter.com', 80)
         http.use_ssl = false
         http.start do |h|
@@ -12,13 +12,12 @@ class Twitter < Subscription
           response = h.request(request)
           @tweets = ActiveSupport::JSON.decode(response.body)
         end
-      rescue
-        nil
+        return @tweets
       end
+    rescue
+      nil
     end
-    return @tweets
   end
-
 
   def self.create_blog_entries(tweets)
     tweets.each do|t|
