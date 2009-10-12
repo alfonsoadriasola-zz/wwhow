@@ -1,22 +1,24 @@
 class Twitter < Subscription
 
   def self.get_tweets
-    last_twit_id = Twitter.find_by_sql("select max(twit_id) twit_id from blog_entries")[0].twit_id
-    begin
-      Timeout::timeout(8) do
-        http = Net::HTTP.new('twitter.com', 80)
-        http.use_ssl = false
-        http.start do |h|
-          request = Net::HTTP::Get.new("/statuses/mentions.json?since_id=#{last_twit_id}")
-          request.basic_auth('wwhow', 'cheapdeal')
-          response = h.request(request)
-          @tweets = ActiveSupport::JSON.decode(response.body)
-        end
-        return @tweets
-      end
-    rescue
-      nil
-    end
+    #last_twit_id = Twitter.find_by_sql("select max(twit_id) twit_id from blog_entries")[0].twit_id
+    #begin
+    #  Timeout::timeout(8) do
+    #    http = Net::HTTP.new('twitter.com', 80)
+    #    http.use_ssl = false
+    #    http.start do |h|
+    #      request = Net::HTTP::Get.new("/statuses/mentions.json?since_id=#{last_twit_id}")
+    #      request.basic_auth('wwhow', 'cheapdeal')
+    #      response = h.request(request)
+    #      @tweets = ActiveSupport::JSON.decode(response.body)
+    #    end
+    #    return @tweets
+    #  end
+    #rescue
+    #  nil
+    #end
+
+    nil
   end
 
   def self.create_blog_entries(tweets)
