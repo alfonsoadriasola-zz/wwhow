@@ -1,4 +1,4 @@
-<div style="position:relative; font-size:1.2em;">
+<div style="position:relative;">
   <% @welcomelocation = " near "<<session[:geo_location].full_address.split(',')[0..2].join(",") if session[:geo_location] %>
   <div style="padding:1em; width:780px">
     <br/>

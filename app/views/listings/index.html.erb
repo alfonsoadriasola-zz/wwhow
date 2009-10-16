@@ -1,12 +1,10 @@
 <% form_for :blog_entry, @message, :url => {:action => 'search'}  do |f| %>
     <%= render :partial =>  'listings/search' %>
     <div id="container" class="centered">
-        <div id="welcome" onclick="window.location.assign('/signup');"
-
+        <div id="<%= "merchant-" if @merchants %>welcome" onclick="window.location.assign('/signup');"
              <% if session[:sliders] && session[:sliders]==true then %>
              class="hide"
              <% end %> >
-
             <%= render :partial => 'welcome_verbage' %>
         </div>
 

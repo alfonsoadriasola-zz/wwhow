@@ -90,25 +90,32 @@ body div {
   overflow-y: visible;
 }
 
-#welcome {
-  background: transparent url(/images/info-tipsy.png) no-repeat top center;
-  height: 291px;
+#welcome,#merchant-welcome {
+  height: 241px;
   cursor: pointer;
   z-index: -1;
 }
 
-#welcome p {
+#welcome {
+  background: transparent url(/images/WwhowWeb-BannerHome_02.png) no-repeat top center;
+}
+
+#merchant-welcome {
+  background: transparent url(/images/WwhowWeb-BannerHomeMerchant02.png) no-repeat top center;
+}
+
+#welcome p, #merchant-welcome p {
   position: absolute;
   top: 90px;
   left: 40px;
   width: 66%;
 }
 
-#welcome h1 {
+#welcome h1,  #merchant-welcome h1 {
   font-size: 1em
 }
 
-#welcome h2 {
+#welcome h2, #merchant-welcome h2{
   font-size: 1em;
   font-weight: normal;
 }
@@ -166,7 +173,7 @@ body div {
 
 #rightbar {
   position: absolute;
-  top: 415px;
+  top: 347px;
   right: 0px;
   background-color: transparent;
   width: 183px;
@@ -456,7 +463,7 @@ td.slider div {
 }
 
 #popular_tags a, #messageListTable tags a,
-  #user-control-panel a, #login a, #active_members a {
+#user-control-panel a, #login a, #active_members a {
   text-decoration: none;
   color: #d50f10;
 }
@@ -695,8 +702,8 @@ span.hasMap, a.buttonAddFave, a.buttonOffFaves, a.buttonEdit, a.buttonMail {
 /*}*/
 
 span.hasMap em, a.buttonAddFave em,
-  a.buttonOffFaves em, a.buttonEdit em,
-  a.buttonMail em {
+a.buttonOffFaves em, a.buttonEdit em,
+a.buttonMail em {
   visibility: hidden;
   font-size: 1.1em;
 }
