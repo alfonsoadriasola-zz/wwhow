@@ -1,0 +1,1541 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlogEntry Load (22.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 298486374) [0m
+  [4;36;1mTagging Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 298486374) AND (context='categories')) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlogEntry Load (0.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (2.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlogEntry Load (0.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (0.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlogEntry Load (0.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1187371253) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+Caught an error during Google geocoding call: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Create (1.0ms)[0m   [0;1mINSERT INTO `users` (`name`, `uri`, `updated_at`, `show_friends_only`, `rated`, `ranked`, `lng`, `twitter_user`, `hide_blocked_users`, `web_user_id`, `lat`, `address`, `created_at`) VALUES('pricespider', NULL, '2009-09-04 01:27:23', 0, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, '2009-09-04 01:27:23')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mBlogEntry Create (1.0ms)[0m   [0mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('RadioShack@2987 YGNACIO VALLEY RD, WALNUT CREEK, 94598', '2009-09-04 01:27:23', NULL, NULL, NULL, 79.99, -122.01636, 79.99, 1187371254, 'AcomData PDHD500USE-72 500GB eSATA External Hard Drive', 37.92669, '2009-09-04 01:27:23', NULL)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371254) AND (context='categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371254) AND (context='categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;35;1mTag Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'Electronics') LIMIT 1[0m
+  [4;35;1mTag Create (1.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Electronics')[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371254, 'categories', '2009-09-04 01:27:23')[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Hard Drives') LIMIT 1[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'Hard Drives') LIMIT 1[0m
+  [4;35;1mTag Create (1.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Hard Drives')[0m
+  [4;36;1mTagging Create (1.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(2, 'BlogEntry', 1187371254, 'categories', '2009-09-04 01:27:23')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBlogEntry Create (1.0ms)[0m   [0;1mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('Target@1871 N Main St, Walnut Creek, 94596', '2009-09-04 01:27:27', NULL, NULL, NULL, 59.99, -122.06338, 59.99, 1187371254, 'Seagate 250 GB USB 2.0 Portable External Hard Drive Black (ST902504EXA101-RK)', 37.90454, '2009-09-04 01:27:27', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371255) AND (context='categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371255) AND (context='categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371255, 'categories', '2009-09-04 01:27:27')[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Hard Drives') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(2, 'BlogEntry', 1187371255, 'categories', '2009-09-04 01:27:27')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBlogEntry Create (0.0ms)[0m   [0;1mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('BestBuy@3260 BUSKIRK AVE, PLEASANT HILL, 94523', '2009-09-04 01:27:28', NULL, NULL, NULL, 449.99, -122.05962, 449.99, 1187371254, 'Samsung LN32B360 32\" LCD TV', 37.93465, '2009-09-04 01:27:28', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371256) AND (context='categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371256) AND (context='categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;36;1mTagging Create (1.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371256, 'categories', '2009-09-04 01:27:28')[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'LCD TV') LIMIT 1[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'LCD TV') LIMIT 1[0m
+  [4;35;1mTag Create (1.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('LCD TV')[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(3, 'BlogEntry', 1187371256, 'categories', '2009-09-04 01:27:28')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBlogEntry Create (1.0ms)[0m   [0;1mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('BestBuy@3260 BUSKIRK AVE, PLEASANT HILL, 94523', '2009-09-04 01:27:28', NULL, NULL, NULL, 799.99, -122.05962, 799.99, 1187371254, 'LG 42LH30 42\" LCD TV', 37.93465, '2009-09-04 01:27:28', NULL)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371257) AND (context='categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371257) AND (context='categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371257, 'categories', '2009-09-04 01:27:28')[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'LCD TV') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(3, 'BlogEntry', 1187371257, 'categories', '2009-09-04 01:27:28')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBlogEntry Create (0.0ms)[0m   [0;1mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('BestBuy@3260 BUSKIRK AVE, PLEASANT HILL, 94523', '2009-09-04 01:27:29', NULL, NULL, NULL, 999.99, -122.05962, 999.99, 1187371254, 'Sharp LC-46D85U 46-Inch 1080p 120Hz LCD HDTV Black', 37.93465, '2009-09-04 01:27:29', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371258) AND (context='categories')) [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371258) AND (context='categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371258, 'categories', '2009-09-04 01:27:29')[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'LCD TV') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(3, 'BlogEntry', 1187371258, 'categories', '2009-09-04 01:27:29')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBlogEntry Create (0.0ms)[0m   [0;1mINSERT INTO `blog_entries` (`where`, `updated_at`, `twit_id`, `discount`, `text`, `price`, `lng`, `price_text`, `user_id`, `what`, `lat`, `created_at`, `original`) VALUES('BestBuy@3260 BUSKIRK AVE, PLEASANT HILL, 94523', '2009-09-04 01:27:30', NULL, NULL, NULL, 9.99, -122.05962, 9.99, 1187371254, 'Knowledge Adventure 20167 JumpStart Advanced 3rd Grade Windows/Macintosh', 37.93465, '2009-09-04 01:27:30', NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371259) AND (context='categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1187371259) AND (context='categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Electronics') LIMIT 1[0m
+  [4;36;1mTagging Create (0.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1187371259, 'categories', '2009-09-04 01:27:30')[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Educational') LIMIT 1[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'Educational') LIMIT 1[0m
+  [4;35;1mTag Create (1.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Educational')[0m
+  [4;36;1mTagging Create (1.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(4, 'BlogEntry', 1187371259, 'categories', '2009-09-04 01:27:30')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`name` = 'pricespider') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` WHERE (`blog_entries`.user_id = 1187371254) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;36;1mWebUser Create (0.0ms)[0m   [0;1mINSERT INTO `web_users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `is_admin`, `password_reset_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('', '82b6d8e5360eaabac35167ec45a9daa1c8bb118c', '2009-09-04 01:27:39', NULL, '157b7b7b92256780cc08224684983f0be5f956ab', NULL, '032af061601bf56f0c09fbf4aa95fdf7ab319a39', 0, NULL, NULL, 'quire', 'quire@example.com', '2009-09-04 01:27:39')[0m
+Sent mail to quire@example.com
+
+Date: Thu, 3 Sep 2009 18:27:39 -0700
+From: wwhow
+To: quire@example.com
+Subject: WWHOW! Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+Your account on WWHOW!has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url http://wwhow.com/who/quire
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;36;1mWebUser Create (0.0ms)[0m   [0;1mINSERT INTO `web_users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `is_admin`, `password_reset_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('', '2908b6dc38222cd06abe21b0db89c81549d803a4', '2009-09-04 01:27:39', NULL, 'ec87b8cc02466971064df42514e97cf6e269c856', NULL, '795b1b0b9b86fe354c592e1ca9d923841138931a', 0, NULL, NULL, 'quire', 'quire@example.com', '2009-09-04 01:27:39')[0m
+Sent mail to quire@example.com
+
+Date: Thu, 3 Sep 2009 18:27:39 -0700
+From: wwhow
+To: quire@example.com
+Subject: WWHOW! Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+Your account on WWHOW!has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url http://wwhow.com/who/quire
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 6) [0m
+  [4;35;1mSQL (8.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quentin2' AND `web_users`.id <> 1) LIMIT 1[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quentin@example.com' AND `web_users`.id <> 1) LIMIT 1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `login` = 'quentin2', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (0.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:39', `remember_token` = 'b0b4172d6e12daa66ce82a69a3a0626604404792', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-11 01:27:39', `remember_token` = 'b93d120e3177e78a6378383d35297cdc82762f38', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (0.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-11 01:27:39', `remember_token` = '85e9b5f92a4f9e6cd7f9d21542c863831e32306c', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (12.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` IS NULL) LIMIT 1[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quentin' AND `web_users`.id <> 1) LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quentin@example.com' AND `web_users`.id <> 1) LIMIT 1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `crypted_password` = '6bf7d24e4f342c0f735b00ed0f7ee3b0e1bce36c', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Update (0.0ms)[0m   [0;1mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:39', `remember_token` = 'c78d02dd34b13a99bdc1cfc9376efe76991c8e5c', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Update (0.0ms)[0m   [0;1mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:39', `remember_token` = '97f05901ccc1d3c075893893874c823982c87deb', `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = NULL, `remember_token` = NULL, `updated_at` = '2009-09-04 01:27:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#index (for 0.0.0.0 at 2009-09-03 18:27:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (2.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+  [4;36;1mTwitter Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `subscriptions`[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (20.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mTagging Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mRating Load (1.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (7.0ms)
+Rendered listings/_welcome_verbage (14.0ms)
+Rendered listings/_tags (3.0ms)
+Rendered layouts/_leftbar (5.0ms)
+Rendered layouts/_active_members (7.0ms)
+Rendered layouts/_rightbar (9.0ms)
+Rendered listings/_search_sliders (12.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (10.0ms)
+Rendered listings/_bad_message_by_user (6.0ms)
+Rendered listings/_message (8.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered listings/_messagelist (28.0ms)
+Rendered layouts/_shared_meta (2.0ms)
+Rendered layouts/_title (2.0ms)
+Rendered layouts/_menu (4.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (2.0ms)
+Completed in 761ms (View: 109, DB: 77) | 200 OK [http://test.host/]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#show (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"post_id"=>"1", "action"=>"show", "controller"=>"listings"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1) [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (1.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (0.0ms)
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1) AND ((context = 'categories'))) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mRating Load (0.0ms)[0m   [0mSELECT * FROM `ratings` WHERE (`ratings`.rateable_id = 1 AND `ratings`.rateable_type = 'BlogEntry') [0m
+Rendered ratings/_rate (5.0ms)
+Rendered listings/_good_message_by_user (78.0ms)
+Rendered listings/_message (78.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (82.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (1.0ms)
+Completed in 325ms (View: 88, DB: 7) | 200 OK [http://test.host/find/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://test.host/
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:46', `remember_token` = 'ff6ed096987c780c84f4a5197d3c789cc179b2e3', `updated_at` = '2009-09-04 01:27:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendered layouts/_menu (3.0ms)
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 14ms (View: 13, DB: 2) | 200 OK [http://test.host/login]
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Update (1.0ms)[0m   [0;1mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:46', `remember_token` = '64bdfe74ec3586189225f1c2b021b783dccbea16', `updated_at` = '2009-09-04 01:27:46' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Update (1.0ms)[0m   [0mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-04 01:22:46', `updated_at` = '2009-09-04 01:27:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = '64bdfe74ec3586189225f1c2b021b783dccbea16') LIMIT 1[0m
+Rendered layouts/_menu (2.0ms)
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = '64bdfe74ec3586189225f1c2b021b783dccbea16') LIMIT 1[0m
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (1.0ms)
+Completed in 8ms (View: 8, DB: 5) | 200 OK [http://test.host/login]
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = '64bdfe74ec3586189225f1c2b021b783dccbea16') LIMIT 1[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'quentin' from 0.0.0.0 at Fri Sep 04 01:27:46 UTC 2009
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 6ms (View: 5, DB: 14) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'quentin' from 0.0.0.0 at Fri Sep 04 01:27:46 UTC 2009
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 8ms (View: 5, DB: 2) | 200 OK [http://test.host/session?login=quentin&password=monkey]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Update (1.0ms)[0m   [0;1mUPDATE `web_users` SET `remember_token_expires_at` = '2009-09-18 01:27:46', `remember_token` = '2fe630be5314ac5dbc6cf6e1f1ab532754b73b9a', `updated_at` = '2009-09-04 01:27:46' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (`web_users`.`remember_token` = '2fe630be5314ac5dbc6cf6e1f1ab532754b73b9a') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Update (0.0ms)[0m   [0;1mUPDATE `web_users` SET `remember_token_expires_at` = NULL, `remember_token` = NULL, `updated_at` = '2009-09-04 01:27:46' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 1) LIMIT 1[0m
+Rendered layouts/_menu (6.0ms)
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 11ms (View: 11, DB: 2) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://test.host/
+Completed in 0ms (DB: 2) | 302 Found [http://test.host/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"0"}
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT * FROM `web_users` WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'quentin' from 0.0.0.0 at Fri Sep 04 01:27:46 UTC 2009
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://test.host/session?login=quentin&password=monkey&remember_me=0]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"1"}
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'quentin' from 0.0.0.0 at Fri Sep 04 01:27:46 UTC 2009
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/session?login=quentin&password=monkey&remember_me=1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 4) | 302 Found [http://test.host/users/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing UsersController#new (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/users/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2009-09-03 18:27:46) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"1", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/users/1?]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"web_users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mWebUser Create (0.0ms)[0m   [0mINSERT INTO `web_users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `is_admin`, `password_reset_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('', 'a5deacdf0f28abf6519db22d31e0834d6d157ab9', '2009-09-04 01:27:46', NULL, 'a256a8f5fd4c9b8ca69d458df67c2469f61b9c67', NULL, '7a80e3149c11f96f89c37e74aa02420a064c5556', 0, NULL, NULL, 'quire', 'quire@example.com', '2009-09-04 01:27:46')[0m
+Sent mail to quire@example.com
+
+Date: Thu, 3 Sep 2009 18:27:46 -0700
+From: wwhow
+To: quire@example.com
+Subject: WWHOW! Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+Your account on WWHOW!has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url http://wwhow.com/who/quire
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.web_user_id = 7) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+Caught an error during Google geocoding call: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/activate/7a80e3149c11f96f89c37e74aa02420a064c5556
+Completed in 18ms (DB: 1) | 302 Found [http://test.host/register?web_user%5Bemail%5D=quire%40example.com&web_user%5Blogin%5D=quire&web_user%5Bpassword%5D=quire69&web_user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing WebUsersController#activate (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"activation_code"=>"", "action"=>"activate", "controller"=>"web_users"}
+Redirected to http://test.host/login
+Completed in 0ms (DB: 2) | 302 Found [http://test.host/activate/]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing WebUsersController#activate (for 0.0.0.0 at 2009-09-03 18:27:46) [GET]
+  Parameters: {"action"=>"activate", "controller"=>"web_users"}
+Redirected to http://test.host/login
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activate]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"web_users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/common
+Rendering web_users/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://test.host/register?web_user%5Bemail%5D=&web_user%5Blogin%5D=quire&web_user%5Bpassword%5D=quire69&web_user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:46) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"web_users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` IS NULL) LIMIT 1[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/common
+Rendering web_users/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 15ms (View: 8, DB: 3) | 200 OK [http://test.host/register?web_user%5Bemail%5D=quire%40example.com&web_user%5Blogin%5D=&web_user%5Bpassword%5D=quire69&web_user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:47) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"web_users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/common
+Rendering web_users/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 13ms (View: 8, DB: 3) | 200 OK [http://test.host/register?web_user%5Bemail%5D=quire%40example.com&web_user%5Blogin%5D=quire&web_user%5Bpassword%5D=quire69&web_user%5Bpassword_confirmation%5D=]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `web_users` [0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:47) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"web_users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;36;1mWebUser Load (1.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/common
+Rendering web_users/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 15ms (View: 8, DB: 4) | 200 OK [http://test.host/register?web_user%5Bemail%5D=quire%40example.com&web_user%5Blogin%5D=quire&web_user%5Bpassword%5D=&web_user%5Bpassword_confirmation%5D=quire69]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `web_users` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing WebUsersController#create (for 0.0.0.0 at 2009-09-03 18:27:47) [POST]
+  Parameters: {"web_user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"web_users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mWebUser Load (0.0ms)[0m   [0;1mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`login` = BINARY 'quire') LIMIT 1[0m
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT `web_users`.id FROM `web_users` WHERE (`web_users`.`email` = BINARY 'quire@example.com') LIMIT 1[0m
+  [4;36;1mWebUser Create (1.0ms)[0m   [0;1mINSERT INTO `web_users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `is_admin`, `password_reset_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('', '7cabe64ca39ce15d3b95050c999a0ffc6a570bd9', '2009-09-04 01:27:47', NULL, '30084134fbc016eb6c6a4b8cd4ce416619983f26', NULL, 'b0748d54d1366ef90b793afc3d41efd03b9c75ff', 0, NULL, NULL, 'quire', 'quire@example.com', '2009-09-04 01:27:47')[0m
+Sent mail to quire@example.com
+
+Date: Thu, 3 Sep 2009 18:27:47 -0700
+From: wwhow
+To: quire@example.com
+Subject: WWHOW! Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+Your account on WWHOW!has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url http://wwhow.com/who/quire
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.web_user_id = 8) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+Caught an error during Google geocoding call: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/activate/b0748d54d1366ef90b793afc3d41efd03b9c75ff
+Completed in 16ms (DB: 5) | 302 Found [http://test.host/register?web_user%5Bemail%5D=quire%40example.com&web_user%5Blogin%5D=quire&web_user%5Bpassword%5D=quire69&web_user%5Bpassword_confirmation%5D=quire69]
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 8) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-03 18:27:53) [GET]
+  Parameters: {"entry_location"=>"jfk", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: jfk. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>jfk</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>John F Kennedy Airport, United States</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AddressLine>John F Kennedy Airport</AddressLine></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.6654280" south="40.6195330" east="-73.7434190" west="-73.8327230" />
+    </ExtendedData>
+    <Point><coordinates>-73.7880710,40.6424805,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709345100902591)*COS(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709345100902591)*SIN(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709345100902591)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709345100902591)*COS(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709345100902591)*SIN(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709345100902591)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 75) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Load (0.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709345100902591)*COS(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709345100902591)*SIN(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709345100902591)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 200) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709345100902591)*COS(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709345100902591)*SIN(-1.28784478764534)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709345100902591)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 325) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (1,1102555210,298486374) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mRating Load (1.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (1,1102555210,298486374) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (6.0ms)
+Rendered listings/_welcome_verbage (12.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (4.0ms)
+Rendered layouts/_active_members (6.0ms)
+Rendered layouts/_rightbar (7.0ms)
+Rendered listings/_search_sliders (10.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (10.0ms)
+Rendered ratings/_rate (5.0ms)
+Rendered listings/_good_message_by_user (12.0ms)
+Rendered listings/_message (13.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (3.0ms)
+Rendered listings/_message (4.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered listings/_messagelist (40.0ms)
+Rendered layouts/_shared_meta (2.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (4.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (1.0ms)
+Completed in 750ms (View: 164, DB: 51) | 200 OK [http://www.example.com/where/jfk]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (0.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1102555210) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mBlogEntry Update (0.0ms)[0m   [0mUPDATE `blog_entries` SET `price_text` = 'BOGOF', `price` = 0.0, `where` = 'payless@94105', `updated_at` = '2009-09-04 01:27:53' WHERE `id` = 1102555210[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'shoes') LIMIT 1[0m
+  [4;35;1mTag Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'shoes') LIMIT 1[0m
+  [4;35;1mTag Create (1.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('shoes')[0m
+  [4;36;1mTagging Create (1.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(5, 'BlogEntry', 1102555210, 'categories', '2009-09-04 01:27:53')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-03 18:27:53) [GET]
+  Parameters: {"action"=>"search", "controller"=>"listings", "category_list"=>"shoes"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (2.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (1=1 AND ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) AND lower(what) LIKE '%shoes%' ) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT DISTINCT blog_entries.* FROM `blog_entries` LEFT OUTER JOIN taggings blog_entries_taggings ON blog_entries_taggings.taggable_id = blog_entries.id AND blog_entries_taggings.taggable_type = 'BlogEntry' LEFT OUTER JOIN tags blog_entries_tags ON blog_entries_tags.id = blog_entries_taggings.tag_id WHERE (1=1 AND ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) AND context = 'categories' AND blog_entries_tags.name LIKE 'shoes') ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mTag Load (5.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (1.0ms)
+Rendered layouts/_active_members (0.0ms)
+Rendered layouts/_rightbar (0.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (2.0ms)
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 269ms (View: 11, DB: 17) | 200 OK [http://www.example.com/what/shoes]
+  [4;35;1mSQL (2.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-09-03 18:27:54) [GET]
+  Parameters: {"entry_location"=>"sfo", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: sfo. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>sfo</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco Airport, United States</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AddressLine>San Francisco Airport</AddressLine></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.6401700" south="37.6041790" east="-122.3548940" west="-122.4015610" />
+    </ExtendedData>
+    <Point><coordinates>-122.3899790,37.6152230,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.656509490221899)*COS(-2.13610810499672)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.656509490221899)*SIN(-2.13610810499672)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.656509490221899)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mTagging Load (0.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mRating Load (0.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (2.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (0.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (1.0ms)
+Rendered listings/_bad_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (9.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 311ms (View: 19, DB: 10) | 200 OK [http://www.example.com/where/sfo]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (0.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1) [0m
+Google geocoding. Address: sfo. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>sfo</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco Airport, United States</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AddressLine>San Francisco Airport</AddressLine></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.6401700" south="37.6041790" east="-122.3548940" west="-122.4015610" />
+    </ExtendedData>
+    <Point><coordinates>-122.3899790,37.6152230,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+
+
+Processing CommonController#malformed (for 127.0.0.1 at 2009-09-03 18:27:54) [GET]
+  Parameters: {"anything"=>[{"controllerlistings;actionindex"=>nil}], "action"=>"malformed", "controller"=>"common"}
+  [4;35;1mTag Load (5.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/common
+Rendering common/404
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 24ms (View: 11, DB: 7) | 200 OK [http://www.example.com/controllerlistings;actionindex]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-03 18:27:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;35;1mWebUser Load (0.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 4) [0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-09-03 18:27:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;36;1mTwitter Load (1.0ms)[0m   [0;1mselect max(twit_id) twit_id from blog_entries[0m
+  [4;35;1mTwitter Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mRating Load (0.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (1.0ms)
+Rendered layouts/_active_members (1.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (1.0ms)
+Rendered listings/_bad_message_by_user (1.0ms)
+Rendered listings/_message (1.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (4.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 404ms (View: 11, DB: 11) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-09-03 18:27:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (1.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957836" south="37.7894884" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926360,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.65960593120774)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.65960593120774)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.65960593120774)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Load (0.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mRating Load (1.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (1.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (1.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (0.0ms)
+Rendered listings/_bad_message_by_user (2.0ms)
+Rendered listings/_message (2.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (3.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 349ms (View: 12, DB: 8) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (60.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-10-12 10:11:49) [GET]
+  Parameters: {"entry_location"=>"jfk", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: jfk. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>jfk</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>John F Kennedy International Airport, Queens, NY 11422, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>NY</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Queens</SubAdministrativeAreaName><DependentLocality><DependentLocalityName>Queens</DependentLocalityName><PostalCode><PostalCodeNumber>11422</PostalCodeNumber></PostalCode><AddressLine>John F Kennedy International Airport</AddressLine></DependentLocality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.6647701" south="40.6212854" east="-73.7483810" west="-73.8232126" />
+    </ExtendedData>
+    <Point><coordinates>-73.7827450,40.6444768,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (29.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709379942910449)*COS(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709379942910449)*SIN(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709379942910449)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709379942910449)*COS(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709379942910449)*SIN(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709379942910449)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 75) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Load (1.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709379942910449)*COS(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709379942910449)*SIN(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709379942910449)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 200) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Load (25.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.709379942910449)*COS(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.709379942910449)*SIN(-1.28775183140938)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.709379942910449)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 325) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Columns (70.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTagging Load (13.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (1,1102555210,298486374) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mRating Load (17.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (1,1102555210,298486374) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (33.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (7.0ms)
+Rendered listings/_welcome_verbage (14.0ms)
+Rendered listings/_tags (3.0ms)
+Rendered layouts/_leftbar (5.0ms)
+Rendered layouts/_active_members (8.0ms)
+Rendered layouts/_rightbar (9.0ms)
+Rendered listings/_search_sliders (13.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (12.0ms)
+Rendered ratings/_rate (6.0ms)
+Rendered listings/_good_message_by_user (16.0ms)
+Rendered listings/_message (19.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (90.0ms)
+Rendered listings/_message (90.0ms)
+Rendered shared/_system_messages (2.0ms)
+Rendered listings/_messagelist (139.0ms)
+Rendered layouts/_shared_meta (3.0ms)
+Rendered layouts/_title (1.0ms)
+Rendered layouts/_menu (4.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (2.0ms)
+Rendered layouts/_endscripts (2.0ms)
+Completed in 1279ms (View: 223, DB: 1189) | 200 OK [http://www.example.com/where/jfk]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1102555210) [0m
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mBlogEntry Update (1.0ms)[0m   [0mUPDATE `blog_entries` SET `price_text` = 'BOGOF', `price` = 0.0, `where` = 'payless@94105', `updated_at` = '2009-10-12 17:11:50' WHERE `id` = 1102555210[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_type = 'BlogEntry') AND (`taggings`.taggable_id = 1102555210) AND (context='categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'shoes') LIMIT 1[0m
+  [4;35;1mTag Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'shoes') LIMIT 1[0m
+  [4;35;1mTag Create (13.0ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('shoes')[0m
+  [4;36;1mTagging Create (1.0ms)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `context`, `created_at`) VALUES(1, 'BlogEntry', 1102555210, 'categories', '2009-10-12 17:11:50')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-10-12 10:11:50) [GET]
+  Parameters: {"action"=>"search", "controller"=>"listings", "category_list"=>"shoes"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Francisco</SubAdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957786" south="37.7894834" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926310,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (2.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (1=1 AND ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) AND lower(what) LIKE '%shoes%' ) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Load (12.0ms)[0m   [0mSELECT DISTINCT blog_entries.* FROM `blog_entries` LEFT OUTER JOIN taggings blog_entries_taggings ON blog_entries_taggings.taggable_id = blog_entries.id AND blog_entries_taggings.taggable_type = 'BlogEntry' LEFT OUTER JOIN tags blog_entries_tags ON blog_entries_tags.id = blog_entries_taggings.tag_id WHERE (1=1 AND ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) AND context = 'categories' AND blog_entries_tags.name LIKE 'shoes') ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mTag Load (41.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (1.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (0.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (2.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 288ms (View: 13, DB: 80) | 200 OK [http://www.example.com/what/shoes]
+  [4;35;1mSQL (2.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#search (for 127.0.0.1 at 2009-10-12 10:11:51) [GET]
+  Parameters: {"entry_location"=>"sfo", "action"=>"search", "controller"=>"listings"}
+Google geocoding. Address: sfo. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>sfo</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco International Airport, California 94030, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Mateo</SubAdministrativeAreaName><PostalCode><PostalCodeNumber>94030</PostalCodeNumber></PostalCode><AddressLine>San Francisco International Airport</AddressLine></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.6392104" south="37.6043769" east="-122.3549471" west="-122.4014108" />
+    </ExtendedData>
+    <Point><coordinates>-122.3899790,37.6152230,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (2.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.656509490221899)*COS(-2.13610810499672)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.656509490221899)*SIN(-2.13610810499672)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.656509490221899)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mTagging Load (1.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mRating Load (0.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (0.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (1.0ms)
+Rendered listings/_bad_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (9.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 178ms (View: 18, DB: 12) | 200 OK [http://www.example.com/where/sfo]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE (`blog_entries`.`id` = 1) [0m
+Google geocoding. Address: sfo. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>sfo</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>San Francisco International Airport, California 94030, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Mateo</SubAdministrativeAreaName><PostalCode><PostalCodeNumber>94030</PostalCodeNumber></PostalCode><AddressLine>San Francisco International Airport</AddressLine></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.6392104" south="37.6043769" east="-122.3549471" west="-122.4014108" />
+    </ExtendedData>
+    <Point><coordinates>-122.3899790,37.6152230,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+
+
+Processing CommonController#malformed (for 127.0.0.1 at 2009-10-12 10:11:51) [GET]
+  Parameters: {"anything"=>[{"controllerlistings;actionindex"=>nil}], "action"=>"malformed", "controller"=>"common"}
+  [4;35;1mTag Load (5.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/common
+Rendering common/404
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 19ms (View: 10, DB: 9) | 200 OK [http://www.example.com/controllerlistings;actionindex]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-10-12 10:11:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/common
+Rendering sessions/new
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (1.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://www.example.com/login]
+  [4;35;1mWebUser Load (1.0ms)[0m   [0mSELECT * FROM `web_users` WHERE (`web_users`.`id` = 4) [0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-10-12 10:11:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;36;1mTwitter Load (1.0ms)[0m   [0;1mselect max(twit_id) twit_id from blog_entries[0m
+  [4;35;1mTwitter Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `subscriptions`[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Francisco</SubAdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957786" south="37.7894834" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926310,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Load (0.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mRating Load (0.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (0.0ms)
+Rendered layouts/_active_members (0.0ms)
+Rendered layouts/_rightbar (0.0ms)
+Rendered listings/_search_sliders (1.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (0.0ms)
+Rendered listings/_bad_message_by_user (1.0ms)
+Rendered listings/_message (2.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (4.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (1.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1367ms (View: 12, DB: 14) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-10-12 10:11:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+  [4;35;1mTwitter Load (0.0ms)[0m   [0mselect max(twit_id) twit_id from blog_entries[0m
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Francisco</SubAdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957786" south="37.7894834" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926310,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (1.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` = 1187371253 and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;35;1mRating Load (1.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` = 1187371253 and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (2.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (0.0ms)
+Rendered layouts/_leftbar (1.0ms)
+Rendered layouts/_active_members (1.0ms)
+Rendered layouts/_rightbar (1.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (0.0ms)
+Rendered listings/_bad_message_by_user (1.0ms)
+Rendered listings/_message (2.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (4.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 551ms (View: 12, DB: 10) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
