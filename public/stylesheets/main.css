@@ -97,11 +97,11 @@ body div {
 }
 
 #welcome {
-  background: transparent url(/images/WwhowWeb-BannerHome_02.png) no-repeat top center;
+  background: transparent url(/images/WwhowWeb-BannerHome.png) no-repeat top center;
 }
 
 #merchant-welcome {
-  background: transparent url(/images/WwhowWeb-BannerHomeMerchant02.png) no-repeat top center;
+  background: transparent url(/images/WwhowWeb-BannerHomeMerchant.png) no-repeat top center;
 }
 
 #welcome p, #merchant-welcome p {
