@@ -24909,3 +24909,287 @@ Rendered shared/_system_messages (0.0ms)
 Rendered layouts/_footer (0.0ms)
 Rendered layouts/_endscripts (0.0ms)
 Completed in 810ms (View: 11, DB: 766) | 200 OK [http://localhost/images/WwhowWeb-BannerHome_02.png]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-11-01 09:53:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+Google geocoding. Address: 100 Pine Street, San Francisco, CA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine Street, San Francisco, CA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Francisco</SubAdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957786" south="37.7894834" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926310,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mBlogEntry Load (308.0ms)[0m   [0;1mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;35;1mBlogEntry Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `blog_entries`[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (20.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IN (80,79,57,82,4,291)) [0m
+  [4;36;1mTagging Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTagging Load (51.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10630,10619,10613,10612,10611,10610,10609,10608,10607,10606,10605,10604,10603,10602,10601,10600) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mTag Load (33.0ms)[0m   [0mSELECT * FROM `tags` WHERE (`tags`.`id` IN (7494,558,131,5820,1215,17,519,894,5681)) [0m
+  [4;36;1mRating Load (18.0ms)[0m   [0;1mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10630,10619,10613,10612,10611,10610,10609,10608,10607,10606,10605,10604,10603,10602,10601,10600) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;35;1mRating Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ratings`[0m
+  [4;36;1mTag Load (1287.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (8.0ms)
+Rendered listings/_welcome_verbage (21.0ms)
+Rendered listings/_tags (14.0ms)
+Rendered layouts/_leftbar (19.0ms)
+Rendered layouts/_active_members (14.0ms)
+Rendered layouts/_rightbar (22.0ms)
+Rendered listings/_search_sliders (23.0ms)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (31.0ms)
+Rendered ratings/_rate (6.0ms)
+Rendered listings/_good_message_by_user (147.0ms)
+Rendered listings/_message (160.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (7.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (73.0ms)
+Rendered listings/_message (73.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered shared/_system_messages (2.0ms)
+Rendered listings/_messagelist (414.0ms)
+Rendered layouts/_shared_meta (13.0ms)
+Rendered layouts/_title (2.0ms)
+Rendered layouts/_menu (14.0ms)
+Rendered shared/_home (1.0ms)
+Rendered layouts/_footer (2.0ms)
+Rendered layouts/_endscripts (7.0ms)
+Completed in 5653ms (View: 720, DB: 1757) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommonController#malformed (for 127.0.0.1 at 2009-11-01 09:53:47) [GET]
+  Parameters: {"anything"=>[{"images"=>nil}, {"WwhowWeb-BannerHome_02.png"=>nil}], "action"=>"malformed", "controller"=>"common"}
+  [4;35;1mTag Load (875.0ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;36;1mUser Load (71.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/common
+Rendering common/404
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_shared_meta (1.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1015ms (View: 34, DB: 947) | 200 OK [http://localhost/images/WwhowWeb-BannerHome_02.png]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ListingsController#index (for 127.0.0.1 at 2009-11-01 09:53:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"listings"}
+Google geocoding. Address: 100 Pine St, San Francisco, CA 94111, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>100 Pine St, San Francisco, CA 94111, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>100 Pine St, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>San Francisco</SubAdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName><Thoroughfare><ThoroughfareName>100 Pine St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94111</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957786" south="37.7894834" east="-122.3958474" west="-122.4021426" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989950,37.7926310,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>100 Pine Center, San Francisco, CA 94111, USA</address>
+    <AddressDetails Accuracy="9" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLine>100 Pine Center</AddressLine></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.7957587" south="37.7894635" east="-122.3958246" west="-122.4021198" />
+    </ExtendedData>
+    <Point><coordinates>-122.3989722,37.7926111,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mBlogEntry Load (27.0ms)[0m   [0mSELECT * FROM `blog_entries` WHERE ( (ACOS(least(1,COS(0.659605843941277)*COS(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*COS(RADIANS(blog_entries.lng))+
+ COS(0.659605843941277)*SIN(-2.13626546388208)*COS(RADIANS(blog_entries.lat))*SIN(RADIANS(blog_entries.lng))+
+ SIN(0.659605843941277)*SIN(RADIANS(blog_entries.lat))))*3963.19)
+<= 50) ORDER BY blog_entries.created_at desc LIMIT 22[0m
+  [4;36;1mBlogEntry Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `blog_entries`[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IN (80,79,57,82,4,291)) [0m
+  [4;35;1mTagging Load (2.0ms)[0m   [0mSELECT `taggings`.* FROM `taggings` WHERE (`taggings`.`taggable_id` IN (12849,12850,12848,12847,10852,10851,10630,10619,10613,10612,10611,10610,10609,10608,10607,10606,10605,10604,10603,10602,10601,10600) and `taggings`.`taggable_type` = 'BlogEntry' AND (context = 'categories')) [0m
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (`tags`.`id` IN (7494,558,131,5820,1215,17,519,894,5681)) [0m
+  [4;35;1mRating Load (12.0ms)[0m   [0mSELECT `ratings`.* FROM `ratings` WHERE (`ratings`.`rateable_id` IN (12849,12850,12848,12847,10852,10851,10630,10619,10613,10612,10611,10610,10609,10608,10607,10606,10605,10604,10603,10602,10601,10600) and `ratings`.`rateable_type` = 'BlogEntry') [0m
+  [4;36;1mTag Load (761.0ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM `tags` LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'categories' LEFT OUTER JOIN blog_entries ON blog_entries.id = taggings.taggable_id WHERE (taggings.taggable_type = 'BlogEntry') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0 AND COUNT(*) >= 18 ORDER BY count DESC, id DESC LIMIT 48[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (rated > 0) ORDER BY rated desc, updated_at desc LIMIT 30[0m
+Rendering template within layouts/nonusers
+Rendering listings/index
+Rendered listings/_search (1.0ms)
+Rendered listings/_welcome_verbage (0.0ms)
+Rendered listings/_tags (2.0ms)
+Rendered layouts/_leftbar (2.0ms)
+Rendered layouts/_active_members (5.0ms)
+Rendered layouts/_rightbar (6.0ms)
+Rendered listings/_search_sliders (0.0ms)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `blog_entries` [0m
+Rendered listings/_map (17.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (6.0ms)
+Rendered listings/_message (7.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (6.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (72.0ms)
+Rendered listings/_good_message_by_user (74.0ms)
+Rendered listings/_message (74.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (3.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (4.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (5.0ms)
+Rendered listings/_message (5.0ms)
+Rendered ratings/_rate (2.0ms)
+Rendered listings/_good_message_by_user (4.0ms)
+Rendered listings/_message (5.0ms)
+Rendered shared/_system_messages (0.0ms)
+Rendered listings/_messagelist (213.0ms)
+Rendered layouts/_shared_meta (0.0ms)
+Rendered layouts/_title (0.0ms)
+Rendered layouts/_menu (1.0ms)
+Rendered shared/_home (0.0ms)
+Rendered layouts/_footer (0.0ms)
+Rendered layouts/_endscripts (0.0ms)
+Completed in 1431ms (View: 226, DB: 820) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommonController#malformed (for 127.0.0.1 at 2009-11-01 09:54:25) [GET]
+  Parameters: {"anything"=>[{"images"=>nil}, {"Wwhow-BannerHome_02.png"=>nil}], "action"=>"malformed", "controller"=>"common"}
