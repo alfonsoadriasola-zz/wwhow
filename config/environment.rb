@@ -92,8 +92,8 @@ GeoKit::Geocoders::yahoo = 'REPLACE_WITH_YOUR_YAHOO_KEY'
 # This is your Google Maps geocoder key. 
 # See http://www.google.com/apis/maps/signup.html
 # and http://www.google.com/apis/maps/documentation/#Geocoding_Examples
-GeoKit::Geocoders::google = 'ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRFiBdD6TtZ5BeLlD8kMi6Q'
-    
+# old GeoKit::Geocoders::google = 'ABQIAAAAM0FeMpRwcm2HzkxmbAFYbxTLGAJQigE2YFmkK0yzoY65G_FjqBS5sBiwRFiBdD6TtZ5BeLlD8kMi6Q'
+GeoKit::Geocoders::google = 'ABQIAAAAWGXzUXEtiLXXpyFWhM1yRhTLGAJQigE2YFmkK0yzoY65G_FjqBR4onviwLfmzSAvGFcJ7Gu-gsSSRg'    
 # This is your username and password for geocoder.us.
 # To use the free service, the value can be set to nil or false.  For 
 # usage tied to an account, the value should be set to username:password.
