@@ -128,7 +128,7 @@ ENV['RECAPTCHA_PRIVATE_KEY'] ='6LfgtAQAAAAAADNGTeLcHbM_EDWVsv_xzFp9P6qI'
 #price spider integration from Bobby
 ENV['PRICE_SPIDER_API_KEY'] = 'a37267d473ab43d5a9037b9a840fa97c'
 
-SITE='http://wwhow.com'
+SITE='http://wwhow.heroku.com'
 
 # Local mail configuration
 ActionMailer::Base.delivery_method = :sendmail
